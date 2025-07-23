@@ -1,0 +1,751 @@
+{
+  "active": false,
+  "connections": {
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Created Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Polling",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Polling",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger 2": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "150 Sec": {
+      "main": [
+        [
+          {
+            "node": "Get Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Video": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video": {
+      "main": [
+        [
+          {
+            "node": "150 Sec",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Video": {
+      "main": [
+        [
+          {
+            "node": "YouTube",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger 1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add to Sheet": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Add to Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser2": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Polling": {
+      "main": [
+        [
+          {
+            "node": "Get Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Created Video": {
+      "main": [
+        [
+          {
+            "node": "Download Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "YouTube": {
+      "main": [
+        [
+          {
+            "node": "Update Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-06T19:16:39.006Z",
+  "id": "g1OtLXKMkKixoQEd",
+  "isArchived": false,
+  "meta": null,
+  "name": "YouTube Content Automation",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://api.dev.runwayml.com/v1/image_to_video",
+        "options": {}
+      },
+      "id": "0f79d0f6-ec76-456a-8459-8aaf10b9be7f",
+      "name": "Generate Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        220,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "unit": "seconds"
+      },
+      "id": "55514cba-8ca1-4f94-9db4-ff34c56640ea",
+      "name": "150 Sec",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        360,
+        580
+      ],
+      "webhookId": "37c707ea-ed3f-4e5c-b165-5a9b7aaa50a8"
+    },
+    {
+      "parameters": {
+        "url": "https://api.dev.runwayml.com/v1/tasks/{{ $json.id }}",
+        "options": {}
+      },
+      "id": "628cf700-23cb-40e0-8cff-173d7e451ee0",
+      "name": "Get Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        240,
+        780
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "d92b9955-cab8-4d4d-9dbe-f348f3a78d6b",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        380,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "status",
+              "value": "error"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "86f72490-39f4-4c24-b80d-a5cbd73cd1b6",
+      "name": "Error",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        680
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 10,
+        "unit": "seconds"
+      },
+      "id": "8cada56b-2c81-4609-b527-a7e0522d73fd",
+      "name": "Polling",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        880
+      ],
+      "webhookId": "dd1f635f-96a9-4e31-a982-23db30b90545"
+    },
+    {
+      "parameters": {
+        "functionCode": "return items;"
+      },
+      "id": "fd6ab63d-1589-48b9-99d6-363357008401",
+      "name": "Created Video",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        140,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://cdn.runwayml.com/video-job/output_123abc456.mp4",
+        "options": {}
+      },
+      "id": "d64726e3-23b3-4baa-bac0-027f47e673b5",
+      "name": "Download Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        360,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "update",
+        "sheetId": "{{GOOGLE_SHEET_ID}}",
+        "range": "Sheet1!A1:B1",
+        "options": {}
+      },
+      "id": "923c1e57-1c85-4867-82c4-0ab14d118eb7",
+      "name": "Update Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 1,
+      "position": [
+        360,
+        360
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "43086763-cce3-4b4b-901b-b1d84e329e84",
+      "name": "Schedule Trigger 1",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        680
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "append",
+        "sheetId": "{{GOOGLE_SHEET_ID}}",
+        "range": "Sheet1!A1",
+        "options": {}
+      },
+      "id": "a5deb707-3c5b-46e7-9ee6-1dc4987010e6",
+      "name": "Add to Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 1,
+      "position": [
+        -460,
+        920
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "baf13d08-eb6d-421d-b1d3-047efb89ac14",
+      "name": "Schedule Trigger 2",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "sheetId": "{{GOOGLE_SHEET_ID}}",
+        "range": "Sheet1!A1:B",
+        "options": {}
+      },
+      "id": "331635fc-b9a3-4f2c-85b3-70957aacbe61",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 1,
+      "position": [
+        -760,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        -600,
+        220
+      ],
+      "id": "0a044722-a38a-48a8-919b-0ed226fe6c6c",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        -260,
+        220
+      ],
+      "id": "8c4159a3-9a9b-4d6a-bb47-21ccf7bba446",
+      "name": "AI Agent2"
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "upload",
+        "title": "jabba nachu",
+        "regionCode": "IN",
+        "categoryId": "1",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [
+        120,
+        360
+      ],
+      "id": "8a249b15-5783-449e-9592-36f03859c64f",
+      "name": "YouTube"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "ten topics on trending reels ",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.8,
+      "position": [
+        -680,
+        640
+      ],
+      "id": "22374edd-6b3b-42cb-aab9-4604e003c70f",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "output.code",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        -860,
+        900
+      ],
+      "id": "81208c4a-dfbb-4632-bc79-05228e93f944",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {},
+      "id": "1e7716a1-8cfe-4baa-89c3-37d962827683",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -680,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"mode\": \"runOnceForEachItem\",\n  \"code\": \"const response = $json[\\\"output\\\"];\\n\\n// Try to extract topics using basic text splitting\\nlet topics = response\\n  .split('\\\\n')                       // split by new lines\\n  .map(t => t.replace(/^\\\\d+\\\\.\\\\s*/, '')) // remove numbers like '1. '\\n  .map(t => t.trim())               // clean spaces\\n  .filter(t => t.length > 0);       // remove empty lines\\n\\n// Only return the first 10\\ntopics = topics.slice(0, 10);\\n\\nreturn [{ json: { topics } }];\"\n}\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        -500,
+        780
+      ],
+      "id": "7a92f1c8-15f4-4558-8dee-02b235c2e14b",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        220
+      ],
+      "id": "d8e17531-76cb-4b41-8092-00ae72d313cc",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        -600,
+        440
+      ],
+      "id": "2fd761fb-eb83-4b99-b15c-16bafe59e867",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        -120,
+        440
+      ],
+      "id": "3dfd9c9a-e20c-49fd-8025-51d8f2e5da57",
+      "name": "Structured Output Parser2"
+    },
+    {
+      "parameters": {
+        "content": "## Ideas Scraper\n",
+        "height": 440,
+        "width": 740,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1000,
+        620
+      ],
+      "id": "491ecaa2-2727-449d-a568-a42f0470985e",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Intro/Outro Generator \n",
+        "height": 440,
+        "width": 1020,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1000,
+        140
+      ],
+      "id": "eb8ddffa-8113-475f-8c86-0452ad08f614",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Video Generation\n\n",
+        "height": 520,
+        "width": 380,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        160,
+        540
+      ],
+      "id": "c6c8b65a-f479-480b-9153-46b17c96cf8c",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## YT Uploader\n",
+        "height": 440,
+        "width": 480
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        60,
+        80
+      ],
+      "id": "003d068c-3196-478a-8354-06afbfdf8426",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Error\n",
+        "height": 200,
+        "width": 200,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        600
+      ],
+      "id": "da0eda34-adfe-4327-945a-dfd372b2cb9e",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## Polling\n",
+        "height": 200,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        820
+      ],
+      "id": "ee319f01-37ec-4b96-a6c2-b67db124c5e7",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -360,
+        440
+      ],
+      "id": "fe8d93e3-19ae-4d1a-94e4-73b8f42a3967",
+      "name": "OpenAI Chat Model"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4o-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        -700,
+        780
+      ],
+      "id": "ee3720b0-86ba-49ac-850e-3794b7a30df1",
+      "name": "OpenAI Chat Model1"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-08T20:07:33.696Z",
+  "versionId": "be28ebe0-30b9-435d-9a52-950a90f62717"
+}
