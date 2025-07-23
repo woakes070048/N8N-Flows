@@ -1,0 +1,555 @@
+{
+  "active": false,
+  "connections": {
+    "GET UNUSED SONGS": {
+      "main": [
+        [
+          {
+            "node": "Prepare Global Flag & Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select Next Song": {
+      "main": [
+        [
+          {
+            "node": "Format Output JSON",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Prepare Single Update Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get All Songs for Reset": {
+      "main": [
+        [
+          {
+            "node": "Prep Data for Reset",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prep Data for Reset": {
+      "main": [
+        [
+          {
+            "node": "Prepare Batch Update Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Re-fetch Songs After Reset": {
+      "main": [
+        [
+          {
+            "node": "Select Next Song",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "GET UNUSED SONGS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Batch Update Data": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets Batch Update",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Batch Update": {
+      "main": [
+        [
+          {
+            "node": "Re-fetch Songs After Reset",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Extract Songs for Select (Code)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Extract Songs for Reset (Code)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Global Flag & Data": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Single Update Data": {
+      "main": [
+        [
+          {
+            "node": "Mark Song as Used (HTTP)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Songs for Select (Code)": {
+      "main": [
+        [
+          {
+            "node": "Select Next Song",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Songs for Reset (Code)": {
+      "main": [
+        [
+          {
+            "node": "Get All Songs for Reset",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-18T17:39:23.774Z",
+  "id": "VS0Ij3WEYwFW12jN",
+  "isArchived": false,
+  "meta": null,
+  "name": "SH SONG Cycler",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e76137d6-39ad-4919-8a97-39cd449e839e",
+              "name": "backgroundMusicUrl",
+              "value": "={{ $json['PUBLIC URL'] }}",
+              "type": "string"
+            },
+            {
+              "id": "d0f6a9e3-3e68-4641-a031-7ab6e58103f9",
+              "name": "backgroundMusicCredits",
+              "value": "={{ $json.CREDITS }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1800,
+        520
+      ],
+      "id": "b9bf46fb-659b-4edb-b7b6-70f58fb687de",
+      "name": "Format Output JSON"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Assuming the input is an array of song objects (items) from GET UNUSED SONGS\nconst availableSongs = $input.all();\n\nif (availableSongs.length === 0) {\n  // This case should primarily be handled by the IF node's TRUE branch,\n  // but this acts as a safeguard.\n  return [];\n}\n\n// Select the first song in the list to ensure cycling\nconst selectedSong = availableSongs[0];\n\n// Ensure the output is a single item, retaining all properties like row_number\nreturn [selectedSong];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1580,
+        420
+      ],
+      "id": "d4b0b1bf-bbf5-4512-a052-e805468c6018",
+      "name": "Select Next Song"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1rhrOkkmLKe8I3HGnUtpWJwi95sQnDd2YCvMn08OoFYI",
+          "mode": "list",
+          "cachedResultName": "SH - BACKGROUND MUSIC",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rhrOkkmLKe8I3HGnUtpWJwi95sQnDd2YCvMn08OoFYI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rhrOkkmLKe8I3HGnUtpWJwi95sQnDd2YCvMn08OoFYI/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "USED",
+              "lookupValue": "=false"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        140,
+        420
+      ],
+      "id": "8d2ebc38-5d8a-4c78-b62a-88b48f471666",
+      "name": "GET UNUSED SONGS",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1rhrOkkmLKe8I3HGnUtpWJwi95sQnDd2YCvMn08OoFYI",
+          "mode": "list",
+          "cachedResultName": "SH - BACKGROUND MUSIC",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rhrOkkmLKe8I3HGnUtpWJwi95sQnDd2YCvMn08OoFYI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rhrOkkmLKe8I3HGnUtpWJwi95sQnDd2YCvMn08OoFYI/edit#gid=0"
+        },
+        "options": {
+          "dataLocationOnSheet": {
+            "values": {
+              "rangeDefinition": "specifyRange"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        820,
+        740
+      ],
+      "id": "90c10897-2248-4c5f-bd5e-79caa41982ab",
+      "name": "Get All Songs for Reset",
+      "executeOnce": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a56b4ea6-e2e0-46e3-bf50-ce4248d1fa96",
+              "name": "USED",
+              "value": "=false",
+              "type": "boolean"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        1000
+      ],
+      "id": "9677d5e2-c72d-4f91-8221-ab889bb7c9bd",
+      "name": "Prep Data for Reset"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1rhrOkkmLKe8I3HGnUtpWJwi95sQnDd2YCvMn08OoFYI",
+          "mode": "list",
+          "cachedResultName": "SH - BACKGROUND MUSIC",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rhrOkkmLKe8I3HGnUtpWJwi95sQnDd2YCvMn08OoFYI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1rhrOkkmLKe8I3HGnUtpWJwi95sQnDd2YCvMn08OoFYI/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "USED",
+              "lookupValue": "=false"
+            }
+          ]
+        },
+        "options": {
+          "dataLocationOnSheet": {
+            "values": {
+              "rangeDefinition": "specifyRange"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1220,
+        1000
+      ],
+      "id": "188ac2f1-511a-4d53-babb-7a015c206356",
+      "name": "Re-fetch Songs After Reset",
+      "executeOnce": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "inputSource": "passthrough"
+      },
+      "id": "aa039455-b231-443b-9bf6-53bd642981cc",
+      "typeVersion": 1.1,
+      "name": "Start",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        -80,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const spreadsheetId = '1rhrOkkmLKe8I3HGnUtpWJwi95sQnDd2YCvMn08OoFYI'; // <-- IMPORTANT: Replace with your actual Spreadsheet ID\nconst sheetName = 'Sheet1'; // <-- IMPORTANT: Replace if your sheet name is different (e.g., 'Music Library')\n\nconst updateRequests = [];\n\nfor (const item of $input.all()) {\n    const rowNumber = item.json.row_number;\n    const usedStatus = item.json.USED; // This should be 'false' from Prep Data for Reset\n\n    if (rowNumber) {\n        // Construct a request to update the 'USED' column for this specific row\n        // IMPORTANT: Replace 'B' below with the actual column letter of your 'USED' column\n        updateRequests.push({\n            range: `${sheetName}!B${rowNumber}`, // e.g., 'Sheet1!B2'\n            values: [[usedStatus]]\n        });\n    }\n}\n\n// Return the prepared request body for the HTTP Request node\nreturn [{\n    json: {\n        spreadsheetId: spreadsheetId, // <-- ADD THIS LINE\n        data: updateRequests,\n        valueInputOption: 'RAW',\n        includeValuesInResponse: false\n    }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1220,
+        520
+      ],
+      "id": "e2e4ae37-5c9b-49ef-90a0-d0522f082bd3",
+      "name": "Prepare Batch Update Data"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://sheets.googleapis.com/v4/spreadsheets/{{ $('Prepare Batch Update Data').item.json.spreadsheetId }}/values:batchUpdate\n",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1220,
+        740
+      ],
+      "id": "e7513323-3d9b-47e2-b774-5c999e819907",
+      "name": "Google Sheets Batch Update",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6dffa9c6-47f9-48fe-8987-9ea53123e3e1",
+              "leftValue": "={{ $json._globalHasRealSongsFlag }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        580,
+        420
+      ],
+      "id": "77369f62-5bf5-42a8-ad26-547836a26b1a",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "jsCode": "const allInputItems = $input.all(); // Get ALL items from GET UNUSED SONGS\n\nlet hasRealSongs = false;\n\n// Determine if there are any actual, non-empty items in the batch\nif (allInputItems.length > 0) {\n    hasRealSongs = allInputItems.some(item => Object.keys(item.json || {}).length > 0);\n}\n\n// Output ONLY ONE item. This item will contain the global flag AND\n// the original input items nested within it, so they are not lost.\nreturn [{\n    json: {\n        _globalHasRealSongsFlag: hasRealSongs, // Our global flag\n        originalSongsList: allInputItems        // The entire original list of items\n    }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        360,
+        420
+      ],
+      "id": "4e36de08-821b-4810-9b3b-f2db737a9104",
+      "name": "Prepare Global Flag & Data"
+    },
+    {
+      "parameters": {
+        "jsCode": "const spreadsheetId = '1rhrOkkmLKe8I3HGnUtpWJwi95sQnDd2YCvMn08OoFYI'; // <-- IMPORTANT: Replace with your actual Spreadsheet ID\nconst sheetName = 'Sheet1'; // <-- IMPORTANT: Replace if your sheet name is different (e.g., 'Music Library')\n\nconst itemToUpdate = $input.item.json; // Get the single song item from Select Next Song\nconst rowNumber = itemToUpdate.row_number; // Get the row_number directly from the item\nconst usedStatus = true; // We want to mark it as TRUE\n\n// This Code node will now return the entire JSON body ready for the HTTP Request\nreturn [{\n    json: {\n        spreadsheetId: spreadsheetId, // Pass ID for HTTP Request URL\n        updateRequest: { // This is the structure for the API call body\n            data: [{\n                range: `${sheetName}!B${rowNumber}`, // Assuming 'USED' is in column B\n                values: [[usedStatus]]\n            }],\n            valueInputOption: 'RAW'\n        }\n    }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1800,
+        260
+      ],
+      "id": "9eada5e1-8f2a-4ea8-83dd-ca40a80e0442",
+      "name": "Prepare Single Update Data"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://sheets.googleapis.com/v4/spreadsheets/{{ $json.spreadsheetId }}/values:batchUpdate\n",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleSheetsOAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.updateRequest }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2060,
+        260
+      ],
+      "id": "f648f6c1-24e4-495d-8912-1e901759f2bb",
+      "name": "Mark Song as Used (HTTP)",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Input is one item like: { json: { _globalHasRealSongsFlag: true, originalSongsList: [...] } }\n// We want to output the array from originalSongsList directly.\nreturn $input.all()[0].json.originalSongsList;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1000,
+        180
+      ],
+      "id": "a36edb9f-05e7-4aa6-bde4-cd0462a5f100",
+      "name": "Extract Songs for Select (Code)"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Input is one item like: { json: { _globalHasRealSongsFlag: false, originalSongsList: [...] } }\n// We want to output the array from originalSongsList directly.\nreturn $input.all()[0].json.originalSongsList;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        820,
+        520
+      ],
+      "id": "a26b9bcb-0420-4d06-ba4d-d53ff8873c76",
+      "name": "Extract Songs for Reset (Code)"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-18T19:51:13.068Z",
+  "versionId": "25010c14-c145-468a-9785-4d9af903101d"
+}
