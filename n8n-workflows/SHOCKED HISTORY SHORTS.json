@@ -1,0 +1,2533 @@
+{
+  "active": true,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Set Global Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Script Writer": {
+      "main": [
+        [
+          {
+            "node": "Get Next Music Track",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Video Scene Producer",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video Scene Producer": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deepseek v3 free": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Video Scene Producer",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deepseek v3 1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Script Writer",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deepseek v3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Video": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Created Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "10 Secs",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "10 Secs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Created Video": {
+      "main": [
+        [
+          {
+            "node": "Publishing Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Video": {
+      "main": [
+        [
+          {
+            "node": "POST TO INSTAGRAM",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "SEND TO ZAP SHEET",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Youtube Post",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "POST TO FACEBOOK",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video": {
+      "main": [
+        [
+          {
+            "node": "60 SECONDS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deepseek v": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Publishing Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Publishing Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "SUCCESS",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ERROR",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Youtube Post": {
+      "main": [
+        [
+          {
+            "node": "UPDATE YOUTUBE COLUMN",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publishing Agent": {
+      "main": [
+        [
+          {
+            "node": "Download Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "POST TO INSTAGRAM": {
+      "main": [
+        [
+          {
+            "node": "UPDATE INSTA COLUMN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "POST TO FACEBOOK": {
+      "main": [
+        [
+          {
+            "node": "UPDATE FB COLUMN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SEND TO ZAP SHEET": {
+      "main": [
+        [
+          {
+            "node": "UPDATE TIKTOK COLUMN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UPDATE YOUTUBE COLUMN": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UPDATE FB COLUMN": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "UPDATE INSTA COLUMN": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "UPDATE TIKTOK COLUMN": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "ERROR": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "10 Secs": {
+      "main": [
+        [
+          {
+            "node": "Get Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "60 SECONDS": {
+      "main": [
+        [
+          {
+            "node": "Get Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Next Music Track": {
+      "main": [
+        [
+          {
+            "node": "Video Scene Producer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Global Variables": {
+      "main": [
+        [
+          {
+            "node": "Script Writer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-08T19:51:49.849Z",
+  "id": "f3YBXEDpXwBuBrQt",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "SHOCKED HISTORY SHORTS",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 12
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -340,
+        -280
+      ],
+      "id": "78a414f8-2eb5-4828-8183-3e757f185bbb",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Status",
+              "lookupValue": "NEW"
+            }
+          ]
+        },
+        "options": {
+          "returnFirstMatch": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -180,
+        -280
+      ],
+      "id": "b2a0eeeb-a549-4823-a54d-4ea97d7b1e9b",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=ABSOLUTELY NO SECTION HEADINGS, LABELS, OR DIRECTOR SPEAK (e.g., 'HOOK (0:02):', 'FLOW:', 'TWIST:', 'CTA:'). YOUR OUTPUT MUST BE THE RAW SCRIPT SPOKEN WORDS ONLY. DO NOT INCLUDE ANY MARKDOWN SUCH AS BOLDING OR ITALICS IN THE FINAL SCRIPT.\n\nYOU ARE AN AI MASTERMIND specialized in crafting high-impact, viral story scripts.\nYour task is to generate a script based on provided input variables.\n\n---\n\n### Input Variables:\n\n- **Video_Length**: The target duration for the video script (e.g., \"1-2 MINUTE\").\n- **Script_Tone**: A detailed description of the desired tone and persona for the script's narration.\n- **TITLE**: The main topic or title to base the story script on.\n- **Target_Word_Count**: The exact word count the script must achieve.\n\n---\n\n### Script Generation Requirements:\n\nGenerate a VIRAL story script based on the title/topic: {{ $json.TITLE }}\nThe script must be exactly **{{ $json.Target_Word_Count }} words long**. To achieve this length, elaborate significantly on details, expand on each section, provide more descriptive imagery, and deepen the narrative. Do NOT just repeat content or add filler. Instead, add richer context, additional examples, or more speculative elements to the story.\n\nThe script should have:\n1. An Amazing, jaw-dropping, Scroll Stopping hook in the first 3 - 5 seconds. (Ensure the *content* serves as the hook, without labeling it.)\n\n2. A tight, escalating flow (with short punchy sentences, no filler) WE CANNOT AFFORD TO LOSE VIEWERS IN THE MIDDLE WE NEED TO KEEP THEM WATCHING (Ensure the *content* maintains flow, without labeling it.)\n\n3. A shocking or mysterious twist (Ensure the *content* contains a twist, without labeling it.)\n\n4. A killer final line or CTA to keep viewers watching more. MENTION TO FOLLOW US AND LIKE AND SUBSCRIBE FOR MORE OR SOMETHING SIMILAR. (Ensure the *content* concludes with a CTA, without labeling it.)\n\nEnsure the script's *progression* naturally moves through Hook, Setup, Conflict, Twist/Resolution, and Call to Action, without explicit section headings or any kind of internal formatting.\nUse a **{{ $json.Script_Tone }}** tone.\nUse simple, casual, spoken-style English, as if someone is telling the story directly to the viewer.\nAim for emotional impact, relatability, or shock value.\nBe engaging and relatable for teenagers and adults.\n\nPlease ensure the script is optimized for text-to-speech generators—using simple, clear sentences with natural rhythm and conversational tone.\n\n---\n\n### Output Format:\n\nReturn strictly the raw, unformatted script text.\n\n# ULTIMATE RULE: YOUR FINAL OUTPUT IS PURE, UNFORMATTED, SPOKEN SCRIPT TEXT. NO HEADINGS. NO LABELS. NO MARKDOWN. NOTHING ELSE.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        260,
+        -280
+      ],
+      "id": "1eae5971-4c9f-4c5c-82e6-72f3a60db713",
+      "name": "Script Writer"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"scenes\": [{\n    \"overlaidText\": \"\",\n    \"voiceOverText\": \"\",\n    \"imagePrompt\": \"\"\n  }]\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        920,
+        -60
+      ],
+      "id": "7dd8a683-789c-4fc9-baae-aa597ae39985",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a social media marketing specialist creating a YouTube video.\nYour task is to generate a series of detailed scenes based on provided input variables, optimized for engagement.\n\n---\n\n### Input Variables:\n\n- **SCRIPT_CONTENT**: The full video script to break down into individual scenes. (This comes from `Script Writer`)\n- **VIDEO_TARGET_LENGTH**: The target duration for the video (e.g., \"1-2 MINUTE\").\n- **VIDEO_TOPIC**: The main subject or title of the video.\n- **SCRIPT_NARRATION_TONE**: A detailed description of the desired tone/style for the script's voice-over and overall feel.\n\n---\n\n### Scene Generation Requirements:\n\nGenerate a series of scenes that fully cover the **SCRIPT_CONTENT**. The total scene count should be enough to support a **{{ $('Set Global Variables').item.json.Video_Length }}** video. Each scene should change approximately every **7 seconds** to keep it interesting and engaging. Build a compelling arc for the scenes: starting with a strong intro, followed by context, rising action, key moments, and a satisfying conclusion.\n\nEach scene must include:\n- A short, punchy **overlaid text** summarizing the scene's core moment.\n- A **voice-over text** that is at least 20 words long, written in an engaging and informative tone, aligning with the **{{ $('Set Global Variables').item.json.Script_Tone }}** of the video.\n- A **detailed image prompt** for generating a realistic image to pair with the scene. IT IS IMPERATIVE THAT NONE OF THE GENERATED IMAGES CONTAIN TEXT. THE ONLY TEXT ALLOWED WILL BE THE OVERLAYS YOU CREATE.\n\nThe image prompt must be in English, detailed, and photorealistic. The topic of the video is: **{{ $('Get row(s) in sheet').item.json.TITLE }}**.\n\n---\n\n### Output Format:\n\nReturn strictly this JSON structure, and nothing else. Ensure all output is in English.\n{\n  \"scenes\": [{\n    \"overlaidText\": \"\",\n    \"voiceOverText\": \"\",\n    \"imagePrompt\": \"\"\n  }]\n}\n\n# IMPORTANT NOTE: DO NOT include any introductory or concluding remarks outside the JSON. Return ONLY the JSON object.",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        840,
+        -280
+      ],
+      "id": "bc5e29b9-da77-49ee-8928-cb254d95085f",
+      "name": "Video Scene Producer"
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3-0324:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        780,
+        -80
+      ],
+      "id": "b2f1f118-1b4b-46de-a383-89cc9e634d87",
+      "name": "deepseek v3 free",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.json2video.com/v2/movies",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "json",
+        "body": "={{ $json.json2videoPayload }}",
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1600,
+        -280
+      ],
+      "id": "9bbfbc04-f5ef-4b20-a167-9adf8d52b1d8",
+      "name": "Generate Video",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "nTtnzQa0DjKsKnct",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3-0324:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        240,
+        0
+      ],
+      "id": "c223b65f-6142-4e96-8d7b-2a5e31894ce3",
+      "name": "deepseek v3 1",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3-0324:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        920,
+        120
+      ],
+      "id": "cffcaf08-937b-4f71-896b-c25148de50ae",
+      "name": "deepseek v3",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://api.json2video.com/v2/movies",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "project",
+              "value": "={{ $('Generate Video').item.json.project }}"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1620,
+        -20
+      ],
+      "id": "f4a938c4-39fe-49d4-bce2-b532b0805ab0",
+      "name": "Get Video",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "nTtnzQa0DjKsKnct",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "5b858d82-0a7c-44ea-940b-ae83a7c22f3c",
+                    "leftValue": "={{ $json.movie.status }}",
+                    "rightValue": "done",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Done"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.movie.status }}",
+                    "rightValue": "error",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "2e627457-06c8-411e-b6e0-f2e0207a3882"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Error"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6ebbf3c8-599e-451d-acf6-4e63fef69ae0",
+                    "leftValue": "={{ $json.movie.status }}",
+                    "rightValue": "running",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Running"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e22298ac-6f08-4f73-a361-768a17ea9a3a",
+                    "leftValue": "={{ $json.movie.status }}",
+                    "rightValue": "preparing",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Preparing"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1840,
+        -40
+      ],
+      "id": "fbd781a1-aba1-412b-ae6b-65611bd5f114",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Video URL": "={{ $json.movie.url }}",
+            "TITLE": "={{ $('Get row(s) in sheet').item.json.TITLE }}",
+            "Status": "DONE"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "INSTAGRAM",
+              "displayName": "INSTAGRAM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "FACEBOOK",
+              "displayName": "FACEBOOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ERRORS?",
+              "displayName": "ERRORS?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2420,
+        -340
+      ],
+      "id": "d048f159-d868-4936-a6b9-c2c6c825cc39",
+      "name": "Created Video",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('Get row(s) in sheet').item.json.TITLE }}",
+            "Video URL": "ERROR"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "INSTAGRAM",
+              "displayName": "INSTAGRAM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FACEBOOK",
+              "displayName": "FACEBOOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2320,
+        -80
+      ],
+      "id": "127110b8-66f7-48a6-a4f4-b50224207b18",
+      "name": "Error",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Get Video').item.json.movie.url }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3120,
+        -340
+      ],
+      "id": "48beb4dc-ce22-48d9-be9f-1edd8215842b",
+      "name": "Download Video"
+    },
+    {
+      "parameters": {
+        "content": "# Generate Video",
+        "height": 680,
+        "width": 600,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        -440
+      ],
+      "id": "70943000-a905-4d79-81bd-5b09739a9479",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "# Success",
+        "height": 260,
+        "width": 340,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2300,
+        -440
+      ],
+      "id": "ddaf5228-f3ce-4372-8f95-95ee52caf679",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "# Error",
+        "height": 240,
+        "width": 340,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2300,
+        -180
+      ],
+      "id": "fcee2481-1185-40cb-a61e-61385400a9b8",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "# Polling\n",
+        "height": 180,
+        "width": 340,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2300,
+        60
+      ],
+      "id": "a0910654-b3ac-4f90-935b-e458276677fc",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Access the scenes array from the Video Scene Producer output\nconst producerScenes = $input.first().json.output.scenes;\n\n// Access the music data from the renamed sub-workflow node output\n// This now comes directly from the 'Get Next Music Track' node.\nconst backgroundMusicUrl = $('Get Next Music Track').first().json.backgroundMusicUrl;\nconst backgroundMusicCredits = $('Get Next Music Track').first().json.backgroundMusicCredits;\n\n// Your actual JSON2Video Template ID\nconst json2videoTemplateId = \"BugEreBZEcQSTdsKALbN\";\n\n// Construct the JSON2Video payload\nconst json2videoPayload = {\n  \"template\": json2videoTemplateId,\n  \"variables\": { // This 'variables' block fills the variables defined within your J2V template\n    \"scenes\": producerScenes, // Your scenes data for the template's 'iterate' variable\n    \"voice\": \"AeRdCCKzvd23BpJoofzx\", // Your voice ID\n    \"background_audio_url\": backgroundMusicUrl // Pass the actual audio URL here as this variable\n  }\n};\n\n// Return both the constructed JSON2Video payload AND the background music credits\n// This way, the credits are available for a later node (e.g., YouTube upload)\nreturn [{\n  json: {\n    json2videoPayload: json2videoPayload, // The payload to send to JSON2Video\n    backgroundMusicCredits: backgroundMusicCredits // The credits for later use\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1240,
+        -280
+      ],
+      "id": "02637515-7308-41f3-9828-4de2e4530bb6",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=- **Input Text Field**: {{ $json.TITLE }} \n{{ $('Script Writer').item.json.output }}\n- **style_tone**: History Channel or Unsolved Mysteries TV SHOW HOST",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "type": "=SystemMessagePromptTemplate",
+              "message": "=You are an AI specialized in crafting high-impact, viral titles and descriptions optimized for TikTok Shorts, Instagram Reels, YouTube Shorts, and Facebook Reels. \n\nYou will receive a input containing informational fields which may be variably named (e.g., \"title\", \"script\", etc.).\n\nYour task is to dynamically detect and use the text field from the input to generate platform-specific content tailored to each platform’s unique style and audience engagement.\n\nThe **tone and style** of the output should be customizable based on a user-defined variable called `style_tone`. This variable specifies the persona or voice you should adopt when generating content (e.g., \"bossbaby\", \"motivational coach\", \"comedy sketch\", etc.).\n\n---\n\n### Input variables:\n\n- **Input Text Field**: The text to base your content on (captions, description, name etc).  \n- **style_tone**: A string indicating the desired voice/persona for the content.\n\n---\n\n### Platform-specific output requirements:\n\n1. **Instagram Reels**:  \n   - Description: Brief, visually descriptive, up to 5 hashtags, strong call-to-action. One hastag must be \"#ShockedHistory\". AT THE END OF THE DESCRIPTION YOU MUST INCLUDE \"CREDIT: {{ $('Code').item.json.backgroundMusicCredits }}\".\n\n2. **YouTube Shorts**:  \n   - Title (max 50 chars): Direct, suspenseful, clickbait style.  \n   - Description: Concise, keyword-rich, with engagement prompts and up to 5 hashtags. One hastag must be \"#ShockedHistory\". AT THE END OF THE DESCRIPTION YOU MUST INCLUDE \"CREDIT: {{ $('Code').item.json.backgroundMusicCredits }}\".\n\n3. **Facebook Reels**:   \n   - Description: Short, emotional hook encouraging reactions and up to 5 hashtags. One hastag must be \"#ShockedHistory\". AT THE END OF THE DESCRIPTION YOU MUST INCLUDE \"CREDIT: {{ $('Code').item.json.backgroundMusicCredits }}\".\n\n4. **TikTok**:  \n   - Description: Creative, catchy, platform-appropriate and up to 5 hashtags. One hastag must be \"#ShockedHistory\". AT THE END OF THE DESCRIPTION YOU MUST INCLUDE \"CREDIT: {{ $('Code').item.json.backgroundMusicCredits }}\".\n\n---\n\n### Output format:\n\nReturn strictly this JSON structure, adapting content tone according to `style_tone`:\n{\n  \"instagram\": {\n    \"description\": \"...\"\n  },\n  \"youtube\": {\n    \"title\": \"...\",\n    \"description\": \"...\"\n  },\n  \"facebook\": {\n    \"description\": \"...\"\n  },\n  \"tiktok\": {\n    \"description\": \"...\"\n  }\n}\n\n#Note \n- Return only the EXACT JSON Output and nothing else."
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        2780,
+        -340
+      ],
+      "id": "c10d2767-33ff-4a3d-9176-20b8ef6d9249",
+      "name": "Publishing Agent"
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3-0324:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        2780,
+        -160
+      ],
+      "id": "42f73a1b-47f2-4d05-891f-54629b91aa70",
+      "name": "deepseek v",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"instagram\": {\n    \"description\": \"...\"\n  },\n  \"youtube\": {\n    \"title\": \"...\",\n    \"description\": \"...\"\n  },\n  \"facebook\": {\n    \"description\": \"...\"\n  },\n  \"tiktok\": {\n    \"description\": \"...\"\n  }\n}\n\n"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        2940,
+        -160
+      ],
+      "id": "c0f1d899-5745-4b27-b91d-76bb3e4c48a7",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c087ebbf-22a5-45f4-82d5-ddabfd921889",
+              "leftValue": "={{ $json.YOUTUBE }}",
+              "rightValue": "DONE",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "301baec8-c772-4042-bdc1-7d2d99f07043",
+              "leftValue": "={{ $json.FACEBOOK }}",
+              "rightValue": "DONE",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "c7469347-06e8-4163-a280-d85ed47d167b",
+              "leftValue": "={{ $json.INSTAGRAM }}",
+              "rightValue": "DONE",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "a216f3c7-76f0-4bdb-89c6-e9e0dd389ce5",
+              "leftValue": "={{ $json.TIKTOK }}",
+              "rightValue": "SENT",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4240,
+        -320
+      ],
+      "id": "d89cf2c9-09b9-48b2-b8ad-70ca191b6e6e",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "upload",
+        "title": "={{ $('Publishing Agent').item.json.output.youtube.title }}",
+        "regionCode": "US",
+        "categoryId": "24",
+        "options": {
+          "description": "={{ $('Publishing Agent').item.json.output.youtube.description }}",
+          "privacyStatus": "public"
+        }
+      },
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [
+        3480,
+        -700
+      ],
+      "id": "cf456ece-ba3c-4224-bcb5-25feaab809c0",
+      "name": "Youtube Post",
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "Gf4ktvvHX8KT65dH",
+          "name": "YouTube SHOCKED HISTORY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Instagram Agent",
+        "height": 220,
+        "width": 420,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3460,
+        -280
+      ],
+      "id": "355584cc-8033-4a7c-81d7-5c2aa13dc269",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## Facebook Agent",
+        "height": 240,
+        "width": 420,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3460,
+        -540
+      ],
+      "id": "9a996c61-bfbf-43b4-a8fb-b2ad6a191e97",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "## TikTok Agent - SENDS TO SHEET FOR ZAPIER TO POST - BECAUSE TIKTOK IS A DICK",
+        "height": 280,
+        "width": 540
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3460,
+        -20
+      ],
+      "id": "fb658d95-1a08-4cf1-a09a-0256cbe2522f",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 4,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        4080,
+        -340
+      ],
+      "id": "5f725544-6bf8-44fd-9aa5-61eed7cebf16",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "content": "## Youtube Agent\n",
+        "height": 220,
+        "width": 420,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        3460,
+        -780
+      ],
+      "id": "c5bf8492-7644-4ae9-9ba1-34927ea918b2",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "operation": "uploadVideo",
+        "user": "Shocked-History",
+        "platform": [
+          "instagram"
+        ],
+        "title": "={{ $json.output.youtube.title }}",
+        "caption": "={{ $json.output.instagram.description }}",
+        "video": "={{ $('Get Video').item.json.movie.url }}",
+        "instagramMediaType": "REELS"
+      },
+      "type": "n8n-nodes-upload-post.uploadPost",
+      "typeVersion": 1,
+      "position": [
+        3480,
+        -200
+      ],
+      "id": "0f7002f8-435d-4975-910f-1f58d8287a55",
+      "name": "POST TO INSTAGRAM",
+      "credentials": {
+        "uploadPostApi": {
+          "id": "6bPvReVoQxtm0Hka",
+          "name": "Upload Post account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "uploadVideo",
+        "user": "Shocked-History",
+        "platform": [
+          "facebook"
+        ],
+        "title": "={{ $json.output.youtube.title }}",
+        "caption": "={{ $json.output.facebook.description }}",
+        "video": "={{ $('Get Video').item.json.movie.url }}",
+        "facebookPageId": "689331224264136",
+        "facebookVideoDescription": "={{ $json.output.facebook.description }}"
+      },
+      "type": "n8n-nodes-upload-post.uploadPost",
+      "typeVersion": 1,
+      "position": [
+        3480,
+        -440
+      ],
+      "id": "d2b3b425-412f-420c-9436-ce4121c6ad55",
+      "name": "POST TO FACEBOOK",
+      "credentials": {
+        "uploadPostApi": {
+          "id": "6bPvReVoQxtm0Hka",
+          "name": "Upload Post account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1uxOHb33pGIhAtbwjIjtTevhAZ6dWNg3el0VwJ8xInbc",
+          "mode": "list",
+          "cachedResultName": "SHOCKED HISTORY POST TO TIKTOK",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uxOHb33pGIhAtbwjIjtTevhAZ6dWNg3el0VwJ8xInbc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uxOHb33pGIhAtbwjIjtTevhAZ6dWNg3el0VwJ8xInbc/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "DATE": "={{ $('Get Video').item.json.movie.created_at }}",
+            "TITLE": "={{ $json.output.youtube.title }}",
+            "DESC": "={{ $json.output.tiktok.description }}",
+            "URL": "={{ $('Get Video').item.json.movie.url }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "DATE",
+              "displayName": "DATE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "DESC",
+              "displayName": "DESC",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "URL",
+              "displayName": "URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        3480,
+        100
+      ],
+      "id": "6d7002fb-fd83-411a-bc2a-2620c6b75e0c",
+      "name": "SEND TO ZAP SHEET",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('Get row(s) in sheet').item.json.TITLE }}",
+            "YOUTUBE": "DONE"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "INSTAGRAM",
+              "displayName": "INSTAGRAM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FACEBOOK",
+              "displayName": "FACEBOOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        3700,
+        -700
+      ],
+      "id": "10b0b315-f0e9-4f6a-bfaf-b740059e82da",
+      "name": "UPDATE YOUTUBE COLUMN",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('Get row(s) in sheet').item.json.TITLE }}",
+            "FACEBOOK": "DONE"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "INSTAGRAM",
+              "displayName": "INSTAGRAM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FACEBOOK",
+              "displayName": "FACEBOOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        3700,
+        -440
+      ],
+      "id": "a5458048-bb12-451a-8164-01c88372613f",
+      "name": "UPDATE FB COLUMN",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('Get row(s) in sheet').item.json.TITLE }}",
+            "INSTAGRAM": "DONE"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "INSTAGRAM",
+              "displayName": "INSTAGRAM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FACEBOOK",
+              "displayName": "FACEBOOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        3700,
+        -200
+      ],
+      "id": "3498d376-ef60-4817-9371-80e01f4a4c03",
+      "name": "UPDATE INSTA COLUMN",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('Get row(s) in sheet').item.json.TITLE }}",
+            "TIKTOK": "SENT"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "INSTAGRAM",
+              "displayName": "INSTAGRAM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FACEBOOK",
+              "displayName": "FACEBOOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        3780,
+        100
+      ],
+      "id": "029a676a-4af2-482f-8bc2-60bf0cf7d84e",
+      "name": "UPDATE TIKTOK COLUMN",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Video URL": "={{ $('Get Video').item.json.movie.url }}",
+            "TITLE": "={{ $('Get row(s) in sheet').item.json.TITLE }}",
+            "POSTING STATUS": "DONE",
+            "ERRORS?": "DONE"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "INSTAGRAM",
+              "displayName": "INSTAGRAM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "FACEBOOK",
+              "displayName": "FACEBOOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ERRORS?",
+              "displayName": "ERRORS?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        4680,
+        -480
+      ],
+      "id": "a02d5eb8-dea9-4839-a7a6-c45c04ec9cec",
+      "name": "SUCCESS",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Video URL": "=",
+            "TITLE": "={{ $('Get row(s) in sheet').item.json.TITLE }}",
+            "POSTING STATUS": "DONE",
+            "ERRORS?": "ERROR"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "INSTAGRAM",
+              "displayName": "INSTAGRAM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "FACEBOOK",
+              "displayName": "FACEBOOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ERRORS?",
+              "displayName": "ERRORS?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        4560,
+        -180
+      ],
+      "id": "f212ef6f-712d-41d0-affe-09553f640541",
+      "name": "ERROR",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "### SUCCESSFUL\n",
+        "height": 220,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4640,
+        -540
+      ],
+      "id": "a913b961-a7e9-439e-a24b-558f84eac065",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Error",
+        "height": 280,
+        "width": 460,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        4500,
+        -280
+      ],
+      "id": "cb75bac8-bf13-42ce-b9dc-c60f94b04c6d",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "chatId": "7439997846",
+        "text": "ERROR ON N8N FLOW",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        4780,
+        -180
+      ],
+      "id": "204c5bc4-b99b-4cad-88e4-b0efd0f1b006",
+      "name": "Send a text message",
+      "webhookId": "601faab6-70ad-4019-9397-30c45c699e23",
+      "credentials": {
+        "telegramApi": {
+          "id": "HHgbp1SZSR5uC5wr",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# SCRIPT WRITER - MUSIC DIRECTOR - SCENE PRODUCER",
+        "height": 680,
+        "width": 1780
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        -440
+      ],
+      "id": "b215f8e1-b5d9-4ba0-989e-2f69864e8c34",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "chatId": "7439997846",
+        "text": "ERROR ON N8N FLOW",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2500,
+        -80
+      ],
+      "id": "869e5485-5cf9-4bae-94c2-a2221f15e828",
+      "name": "Send a text message1",
+      "webhookId": "601faab6-70ad-4019-9397-30c45c699e23",
+      "credentials": {
+        "telegramApi": {
+          "id": "HHgbp1SZSR5uC5wr",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2460,
+        120
+      ],
+      "id": "9b62fda8-95ef-42cd-94f1-e5b3eb423587",
+      "name": "10 Secs",
+      "webhookId": "1ce236fe-fb6b-430c-a4b0-91223200a44a"
+    },
+    {
+      "parameters": {
+        "amount": 60
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1820,
+        -280
+      ],
+      "id": "8ae17166-2986-4216-9da6-c5c1d9458a12",
+      "name": "60 SECONDS",
+      "webhookId": "a1e9e838-51c4-4648-ab0e-72f4ec9af1e9"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "VS0Ij3WEYwFW12jN",
+          "mode": "list",
+          "cachedResultName": "SH SONG Cycler"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        600,
+        -280
+      ],
+      "id": "08d9e3df-688b-4b63-bc7f-ff93ed470612",
+      "name": "Get Next Music Track"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "77c08d99-49cf-482f-8302-f3f236319c09",
+              "name": "Video_Length",
+              "value": "90 second",
+              "type": "string"
+            },
+            {
+              "id": "b674fe0d-b8c0-4141-98f4-dad8f0d8aa0d",
+              "name": "Script_Tone",
+              "value": "Spooky, intense tone like a narrator telling a forbidden historical secret or \"Don Wilder\" - the host of \"cities of the underworld\" from the History Channel",
+              "type": "string"
+            },
+            {
+              "id": "b3099542-7b43-403b-ad7c-f4182d803d90",
+              "name": "Target_Word_Count",
+              "value": "200 - 250",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        40,
+        -280
+      ],
+      "id": "6097065b-3949-45e7-b071-acc606995698",
+      "name": "Set Global Variables"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Chicago",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "ErJsFIMzI5GAr6Io"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2025-07-18T21:21:58.212Z",
+  "versionId": "3e576cfb-c477-4de3-bd8e-5ea1eb003246"
+}
