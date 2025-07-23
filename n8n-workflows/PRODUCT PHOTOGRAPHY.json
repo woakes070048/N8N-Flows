@@ -1,0 +1,1275 @@
+{
+  "active": false,
+  "connections": {
+    "Create All Combinations": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Combinations1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "List Reference Images1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "List Product Photos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Photos1": {
+      "main": [
+        [
+          {
+            "node": "Create All Combinations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Combinations1": {
+      "main": [
+        [
+          {
+            "node": "Create Summary",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Download Reference Image1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Product Image1": {
+      "main": [
+        [
+          {
+            "node": "Prepare Image Data1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Image Data1": {
+      "main": [
+        [
+          {
+            "node": "Extract from File2",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Extract from File3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Analyze Reference Image1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Product Photos": {
+      "main": [
+        [
+          {
+            "node": "Merge Photos1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Create Summary": {
+      "main": [
+        [
+          {
+            "node": "Telegram Notification1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Generation Status1": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Runway Result1": {
+      "main": [
+        [
+          {
+            "node": "Prepare Save Data1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Photos3": {
+      "main": [
+        [
+          {
+            "node": "RunWay Image Gen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Delete a file",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Download Runway Result1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait for Runway (40 Seconds)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Save Data1": {
+      "main": [
+        [
+          {
+            "node": "Save Generated Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Generated Image": {
+      "main": [
+        [
+          {
+            "node": "Log Completion1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Completion1": {
+      "main": [
+        [
+          {
+            "node": "Track Loop Progress",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Runway (40 Seconds)1": {
+      "main": [
+        [
+          {
+            "node": "Check Generation Status1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Reference Images1": {
+      "main": [
+        [
+          {
+            "node": "Merge Photos1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Reference Image1": {
+      "main": [
+        [
+          {
+            "node": "Download Product Image1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File2": {
+      "main": [
+        [
+          {
+            "node": "Merge Photos3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File3": {
+      "main": [
+        [
+          {
+            "node": "Merge Photos3",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "RunWay Image Gen": {
+      "main": [
+        [
+          {
+            "node": "Wait for Runway (40 Seconds)1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze Reference Image1": {
+      "main": [
+        [
+          {
+            "node": "Runway Prompt Creator Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Runway Prompt Creator Agent": {
+      "main": [
+        [
+          {
+            "node": "Format for Runway",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT-4 Mini for Prompts": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Runway Prompt Creator Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format for Runway": {
+      "main": [
+        [
+          {
+            "node": "Merge Photos3",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Track Loop Progress": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Combinations1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete a file": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-16T19:57:14.123Z",
+  "id": "B1UoGaYSEfkoTypE",
+  "isArchived": false,
+  "meta": null,
+  "name": "PRODUCT PHOTOGRAPHY",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "// Get all photos\nconst allItems = $input.all();\nconst referenceImages = []; // Lifestyle photos (with or without labubus)\nconst products = [];        // Our labubu products to add/replace\n\n// Separate reference images and products by folder ID\nlet foundReferenceEnd = false;\nfor (const item of allItems) {\n  // Check if this is a product by looking at parent folder\n  if (item.json.parents && item.json.parents.includes('1yxVQyDsafpJuT7N2gx8O6Vbm1uKgb8zw')) {\n    products.push(item.json);\n    foundReferenceEnd = true;\n  } else if (!foundReferenceEnd || (item.json.parents && item.json.parents.includes('1EErMLWL2z2IKKo_30UtpTkZyMBoA1ikW'))) {\n    referenceImages.push(item.json);\n  }\n}\n\n// If separation didn't work, use position-based split\nif (referenceImages.length === 0 || products.length === 0) {\n  referenceImages.length = 0;\n  products.length = 0;\n  const referenceItems = $('List Reference Images1').all();\n  const productItems = $('List Product Photos').all();\n  \n  referenceImages.push(...referenceItems.map(item => item.json));\n  products.push(...productItems.map(item => item.json));\n}\n\nconsole.log(`Found ${referenceImages.length} lifestyle reference images and ${products.length} labubu products`);\n\n// Create exactly 15 combinations\nconst combinations = [];\nlet combinationCount = 0;\nconst targetCombinations = 15;\n\n// Generate combinations with metadata\nfor (let i = 0; i < referenceImages.length && combinationCount < targetCombinations; i++) {\n  for (let j = 0; j < products.length && combinationCount < targetCombinations; j++) {\n    const reference = referenceImages[i];\n    const product = products[j];\n    \n    combinations.push({\n      combinationId: `combo_${String(combinationCount + 1).padStart(2, '0')}`,\n      combinationIndex: combinationCount,\n      totalCombinations: targetCombinations,\n      referenceImageId: reference.id,\n      referenceImageName: reference.name,\n      productId: product.id,\n      productName: product.name,\n      imageType: 'lifestyle_labubu_integration',\n      processingType: 'auto_detect', // Will be determined by image analysis\n      createdAt: new Date().toISOString(),\n      metadata: {\n        referenceIndex: i,\n        productIndex: j,\n        batchInfo: `Batch 1 of 1 (${targetCombinations} items)`\n      }\n    });\n    \n    combinationCount++;\n  }\n}\n\nconsole.log(`Created ${combinations.length} combinations for processing`);\nconsole.log(`Each will be analyzed to determine if labubu replacement or addition is needed`);\n\n// Return all combinations as separate items\nreturn combinations.map(combo => ({ json: combo }));"
+      },
+      "id": "42ef7d88-b28a-4226-a5a6-51d8052ac19e",
+      "name": "Create All Combinations",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -180,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 12
+            }
+          ]
+        }
+      },
+      "id": "2174fcac-7085-4ae8-b6bf-02f009a7f756",
+      "name": "Schedule Trigger1",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1060,
+        1180
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "077232bd-78e8-417b-9adb-03a55b0f730e",
+      "name": "Merge Photos1",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        -480,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "aa07ceb5-6a4a-4b13-a66c-8131f80c1808",
+      "name": "Loop Over Combinations1",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        100,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.productId }}",
+          "mode": "id"
+        },
+        "options": {
+          "binaryPropertyName": "productImage"
+        }
+      },
+      "id": "8e5a8131-1e55-4339-9dfa-4711e6857b02",
+      "name": "Download Product Image1",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        880,
+        1300
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the combination data and downloaded images\nconst combinationData = $('Loop Over Combinations1').item.json;\nconst referenceDownload = $('Download Reference Image1').item;\nconst productDownload = $('Download Product Image1').item;\n\n// Check if downloads were successful\nlet referenceBinary = null;\nlet productBinary = null;\nlet downloadStatus = 'success';\nlet downloadErrors = [];\n\n// Handle reference image (lifestyle photo with existing labubu)\nif (referenceDownload.binary && referenceDownload.binary.referenceImage) {\n  referenceBinary = referenceDownload.binary.referenceImage;\n} else {\n  downloadErrors.push('Failed to download reference lifestyle image');\n  downloadStatus = 'partial_failure';\n}\n\n// Handle product image (our labubu to replace with)\nif (productDownload.binary && productDownload.binary.productImage) {\n  productBinary = productDownload.binary.productImage;\n} else {\n  downloadErrors.push('Failed to download product image');\n  downloadStatus = 'partial_failure';\n}\n\n// If both failed, mark as complete failure\nif (!referenceBinary && !productBinary) {\n  downloadStatus = 'failed';\n}\n\n// Prepare the complete data package\nconst preparedData = {\n  // Combination info\n  combinationData: {\n    ...combinationData,\n    downloadStatus,\n    downloadErrors\n  },\n  \n  // Processing metadata\n  processingMetadata: {\n    combinationId: combinationData.combinationId,\n    referenceImageName: combinationData.referenceImageName,\n    productName: combinationData.productName,\n    imageType: combinationData.imageType,\n    downloadedAt: new Date().toISOString(),\n    readyForAI: downloadStatus === 'success',\n    currentIndex: combinationData.combinationIndex + 1,\n    totalCombinations: combinationData.totalCombinations\n  }\n};\n\n// Log progress\nconsole.log(`Processing ${preparedData.processingMetadata.currentIndex} of ${preparedData.processingMetadata.totalCombinations}`);\nconsole.log(`Reference: ${preparedData.processingMetadata.referenceImageName}, Product: ${preparedData.processingMetadata.productName}`);\n\n// Add binary data to output if available\nconst output = { json: preparedData };\n\nif (referenceBinary || productBinary) {\n  output.binary = {};\n  \n  if (referenceBinary) {\n    output.binary.referenceImage = referenceBinary;\n  }\n  \n  if (productBinary) {\n    output.binary.productImage = productBinary;\n  }\n}\n\nreturn output;"
+      },
+      "id": "20fbafaf-005a-4930-b129-ef9b24a66a15",
+      "name": "Prepare Image Data1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -440,
+        1580
+      ]
+    },
+    {
+      "parameters": {
+        "text": "=🎨 Generation Complete!\n\n✅ Generated: {{ $json.successfulGenerations }}/{{ $json.totalCombinations }} images\n📊 Success Rate: {{ $json.successRate }}\n⏱️ Duration: {{ $now.diff($json.startTime, 'minutes').toObject().minutes }} minutes\n\nAll images saved to Google Drive!",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        700,
+        900
+      ],
+      "id": "12469238-76ef-4f2e-97b7-2e6bb35229d6",
+      "name": "Telegram Notification1",
+      "webhookId": "533e16c3-3500-4ae9-bd1e-092bdfa7385f"
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "returnAll": true,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "1qZmQJltTOQHiPgBXNCnRTXNugCpvOItT",
+            "mode": "list",
+            "cachedResultName": "To Use",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/1qZmQJltTOQHiPgBXNCnRTXNugCpvOItT"
+          }
+        },
+        "options": {}
+      },
+      "id": "534c46c9-f319-4bcf-b6da-6267bd3d57b4",
+      "name": "List Product Photos",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -800,
+        1300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Collect all saved images from the execution\nconst allSaved = $('Save Generated Image').all();\n\nconst summary = {\n  totalCombinations: 15,\n  successfulGenerations: allSaved.length,\n  successRate: ((allSaved.length / 15) * 100).toFixed(1) + '%',\n  startTime: $('Create All Combinations').first().json.createdAt,\n  endTime: new Date().toISOString(),\n  savedImages: allSaved.map(item => ({\n    combinationId: item.json.combinationId,\n    fileId: item.json.id,\n    fileName: item.json.name\n  }))\n};\n\nreturn summary;"
+      },
+      "id": "349f9641-973b-419d-a290-f6e9cac476e6",
+      "name": "Create Summary",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        500,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ 'https://api.dev.runwayml.com/v1/tasks/' + $json.id}}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Runway-Version",
+              "value": "2024-11-06"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer {Get Your Own API}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a4bd4355-0d47-4272-978a-bac6ff357b93",
+      "name": "Check Generation Status1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1000,
+        1840
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Check Generation Status1').item.json.output[0] }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "3ed7a29c-0ba3-4598-acd0-53488ee70485",
+      "name": "Download Runway Result1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1740,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "id": "559e064a-8333-4d6f-ad44-3c47a52bcc74",
+      "name": "Merge Photos3",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        700,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "1837f1d6-e4d4-4fd7-aa48-e7aa63514945",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "FAILED",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "SUCCEEDED",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "bff9e000-a0d3-436f-8308-be4f95968aed"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "22533ab5-0459-40d6-86be-d2399e89af2d",
+                    "leftValue": "={{ $json.status }}",
+                    "rightValue": "RUNNING",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1100,
+        1580
+      ],
+      "id": "fdd75db6-a3fd-4ed1-b0a9-23d3b2e17c6b",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "text": "=Run Failed \n\nText prompt did not pass moderation\n\n{{ $json.failureCode }}",
+        "additionalFields": {
+          "appendAttribution": true
+        }
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1720,
+        920
+      ],
+      "id": "8bfeeae1-b8ed-4895-bfb4-a24ea6d3388c",
+      "name": "Send a text message1",
+      "webhookId": "b668860b-ac79-48f0-a1ca-c79bc3e7ed92"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all necessary data\nconst combinationData = $('Loop Over Combinations1').item.json;\nconst generatedImage = $('Download Runway Result1').item.binary.data;\nconst runwayResponse = $('Check Generation Status1').item.json;\n\n// Prepare save data\nconst saveData = {\n  combinationId: combinationData.combinationId,\n  combinationIndex: combinationData.combinationIndex,\n  totalCombinations: combinationData.totalCombinations,\n  referenceImageName: combinationData.referenceImageName,\n  productName: combinationData.productName,\n  imageType: combinationData.imageType || 'labubu_replacement',\n  runwayTaskId: runwayResponse.id,\n  generatedAt: new Date().toISOString(),\n  fileName: `labubu_lifestyle_${combinationData.combinationId}_${combinationData.referenceImageName.replace(/[^a-z0-9]/gi, '_')}_${combinationData.productName.replace(/[^a-z0-9]/gi, '_')}.png`\n};\n\n// Log progress\nconsole.log(`Saving image ${combinationData.combinationIndex + 1} of ${combinationData.totalCombinations}`);\nconsole.log(`Replaced labubu in: ${saveData.referenceImageName} with: ${saveData.productName}`);\n\n// Return with binary\nreturn {\n  json: saveData,\n  binary: {\n    imageToSave: generatedImage\n  }\n};"
+      },
+      "id": "b1c91987-50ef-4c99-af4e-e0e2d833915c",
+      "name": "Prepare Save Data1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2020,
+        1380
+      ]
+    },
+    {
+      "parameters": {
+        "inputDataFieldName": "imageToSave",
+        "name": "={{ $json.fileName }}",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "value": "1zniWKu7-G9IUyeLhMS-R9-GkuqkU2pLF",
+          "mode": "list",
+          "cachedResultName": "Insta photos Gen",
+          "cachedResultUrl": "https://drive.google.com/drive/folders/1zniWKu7-G9IUyeLhMS-R9-GkuqkU2pLF"
+        },
+        "options": {}
+      },
+      "id": "b8fdd4c2-72c4-4700-940f-90e0f7c2a2f8",
+      "name": "Save Generated Image",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1620,
+        1640
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "log-success",
+              "name": "successLog",
+              "value": "={{ {\n  status: 'completed',\n  combinationId: $json.combinationId,\n  combinationIndex: $json.combinationIndex,\n  totalCombinations: $json.totalCombinations,\n  fileName: $json.fileName,\n  googleDriveId: $('Save Generated Image').item.json.id,\n  savedAt: $now.toISO()\n} }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0baf4218-3c5f-4b87-aa80-b3fe0a5841a5",
+      "name": "Log Completion1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1420,
+        1860
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# 🚀 LABUBU PRODUCT IMAGE GENERATION WORKFLOW\n\n## Overview\nThis workflow automatically generates 15 product images by combining bag photos with labubu charm products using AI image generation.\n\n## What It Does:\n1. **Fetches** bag photos and labubu product photos from Google Drive\n2. **Creates** 15 unique combinations\n3. **Generates** AI images using RunwayML with reference images\n4. **Saves** final images back to Google Drive\n5. **Notifies** via Telegram when complete\n\n## Key Features:\n- Processes exactly 15 combinations sequentially\n- Handles errors gracefully\n- Tracks progress throughout\n- Professional product photography output",
+        "height": 580,
+        "width": 600,
+        "color": 4
+      },
+      "id": "0b033150-bfc7-4708-96fb-60e596bda019",
+      "name": "Workflow Overview1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1980,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# 📋 REQUIRED SETUP & CREDENTIALS\n\n## 1. Google Drive API\n- **Purpose**: Access bag & product photos, save results\n- **Setup**: Enable Google Drive API in Google Cloud Console\n- **Credential Type**: OAuth2\n- **Permissions**: Read/Write access to folders\n\n## 2. RunwayML API\n- **Purpose**: AI image generation\n- **Get Key**: https://app.runwayml.com/account/api\n- **Model**: gen4_image\n- **Cost**: ~$0.10 per image\n\n## 3. Telegram Bot (Optional)\n- **Purpose**: Completion notifications\n- **Setup**: Create bot via @BotFather\n- **Get Chat ID**: Message your bot, check API\n\n## 4. Folder Structure\n```\nGoogle Drive/\n├── Bag Photos (IRL)/          [1LFXWtvsRhVM...]\n├── Product Photos (Labubus)/   [1FqO69Vr0uJ8...]\n└── Generated Results/          [1whajbsXiDav...]\n```",
+        "height": 720,
+        "width": 600,
+        "color": 5
+      },
+      "id": "8ab5f8e5-42f2-4c3c-9848-276cad608007",
+      "name": "Setup Guide1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1980,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# STEP 1: FETCH & COMBINE PHOTOS\n\n## Nodes Involved:\n- **Schedule Trigger**: Runs every 12 hours (or manually)\n- **List Bag/Product Photos**: Fetches from Google Drive folders\n- **Merge Photos**: Combines both lists\n- **Create All Combinations**: Generates 15 unique pairs\n\n## Key Logic:\n```javascript\n// Creates combinations like:\n// Reference 1 + Product 1 = Combo 01\n// Reference 1 + Product 2 = Combo 02\n// ...\n// Until 15 combinations\n```\n\n## Important:\n- Handles folder separation automatically\n- Creates exactly 15 combinations\n- Each combo has unique ID for tracking",
+        "height": 930,
+        "width": 840,
+        "color": 6
+      },
+      "id": "7d1d7e32-96f9-490c-a054-6818554985e0",
+      "name": "Step 1: Data Preparation1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -860,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# STEP 2: LOOP PROCESSING\n\n## The Loop Mechanism:\n**Split In Batches** node processes one combination at a time:\n- Output 0: All done → Summary\n- Output 1: Process next → Downloads\n\n## Download Sequence:\n1. Download bag image\n2. Download product image\n3. Prepare data package\n4. Generate AI prompts\n\n## Data Flow:\nEach iteration maintains:\n- Combination ID & index\n- Binary image data\n- Processing metadata\n- Progress tracking (X of 15)",
+        "height": 840,
+        "width": 410,
+        "color": 5
+      },
+      "id": "cece56a3-0002-4fdd-bbd3-c4e92be46bc9",
+      "name": "Step 2: Loop Processing4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# STEP 3: AI PROMPT GENERATION\n\n## Generate Composition Prompt:\nCreates unique prompts for each combination:\n- **Placement**: Varies by index (strap, zipper, clip)\n- **Attachment**: Different methods per combo\n- **Angle**: Rotates through views\n- **Lighting**: Consistent studio setup\n\n## Smart Variations:\n```javascript\npositions = ['left strap', 'right strap', \n             'front zipper', 'side clip']\nmethods = ['chain', 'clip', 'loop', 'magnet']\n```\n\n## Purpose:\nEnsures each of 15 images is unique while maintaining professional quality",
+        "height": 600,
+        "width": 560,
+        "color": 6
+      },
+      "id": "7e310052-86ca-4515-b877-4bc22f199dd2",
+      "name": "Step 3: AI Prompting1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -860,
+        1500
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# STEP 4: RUNWAY IMAGE GENERATION\n\n## Process Flow:\n1. **Extract Images**: Convert binary to base64\n2. **Merge Data**: Combine for API call\n3. **RunwayML API**: Submit generation request\n4. **Wait & Check**: Poll for completion\n5. **Download Result**: Get generated image\n\n## API Details:\n- Model: gen4_image\n- Size: 1024x1024\n- Uses reference images with tags\n- Average time: 60-120 seconds\n\n## Status Handling:\n- RUNNING → Wait 10s → Check again\n- SUCCEEDED → Download image\n- FAILED → Send error notification",
+        "height": 530,
+        "width": 1540,
+        "color": 6
+      },
+      "id": "f5e26b5e-17e5-466b-bdcd-f4149a7f09a6",
+      "name": "Step 4: Image Generation1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        1500
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# STEP 5: SAVE & LOOP BACK\n\n## Save Process:\n1. **Prepare Save Data**: Format filename & metadata\n2. **Save to Drive**: Upload to results folder\n3. **Log Completion**: Track success\n4. **Loop Back**: Return to process next\n\n## Filename Format:\n`labubu_combo_01_bagname_productname.png`\n\n## The Loop Continues:\nAfter saving, returns to **Loop Over Combinations**:\n- If more items → Process next\n- If complete → Create summary\n\n## Progress Tracking:\nEach save logs: X of 15 completed",
+        "height": 1020,
+        "width": 980,
+        "color": 6
+      },
+      "id": "1b4f2787-7874-47a3-9cfd-e05c31888cc3",
+      "name": "Step 5: Save & Continue1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# 🎯 KEY NODES EXPLAINED\n\n## Split In Batches (Loop Over Combinations)\n**The Heart of the Workflow**\n- Processes items one by one\n- Maintains state between iterations\n- Exits when all items complete\n\n## Code Nodes\n**Create All Combinations**: Pairs bags with products\n**Prepare Image Data**: Validates downloads\n**Generate Composition Prompt**: Creates AI prompts\n\n## Switch Node\n**Status Router**\n- Routes based on RunwayML status\n- Handles success/failure/running states\n\n## Error Handling\n- Download errors: Continue with logging\n- Generation failures: Telegram notification\n- Missing data: Graceful degradation",
+        "height": 620,
+        "width": 900,
+        "color": 3
+      },
+      "id": "f29652a8-e6d3-49b6-ac72-19a8ac8a661f",
+      "name": "Key Nodes Explained1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# ⚡ QUICK START GUIDE\n\n## 1. Import Workflow\n- Copy the complete JSON\n- Import into n8n\n\n## 2. Configure Credentials\n- Google Drive OAuth2\n- RunwayML API Key\n- Telegram Bot (optional)\n\n## 3. Update Folder IDs\n- Bag photos folder\n- Product photos folder\n- Results save folder\n\n## 4. Test Run\n- Use manual trigger first\n- Watch first combination\n- Check saved result\n\n## 5. Full Run\n- Enable schedule trigger\n- Monitor via executions\n- ~3 minutes per image",
+        "height": 570,
+        "width": 470
+      },
+      "id": "1a4f8dbc-824f-420b-9c56-0724434dc44f",
+      "name": "Quick Start1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1360,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# 🔧 TROUBLESHOOTING\n\n## Common Issues:\n\n**\"No photos found\"**\n- Check folder IDs are correct\n- Verify Google Drive permissions\n- Ensure folders contain images\n\n**\"RunwayML timeout\"**\n- API may be slow (2-3 min normal)\n- Check API key is valid\n- Verify account has credits\n\n**\"Loop stuck\"**\n- Check Log Completion → Loop connection\n- Verify Split In Batches config\n- Look for error in executions\n\n**\"Wrong image format\"**\n- RunwayML accepts JPEG/PNG\n- WebP needs conversion\n- Check binary data exists",
+        "height": 670,
+        "width": 470,
+        "color": 2
+      },
+      "id": "dc772601-bfa6-47ad-9269-aff57ab546a3",
+      "name": "Troubleshooting1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1360,
+        1440
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# 📊 WORKFLOW METRICS\n\n## Performance:\n- **Images per hour**: ~20-30\n- **Success rate**: ~95%\n- **Average time per image**: 2-3 minutes\n\n## Resource Usage:\n- **RunwayML credits**: 15 images = ~$1.50\n- **Google Drive storage**: ~20MB per run\n- **n8n memory**: Low (sequential processing)\n\n## Optimization Tips:\n- Run during off-peak hours\n- Pre-optimize source images\n- Use webhook for real-time updates\n- Consider parallel processing for speed",
+        "height": 500,
+        "width": 590,
+        "color": 7
+      },
+      "id": "f9862d75-87df-437c-aac5-884fd5e327a7",
+      "name": "Workflow Metrics1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1980,
+        1600
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# 🎨 IMAGE GENERATION TIPS\n\n## For Best Results:\n\n**Source Images:**\n- Bags: Clear, well-lit, minimal background\n- Products: PNG with transparency preferred\n- Resolution: 1024x1024 minimum\n\n**Prompt Engineering:**\n- Be specific about placement\n- Include lighting details\n- Mention scale (3-4cm charm)\n- Add \"professional photography\"\n\n**Quality Control:**\n- Review first few generations\n- Adjust prompts if needed\n- Check shadow realism\n- Verify charm visibility",
+        "height": 560,
+        "width": 470,
+        "color": 6
+      },
+      "id": "edc6cdcc-b7d7-445f-932d-9e7f72e7098b",
+      "name": "Image Generation Tips1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1360,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# ⚠️ IMPORTANT NOTES\n\n## API Limits:\n- RunwayML: Check rate limits\n- Google Drive: 750GB upload/day\n- Consider costs (~$0.10/image)\n\n## Data Safety:\n- Images remain in your Drive\n- No external storage used\n- RunwayML deletes after 24h\n\n## Workflow Limits:\n- Max 15 combinations per run\n- Sequential (not parallel)\n- ~45 min total runtime\n\n## Future Enhancements:\n- Add quality scoring\n- Implement retry logic\n- Support batch processing\n- Add more AI providers",
+        "height": 680,
+        "width": 490,
+        "color": 2
+      },
+      "id": "b02c4c0a-2a3d-473b-8f67-d258b0a8465e",
+      "name": "Important Notes1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        920,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# Completions\ngives full rundown in message\n\nchange chat id to your\n",
+        "height": 440,
+        "width": 450,
+        "color": 4
+      },
+      "id": "dda45992-9912-4dda-a891-e1764a0baf21",
+      "name": "Step 2: Loop Processing5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        440,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# Download Reference Images\n\n",
+        "height": 380,
+        "width": 810,
+        "color": 5
+      },
+      "id": "040347e2-1adb-4412-9c82-f571ae53409e",
+      "name": "Step 2: Loop Processing6",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        440,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "content": "# Failed Run\n\nchange chat id to your\n",
+        "height": 300,
+        "width": 450,
+        "color": 3
+      },
+      "id": "1f42b536-6d11-43f7-a128-fd59a9801f44",
+      "name": "Step 2: Loop Processing7",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "id": "8a34889b-c4e9-4969-bc59-f6fb45049966",
+      "name": "Wait for Runway (40 Seconds)1",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        900,
+        1580
+      ],
+      "webhookId": "a5a5ace0-9f08-43a3-a1c2-360a4af0f3b2"
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "returnAll": true,
+        "filter": {
+          "folderId": {
+            "__rl": true,
+            "value": "17vKHtBnWRlwDw8RkVrfWPuSz2kecz0Vf",
+            "mode": "list",
+            "cachedResultName": "To Use N8N",
+            "cachedResultUrl": "https://drive.google.com/drive/folders/17vKHtBnWRlwDw8RkVrfWPuSz2kecz0Vf"
+          }
+        },
+        "options": {}
+      },
+      "id": "e7a76480-4def-402c-84d2-d16a1d7c1bee",
+      "name": "List Reference Images1",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        -800,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.referenceImageId }}",
+          "mode": "id"
+        },
+        "options": {
+          "binaryPropertyName": "referenceImage"
+        }
+      },
+      "id": "6c967eaf-fa80-475d-b812-c93510a7b456",
+      "name": "Download Reference Image1",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        540,
+        1220
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "binaryPropertyName": "productImage",
+        "destinationKey": "product",
+        "options": {}
+      },
+      "id": "c9fc73f8-b27c-4a82-81e2-ee4eeb669620",
+      "name": "Extract from File2",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        100,
+        1580
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "binaryPropertyName": "referenceImage",
+        "destinationKey": "reference",
+        "options": {}
+      },
+      "id": "31dd48b7-4b34-455c-b13d-22ee4f134e8d",
+      "name": "Extract from File3",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        100,
+        1800
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Change how many generations you want\n\nconst combinations = [];\nlet combinationCount = 0;\nconst targetCombinations = 15;",
+        "height": 340,
+        "width": 300,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -320,
+        1100
+      ],
+      "id": "f18a864b-2c22-482a-aab1-9f74e6b629c6",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.dev.runwayml.com/v1/text_to_image",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {Get Your Own API}"
+            },
+            {
+              "name": "X-Runway-Version",
+              "value": "2024-11-06"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ {\n \"promptText\": \"$json.runwayConfig.prompt\",\n  \"ratio\": \"1024:1024\",\n  \"seed\": Math.floor(Math.random() * 4294967295),\n  \"model\": \"gen4_image\",\n  \"referenceImages\": [\n    {\n      \"uri\": \"data:image/jpeg;base64,\" + $('Extract from File3').first().json.reference,\n      \"tag\": \"reference\"\n    },\n    {\n      \"uri\": \"data:image/jpeg;base64,\" + $('Extract from File2').first().json.product,\n      \"tag\": \"product\"\n    }\n  ],\n  \"contentModeration\": {\n    \"publicFigureThreshold\": \"auto\"\n  }\n} }}",
+        "options": {}
+      },
+      "id": "bed1c171-98d1-4c80-8bab-6ce8d5731210",
+      "name": "RunWay Image Gen",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        800,
+        1840
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list"
+        },
+        "text": "You are an expert visual AI analyst specialized in product placement and lifestyle photography. Your task is to analyze reference images and identify opportunities for placing or replacing products in a natural, aesthetically pleasing way.\n\n## Product Information:\nI need you to analyze images for placing my product: [DESCRIBE YOUR PRODUCT]\n- Product type: [e.g., \"bag charm\", \"phone accessory\", \"wearable\", etc.]\n- How it attaches/is used: [e.g., \"clips onto bags\", \"sticks to phones\", \"worn on wrist\"]\n- Typical size: [e.g., \"15-20cm\", \"palm-sized\", \"credit card sized\"]\n- Key features: [colors, materials, distinctive elements]\n\n## Analysis Framework:\n\n### 1. Initial Scene Assessment:\n- What type of image is this? (product shot/lifestyle/advertisement)\n- What's the main focus of the image?\n- What products/items are currently visible?\n\n### 2. Product Detection:\n- Is my type of product already present in the image?\n- If YES: Document its exact position, size, and how it's integrated\n- If NO: Identify where it would naturally belong\n\n### 3. Placement Opportunity Analysis:\nFor items that could hold/display my product:\n- Identify all potential placement locations\n- Determine the most visually appealing spot\n- Consider the item's orientation and visible surfaces\n- Calculate appropriate product size (relative to context)\n\n### 4. Integration Considerations:\n- How would my product naturally attach/sit in this location?\n- What's the optimal size relative to surrounding elements?\n- Which angle/orientation would be most appealing?\n- How should lighting and shadows work?\n\n### 5. Scene Preservation Requirements:\nDocument everything that must NOT change:\n- Person's pose, expression, clothing (if applicable)\n- Background elements and environment\n- Lighting direction and quality\n- Overall composition and mood\n- Other products or accessories\n\n## Detailed Analysis Output:\n```json\n{\n  \"imageAnalysis\": {\n    \"imageType\": \"product/lifestyle/advertisement\",\n    \"mainSubject\": \"what the image focuses on\",\n    \"setting\": \"environment/background description\",\n    \"mood\": \"overall feeling/aesthetic\"\n  },\n  \n  \"existingProduct\": {\n    \"found\": true/false,\n    \"currentLocation\": \"exact position if found\",\n    \"currentIntegration\": \"how it's currently placed/attached\",\n    \"sizeRelativeToContext\": \"current size description\"\n  },\n  \n  \"placementOpportunities\": {\n    \"primaryLocation\": {\n      \"item\": \"what item to place product on\",\n      \"specificSpot\": \"exact location on that item\",\n      \"attachmentMethod\": \"how it would connect\",\n      \"visibility\": \"how prominent it would be\"\n    },\n    \"alternativeLocations\": [\n      \"other possible placement options\"\n    ]\n  },\n  \n  \"technicalRequirements\": {\n    \"productSize\": \"recommended size in context\",\n    \"orientation\": \"angle/direction to face\",\n    \"lighting\": \"how shadows/highlights should fall\",\n    \"perspective\": \"match to image perspective\"\n  },\n  \n  \"preservationList\": {\n    \"mustNotChange\": [\n      \"list everything that stays identical\"\n    ],\n    \"canSubtlyAdjust\": [\n      \"elements with minor flexibility\"\n    ]\n  },\n  \n  \"recommendedAction\": \"replace/add/reposition\",\n  \n  \"aiGenerationPrompt\": \"Detailed prompt for image generation\",\n  \n  \"implementationNotes\": \"Special considerations for this specific image\"\n}",
+        "inputType": "base64",
+        "binaryPropertyName": "referenceImage,productImage",
+        "options": {
+          "maxTokens": 500
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -160,
+        2240
+      ],
+      "id": "b53794c3-f12a-4486-b8a8-642b60eeee9f",
+      "name": "Analyze Reference Image1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.content }}",
+        "options": {
+          "systemMessage": "You are an expert visual AI analyst specializing in product placement and lifestyle photography. Your task is to analyze reference images and create detailed prompts for AI image generation tools like Runway, DALL-E, or Midjourney.\n\n## Your Mission:\nI need you to analyze images and determine how to place/replace my product in lifestyle or product shots. My product is: [DESCRIBE YOUR PRODUCT - e.g., \"a charm accessory that attaches to bags\", \"a phone case\", \"a watch\", etc.]\n\n## Image Analysis Framework:\nWhen I show you images, analyze them using this framework:\n\n### 1. Image Type Classification:\n- PRODUCT SHOT: Just the item/object without people\n- LIFESTYLE SHOT: Person visible using or wearing the item\n- HYBRID: Both product-focused and lifestyle elements\n\n### 2. Current State Analysis:\n- Is my product type already present in the image?\n- If yes, where is it located/how is it being used?\n- If no, where would it naturally belong?\n\n### 3. Desired Outcome:\nBased on the image, determine the best action:\n- REPLACE: Swap existing product with mine\n- RELOCATE: Move product to better position\n- ADD: Place product where none exists\n\n## Critical Rules for My Product:\n[CUSTOMIZE THIS SECTION]\n- Where should it ALWAYS be placed: [e.g., \"attached to bags, never held in hands\"]\n- How should it be attached/positioned: [e.g., \"via clip or chain to bag hardware\"]\n- Size relative to context: [e.g., \"approximately 60-70% of bag width\"]\n- What to avoid: [e.g., \"never show being held or touched by hands\"]\n\n## Detailed Analysis Output:\nFor each image, provide:\n\n```json\n{\n  \"imageType\": \"[product_shot/lifestyle_shot/hybrid]\",\n  \"sceneAnalysis\": {\n    \"setting\": \"describe environment/background\",\n    \"lighting\": \"natural/studio/mixed - with direction\",\n    \"mood\": \"casual/professional/luxury/etc\",\n    \"cameraAngle\": \"front/side/overhead/etc\"\n  },\n  \"existingProduct\": {\n    \"present\": true/false,\n    \"currentLocation\": \"exact position description\",\n    \"currentState\": \"how it appears/is being used\"\n  },\n  \"targetPlacement\": {\n    \"idealLocation\": \"where product should be\",\n    \"attachmentMethod\": \"how it should be attached/placed\",\n    \"orientation\": \"angle/direction it should face\",\n    \"size\": \"relative to surroundings\"\n  },\n  \"personDetails\": {\n    \"visible\": true/false,\n    \"pose\": \"detailed pose description\",\n    \"interaction\": \"how they relate to the product area\",\n    \"mustPreserve\": [\"list of elements that cannot change\"]\n  },\n  \"requiredAction\": \"replace/relocate/add\",\n  \"detailedPrompt\": \"Complete prompt for AI image generation\"\n}"
+        }
+      },
+      "id": "6e4a0f35-a67b-4fd6-bf57-5eeb80a2c5f9",
+      "name": "Runway Prompt Creator Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.7,
+      "position": [
+        180,
+        2240
+      ]
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list"
+        },
+        "options": {
+          "maxTokens": 500,
+          "temperature": 0.7
+        }
+      },
+      "id": "c169ec1b-9302-45eb-aa90-c1a60bdea126",
+      "name": "GPT-4 Mini for Prompts",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        2320
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// CONFIGURATION SECTION - Customize these for your product\nconst PRODUCT_NAME = \"product\"; // e.g., \"charm\", \"accessory\", \"pin\"\nconst TARGET_ITEM = \"target item\"; // e.g., \"bag\", \"jacket\", \"phone case\"\nconst ATTACHMENT_METHOD = \"attached\"; // e.g., \"clipped\", \"pinned\", \"stuck\"\nconst SIZE_SPECIFICATION = \"appropriately sized\"; // e.g., \"15-20cm (60-70% of item width)\"\nconst PLACEMENT_RULE = \"must be attached to the item\"; // Your specific rule\n\n// Parse agent output\nlet agentOutput;\ntry {\n  agentOutput = typeof $json.output === 'string' ? JSON.parse($json.output) : $json.output;\n} catch (error) {\n  console.error('Parse error:', error);\n  agentOutput = {\n    imageType: 'lifestyle_shot',\n    requiredAction: 'add_to_target',\n    targetDetails: { color: TARGET_ITEM }\n  };\n}\n\nconst originalData = $('Prepare Image Data1').item.json;\nlet generationPrompt;\n\n// Extract details from analysis\nconst imageType = agentOutput.imageType;\nconst action = agentOutput.requiredAction;\nconst target = agentOutput.targetDetails || agentOutput.bagDetails || {};\nconst person = agentOutput.personDetails || {};\n\n// Build prompts based on image type and required action\nif (imageType === 'product_shot') {\n  // Product shots - item only, no person\n  switch(action) {\n    case 'replace_existing':\n      generationPrompt = `Using @reference as base, keep the ${target.color || ''} ${TARGET_ITEM} EXACTLY as shown. Replace ONLY the existing ${PRODUCT_NAME} with @product ${PRODUCT_NAME} in the EXACT same position. The ${PRODUCT_NAME} must remain ${ATTACHMENT_METHOD} to the ${TARGET_ITEM}. Do not change anything else.`;\n      break;\n      \n    case 'add_new':\n      generationPrompt = `Using @reference as base, keep the ${target.color || ''} ${TARGET_ITEM} EXACTLY as shown. ADD @product ${PRODUCT_NAME} ${ATTACHMENT_METHOD} to the ${TARGET_ITEM} at ${target.bestPlacementPoint || 'the most visible/appropriate location'}. The ${PRODUCT_NAME} should be ${SIZE_SPECIFICATION}. Everything else remains identical.`;\n      break;\n  }\n} else {\n  // Lifestyle shots - person visible with item\n  switch(action) {\n    case 'relocate_to_target':\n      // Person holding product, must move to target item\n      generationPrompt = `CRITICAL INSTRUCTION: In @reference, the person is holding a ${PRODUCT_NAME}. Create the EXACT same photo with these changes:\n\n1. REMOVE the ${PRODUCT_NAME} from the person's hands\n2. ATTACH the @product ${PRODUCT_NAME} TO THE ${target.color || ''} ${TARGET_ITEM} at ${target.bestPlacementPoint || 'an appropriate location'}\n3. The person's hands must be EMPTY or in a natural position\n4. The ${PRODUCT_NAME} ${PLACEMENT_RULE}\n\nPRESERVE EXACTLY: The person's appearance, pose, expression, clothing, and the background. Only the ${PRODUCT_NAME} location changes.`;\n      break;\n      \n    case 'replace_existing':\n      generationPrompt = `Using @reference, keep EVERYTHING identical. Replace ONLY the ${PRODUCT_NAME} currently on the ${target.color || ''} ${TARGET_ITEM} with @product ${PRODUCT_NAME} in the SAME position. The ${PRODUCT_NAME} must remain ${ATTACHMENT_METHOD} to the ${TARGET_ITEM}.`;\n      break;\n      \n    case 'add_new':\n      generationPrompt = `Using @reference, keep EVERYTHING identical. ADD @product ${PRODUCT_NAME} to the ${target.color || ''} ${TARGET_ITEM} at ${target.bestPlacementPoint || 'an appropriate visible location'}. \n\nCRITICAL: The ${PRODUCT_NAME} ${PLACEMENT_RULE}. The person's current position must remain exactly the same.\n\nSize: ${SIZE_SPECIFICATION}. Everything else remains unchanged.`;\n      break;\n  }\n}\n\n// Add universal requirements based on your product rules\ngenerationPrompt += `\n\nABSOLUTE REQUIREMENT: The @product ${PRODUCT_NAME} ${PLACEMENT_RULE}. Follow the reference image exactly except for the specified ${PRODUCT_NAME} placement.\n\nFINAL CHECK: The generated image should show the ${PRODUCT_NAME} ${ATTACHMENT_METHOD} to the ${target.color || ''} ${TARGET_ITEM}, while everything else remains identical to @reference.`;\n\n// Add emphasis for specific scenarios (customize as needed)\nif (person.currentlyHoldingProduct) {\n  generationPrompt = `URGENT: RELOCATE ${PRODUCT_NAME.toUpperCase()}!\\n\\n${generationPrompt}\\n\\nREMINDER: The ${PRODUCT_NAME} must be moved from hands to ${TARGET_ITEM}.`;\n}\n\n// Return formatted data\nreturn {\n  json: {\n    ...originalData,\n    agentAnalysis: agentOutput,\n    generationConfig: {\n      prompt: generationPrompt,\n      imageType: imageType,\n      action: action,\n      referenceTag: \"reference\",\n      productTag: \"product\",\n      criticalRule: PLACEMENT_RULE\n    },\n    debugInfo: {\n      scenario: `${imageType} - ${action}`,\n      productName: PRODUCT_NAME,\n      targetItem: TARGET_ITEM,\n      placementLocation: target.bestPlacementPoint || 'target location'\n    }\n  },\n  binary: $binary\n};"
+      },
+      "id": "b4dbe4b9-a0fa-4547-986f-18b437b98637",
+      "name": "Format for Runway",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        1860
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Prompt Creations\nAnalyses Images and feeds into ai agent who creates a detailed product photo",
+        "height": 460,
+        "width": 820
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -280,
+        2040
+      ],
+      "id": "e56e8042-13a5-4361-839f-265fe0f537c3",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the current combination data\nconst currentCombination = $json;\nconst loopData = $('Loop Over Combinations1').context;\n\n// Check if we have loop context\nif (!loopData) {\n  throw new Error('Loop context not found');\n}\n\n// Get the current position in the loop\nconst currentIndex = loopData.currentRunIndex || 0;\nconst totalItems = loopData.maxRunIndex || 15;\n\n// Log progress\nconsole.log(`Completed combination ${currentIndex + 1} of ${totalItems}`);\nconsole.log(`Just processed: ${currentCombination.referenceImageName} + ${currentCombination.productName}`);\n\n// Pass through all data and add loop tracking\nreturn {\n  json: {\n    ...currentCombination,\n    loopProgress: {\n      currentIndex: currentIndex + 1,\n      totalItems: totalItems,\n      percentComplete: ((currentIndex + 1) / totalItems * 100).toFixed(1) + '%',\n      isLastItem: currentIndex + 1 === totalItems\n    }\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1960,
+        1960
+      ],
+      "id": "dfde3f13-0456-4033-8c4a-feeb863d13e3",
+      "name": "Track Loop Progress"
+    },
+    {
+      "parameters": {
+        "operation": "deleteFile",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.referenceImageId }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1500,
+        920
+      ],
+      "id": "81247812-3e86-4c0b-b24e-94e04985bb1b",
+      "name": "Delete a file",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## Adapt this prompt to your liking of your ideal outcome, \n\nuse gpt for it. ",
+        "height": 340,
+        "width": 440,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        40,
+        2140
+      ],
+      "id": "3f12df78-949e-456e-a8db-916bb4b6ce48",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## Customise to your product\n\nuse gpt",
+        "height": 300,
+        "width": 220,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        500,
+        1720
+      ],
+      "id": "995abcd7-b9ba-4818-9a88-220faa85b7bb",
+      "name": "Sticky Note3"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-16T19:57:14.123Z",
+  "versionId": "eec72470-a88d-459e-a640-67979b041380"
+}
