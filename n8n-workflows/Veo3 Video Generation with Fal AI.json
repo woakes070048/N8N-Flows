@@ -1,0 +1,402 @@
+{
+  "active": false,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Ideas AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ideas AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Prompts AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think Ideas": {
+      "ai_tool": [
+        [
+          {
+            "node": "Ideas AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ideas Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Ideas AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prompts AI Agent": {
+      "main": [
+        [
+          {
+            "node": "FAL1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think Prompts": {
+      "ai_tool": [
+        [
+          {
+            "node": "Prompts AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Ideas AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Prompts AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Check Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Get Images",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Status": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FAL1": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-16T19:46:15.950Z",
+  "id": "7TNG8ALFtApph802",
+  "isArchived": false,
+  "meta": null,
+  "name": "Veo3 Video Generation with Fal AI",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "seconds"
+            }
+          ]
+        }
+      },
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        540,
+        380
+      ],
+      "id": "7aaecd6f-02b1-414f-bf80-f028c0461e11"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "Generate a creative video idea for a Yeti vlogger character. The video should be something that would go viral on social media platforms like TikTok. Make it funny, relatable, and visually engaging. Focus on winter/mountain themes that would work well with a Yeti character.\n\nYeti is showing what cooks in a day, meat fish or otherwise. Start with a cooking scene",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "name": "Ideas AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        800,
+        280
+      ],
+      "id": "e8fdc16e-7ef5-48e8-a343-0d492ab9f970"
+    },
+    {
+      "parameters": {},
+      "name": "Think Ideas",
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        880,
+        500
+      ],
+      "id": "498b23d5-0f78-46f0-befd-a59118b5564c"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"idea\": \"A Yeti vlogger giving winter survival tips while accidentally demonstrating what NOT to do\",\n  \"caption\": \"When the Yeti gives advice but chaos ensues! 🏔️❄️ #YetiLife #WinterFails #Vlogger #Funny\",\n  \"environment\": \"Snowy mountain landscape with pine trees, overcast sky, natural outdoor lighting\",\n  \"status\": \"for_production\"\n}"
+      },
+      "name": "Ideas Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1000,
+        500
+      ],
+      "id": "50ed2744-5e2d-4cba-a052-178ac95a1a15"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Create a detailed Veo3 video prompt for this idea: {{ $json.output.idea }}\n\nEnvironment setting: {{ $json.output.environment }}\n\nMake sure the prompt is optimized for high-quality, engaging video generation that would work well for social media content. Be extremely descriptive and specific. Include subject, context, action, style, camera movement, and composition. Specify visual details like lighting, colors, and atmosphere. Mention video style (realistic, cinematic, documentary, etc.). Include camera movement instructions (static shot, tracking, aerial view, etc.). Be clear about the main action or movement. Specify the mood and tone. Keep prompts under 500 words but be as detailed as possible. Output ONLY the final video prompt text, nothing else.\n\n\nCreate only the first scene and what the character says.\n\nThe shot must be vlog style -  A cinematic handheld selfie-style video shot. Do not add quotes \"\" around dialogues.\n\n!!IMPORTANT!! - YOU MUST include in the prompt something like \"slightly amused expression as he whispers/screams/shouts/other \" relevant to the scene before you add \"He/She says:\" in the next line. Refer to the example prompt. What the character says MUST be on the same line as \"He/She says\"\n\nYou MUST include Time of day, Lens, Film stock, and audio as seen in the example prompt.\n\nYou MUST always include  \"Vertical video format\" and \"Subtitles: Off\" in the prompt.\n\n<example_prompt>\nA cinematic handheld selfie-style video shot, showing a young man in ancient Middle Eastern robes with shoulder-length dark hair and a short beard, holding the camera like a selfie cam. He’s inside a dimly lit stone den with rugged cave walls. Behind him, several large lions slowly pace or rest, casting shadows in the flickering torchlight. The man speaks directly into the camera he holds, slightly amused expression as he whispers.\nHe says: Alright, welcome to my crib. That one is asleep, he gets grouchy in the mornings.\n\nHe looks happy as he whispers, as if he knows a secret. He pans the camera to show the lions in the background behind him. \n\nThe light pours from the cave entrance above that illuminates the dark cave chamber with the lions below. \n\nVertical video format. \nTime of Day: day\nLens: ultra-wide selfie lens, shallow depth of field\nFilm Stock: vintage 35mm documentary style, selfie camera view\nAudio: (implied) ambient lion growls \nBackground: Lions sleeping behind the young man.\nSubtitles: Off\n</example_prompt>",
+        "options": {}
+      },
+      "name": "Prompts AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1200,
+        380
+      ],
+      "id": "bc10c237-494d-4e04-9619-151b15fd663d"
+    },
+    {
+      "parameters": {},
+      "name": "Think Prompts",
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        600
+      ],
+      "id": "410f92ca-1f1a-407f-b102-7cfdf690620f"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1-mini",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        760,
+        500
+      ],
+      "id": "b69f3cb4-44b1-471e-95d5-f01bd57f242d",
+      "name": "OpenAI Chat Model"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        800
+      ],
+      "id": "d00d9b2b-9335-4cc9-a5b5-281115eb201c",
+      "name": "Wait1",
+      "webhookId": "15a2f9bf-6947-485d-a13b-1f2e6091ac97"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "743ebece-a200-436a-a7cb-62f33f1f7938",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "COMPLETED",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        800
+      ],
+      "id": "25f037a1-d746-4a81-9a31-1878c5389084",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "url": "=https://queue.fal.run/fal-ai/veo3/requests/{{ $json.request_id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "Key 921e5646-9b39-47d6-8fc9-baf729863c45:342dd72ef4ba33c53133f4140d5d7c94"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1480,
+        780
+      ],
+      "id": "1fb93046-35b7-4b1b-8bd3-c6947c527d4f",
+      "name": "Get Images"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.status_url }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "Key 921e5646-9b39-47d6-8fc9-baf729863c45:342dd72ef4ba33c53133f4140d5d7c94"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        980,
+        720
+      ],
+      "id": "0f8f89f9-907a-479b-a73c-eb1301e49752",
+      "name": "Check Status"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://queue.fal.run/fal-ai/veo3",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "Key 921e5646-9b39-47d6-8fc9-baf729863c45:342dd72ef4ba33c53133f4140d5d7c94"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "prompt",
+              "value": "={{ $json.output }}"
+            },
+            {
+              "name": "aspect_ratio",
+              "value": "16:9"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        540,
+        800
+      ],
+      "id": "c0be3215-7134-445b-b7a1-0bffc9ccb94b",
+      "name": "FAL1"
+    },
+    {
+      "parameters": {
+        "content": "### Veo3 Video Generation with Fal AI\n\nThis workflow automates the entire video creation pipeline, from generating an idea to rendering a video using the Veo3 model hosted by Fal AI.\n\n**Workflow Breakdown:**\n\n1.  **Schedule Trigger**: Kicks off the workflow automatically at a set interval.\n\n2.  **Ideas AI Agent**: Generates a creative, viral video concept based on an initial prompt about a Yeti vlogger.\n\n3.  **Ideas Output Parser**: Structures the AI-generated idea into a clean JSON format (`idea`, `caption`, `environment`).\n\n4.  **Prompts AI Agent**: Takes the structured idea and crafts a highly detailed, descriptive prompt optimized for the Veo3 video model. This prompt includes specifics on camera shots, character actions, dialogue, lighting, and mood.\n\n5.  **FAL1 (HTTP Request)**: Sends the final, detailed prompt to the Fal AI API endpoint to start the video generation job.\n\n6.  **Polling Loop (`Wait` -> `Check Status` -> `If`)**: After submitting the job, the workflow enters a loop. It waits for 10 seconds, checks the status of the video generation, and continues looping until the status is `COMPLETED`.\n\n7.  **Get Images (HTTP Request)**: Once the video is ready, this node fetches the final video file from the URL provided by Fal AI.\n\n---\n\n### How to Set Up Fal AI\n\nTo use this workflow, you need to configure your Fal AI credentials.\n\n1.  **Create Account**: Sign up for an account on [fal.ai](https://fal.ai).\n\n2.  **Get API Key**: Navigate to the **Keys** section in your Fal AI dashboard and generate a new API key. The key will be in the format `Key YOUR_KEY_ID:YOUR_KEY_SECRET`.\n\n3.  **Update HTTP Nodes**: You must copy your full Fal AI key and paste it into the `Authorization` field in the headers of the three **HTTP Request** nodes:\n    * `FAL1`\n    * `Check Status`\n    * `Get Images`\n\n---\n\n### Fal Veo3 Documentation\n\nThe Veo3 model on Fal AI is very new. For detailed information on its capabilities and advanced prompt engineering, refer to the official documentation:\n\n* **Fal AI Veo3 Model Page**: [https://fal.ai/models/fal-ai/veo3](https://fal.ai/models/fal-ai/veo3)\n* **Official Fal AI Blog**: [https://blog.fal.ai/veo-3/](https://blog.fal.ai/veo-3/)\n* **General Fal AI Docs**: [https://docs.fal.ai/](https://docs.fal.ai/)\n",
+        "height": 1600,
+        "width": 360
+      },
+      "name": "Workflow Explanation & Setup1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "3e32c1a3-7c86-430a-9887-2bc720b9c575"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-16T19:46:15.950Z",
+  "versionId": "3f31e8dd-a035-4b60-a798-b62976932437"
+}
