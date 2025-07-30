@@ -1,0 +1,313 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram (Get File)": {
+      "main": [
+        [
+          {
+            "node": "OpenRouter (DeepSeek Agent)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter (DeepSeek Agent)": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets (Add Row)": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets (Get Today's Rows)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets (Get Today's Rows)": {
+      "main": [
+        [
+          {
+            "node": "Calculate Remaining Calories",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Remaining Calories": {
+      "main": [
+        [
+          {
+            "node": "Telegram (Send Reply)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Telegram (Get File)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-29T21:39:10.584Z",
+  "id": "F3sFsVZEGBagFzKv",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "MACRO TRACKER BOT",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {
+          "download": false,
+          "chatIds": "",
+          "userIds": ""
+        }
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        300,
+        -360
+      ],
+      "id": "aa1b4030-07fb-4e11-a19a-8b2d90501bef",
+      "name": "Telegram Trigger",
+      "webhookId": "c93f2d92-a5b7-4a55-bf11-30a8d54bf417",
+      "credentials": {
+        "telegramApi": {
+          "id": "UQ0TGFdRm981nAK4",
+          "name": "Telegram - MACRO TRACKER"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        520,
+        -360
+      ],
+      "id": "0e515b1b-3862-4666-9741-433de885fdd5",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3-0324:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        500,
+        -140
+      ],
+      "id": "fe1bbe3b-cbe9-4908-8243-85aea950f99c",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "headerAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "id": "64bd74ca-946f-4e76-beb5-8ed561332934",
+      "name": "OpenRouter (DeepSeek Agent)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        940,
+        -620
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "29cca611-847c-499f-bb19-04c019a9fad4",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2.2,
+      "position": [
+        1140,
+        -620
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "8eb34323-e4c2-49de-8433-f6ac636c6e44",
+      "name": "Set Date & Time",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2.2,
+      "position": [
+        1340,
+        -620
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": "",
+        "sheetName": ""
+      },
+      "id": "bab87291-cd0a-4b9b-9071-881ea16d539f",
+      "name": "Google Sheets (Add Row)",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        1540,
+        -620
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": "",
+        "sheetName": ""
+      },
+      "id": "7914b104-b43c-4f60-8a58-487b1717266c",
+      "name": "Google Sheets (Get Today's Rows)",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        1740,
+        -620
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "let totalCalories = 0;\nfor (const item of items) {\n  totalCalories += parseFloat(item.json.CALORIES) || 0;\n}\n\nconst remainingCalories = $vars.dailyCalorieGoal - totalCalories;\n\nreturn {\n  totalCalories: totalCalories.toFixed(0),\n  remainingCalories: remainingCalories.toFixed(0)\n};"
+      },
+      "id": "6140e119-cebe-4c9f-808a-c8132005641d",
+      "name": "Calculate Remaining Calories",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1940,
+        -620
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $trigger.item.json.message.chat.id }}",
+        "text": "=✅ Logged! You have *{{ $json.remainingCalories }}* CALORIES left today.",
+        "additionalFields": {}
+      },
+      "id": "db907f70-63dc-4298-abb3-8c1cd233be25",
+      "name": "Telegram (Send Reply)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.1,
+      "position": [
+        2140,
+        -620
+      ],
+      "webhookId": "66c857e0-4eba-45b7-8d42-1a9faca14f86"
+    },
+    {
+      "parameters": {},
+      "id": "68d61268-a29e-4a22-b4f0-718539788bc2",
+      "name": "Set Daily Calorie Goal",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2.2,
+      "position": [
+        740,
+        -620
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getFile"
+      },
+      "id": "d13965f4-c2ab-44da-b37a-6e658ca6cd27",
+      "name": "Telegram (Get File)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.1,
+      "position": [
+        740,
+        -780
+      ],
+      "webhookId": "c282eebe-71b5-4bdb-8002-55ec1dcaa9fa"
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "id": "c91a4075-975a-4cb4-bbd5-ef01f3c75cd8",
+      "name": "Telegram Trigger1",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        520,
+        -620
+      ],
+      "webhookId": "ec1cc012-9dc3-4653-a2b8-ecedc345d802"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-30T18:30:31.149Z",
+  "versionId": "66f266f0-2eed-45fb-a898-33719267bbbd"
+}
