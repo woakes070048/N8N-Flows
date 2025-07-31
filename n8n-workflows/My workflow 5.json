@@ -1,0 +1,893 @@
+{
+  "active": false,
+  "connections": {
+    "VEO3 FAST": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "InitialSet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "TaskReq",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UploadFile": {
+      "main": [
+        [
+          {
+            "node": "VEO3 FAST",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TaskReq": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Create Video from image1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Video from image1": {
+      "main": [
+        [
+          {
+            "node": "Create Video1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Video1": {
+      "main": [
+        [
+          {
+            "node": "Analyze image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze image": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Collect data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collect data": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "InitialSet": {
+      "main": [
+        [
+          {
+            "node": "UploadFile",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "ReadTheFiles",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "InitialSet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ReadTheFiles": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Create Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-31T12:11:19.108Z",
+  "id": "YIyOFGRoCz4JGMCt",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 5",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.kie.ai/api/v1/veo/generate",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"prompt\": \"{{ $('When clicking ‘Execute workflow’').item.json.orig_prompt }}\",\n  \"imageUrls\": [\n    \"{{ $json.data.downloadUrl }}\"\n  ],\n  \"model\": \"veo3_fast\",\n  \"aspectRatio\": \"16:9\"\n} ",
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -272,
+        576
+      ],
+      "id": "def1c1c7-0346-4fa0-9be1-e5f3859442b8",
+      "name": "VEO3 FAST"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -912,
+        576
+      ],
+      "id": "a505354d-719e-4850-bea1-b6f1c897b841",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.kie.ai/api/v1/veo/record-info?taskId={{ $json.data.taskId }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n \n}",
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        112,
+        576
+      ],
+      "id": "01b91751-063e-4028-a4e1-236d33ac9619",
+      "name": "TaskReq"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -64,
+        576
+      ],
+      "id": "0d23fe37-da2c-4a63-b17a-e5d9f5298237",
+      "name": "Wait",
+      "webhookId": "d7941ae6-27de-4b61-8682-d4a831557db7"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://kieai.redpandaai.co/api/file-url-upload",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "fileUrl",
+              "value": "={{ $json.imagefileURL }}"
+            },
+            {
+              "name": "uploadPath",
+              "value": "images/downloaded"
+            },
+            {
+              "name": "fileName",
+              "value": "={{ $json.imagefilename }}"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -496,
+        576
+      ],
+      "id": "59a5d173-909f-4119-bbfb-e0ffb78b39f8",
+      "name": "UploadFile"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6894b7c9-ff57-417a-979f-1f534081c290",
+              "leftValue": "={{ $json.data.response.resultUrls }}",
+              "rightValue": "http://",
+              "operator": {
+                "type": "string",
+                "operation": "exists",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        320,
+        576
+      ],
+      "id": "5e79112b-2a79-44dc-b1f3-b00224217bbc",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://toolkit.mindstreamai.app/v1/video/thumbnail",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpCustomAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"video_url\": \"{{ $('If').item.json.data.response.resultUrls[0] }}\",\n  \"second\": {{ $json.response.duration - (1 / $json.response.fps) }},\n  \"id\": \"extract-last-frame\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -688,
+        176
+      ],
+      "id": "5a5a7f02-2f71-49a8-8cbf-108ea771a4de",
+      "name": "Create Video1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://toolkit.mindstreamai.app/v1/media/metadata",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpCustomAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"media_url\": \"{{ $json.data.response.resultUrls[0] }}\"}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -928,
+        176
+      ],
+      "id": "52e4a09c-c53e-4efb-9614-5df93c45452b",
+      "name": "Create Video from image1"
+    },
+    {
+      "parameters": {
+        "content": "## PROMPT + IMAGE URL = generate video",
+        "height": 380,
+        "width": 1360
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -928,
+        464
+      ],
+      "typeVersion": 1,
+      "id": "75e1cf4e-ba1d-466c-a792-ad8078deb8cf",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Get last frame with NCA Toolkit (FFMPEG) - VIDEO2JPEG",
+        "height": 380,
+        "width": 500
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -992,
+        64
+      ],
+      "typeVersion": 1,
+      "id": "1aa51854-15cf-4003-9495-9805c2cf4db5",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## Describe the image with OpenAI",
+        "height": 380,
+        "width": 280
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -464,
+        64
+      ],
+      "typeVersion": 1,
+      "id": "6032ac3a-bb6d-4dde-9127-25fea6edc104",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "chatgpt-4o-latest",
+          "mode": "list",
+          "cachedResultName": "CHATGPT-4O-LATEST"
+        },
+        "text": "Describe the image in details",
+        "imageUrls": "={{ $json.response }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -384,
+        176
+      ],
+      "id": "2b242bec-8f20-4625-bb9d-a5ecc5591e48",
+      "name": "Analyze image"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an experienced scene writer in the movie industry. Your task is to create an animation for a dynamic advertising videoclip for a furniture factory, focusing on kitchen and room furniture scenes with people interacting in home settings. You will be given a description of a static scene, and your job is to add dynamic movements to bring it to life.\n\nHere's the description of the image:\n<image_description>\n{{ $json.content }}\n</image_description>\n\nYour goal is to transform this static scene into a dynamic, engaging animation that showcases the furniture and the interactions between people and their living spaces. Focus on creating fluid, natural movements that highlight the features and functionality of the furniture while telling a story about daily life.\n\nTo approach this task:\n1. Carefully read and analyze the image description.\n2. Identify the key elements: furniture pieces, people, and their current positions or actions.\n3. Envision how these elements could move or interact in a natural, yet visually interesting way.\n4. Consider how the movement can showcase the furniture's features or demonstrate its use in daily life. (but this is optional)\n5. Think about how lighting, camera angles, and transitions could enhance the dynamic feel of the scene.\n\nWhen describing the animation:\n- Start with the initial setup as described in the image.\n- Detail how each element (people and furniture) moves or changes over time.\n- Include camera movements to add dynamism (e.g., panning, zooming, tracking shots).\n- Describe any changes in lighting or atmosphere that occur during the animation.\n- Ensure that the movements and actions relate to the furniture and its use.\n- Keep the animation duration between 5-10 seconds for a punchy, impactful scene.\n\nRemember to make the animation engaging, visually appealing, and focused on showcasing the furniture in an active, lived-in environment. \n\n### **Precise Prompt Formula**\n\nThe Prompt Precision Formula is designed for users requiring advanced camera movement or image presentation, aiming for a more professional-grade video production.  Precise and detailed prompts can enhance the visual quality of the footage.\n\nPrecise Prompt Formula = **Main Subject** + **Scene** + **Motion** + **Camera Movement** + **Aesthetic Atmosphere**\n\n**Camera Movement:** You can use common camera movements, such as tracking, zooming, panning, handheld and other camera movements to restrict the final presentation.\n\n**Aesthetic Atmosphere**: You can describe the visual style and the sense of atmosphere to get a better result.\n\nPlease provide your animation description in the following format in english:\n[Your detailed description of the animated scene here, do not add enters or \\n\\n]\n\n",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        -64,
+        64
+      ],
+      "id": "a1ee0677-2d47-4bf7-ba3d-fecbc54505ac",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "gpt-4.1",
+          "mode": "list",
+          "cachedResultName": "gpt-4.1"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        192,
+        272
+      ],
+      "id": "c92dd862-2ff5-4b49-adfd-44f39cb5c535",
+      "name": "OpenAI Chat Model"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"orig_prompt\": \"California\",\n\t\"animated_prompt\": \"Los Angeles\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        352,
+        272
+      ],
+      "id": "63ac9ece-3af8-4767-8f28-e58757796f33",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4a5350ad-9a04-498c-9134-d4007db9fcb9",
+              "name": "animated_prompt",
+              "value": "={{ $json.output.animated_prompt }}",
+              "type": "string"
+            },
+            {
+              "id": "40c78687-0a3c-4a57-b309-d2a6e4c1bc51",
+              "name": "imagefileURL",
+              "value": "={{ $('Create Video1').item.json.response }}",
+              "type": "string"
+            },
+            {
+              "id": "b8d1269f-6222-46f6-90ae-958d23431ea5",
+              "name": "videoUrl",
+              "value": "={{ $('If').item.json.data.response.resultUrls[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "442c8ccb-c303-4a8e-bb36-0d1d4b26b40b",
+              "name": "step",
+              "value": "={{ $('InitialSet').item.json.step }}",
+              "type": "number"
+            },
+            {
+              "id": "b7355280-6af8-456c-860b-e9ce0444e817",
+              "name": "loop",
+              "value": "={{ $('InitialSet').item.json.loop }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        304,
+        64
+      ],
+      "id": "38096069-9fca-4921-9c9f-46f5110f71cf",
+      "name": "Collect data"
+    },
+    {
+      "parameters": {
+        "content": "## Gernerate the movement and the new prompt with image",
+        "height": 480,
+        "width": 800
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -128,
+        -48
+      ],
+      "typeVersion": 1,
+      "id": "7d8684c6-0c3f-4f39-8a8d-7e9d3da829fb",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1IO9YmLp1ALoVMaFjms1uj1HdL6gu7d_tzuyrK2LJ9DE",
+          "mode": "list",
+          "cachedResultName": "POV Video Creator",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1IO9YmLp1ALoVMaFjms1uj1HdL6gu7d_tzuyrK2LJ9DE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1923512644,
+          "mode": "list",
+          "cachedResultName": "Concatenator",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1IO9YmLp1ALoVMaFjms1uj1HdL6gu7d_tzuyrK2LJ9DE/edit#gid=1923512644"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "date": "={{ new Date().toISOString() }}",
+            "mp4_url": "={{ $json.videoUrl }}",
+            "step": "={{ $json.step }}",
+            "animated_prompt": "={{ $json.animated_prompt }}",
+            "imagefileURL": "={{ $json.imagefileURL }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "mp4_url",
+              "displayName": "mp4_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "date",
+              "displayName": "date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "step",
+              "displayName": "step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "imagefileURL",
+              "displayName": "imagefileURL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "animated_prompt",
+              "displayName": "animated_prompt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        512,
+        64
+      ],
+      "id": "4f8063fa-3ee3-4da0-b432-eb3b13966e8a",
+      "name": "Append row in sheet"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "845af529-04e4-4a77-ad42-c2a3025148da",
+              "name": "step",
+              "value": "={{ $json.step }}",
+              "type": "string"
+            },
+            {
+              "id": "e1c5b7af-8520-45c6-a1e7-da832f711b0f",
+              "name": "loop",
+              "value": "={{ $json.loop }}",
+              "type": "string"
+            },
+            {
+              "id": "ee00f8fe-e2b2-4833-ab03-d548c338856d",
+              "name": "imagefilename",
+              "value": "={{ $json.imagefilename }}",
+              "type": "string"
+            },
+            {
+              "id": "f4f5df61-7c8b-4813-a52b-3a22e69c0dda",
+              "name": "imagefileURL",
+              "value": "={{ $json.imagefileURL }}",
+              "type": "string"
+            },
+            {
+              "id": "04ac9f2f-bd27-412f-b386-c55b805a7ee5",
+              "name": "orig_prompt",
+              "value": "={{ $json.orig_prompt }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -736,
+        576
+      ],
+      "id": "0b81d1b0-f22f-4cb1-9c7e-ff62c7354135",
+      "name": "InitialSet"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={\n  \"mp4_url\":\"{{ $json.mp4_url }}\",\n  \"imagefileURL\":\"{{ $json.imagefileURL }}\",\n   \"animated_prompt\":\"{{ $json.animated_prompt }}\",\n  \"step\": {{$json.step + 1}},\n  \"loop\":  {{ $('Collect data').item.json.loop }}\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        576,
+        304
+      ],
+      "id": "00e75115-5b1b-4f88-abdb-3f047e543cbd",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "a4b84c6a-c477-4929-a527-c70201b829d4",
+              "leftValue": "={{ $('When clicking ‘Execute workflow’').item.json.loop }}",
+              "rightValue": "={{ $json.step }}",
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        304
+      ],
+      "id": "49fc86b9-4e9c-4bd4-8693-009a65e4d526",
+      "name": "If2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://toolkit.mindstreamai.app/v1/video/concatenate",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpCustomAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1040,
+        752
+      ],
+      "id": "a1a2cc15-729c-45d5-aec6-1c850b0137eb",
+      "name": "Create Video"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1IO9YmLp1ALoVMaFjms1uj1HdL6gu7d_tzuyrK2LJ9DE",
+          "mode": "list",
+          "cachedResultName": "POV Video Creator",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1IO9YmLp1ALoVMaFjms1uj1HdL6gu7d_tzuyrK2LJ9DE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1923512644,
+          "mode": "list",
+          "cachedResultName": "Concatenator",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1IO9YmLp1ALoVMaFjms1uj1HdL6gu7d_tzuyrK2LJ9DE/edit#gid=1923512644"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        592,
+        752
+      ],
+      "id": "4fa5157a-df7b-4a13-8690-ac59ad12c403",
+      "name": "ReadTheFiles"
+    },
+    {
+      "parameters": {
+        "jsCode": "const arr = $input.all(); // This gives you all items as array of objects with .json property\nconst video_urls = arr.map(item => ({ video_url: item.json.mp4_url }));\n\nconst payload = {\n  video_urls,\n  id: \"concatenate-job-id\"\n};\n\nreturn [\n  {\n    json: payload\n  }\n];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        816,
+        752
+      ],
+      "id": "78232de8-4355-4e5d-bace-335b55e635fb",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "content": "## Concatenate videos",
+        "height": 260,
+        "width": 800
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        544,
+        672
+      ],
+      "typeVersion": 1,
+      "id": "2d0363e6-fbb1-4b2f-89d1-0f84adeb8e86",
+      "name": "Sticky Note5"
+    }
+  ],
+  "pinData": {
+    "AI Agent": [
+      {
+        "json": {
+          "output": {
+            "orig_prompt": "The image showcases a beautifully designed, bright, and airy modern living room with a minimalist yet cozy aesthetic. Here's a detailed description:\n\n### **Room Layout and Architecture**\n- **Natural Light:** Large floor-to-ceiling glass sliding doors dominate the left side of the room, opening out to a balcony. The abundant sunlight floods the room, creating a bright, airy atmosphere.\n- **Curtains:** Sheer white curtains are billowing inward, caught in a gentle breeze, adding movement and softness to the otherwise clean lines of the room.\n\n### **Furniture and Decor**\n- **Sofa:** A plush, light-beige L-shaped sofa occupies the foreground. It has clean lines and is accented with throw pillows in neutral and earthy tones (like brown and gold).\n- **Coffee Table:** In front of the sofa sits a round, light-wooden coffee table. On top, there’s a small stack of books, a ceramic cup, and a stylish matte vase holding dried grasses.\n- **TV Area:** \n  - A sleek, flat-screen TV is mounted on the wall opposite the sofa.\n  - Beneath it is a low, modern wooden media console with a natural wood grain finish. The console is accessorized with minimal decor, including a soft white vase and some small artistic items.\n- **Side Plant:** To the left of the TV stand, a medium-sized green potted plant adds a touch of greenery and enhances the freshness of the space.\n\n### **Shelving Unit**\n-",
+            "animated_prompt": "The animation begins with a soft, sunlit living room scene as the camera pans slowly from left to right, capturing the sheer white curtains gently billowing inward through the open glass sliding doors. Warm sunlight dances across the plush, light-beige L-shaped sofa where a young woman enters from the balcony, sits down comfortably, and picks up a book from the coffee table. As she settles in, a child enters from the hallway, running over to the sofa to gently jump onto it, causing the throw pillows to bounce slightly, demonstrating the sofa’s softness and resilience. The mother and child share a brief, joyful moment, smiling and laughing. The camera smoothly tracks forward to focus on the coffee table, zooming in on the elegant arrangement of books, ceramic cup, and matte vase with dried grasses. Simultaneously, the sunlight subtly intensifies, highlighting the natural wood textures of the media console and coffee table while a gentle breeze animates the greenery of the potted plant beside the TV. The scene concludes with the camera tilting upward toward the TV area as soft, lively background music fades in, emphasizing the warmth, coziness, and dynamic everyday life enabled by the furniture, all in a clean modern aesthetic bathed in glowing daylight."
+          }
+        }
+      }
+    ],
+    "When clicking ‘Execute workflow’": [
+      {
+        "json": {
+          "imagefilename": "imagine_cu_vedere.png",
+          "imagefileURL": "https://pub-792049b9c28242efb233a2c35ce538a2.r2.dev/imagine_cu_vedere_spre_living_modern_podea_parchet_stejar_natur_deschis_montaj_la_45_textur_mat_ton_2cvrgdep1u0afso0os40_1-gigapixel-high%20fidelity%20v2-2x.png",
+          "orig_prompt": "8-second realistic video. Medium shot. Slow-motion camera arc through a modern, sunlit living room. No people present. Focus on cozy décor, plush furniture, sunbeams on neutral textures, soft wood tones, gentle curves. ASMR sound design: soft ambient room noise—curtains fluttering in a light breeze, faint fabric rustling, distant city hum, quiet clock ticking. No dialogue.",
+          "loop": "5",
+          "step": "1"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-31T12:11:19.108Z",
+  "versionId": "5e82a101-7243-446e-b1ac-b838c3e43923"
+}
