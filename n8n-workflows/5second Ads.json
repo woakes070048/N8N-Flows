@@ -1,0 +1,800 @@
+{
+  "active": false,
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain1": {
+      "main": [
+        [
+          {
+            "node": "Post Request - Wavespeed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Post Request - Wavespeed": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Execute Command1": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain2": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk5": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Execute Command1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-30T20:09:09.283Z",
+  "id": "zNw3RR39vUDTu0Dh",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "5second Ads",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        560,
+        784
+      ],
+      "id": "573e5584-370e-44cf-9289-552a3ab69f43",
+      "name": "When chat message received",
+      "webhookId": "b49b9f52-12f8-4a33-9d40-3044a84b173b"
+    },
+    {
+      "parameters": {
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are a trend research assistant for a creative video marketing workflow. based on the user's input (tyipcally a request like \"Create a 5-second Instagram video ad for my [product/brand]\", your job is to identify the most relevant and fresh trend  that could inspire the marketing angle or visual concept of the video.\n\nYour response will be passed directly into a Video Prompt Generator node, so it should highlight a trend that can be translated visually or conceptually into short-form video content.\n\nRequirements:\n\nSelect only the top, most relevant trend that connects clearly with the user's topic or product.\n\nBriefly explain why this trend is compelling and how it could be used as a visual or narrative concept for a video ad.\n\nInclude the source URL of the trend for context.\n\nKeep your output concise, visual-oriented, and actionable for marketing. Avoid generic summaries. Prioritize consumer behavior shifts, viral aesthetics, cultural moments, audio trends, or platform-specific like Instagram or TikTok.\n\nInput Example:\n\"Create a 5-second Instagram ad for my perfume brand\"\n\nExpected Ouput Format:\n\nTrend Title:\n\nSumamry & Video Angle Suggestion:\n\nSource URL:\n"
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        864,
+        784
+      ],
+      "id": "8e10e308-0c98-447c-8602-a40a49a00aee",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "model": "deepseek-r1-distill-llama-70b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        864,
+        1008
+      ],
+      "id": "09bef0cb-b0e0-44ac-89dd-8912ac9ef961",
+      "name": "Groq Chat Model"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.text }}",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "You are a creative video prompt generator for short-form ads (e.g. Instagram, TikTok). Based on:\n\nThe user's original brief (e.g. \"Create a 5-second ad for my perfume brand\"), and\n\nThe top marketing trend insight provided by the previous research node.\n\nYour task is to craft a concise, visually descriptive video generation prompt suitable for input the Seedance API.\n\nDo not include any extra explanation, formatting, or commentary. Your entire output must be the exact prompt to pass into the video generator. \n\nThe prompt shoud:\n- Be under 100 words\n- Describe the visual elements, tone, and notion clearly\n- Reflect the product or brand type, and \n- Incorporate the marketing trend as the core concept or hook\n\nExample of your expected output format:\n\n\"A close-up slow-motion shot of a glass of perfume bottle as morning sunlight filters through mist. The background shows soft-focus wildflowers, matching the theme of natural beauty and calm. Overlay text: \"Nature's Elegance. Reivented\". Trend inspired styling based on the 'quiet luxury' aesthetic. For Instagram. 5 seconds.\""
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1232,
+        784
+      ],
+      "id": "cf20a56c-b300-4ed5-b1af-078f6ab6e435",
+      "name": "Basic LLM Chain1"
+    },
+    {
+      "parameters": {
+        "model": "deepseek-r1-distill-llama-70b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        1232,
+        1008
+      ],
+      "id": "979adc95-05f4-4b80-b0fd-08d6641fdd83",
+      "name": "Groq Chat Model1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.wavespeed.ai/api/v3/minimax/hailuo-02/i2v-pro",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "duration",
+              "value": "6"
+            },
+            {
+              "name": "enable_prompt_expansion",
+              "value": "false"
+            },
+            {
+              "name": "prompt",
+              "value": "={{ $json.text }}"
+            },
+            {
+              "name": "image",
+              "value": "https://cdn.topgear.es/sites/navi.axelspringer.es/public/media/image/2021/07/lotus-emira-2021-2399003.jpg?tf=3840x"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1568,
+        784
+      ],
+      "id": "8d996d66-5952-4fc0-9376-56d2e258ce1a",
+      "name": "Post Request - Wavespeed"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.wavespeed.ai/api/v3/predictions/{{ $json.data.id }}/result",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1520,
+        1024
+      ],
+      "id": "c565a356-ca74-446f-b6bb-6a60a2439e1e",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1824,
+        784
+      ],
+      "id": "65b550f8-35d3-435e-bf5f-7dfadbc10327",
+      "name": "Wait2",
+      "webhookId": "11ec7520-de79-41cc-b8a2-24f0f185b2dd"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "fca6d078-c73e-4193-9452-a1df5fc49434",
+              "leftValue": "={{ $json.data.status }}",
+              "rightValue": "processing",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1744,
+        1024
+      ],
+      "id": "bb39bef8-6621-4415-a025-4cc187e1fae6",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1984,
+        1008
+      ],
+      "id": "e7e83254-0f15-4234-a8b1-9096c3dbd5c3",
+      "name": "Wait",
+      "webhookId": "be47d2d4-04e6-41cb-b1e7-247db6d252a5"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7069ed55-7f9e-4b99-8e99-018d5d7f9716",
+              "name": "productName",
+              "value": "Thunderbolt XR",
+              "type": "string"
+            },
+            {
+              "id": "c34f196f-81ca-43f7-8ba5-d01f659f2f5c",
+              "name": "descriptionProduct",
+              "value": "Thunderbolt XR: Potencia electrizante y diseño aerodinámico para dominar la carretera.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        752,
+        1872
+      ],
+      "id": "587aeb50-d214-4ba7-a8a2-086f5475f6eb",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "jsCode": "const originalText = $json.text;\n\n// Eliminar todo el bloque <think>...</think> (incluye multilínea)\nconst cleanedText = originalText.replace(/<think>[\\s\\S]*?<\\/think>/gi, '').trim();\n\n// Eliminar espacios y saltos extra\nconst finalSpeech = cleanedText.replace(/\\s+/g, ' ').trim();\n\nreturn [{\n  json: {\n    speechText: finalSpeech\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1248,
+        1872
+      ],
+      "id": "c6eb2de6-63eb-44c8-b66b-a126f8a31ee0",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "command": "ffmpeg -i datam.mpga -filter:a \"atempo=0.9\" outputm.mp3\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        2064,
+        1872
+      ],
+      "id": "bec61d09-f169-425f-9b7f-d06c2c015974",
+      "name": "Execute Command"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "./datam.mpga",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        1872,
+        1872
+      ],
+      "id": "a0fa08b6-7323-4719-920b-66a3f12436ea",
+      "name": "Read/Write Files from Disk"
+    },
+    {
+      "parameters": {
+        "fileSelector": "./outputm.mp3",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        1872
+      ],
+      "id": "edf74fd9-f2a2-4dea-b244-67a9d814d5cd",
+      "name": "Read/Write Files from Disk1"
+    },
+    {
+      "parameters": {
+        "command": "ffmpeg -i ./video_output/3.mp4 -i ./outputm.mp3 -c:v copy -c:a aac -map 0:v:0 -map 1:a:0 outputm.mp4\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        3072,
+        1328
+      ],
+      "id": "74369d2d-19fe-4a69-82d3-4fc999dd1a86",
+      "name": "Execute Command1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Write a short, funny, and catchy ad phrase for the product \"{{ $json.productName }}\" based on its description \"{{ $json.descriptionProduct }}\".\n",
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=You are a professional advertising copywriter. Your goal is to write a funny, catchy ad phrase that can be spoken aloud in approximately 20 seconds.\n\nDetect the language of the product name and description. If the language is English, respond in English. If it’s Spanish, respond in Spanish.\n\nYour output must be:\n- No extra text, no introductions, no explanations\n- Easy to read aloud in 20 seconds\n"
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        928,
+        1872
+      ],
+      "id": "fcef0737-8a61-4b05-8892-d946d58f310c",
+      "name": "Basic LLM Chain2"
+    },
+    {
+      "parameters": {
+        "model": "deepseek-r1-distill-llama-70b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        928,
+        2048
+      ],
+      "id": "e4afba9f-c552-426b-a2f3-24e171bb92cb",
+      "name": "Groq Chat Model2"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.elevenlabs.io/v1/text-to-speech/YOq2y2Up4RgXP2HyXjE5",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "output_format",
+              "value": "mp3_44100_128"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "xi-api-key",
+              "value": "sk_af8cb958bfb82d7f7f509374efd6ce6a9ec33f780ba5ee02"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "text",
+              "value": "={{ $json.speechText }}"
+            },
+            {
+              "name": "model_id",
+              "value": "eleven_multilingual_v2"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1472,
+        1872
+      ],
+      "id": "b4ec3e2f-4bdf-4d7a-9da5-80a92933d340",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1648,
+        1872
+      ],
+      "id": "df1e8734-b619-47ce-899c-f5619ee395d9",
+      "name": "Wait1",
+      "webhookId": "6290c7d5-2cc1-4271-92ae-d08851e154c7"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data.outputs[0] }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1984,
+        1232
+      ],
+      "id": "147780e2-0f07-411e-ac07-42ed4dbf8add",
+      "name": "HTTP Request2"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "./video_output/3.mp4",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        2224,
+        1264
+      ],
+      "id": "56f8fd76-0da4-4fbd-a3c8-0d253712c7fb",
+      "name": "Read/Write Files from Disk5"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        2752,
+        1328
+      ],
+      "id": "903a2727-b048-4615-9140-a3909d36ae8d",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "fileSelector": "./outputm.mp4",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        3280,
+        1328
+      ],
+      "id": "51c9ba3a-7317-4471-b417-836bab95c309",
+      "name": "Read/Write Files from Disk3"
+    },
+    {
+      "parameters": {
+        "content": "## AUDIO SCRIPT & VOICEOVER GENERATION\n**Goal**: Create a catchy and funny voiceover script and generate its audio using AI voice synthesis.\n\n**Steps**:\n\n- Use the product name and description to generate a short ad phrase.\n\n- Clean and format the text.\n\n- Convert the text to speech via ElevenLabs API, resulting in a .mp3 voiceover file.\n\n",
+        "height": 660,
+        "width": 1920,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        608,
+        1552
+      ],
+      "id": "2ab03267-4936-48d6-b133-0b46c1efd161",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## VIDEO CONCEPT GENERATION\n**Goal**: Transform the user’s request into a compelling 5-second video idea based on current trends.\n\n**Steps**:\n\n- Receive user input like “Create a 5-second ad for my sports car.”\n\n- Use a language model to find a fresh marketing trend (e.g., \"retro-futurism visuals on TikTok\").\n\n- Generate a short, descriptive video prompt that combines the product and trend (e.g., “Slow-mo car under neon lights, cyberpunk vibes”).",
+        "height": 1000,
+        "width": 1720
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        800,
+        448
+      ],
+      "id": "7836c1b5-dc64-4cca-be5a-bf12c25719a2",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## FINAL VIDEO RENDERING (VIDEO + AUDIO) \n**Goal**: Merge the AI-generated video and voiceover into one cohesive 5-second ad.\n\n**Steps**:\n\n- Adjust and combine the video with the audio using FFmpeg.\n\n- Output the final 5-second video ad with synced visuals and voiceover.",
+        "height": 580,
+        "width": 1080,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2720,
+        1008
+      ],
+      "id": "031b9ea9-48fc-47ae-bda7-1cd7040d18b9",
+      "name": "Sticky Note2"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-31T11:53:42.098Z",
+  "versionId": "b22879f2-7331-4240-afd4-d4cb7c44bc92"
+}
