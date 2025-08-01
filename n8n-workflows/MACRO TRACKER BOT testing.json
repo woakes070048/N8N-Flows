@@ -1,0 +1,1216 @@
+{
+  "active": false,
+  "connections": {
+    "Telegram Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Check for Repeat Meal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check if Photo1": {
+      "main": [
+        [
+          {
+            "node": "Download Photo1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Analyze Text with AI1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Photo1": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze Photo with AI1": {
+      "main": [
+        [
+          {
+            "node": "Calculate Nutrition1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze Text with AI1": {
+      "main": [
+        [
+          {
+            "node": "Calculate Nutrition1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculate Nutrition1": {
+      "main": [
+        [
+          {
+            "node": "Verify Nutrition with AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add to Notion1": {
+      "main": [
+        [
+          {
+            "node": "Get Daily Totals1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Daily Totals1": {
+      "main": [
+        [
+          {
+            "node": "Format Response1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response1": {
+      "main": [
+        [
+          {
+            "node": "Send Reply1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Analyze Photo with AI1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verify Nutrition with AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Finalize for Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Verify Nutrition with AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DEEPSEEK": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Verify Nutrition with AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Finalize for Notion": {
+      "main": [
+        [
+          {
+            "node": "Add to Notion1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "Verify Nutrition with AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check for Repeat Meal": {
+      "main": [
+        [
+          {
+            "node": "Extract Search Term",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Check if Photo1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Search Term": {
+      "main": [
+        [
+          {
+            "node": "Search for Past Meals",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search for Past Meals": {
+      "main": [
+        [
+          {
+            "node": "Filter Search Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check for Any Results": {
+      "main": [
+        [
+          {
+            "node": "Get Item Count",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Item Count": {
+      "main": [
+        [
+          {
+            "node": "Route by Result Count",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route by Result Count": {
+      "main": [
+        [
+          {
+            "node": "Log Single Meal",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Create Message & Keyboard",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Search Results": {
+      "main": [
+        [
+          {
+            "node": "Check for Any Results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Message & Keyboard": {
+      "main": [
+        [
+          {
+            "node": "Send Meal Options",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Answer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Answer": {
+      "main": [
+        [
+          {
+            "node": "Answer Query a callback",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-31T19:49:11.861Z",
+  "id": "xhbVkr7K9I3rNfJr",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "MACRO TRACKER BOT testing",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {},
+        "path": "c1fb703c-3a23-43a4-b019-43ba0541ca64"
+      },
+      "id": "3858454f-6f0f-40df-aa7a-809a9962284a",
+      "name": "Telegram Trigger1",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [
+        1056,
+        1408
+      ],
+      "webhookId": "c1fb703c-3a23-43a4-b019-43ba0541ca64",
+      "credentials": {
+        "telegramApi": {
+          "id": "UQ0TGFdRm981nAK4",
+          "name": "Telegram - MACRO TRACKER"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 1
+          },
+          "conditions": [
+            {
+              "id": "condition-1",
+              "leftValue": "={{ $json.message.photo }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {
+          "looseTypeValidation": true
+        }
+      },
+      "id": "0a8aee09-5679-42e0-871e-c69d5d804e59",
+      "name": "Check if Photo1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1408,
+        1792
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $('Telegram Trigger1').item.json.message.photo[3].file_id }}",
+        "path": "43975db7-0722-447d-ad4d-2b8c1cd30daf"
+      },
+      "id": "6114a5a4-33bb-475b-a723-32c730e34202",
+      "name": "Download Photo1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        1616,
+        1680
+      ],
+      "webhookId": "43975db7-0722-447d-ad4d-2b8c1cd30daf",
+      "credentials": {
+        "telegramApi": {
+          "id": "UQ0TGFdRm981nAK4",
+          "name": "Telegram - MACRO TRACKER"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openRouterApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{\n({\n  \"model\": \"mistralai/mistral-small-3.1-24b-instruct:free\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": `You are an advanced nutrition calculator. Your task is to calculate the **total nutritional information for a complete meal** based on a user's text caption and an accompanying image.\n\nYour job is to intelligently combine information from both the text and the image:\n\n1.  **Analyze the Text:** Read the user's caption to understand the meal. Any specific quantities mentioned in the text (e.g., \"18 pizza rolls\", \"about 8oz\") are the **primary source of truth** and should be used.\n2.  **Analyze the Image:** Use the image to visually identify the food items.\n    * **If the caption asks you to count discrete items**, you must count them and use that number.\n    * **If no portion size is given in the text for an item like a steak or fries**, you may attempt to **estimate the portion size** (e.g., in grams or ounces) from the photo as a rough 'ballpark' guess.\n3.  **Calculate:** Combine all information to **sum up the nutrition for the ENTIRE meal.**\n\n**Priority:** Always prefer a portion size written in the caption over your own visual estimate.\n\nReturn ONLY a single JSON object with the final, calculated totals. If you make an estimate, reflect that in the food name.\n{\n  \"food_name\": \"A descriptive name of the meal, like '18 Pizza Rolls' or 'Est. 8oz Steak & Fries'\",\n  \"calories\": number,\n  \"protein\": number,\n  \"fat\": number,\n  \"carbs\": number,\n  \"fiber\": number\n}`\n    },\n    {\n      \"role\": \"user\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": $('Telegram Trigger1').item.json.message.caption || ''\n        },\n        {\n          \"type\": \"image_url\",\n          \"image_url\": {\n            \"url\": `data:image/jpeg;base64,${$json.base64Image}`\n          }\n        }\n      ]\n    }\n  ],\n  \"response_format\": { \"type\": \"json_object\" }\n})\n}}",
+        "options": {}
+      },
+      "id": "acef0a47-7da4-4612-8e6e-97270a132df7",
+      "name": "Analyze Photo with AI1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2048,
+        1680
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "i6X3fH9gEWk4yda5",
+          "name": "VERTEX API ACCESS"
+        },
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openRouterApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "=json",
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "jsonBody": "={{\n({\n  \"model\": \"mistralai/mistral-small-3.1-24b-instruct:free\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": `You are an advanced nutrition calculator. Your task is to calculate the **total nutritional information for a complete meal** described by the user in the text they provide.\n\nYour job is to:\n1.  Read the user's text to identify all food items and their quantities (e.g., \"6 ounces of black coffee\", \"One serving of this protein shake\").\n2.  Use your own knowledge for the nutritional values.\n3.  If the user provides new information about the Nutrition of one of the items follow that to the best of your ability and reconcile it with your own knowledge.\n4.  **Sum up the nutrition for ALL items to get a final total for the entire meal.**\n\nReturn ONLY a single JSON object with the final, calculated totals. The food name should be a summary of the meal.\n{\n  \"food_name\": \"A descriptive name of the meal, like 'Chicken and Rice' or 'Protein Shake' or \"Chic-Fil-A Nugget Meal\",\n  \"calories\": number,\n  \"protein\": number,\n  \"fat\": number,\n  \"carbs\": number,\n  \"fiber\": number\n}`\n    },\n    {\n      \"role\": \"user\",\n      \"content\": $('Telegram Trigger1').item.json.message.text || ''\n    }\n  ],\n  \"response_format\": { \"type\": \"json_object\" }\n})\n}}",
+        "options": {}
+      },
+      "id": "1e3ac6c1-5e98-4381-93a6-8032e645ebc5",
+      "name": "Analyze Text with AI1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1616,
+        1888
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "i6X3fH9gEWk4yda5",
+          "name": "VERTEX API ACCESS"
+        },
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the AI's response which contains the final calculated totals\nconst aiResponse = JSON.parse($input.first().json.choices[0].message.content);\nconst userMessage = $('Telegram Trigger1').item.json.message;\n\n// Combine the AI response with user and time data\nconst result = {\n  ...aiResponse, // This adds food_name, calories, protein, etc. from the AI\n  date: new Date().toISOString().split('T')[0],\n  time: new Date().toLocaleTimeString('en-US', {\n    hour12: false,\n    hour: '2-digit',\n    minute: '2-digit',\n    timeZone: 'America/Chicago'\n  }),\n  telegram_user_id: userMessage.from.id,\n  telegram_username: userMessage.from.username || userMessage.from.first_name\n};\n\nreturn { json: result };"
+      },
+      "id": "ba9eef2c-476e-4bee-8180-c72f7327bcb4",
+      "name": "Calculate Nutrition1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2272,
+        1792
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "241541c0-2b31-8077-ba98-eec6adda6f48",
+          "mode": "list",
+          "cachedResultName": "Food Tracker",
+          "cachedResultUrl": "https://www.notion.so/241541c02b318077ba98eec6adda6f48"
+        },
+        "title": "={{ $json.output.food_name }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Date|date",
+              "includeTime": false,
+              "date": "={{ $json.date }}",
+              "timezone": "America/Chicago"
+            },
+            {
+              "key": "Time|rich_text",
+              "textContent": "={{ $json.time }}"
+            },
+            {
+              "key": "Calories|number",
+              "numberValue": "={{ $json.output.calories }}"
+            },
+            {
+              "key": "Protein (g)|number",
+              "numberValue": "={{ $json.output.protein }}"
+            },
+            {
+              "key": "Fat (g)|number",
+              "numberValue": "={{ $json.output.fat }}"
+            },
+            {
+              "key": "Carbs (g)|number",
+              "numberValue": "={{ $json.output.carbs }}"
+            },
+            {
+              "key": "Fiber (g)|number",
+              "numberValue": "={{ $json.output.fiber }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a973ef86-3eff-4645-8081-4f44cbe1faa9",
+      "name": "Add to Notion1",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        3088,
+        1792
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "X9pMOV66IStKRydY",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "241541c0-2b31-8077-ba98-eec6adda6f48",
+          "mode": "list",
+          "cachedResultName": "Food Tracker",
+          "cachedResultUrl": "https://www.notion.so/241541c02b318077ba98eec6adda6f48"
+        },
+        "returnAll": true,
+        "simple": false,
+        "filterType": "manual",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Date|date",
+              "condition": "equals",
+              "date": "=={{ $now.toISODate() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2700237c-b34a-472d-9b37-f2824e114785",
+      "name": "Get Daily Totals1",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        3296,
+        1792
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "notionApi": {
+          "id": "X9pMOV66IStKRydY",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Calculate daily totals from Notion results\nconst notionResults = $input.all();\nconst currentMeal = $('Calculate Nutrition1').item.json;\n\nlet dailyTotals = {\n  calories: 0,\n  protein: 0,\n  fat: 0,\n  carbs: 0,\n  fiber: 0\n};\n\n// Sum up all entries for today\nif (notionResults && notionResults.length > 0) {\n  notionResults.forEach(item => {\n    if (item.json && item.json.properties) {\n      const props = item.json.properties;\n      dailyTotals.calories += props.Calories?.number || 0;\n      dailyTotals.protein += props['Protein (g)']?.number || 0;\n      dailyTotals.fat += props['Fat (g)']?.number || 0;\n      dailyTotals.carbs += props['Carbs (g)']?.number || 0;\n      dailyTotals.fiber += props['Fiber (g)']?.number || 0;\n    }\n  });\n}\n\n// Round the totals\ndailyTotals.calories = Math.round(dailyTotals.calories);\ndailyTotals.protein = Math.round(dailyTotals.protein * 10) / 10;\ndailyTotals.fat = Math.round(dailyTotals.fat * 10) / 10;\ndailyTotals.carbs = Math.round(dailyTotals.carbs * 10) / 10;\ndailyTotals.fiber = Math.round(dailyTotals.fiber * 10) / 10;\n\n// Create response message\nconst mealSummary = `🍽️ **Meal Logged: ${currentMeal.food_name}**\\n` +\n  `📊 **This Meal:**\\n` +\n  `• Calories: ${currentMeal.calories}\\n` +\n  `• Protein: ${currentMeal.protein}g\\n` +\n  `• Fat: ${currentMeal.fat}g\\n` +\n  `• Carbs: ${currentMeal.carbs}g\\n` +\n  `• Fiber: ${currentMeal.fiber}g\\n\\n` +\n  `📈 **Today's Totals:**\\n` +\n  `• Calories: ${dailyTotals.calories}\\n` +\n  `• Protein: ${dailyTotals.protein}g\\n` +\n  `• Fat: ${dailyTotals.fat}g\\n` +\n  `• Carbs: ${dailyTotals.carbs}g\\n` +\n  `• Fiber: ${dailyTotals.fiber}g`;\n\nreturn {\n  json: {\n    message: mealSummary,\n    chat_id: $('Telegram Trigger1').item.json.message.chat.id,\n    currentMeal: currentMeal,\n    dailyTotals: dailyTotals\n  }\n};"
+      },
+      "id": "73f817a4-a218-4ea1-9605-ce89f6098f91",
+      "name": "Format Response1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3520,
+        1792
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $json.chat_id }}",
+        "text": "={{ $json.message }}",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        },
+        "path": "38eefa4d-6956-44bb-b17c-9422c51e5991"
+      },
+      "id": "b068a2a6-5e11-436b-aa88-154515e56434",
+      "name": "Send Reply1",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        3744,
+        1792
+      ],
+      "webhookId": "38eefa4d-6956-44bb-b17c-9422c51e5991",
+      "credentials": {
+        "telegramApi": {
+          "id": "UQ0TGFdRm981nAK4",
+          "name": "Telegram - MACRO TRACKER"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "destinationKey": "base64Image",
+        "options": {
+          "keepSource": "json"
+        }
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        1824,
+        1680
+      ],
+      "id": "08669835-fff2-4e88-9026-54b928ebc3f7",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ JSON.stringify($input.first().json) }}\n",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "You are a meticulous nutrition data verifier. Your job is to check if the provided nutritional data for a given meal description is reasonable. The initial calculation was done by another AI, and you are the quality check.\n\nI will provide you with a JSON object containing a 'food_name' and its calculated nutrition.\n\nIf the numbers seem reasonable for the food described, return the JSON object exactly as you received it.\n\nIf the numbers seem wildly incorrect (e.g., 1700 calories for a piece of chicken), recalculate them based on your knowledge and return a JSON object with the corrected values.\n\nDo not add any explanation, apologies, or extra text. Your output MUST be only the JSON object in the exact same format as the input.\n\nHere is the required format:\n{\n\"food_name\": \"A descriptive name of the meal\",\n\"calories\": number,\n\"protein\": number,\n\"fat\": number,\n\"carbs\": number,\n\"fiber\": number\n}"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        2480,
+        1792
+      ],
+      "id": "c84c29db-931c-495a-93fd-7bb3e5c9672d",
+      "name": "Verify Nutrition with AI Agent"
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"food_name\": {\n      \"type\": \"string\",\n      \"description\": \"A descriptive name of the meal, like 'Chicken and Rice' or 'Protein Shake'\"\n    },\n    \"calories\": {\n      \"type\": \"number\",\n      \"description\": \"Total calories for the meal\"\n    },\n    \"protein\": {\n      \"type\": \"number\",\n      \"description\": \"Total protein in grams for the meal\"\n    },\n    \"fat\": {\n      \"type\": \"number\",\n      \"description\": \"Total fat in grams for the meal\"\n    },\n    \"carbs\": {\n      \"type\": \"number\",\n      \"description\": \"Total carbs in grams for the meal\"\n    },\n    \"fiber\": {\n      \"type\": \"number\",\n      \"description\": \"Total fiber in grams for the meal\"\n    }\n  },\n  \"required\": [\n    \"food_name\",\n    \"calories\",\n    \"protein\",\n    \"fat\",\n    \"carbs\",\n    \"fiber\"\n  ]\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        2656,
+        2080
+      ],
+      "id": "76e20669-44ec-4f97-9df6-51ab644b9772",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3-0324:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        2416,
+        2080
+      ],
+      "id": "d7cf6c88-67d3-4e16-ad2c-bdb074300c55",
+      "name": "DEEPSEEK",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the original data from before the verification step\nconst originalData = $('Calculate Nutrition1').item.json;\n\n// Get the verified data from the verifier AI\n// Note: The AI Agent node might put the response in a different place than the HTTP node.\n// We'll check for a 'content' or direct property.\nconst aiResponse = $input.first().json;\nconst verifiedDataString = aiResponse.content || JSON.stringify(aiResponse);\nconst verifiedData = JSON.parse(verifiedDataString);\n\n\n// Combine them into the final object for Notion\nconst result = {\n  ...verifiedData, // Use the verified food_name, calories, protein, etc.\n  date: originalData.date,\n  time: originalData.time,\n  telegram_user_id: originalData.telegram_user_id,\n  telegram_username: originalData.telegram_username,\n};\n\nreturn { json: result };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2832,
+        1792
+      ],
+      "id": "c01ce920-787b-40e3-ba59-79afa7a68fa7",
+      "name": "Finalize for Notion"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1.1,
+      "position": [
+        2592,
+        2000
+      ],
+      "id": "28e09cd4-6446-43fc-971e-b2d47f6b7fb3",
+      "name": "Think"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "82734dab-de4f-418b-acd7-7485d6e8896d",
+              "leftValue": "={{ $('Telegram Trigger1').item.json.message.text }}",
+              "rightValue": "normal",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "63e63973-a2f5-402b-aaee-9546be611f65",
+              "leftValue": "={{ $('Telegram Trigger1').item.json.message.text }}",
+              "rightValue": "usual",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "0e64cfc4-9e15-4d56-8182-1c5220efbab5",
+              "leftValue": "={{ $('Telegram Trigger1').item.json.message.text }}",
+              "rightValue": "typical",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "a2ce2d07-aa07-48ba-bd79-82ebae1d05c8",
+              "leftValue": "={{ $('Telegram Trigger1').item.json.message.text }}",
+              "rightValue": "daily",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "4bcfbca9-bc67-49ac-8864-71c2c73de7f1",
+              "leftValue": "={{ $('Telegram Trigger1').item.json.message.text }}",
+              "rightValue": "favorite",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "3aef39c6-ab66-4662-946b-5f02910fb676",
+              "leftValue": "={{ $('Telegram Trigger1').item.json.message.text }}",
+              "rightValue": "standard",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "63c0d5b1-fc13-4c72-8d03-243ece6bc007",
+              "leftValue": "={{ $('Telegram Trigger1').item.json.message.text }}",
+              "rightValue": "regular",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "9638da24-2f79-4a7f-8554-dcf7af16b4ec",
+              "leftValue": "={{ $('Telegram Trigger1').item.json.message.text }}",
+              "rightValue": "go-to",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "702a9fb7-35dd-4d3c-b6b3-1ddc75ccb0f7",
+              "leftValue": "={{ $('Telegram Trigger1').item.json.message.text }}",
+              "rightValue": "again",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "1203f4a7-9f7d-4756-8e75-722a6c235937",
+              "leftValue": "={{ $('Telegram Trigger1').item.json.message.text }}",
+              "rightValue": "repeat",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "looseTypeValidation": true,
+        "options": {
+          "ignoreCase": true
+        }
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1264,
+        1408
+      ],
+      "id": "89cfe706-86a4-4e69-92d1-508f950aa879",
+      "name": "Check for Repeat Meal"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the first item from the input array.\n// In \"Run Once for All Items\" mode, 'items' is an array of all input items.\nconsole.log('--- Extract Search Term: Starting execution ---');\nconsole.log('Input items received:', items.length, 'items');\n\nif (!items || items.length === 0) {\n    console.error('Error: No input items. Exiting gracefully.');\n    return []; // Return an empty array if no input, to prevent crashing on items[0]\n}\n\nconst currentItem = items[0];\nconsole.log('First item structure (partial):', JSON.stringify(currentItem.json.message));\n\n// Access the message from the currentItem's JSON data\n// Add a check to ensure 'text' property exists and is a string\nif (!currentItem.json || !currentItem.json.message || typeof currentItem.json.message.text !== 'string') {\n    console.error('Error: Message text is missing or not a string. Exiting.');\n    return [];\n}\nconst message = currentItem.json.message.text.toLowerCase();\nconsole.log('Original message (lowercase):', message);\n\n// List of keywords to remove from the message to find the search term\nconst keywords = [\n  'my', 'the', 'a', 'an',\n  'normal', 'usual', 'typical', 'daily',\n  'favorite', 'standard', 'regular',\n  'go-to', 'again', 'repeat', 'same as'\n];\n\nlet searchTerm = message;\nconsole.log('Initial searchTerm:', searchTerm);\n\nfor (const keyword of keywords) {\n  // This removes the keyword as a whole word\n  const regex = new RegExp(`\\\\b${keyword}\\\\b`, 'gi');\n  console.log(`Applying regex /\\\\b${keyword}\\\\b/gi to: \"${searchTerm}\"`);\n  searchTerm = searchTerm.replace(regex, '');\n  console.log('searchTerm after keyword removal:', searchTerm);\n}\n\n// Clean up any extra spaces left behind and add it to the current item's JSON\n// ****** THIS IS THE CRITICAL CHANGE ******\ncurrentItem.json.searchWords = searchTerm.split(' ').filter(word => word.length > 0);\nconsole.log('Final searchTerm added to item.json:', currentItem.json.searchTerm);\n\n// Return the modified array of items\nconsole.log('--- Extract Search Term: Returning items ---');\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1472,
+        1312
+      ],
+      "id": "3683be8b-174e-4b02-8870-3ddb778b996f",
+      "name": "Extract Search Term"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "241541c0-2b31-8077-ba98-eec6adda6f48",
+          "mode": "list",
+          "cachedResultName": "Food Tracker",
+          "cachedResultUrl": "https://www.notion.so/241541c02b318077ba98eec6adda6f48"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1760,
+        1312
+      ],
+      "id": "50dbb37f-3d1f-49e0-9ae9-a9d187534763",
+      "name": "Search for Past Meals",
+      "alwaysOutputData": false,
+      "credentials": {
+        "notionApi": {
+          "id": "X9pMOV66IStKRydY",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "b26b622b-5aaf-4f52-9dd5-3f9435b85869",
+              "leftValue": "={{ $items.length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2304,
+        1312
+      ],
+      "id": "95ce7c46-f434-4a3a-af21-a82345909a8e",
+      "name": "Check for Any Results"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger1').item.json.message.chat.id }}",
+        "text": "=Sorry, I couldn't find any past meals matching {{ $('Extract Search Term').item.json.searchTerm }}.  Please try describing a new meal.",
+        "additionalFields": {},
+        "path": "c6732fde-c8b3-4a46-9974-b17057594c56"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2896,
+        1408
+      ],
+      "id": "cc735534-dcff-4651-bc38-ac9b0f8c01e4",
+      "name": "Send a text message",
+      "webhookId": "c6732fde-c8b3-4a46-9974-b17057594c56",
+      "credentials": {
+        "telegramApi": {
+          "id": "UQ0TGFdRm981nAK4",
+          "name": "Telegram - MACRO TRACKER"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "241541c0-2b31-8077-ba98-eec6adda6f48",
+          "mode": "list",
+          "cachedResultName": "Food Tracker",
+          "cachedResultUrl": "https://www.notion.so/241541c02b318077ba98eec6adda6f48"
+        },
+        "title": "={{ $('Search for Past Meals').item.json.name }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Date|date",
+              "includeTime": false,
+              "date": "={{ new Date().toLocaleDateString('en-CA', { timeZone: 'America/Chicago' }) }}",
+              "timezone": "America/Chicago"
+            },
+            {
+              "key": "Time|rich_text",
+              "textContent": "={{ new Date($('Telegram Trigger1').item.json.message.date * 1000).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'America/Chicago' }) }}"
+            },
+            {
+              "key": "Calories|number",
+              "numberValue": "={{ $json.property_calories }}"
+            },
+            {
+              "key": "Protein (g)|number",
+              "numberValue": "={{ $json.property_protein_g }}"
+            },
+            {
+              "key": "Fat (g)|number",
+              "numberValue": "={{ $json.property_fat_g }}"
+            },
+            {
+              "key": "Carbs (g)|number",
+              "numberValue": "={{ $json.property_carbs_g }}"
+            },
+            {
+              "key": "Fiber (g)|number",
+              "numberValue": "={{ $json.property_fiber_g }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        3280,
+        960
+      ],
+      "id": "594a9fae-569d-4431-9ed8-535c363f5ec6",
+      "name": "Log Single Meal",
+      "credentials": {
+        "notionApi": {
+          "id": "X9pMOV66IStKRydY",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.actualItemCount }}",
+                    "rightValue": 1,
+                    "operator": {
+                      "type": "number",
+                      "operation": "equals"
+                    },
+                    "id": "710e95ae-c3f9-48eb-9606-d40d9fdba6b2"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Single"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra",
+          "allMatchingOutputs": true
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2800,
+        1120
+      ],
+      "id": "d01c8ce5-86aa-4f8b-8770-562166549979",
+      "name": "Route by Result Count",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {
+        "jsCode": "const currentItem = items[0];\n// Calculate the length of the items array and add it as a new property\ncurrentItem.json.actualItemCount = items.length;\n\nconsole.log('Code Node \"Get Item Count\": Calculated actualItemCount as:', currentItem.json.actualItemCount);\n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2512,
+        1216
+      ],
+      "id": "8392f0a6-1832-4bbc-a9e5-298ae1538d32",
+      "name": "Get Item Count"
+    },
+    {
+      "parameters": {
+        "jsCode": "// This node receives all pages from the Notion database.\n// It will filter them using the search words from a previous node.\n\n// Get the search words from the first item's JSON\n// The items array from the Notion node will be long, so we use the search words\n// from the initial trigger, which is available in a different node's output.\nconst searchWords = $('Extract Search Term').item.json.searchWords;\n\n// Filter the items to only include those where the title contains ALL search words\nconst filteredItems = items.filter(item => {\n  const title = item.json.property_food_item.toLowerCase();\n  // 'every' checks if every word in the array matches a condition\n  return searchWords.every(word => title.includes(word.toLowerCase()));\n});\n\n// Check if any items remain after filtering\nif (filteredItems.length === 0) {\n  // If no items match, return an empty array to stop the workflow gracefully\n  return [];\n}\n\n// If there are matches, return the filtered items\nreturn filteredItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1968,
+        1312
+      ],
+      "id": "33544359-e5a9-4940-9e2a-83b40a5a8e17",
+      "name": "Filter Search Results"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger1').first().json.message.chat.id }}\n\n",
+        "text": "={{ $json.telegramMessage }}",
+        "additionalFields": {
+          "parse_mode": "HTML"
+        },
+        "path": "463065f9-f2e9-4380-8cb2-165ab1591e18"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        3536,
+        1200
+      ],
+      "id": "9322fe36-04d0-4078-a239-11eb86d87392",
+      "name": "Send Meal Options",
+      "webhookId": "463065f9-f2e9-4380-8cb2-165ab1591e18",
+      "credentials": {
+        "telegramApi": {
+          "id": "UQ0TGFdRm981nAK4",
+          "name": "Telegram - MACRO TRACKER"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const options = [];\n// Use HTML line breaks\nlet replyMessage = \"Multiple past meals found. Please choose:<br><br>\";\n\n// Loop through meals and generate options\nitems.forEach((item, index) => {\n    const mealName = item.json.property_food_item || item.json.name;\n    const optionNumber = index + 1;\n\n    options.push({\n        optionNumber,\n        mealName,\n        originalNotionData: item.json\n    });\n\n    // Use an HTML line break at the end of each line\n    replyMessage += `${optionNumber}. ${mealName}<br>`;\n});\n\n// Create the array of button rows\nconst buttonRows = options.map(option => {\n    return [{\n        text: option.mealName,\n        callback_data: option.optionNumber.toString()\n    }];\n});\n\n// Create the final, complete keyboard object that the Telegram API expects\nconst finalKeyboardObject = {\n    inline_keyboard: buttonRows\n};\n\n// Return all the data needed by the next node\nreturn [{\n    json: {\n        telegramMessage: replyMessage,\n        telegramKeyboardObject: finalKeyboardObject, // The object we'll use\n        mealOptions: options\n    }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3168,
+        1216
+      ],
+      "id": "da6ab9c1-fe6f-4b32-930d-3ccf726b3521",
+      "name": "Create Message & Keyboard"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "callback_query"
+        ],
+        "additionalFields": {},
+        "path": "29b76c9b-db06-4fec-8050-a6d314c5f8f1"
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        4144,
+        1328
+      ],
+      "id": "41e06638-1077-48d6-aa85-c94066f0b179",
+      "name": "Telegram Trigger",
+      "webhookId": "29b76c9b-db06-4fec-8050-a6d314c5f8f1",
+      "credentials": {
+        "telegramApi": {
+          "id": "HHgbp1SZSR5uC5wr",
+          "name": "Telegram account - ALERTS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get callback data\nconst callbackData = JSON.parse($json.callback_query.data);\nconst selectedIndex = callbackData.selectedMealIndex;\n\n// Get stored meal options (from earlier)\nconst mealOptions = $('Create Message & Keyboard').first().json.mealOptions;\nconst selectedMeal = mealOptions[selectedIndex];\n\nreturn [{\n    json: {\n        selectedMeal: selectedMeal,\n        originalNotionData: selectedMeal.originalNotionData,\n        chatId: $json.callback_query.message.chat.id,\n        messageId: $json.callback_query.message.message_id\n    }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4352,
+        1328
+      ],
+      "id": "c2a6ece5-8707-446b-9101-0e9717d53d52",
+      "name": "Get Answer"
+    },
+    {
+      "parameters": {
+        "resource": "callback",
+        "additionalFields": {},
+        "path": "0151ce08-5d9d-482d-a539-693da0e634ac"
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        4560,
+        1328
+      ],
+      "id": "0c61e6b8-925b-4ab5-9808-888dbd004d78",
+      "name": "Answer Query a callback",
+      "webhookId": "0151ce08-5d9d-482d-a539-693da0e634ac",
+      "credentials": {
+        "telegramApi": {
+          "id": "HHgbp1SZSR5uC5wr",
+          "name": "Telegram account - ALERTS"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Telegram Trigger1": [
+      {
+        "json": {
+          "update_id": 600519790,
+          "message": {
+            "message_id": 49,
+            "from": {
+              "id": 7439997846,
+              "is_bot": false,
+              "first_name": "KC",
+              "last_name": "Uke",
+              "language_code": "en"
+            },
+            "chat": {
+              "id": 7439997846,
+              "first_name": "KC",
+              "last_name": "Uke",
+              "type": "private"
+            },
+            "date": 1753981586,
+            "text": "My normal protein coffee"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2025-07-31T19:49:11.861Z",
+  "versionId": "e8b4fe31-be3a-4ccf-9fef-03aa8db145cf"
+}
