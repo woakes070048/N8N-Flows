@@ -1,0 +1,221 @@
+{
+  "active": false,
+  "connections": {
+    "YouTube video URL": {
+      "main": [
+        [
+          {
+            "node": "Request YouTube Transcript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarization Engine": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Summarization of a YouTube script",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Request YouTube Transcript": {
+      "main": [
+        [
+          {
+            "node": "Summarization of a YouTube script",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarization of a YouTube script": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-03T20:09:41.182Z",
+  "id": "4WmGIdUmnVDbovB4",
+  "isArchived": false,
+  "meta": null,
+  "name": "YouTube Summarizer",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "**Summarize YouTube videos**\n\nThis project automates the summarization of YouTube videos, transforming lengthy content into concise, actionable insights. By leveraging AI and workflow automation, it extracts video transcripts, analyzes key points, and generates summaries, saving time for content creators, researchers, and professionals. Perfect for staying informed, conducting research, or repurposing video content efficiently.",
+        "height": 120,
+        "width": 1160,
+        "color": 7
+      },
+      "id": "da3db51c-995b-4558-a4c5-3cf4b6f1a622",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        240,
+        96
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "Add the full YouTube URL. ☝️\nYou can change this input to a webhook or anything else.",
+        "height": 80,
+        "width": 230
+      },
+      "id": "9f97e36c-cd91-4444-9af5-11056373ed65",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        224,
+        496
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "Apify API_KEY Here ???",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n \"startUrls\": [\n \"{{ $json['Full URL'] }}\"\n ]\n}",
+        "options": {}
+      },
+      "id": "c1271c09-1284-4588-8627-fde199d0a204",
+      "name": "Request YouTube Transcript",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        560,
+        368
+      ],
+      "typeVersion": 4.2
+    },
+    {
+      "parameters": {
+        "content": "Once you follow the Setup Instructions (mentioned in the template page description), you can insert the full URL endpoint, which includes both the POST Endpoint and API Key. 👇",
+        "height": 340,
+        "width": 280,
+        "color": 3
+      },
+      "id": "e76d1485-66c2-413c-954d-bfdafdcbb5e8",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        480,
+        240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "3f61f84c-6620-4c7b-8fee-a9c1cf796579",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        1152,
+        368
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "60235386-daf4-4524-ab03-01d905c4cc34",
+      "name": "Summarization of a YouTube script",
+      "type": "@n8n/n8n-nodes-langchain.chainSummarization",
+      "position": [
+        800,
+        368
+      ],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "formTitle": "Summarize YouTube video's",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Full URL"
+            }
+          ]
+        },
+        "options": {
+          "path": "ddd"
+        }
+      },
+      "id": "1c008a37-f771-4b82-bf34-32229d8a0f56",
+      "name": "YouTube video URL",
+      "type": "n8n-nodes-base.formTrigger",
+      "position": [
+        352,
+        368
+      ],
+      "webhookId": "3dc17600-3020-40b1-be8f-e65ef45269b6",
+      "typeVersion": 2.2
+    },
+    {
+      "parameters": {
+        "content": "☝️ Optional\nIf the workflow ends here, Consider checking with another enrichment service.",
+        "height": 100,
+        "color": 4
+      },
+      "id": "2e7a6db4-3287-42be-83ad-fd9cdf2c7ae7",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1152,
+        496
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "24b847a8-e277-4b3e-b4af-4042913f4138",
+      "name": "Summarization Engine",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "position": [
+        800,
+        544
+      ],
+      "typeVersion": 1.1
+    },
+    {
+      "parameters": {
+        "content": "The summarization node works automatically and professionally, recognizing the input text and processing it directly without requiring any enhancements from your side👇",
+        "width": 280,
+        "color": 5
+      },
+      "id": "fb44d6a8-e012-4bea-b314-fe5915ef9034",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        800,
+        240
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-03T20:09:41.182Z",
+  "versionId": "7fa4d97f-efd0-4364-84f9-1c128a673972"
+}
