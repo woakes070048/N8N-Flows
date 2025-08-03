@@ -1,0 +1,117 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Generate Images Flux Free",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Images Flux Free": {
+      "main": [
+        [
+          {
+            "node": "Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-03T13:47:11.198Z",
+  "id": "nmxtpiiXDbPoE6ag",
+  "isArchived": false,
+  "meta": null,
+  "name": "FreeFLUX Images",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -192,
+        0
+      ],
+      "id": "2a36c5b7-736a-4034-9f19-3c0b3fc96949",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.together.xyz/v1/images/generations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"black-forest-labs/FLUX.1-schnell-Free\",\n  \"prompt\": \"A futuristic city skyline at sunset, with flying cars, glowing neon signs in different languages, and tall glass skyscrapers reflecting orange and purple skies, ultra-realistic, cinematic lighting, 8K resolution\",\n  \"width\": 720,\n  \"height\": 1280,\n  \"steps\": 4,\n  \"seed\": 1,\n  \"response_format\": \"url\",\n  \"output_format\": \"jpeg\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        192,
+        0
+      ],
+      "id": "6d1d00c8-b83a-4a72-8a9a-e9379d592a30",
+      "name": "Generate Images Flux Free",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "JdfDCxKTwaEVNBKO",
+          "name": "TOGETHER_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        496,
+        0
+      ],
+      "id": "2f9e2cea-e231-4d3f-a8bd-3e6c88e56ac1",
+      "name": "Download Image"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-08-03T13:57:08.438Z",
+      "updatedAt": "2025-08-03T13:57:08.438Z",
+      "id": "Mas1jE28bXSMu19L",
+      "name": "Fully Functional"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-03T17:20:30.983Z",
+  "versionId": "5a8a1333-cdb6-4811-b156-ab3f4754d9db"
+}
