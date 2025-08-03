@@ -1,0 +1,423 @@
+{
+  "active": false,
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set Global Variables1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Video": {
+      "main": [
+        [
+          {
+            "node": "Wait for Processing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for Processing": {
+      "main": [
+        [
+          {
+            "node": "Check Video Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Video Status": {
+      "main": [
+        [
+          {
+            "node": "Is Video Ready?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Video Ready?": {
+      "main": [
+        [
+          {
+            "node": "Download Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait and Retry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Video": {
+      "main": [
+        [
+          {
+            "node": "Save Video File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait and Retry": {
+      "main": [
+        [
+          {
+            "node": "Check Video Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Create Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Script Writer1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Global Variables1": {
+      "main": [
+        [
+          {
+            "node": "Script Writer1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Script Writer1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-03T15:51:17.332Z",
+  "id": "6DdlLHLWY8Xlixaj",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Short Video Maker with Pexels",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "fd4c9d99-5417-4632-b8d0-d9f5f8f43728",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1904,
+        -16
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://short-video-maker:3123/api/short-video",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.output }}",
+        "options": {}
+      },
+      "id": "2763b946-b201-4495-967c-2a0a5b20b7b5",
+      "name": "Create Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -496,
+        -16
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "minutes"
+      },
+      "id": "2e4d1927-0ab8-4c4a-a4dc-f5e0b194f89d",
+      "name": "Wait for Processing",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -272,
+        -16
+      ],
+      "webhookId": "3e709cd6-1540-4732-b201-656fcdfcafbe"
+    },
+    {
+      "parameters": {
+        "url": "=http://short-video-maker:3123/api/short-video/{{ $('Create Video').item.json.videoId }}/status",
+        "options": {}
+      },
+      "id": "1965dbf0-d138-45a1-ab87-de837cf6cf7e",
+      "name": "Check Video Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -64,
+        -16
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+              "leftValue": "={{ $json.status }}",
+              "rightValue": "ready",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "b10648f9-4a25-428c-a546-8c88ff4601e9",
+      "name": "Is Video Ready?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        160,
+        -16
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=http://short-video-maker:3123/api/short-video/{{ $('Create Video').item.json.videoId }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "d85e9b94-5739-43c2-8c0d-b054197c53fc",
+      "name": "Download Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        384,
+        -112
+      ]
+    },
+    {
+      "parameters": {
+        "fileName": "=generated_video_{{ $('Create Video').item.json.videoId }}.mp4",
+        "options": {}
+      },
+      "id": "c8469443-71c3-4552-bf06-312070ae9fb3",
+      "name": "Save Video File",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        608,
+        -112
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "minutes"
+      },
+      "id": "bcd25061-8b1c-4c92-a7d2-ea4c36c4e1f7",
+      "name": "Wait and Retry",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        384,
+        96
+      ],
+      "webhookId": "631db420-0f42-4f2c-8583-d4994a331c1c"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a social media marketing specialist creating a YouTube video.\nYour task is to generate a series of detailed scenes based on provided input variables, optimized for engagement.\n\n---\n\n### Input Variables:\n\n- **SCRIPT_CONTENT**: The full video script to break down into individual scenes. (This comes from `Script Writer`)\n- **VIDEO_TARGET_LENGTH**: The target duration for the video (e.g., \"1-2 MINUTE\").\n- **VIDEO_TOPIC**: The main subject or title of the video.\n- **SCRIPT_NARRATION_TONE**: A detailed description of the desired tone/style for the script's voice-over and overall feel.\n\n\n\n- **SCRIPT_CONTENT**: {{ $json.output }}\n- **VIDEO_TARGET_LENGTH**: {{ $('Set Global Variables1').item.json.Video_Length }}\n- **VIDEO_TOPIC**: {{ $('Set Global Variables1').item.json.Topic }}\n- **SCRIPT_NARRATION_TONE**: {{ $('Set Global Variables1').item.json.Script_Tone }}\n- **SCENE_TARGET_WORD COUNT**: {{ $('Set Global Variables1').item.json.Target_Word_Count }}",
+        "hasOutputParser": true,
+        "options": {
+          "systemMessage": "=You are a viral video script generator that creates JSON configurations for an AI video maker. Your job is to take the following script and convert it into properly formatted JSON for the short video maker API.\n\n- **SCRIPT_CONTENT**: {{ $json.output }}\n- **VIDEO_TARGET_LENGTH**: {{ $('Set Global Variables1').item.json.Video_Length }}\n- **VIDEO_TOPIC**: {{ $('Set Global Variables1').item.json.Topic }}\n- **SCRIPT_NARRATION_TONE**: {{ $('Set Global Variables1').item.json.Script_Tone }}\n- **SCENE_TARGET_WORD COUNT**: {{ $('Set Global Variables1').item.json.Target_Word_Count }}\n\n## OUTPUT FORMAT:\nYou must ONLY respond with valid JSON in this exact format:\n\n{\n  \"scenes\": [\n    {\n      \"text\": \"Narration text that will be spoken (keep each scene 15-25 words for good pacing)\",\n      \"searchTerms\": [\"keyword1\", \"keyword2\", \"keyword3\"]\n    }\n  ],\n  \"config\": {\n    \"paddingBack\": 2000,\n    \"music\": \"MUSIC_MOOD\",\n    \"voice\": \"VOICE_NAME\",\n    \"orientation\": \"portrait\",\n    \"captionPosition\": \"bottom\",\n    \"captionBackgroundColor\": \"blue\"\n  }\n}\n\n## SCENE GUIDELINES:\n- Generate a series of scenes that fully cover the **SCRIPT_CONTENT**\n- The total scene count should be enough to support a **VIDEO_TARGET_LENGTH** video\n- Each scene text should be **SCENE_TARGET_WORD COUNT** (roughly 3-5 seconds of speech)\n- Make searchTerms relevant to the scene content for good background videos\n- Use 2-4 searchTerms per scene\n\n\n## AVAILABLE VOICES:\naf_heart, af_alloy, af_aoede, af_bella, af_jessica, af_kore, af_nicole, af_nova, af_river, af_sarah, af_sky, am_adam, am_echo, am_eric, am_fenrir, am_liam, am_michael, am_onyx, am_puck, am_santa, bf_emma, bf_isabella, bm_george, bm_lewis, bf_alice, bf_lily, bm_daniel, bm_fable\n\n## AVAILABLE MUSIC MOODS:\nsad, melancholic, happy, euphoric/high, excited, chill, uneasy, angry, dark, hopeful, contemplative, funny/quirky\n\n## SEARCH TERMS TIPS:\n- Use concrete, visual terms that will find good stock footage\n- Avoid abstract concepts\n- Good examples: \"ocean\", \"cityscape\", \"technology\", \"nature\", \"coffee\", \"workout\"\n- Avoid: \"success\", \"motivation\", \"feelings\" (too abstract)\n\n## VOICE SELECTION:\n- Use \"af_\" voices for female narration\n- Use \"am_\" or \"bm_\" voices for male narration\n- \"af_nova\" and \"af_sarah\" are popular choices\n- \"am_adam\" and \"am_liam\" are good male options\n\n## MUSIC SELECTION:\n- \"chill\" - for relaxed, informational content\n- \"happy\" - for upbeat, positive content\n- \"excited\" - for high-energy content\n- \"contemplative\" - for thoughtful, serious topics\n- \"hopeful\" - for inspirational content\n\n## IMPORTANT:\n- Respond ONLY with the JSON, no explanations or additional text\n- Ensure the JSON is valid and properly formatted\n- Keep total video length reasonable {{ $('Set Global Variables1').item.json.Video_Length }} NO MORE THAN 60 SECONDS"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        -864,
+        -16
+      ],
+      "id": "a2b4250c-d9d5-4355-bffd-1a8f9cfc327e",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3-0324:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -1152,
+        240
+      ],
+      "id": "be529269-17ac-44c9-a6d3-ae82cdc8147c",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"scenes\": [\n    {\n      \"text\": \"Starting your day with intention can transform your entire life and boost your energy levels.\",\n      \"searchTerms\": [\"sunrise\", \"morning\", \"bedroom\", \"stretching\"]\n    },\n    {\n      \"text\": \"Begin with five minutes of gentle stretching to wake up your body and mind naturally.\",\n      \"searchTerms\": [\"yoga\", \"stretching\", \"exercise\", \"wellness\"]\n    },\n    {\n      \"text\": \"Fuel your body with a nutritious breakfast that includes protein, healthy fats, and fresh fruits.\",\n      \"searchTerms\": [\"healthy breakfast\", \"fruits\", \"nutrition\", \"kitchen\"]\n    },\n    {\n      \"text\": \"Set three clear intentions for the day to stay focused and accomplish what matters most.\",\n      \"searchTerms\": [\"planning\", \"journal\", \"goals\", \"productivity\"]\n    }\n  ],\n  \"config\": {\n    \"paddingBack\": 2000,\n    \"music\": \"hopeful\",\n    \"voice\": \"af_sarah\",\n    \"orientation\": \"portrait\",\n    \"captionPosition\": \"bottom\",\n    \"captionBackgroundColor\": \"blue\"\n  }\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -976,
+        256
+      ],
+      "id": "53fbb43c-57b6-41ce-88c2-ca5855b4d0cc",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "77c08d99-49cf-482f-8302-f3f236319c09",
+              "name": "Video_Length",
+              "value": "30 - 45 seconds",
+              "type": "string"
+            },
+            {
+              "id": "b674fe0d-b8c0-4141-98f4-dad8f0d8aa0d",
+              "name": "Script_Tone",
+              "value": "Spooky, intense tone like a narrator telling a forbidden historical secret or \"Don Wilder\" - the host of \"cities of the underworld\" from the History Channel",
+              "type": "string"
+            },
+            {
+              "id": "b3099542-7b43-403b-ad7c-f4182d803d90",
+              "name": "Target_Word_Count",
+              "value": "15 - 25 words per scene",
+              "type": "string"
+            },
+            {
+              "id": "26f642b6-eaf1-447b-89df-9265e3193b67",
+              "name": "Topic",
+              "value": "5 historical mysteries science can't explain",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -1616,
+        -16
+      ],
+      "id": "d7193f27-dbf7-403a-a999-5b38c826bb7e",
+      "name": "Set Global Variables1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=ABSOLUTELY NO SECTION HEADINGS, LABELS, OR DIRECTOR SPEAK (e.g., 'HOOK (0:02):', 'FLOW:', 'TWIST:', 'CTA:'). YOUR OUTPUT MUST BE THE RAW SCRIPT SPOKEN WORDS ONLY. DO NOT INCLUDE ANY MARKDOWN SUCH AS BOLDING OR ITALICS IN THE FINAL SCRIPT.\n\nYOU ARE AN AI MASTERMIND specialized in crafting high-impact, viral story scripts.\nYour task is to generate a script based on provided input variables.\n\n---\n\n### Input Variables:\n\n- **Video_Length**: The target duration for the video script (e.g., \"45 - 90 SECONDS\").\n- **Script_Tone**: A detailed description of the desired tone and persona for the script's narration.\n- **TITLE**: The main topic or title to base the story script on.\n- **Target_Word_Count**: The exact word count the script must achieve.\n\n---\n\n### Script Generation Requirements:\n\nGenerate a VIRAL story script based on the title/topic: {{ $json.Topic }}\nThe script must be  **{{ $json.Target_Word_Count }}**. To achieve this length, elaborate significantly on details, expand on each section, provide more descriptive imagery, and deepen the narrative. Do NOT just repeat content or add filler. Instead, add richer context, additional examples, or more speculative elements to the story.\n\n\n\nThe script should have:\n1. An Amazing, jaw-dropping, Scroll Stopping hook in the first 3 - 5 seconds. (Ensure the *content* serves as the hook, without labeling it.)\n\n2. A tight, escalating flow (with short punchy sentences, no filler) WE CANNOT AFFORD TO LOSE VIEWERS IN THE MIDDLE WE NEED TO KEEP THEM WATCHING (Ensure the *content* maintains flow, without labeling it.)\n\n3. A shocking or mysterious twist (Ensure the *content* contains a twist, without labeling it.)\n\n4. A killer final line or CTA to keep viewers watching more. MENTION TO FOLLOW US AND LIKE AND SUBSCRIBE FOR MORE OR SOMETHING SIMILAR. (Ensure the *content* concludes with a CTA, without labeling it.)\n\nEnsure the script's *progression* naturally moves through Hook, Setup, Conflict, Twist/Resolution, and Call to Action, without explicit section headings or any kind of internal formatting.\nUse a **{{ $json.Script_Tone }}** tone.\nUse simple, casual, spoken-style English, as if someone is telling the story directly to the viewer.\nAim for emotional impact, relatability, or shock value.\nBe engaging and relatable for teenagers and adults.\n\nTHE SCRIPT MUST NOT BE LONGER THAN {{ $json.Video_Length }} optimized for text-to-speech generators—using simple, clear sentences with natural rhythm and conversational tone.\n\nENSURE THE VIDEO WILL BE LESS THAN 60 SECONDS LONG\n---\n\n### Output Format:\n\nReturn strictly the raw, unformatted script text.\n\n# ULTIMATE RULE: YOUR FINAL OUTPUT IS PURE, UNFORMATTED, SPOKEN SCRIPT TEXT. NO HEADINGS. NO LABELS. NO MARKDOWN. NOTHING ELSE.",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        -1376,
+        -16
+      ],
+      "id": "0c299122-89fc-4403-b268-eb87d02604a8",
+      "name": "Script Writer1"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-03T17:24:01.988Z",
+  "versionId": "aac132be-8572-4c61-9167-0c51a8a79585"
+}
