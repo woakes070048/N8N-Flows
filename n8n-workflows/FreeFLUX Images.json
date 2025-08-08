@@ -1,0 +1,364 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Images Flux Free": {
+      "main": [
+        [
+          {
+            "node": "Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image": {
+      "main": [
+        [
+          {
+            "node": "Instagram Container ID",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Generate Images Flux Free",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facebook": {
+      "main": [
+        []
+      ]
+    },
+    "Instagram Container ID": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Publish to Instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-03T13:47:11.198Z",
+  "id": "nmxtpiiXDbPoE6ag",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "FreeFLUX Images",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -144,
+        0
+      ],
+      "id": "2a36c5b7-736a-4034-9f19-3c0b3fc96949",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.together.xyz/v1/images/generations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"black-forest-labs/FLUX.1-schnell-Free\",\n  \"prompt\": \"{{ $json.prompt }}\",\n  \"width\": 720,\n  \"height\": 1280,\n  \"steps\": 4,\n  \"seed\": 1,\n  \"response_format\": \"url\",\n  \"output_format\": \"jpeg\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        352,
+        0
+      ],
+      "id": "6d1d00c8-b83a-4a72-8a9a-e9379d592a30",
+      "name": "Generate Images Flux Free",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "JdfDCxKTwaEVNBKO",
+          "name": "TOGETHER_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        576,
+        0
+      ],
+      "id": "2f9e2cea-e231-4d3f-a8bd-3e6c88e56ac1",
+      "name": "Download Image"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "411d733f-5018-4152-9e59-3722460e92b2",
+              "name": "prompt",
+              "value": "abandoned 1950s-style diner in a post-apocalyptic wasteland, rusted neon signs flickering, sand-blasted windows, retrofuturistic decay, moody lighting, overcast skies, vintage pulp style, cinematic wide shot",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        96,
+        0
+      ],
+      "id": "b78d9cc7-6a6c-462c-a707-0054f324ecb8",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "689331224264136",
+        "edge": "photos",
+        "sendBinaryData": true,
+        "binaryPropertyName": "=data",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption",
+                "value": "#ShockedHistory"
+              },
+              {
+                "name": "url",
+                "value": "={{ $('Generate Images Flux Free').item.json.data[0].url }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        832,
+        -128
+      ],
+      "id": "ca1d6f24-6a30-4bc1-9092-e9d9653b3de7",
+      "name": "Facebook",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "7LqmSLXmdFIqY9ah",
+          "name": "SHOCKED HISTORY Facebook"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "17841475038413037",
+        "edge": "media",
+        "sendBinaryData": true,
+        "binaryPropertyName": "=data",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption",
+                "value": "#ShockedHistory"
+              },
+              {
+                "name": "media_type",
+                "value": "IMAGE"
+              },
+              {
+                "name": "image_url",
+                "value": "={{ $('Generate Images Flux Free').item.json.data[0].url }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        880,
+        64
+      ],
+      "id": "6504e120-531d-487d-b874-eeecf2b3655b",
+      "name": "Instagram Container ID",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "ZT7Powit0HHCB9Hh",
+          "name": "Instagram Shocked History"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "17841475038413037",
+        "edge": "media_publish",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption",
+                "value": "#ShockedHistory"
+              },
+              {
+                "name": "image_url",
+                "value": "={{ $('Generate Images Flux Free').item.json.data[0].url }}"
+              },
+              {
+                "name": "creation_id",
+                "value": "={{ $json.id }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        1312,
+        64
+      ],
+      "id": "c99eb15a-2adf-4206-8491-c3ffc1c39456",
+      "name": "Publish to Instagram",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "ZT7Powit0HHCB9Hh",
+          "name": "Instagram Shocked History"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 45
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1088,
+        64
+      ],
+      "id": "103b14d7-b3f3-43c3-aabd-48acab0a696f",
+      "name": "Wait",
+      "webhookId": "06f6a4e3-c628-4ffa-a9ba-143d377ade5a"
+    }
+  ],
+  "pinData": {
+    "Facebook": [
+      {
+        "json": {
+          "id": "122138413052874426",
+          "post_id": "689331224264136_122138413076874426"
+        }
+      }
+    ],
+    "Generate Images Flux Free": [
+      {
+        "json": {
+          "id": "o6EjRXF-2kFHot-96b9613caf2c2c85-PDX",
+          "model": "black-forest-labs/FLUX.1-schnell-Free",
+          "object": "list",
+          "data": [
+            {
+              "index": 0,
+              "url": "https://api.together.ai/shrt/LeEbj9EbjhrZI8eG",
+              "timings": {
+                "inference": 1.136967014055699
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "Edit Fields": [
+      {
+        "json": {
+          "prompt": "abandoned 1950s-style diner in a post-apocalyptic wasteland, rusted neon signs flickering, sand-blasted windows, retrofuturistic decay, moody lighting, overcast skies, vintage pulp style, cinematic wide shot"
+        }
+      }
+    ],
+    "When clicking ‘Execute workflow’": [
+      {
+        "json": {}
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-08-03T13:57:08.438Z",
+      "updatedAt": "2025-08-03T13:57:08.438Z",
+      "id": "Mas1jE28bXSMu19L",
+      "name": "Fully Functional"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-07T20:44:46.241Z",
+  "versionId": "379883af-6dbf-4a40-8072-a4b4f2e9b7ef"
+}
