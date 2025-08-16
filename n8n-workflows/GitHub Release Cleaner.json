@@ -1,0 +1,501 @@
+{
+  "active": false,
+  "connections": {
+    "Daily Cleanup - 2AM": {
+      "main": [
+        [
+          {
+            "node": "Get Completed Posts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Completed Posts": {
+      "main": [
+        [
+          {
+            "node": "Check if Older Than 7 Days",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check if Older Than 7 Days": {
+      "main": [
+        [
+          {
+            "node": "Delete GitHub Release",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Cleanup Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete GitHub Release": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Archive Sheet Row": {
+      "main": [
+        [
+          {
+            "node": "Send Cleanup Summary",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Archive Sheet Row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-16T14:59:37.884Z",
+  "id": "XnbfHNpSouSzOx45",
+  "isArchived": false,
+  "meta": null,
+  "name": "GitHub Release Cleaner",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtHour": 12
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        112,
+        128
+      ],
+      "id": "f1c01772-5758-4c60-b04e-6d9a1ba96292",
+      "name": "Daily Cleanup - 2AM"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "YOUTUBE",
+              "lookupValue": "SENT"
+            },
+            {
+              "lookupColumn": "FB",
+              "lookupValue": "SENT"
+            },
+            {
+              "lookupColumn": "INSTA",
+              "lookupValue": "SENT"
+            },
+            {
+              "lookupColumn": "TIKTOK",
+              "lookupValue": "SENT"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        368,
+        128
+      ],
+      "id": "a6783367-8be7-4fb8-9376-1516d9463177",
+      "name": "Get Completed Posts",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "check-date",
+              "leftValue": "={{ $json['DATE CREATED'] }}",
+              "rightValue": "={{ new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) }}",
+              "operator": {
+                "type": "dateTime",
+                "operation": "before"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        592,
+        128
+      ],
+      "id": "383e4e93-f4c8-43c0-9fec-f1e967dc80ea",
+      "name": "Check if Older Than 7 Days"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "release",
+        "operation": "delete",
+        "owner": {
+          "__rl": true,
+          "value": "Uke13",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "symmetrical-eureka-SH",
+          "mode": "list",
+          "cachedResultName": "symmetrical-eureka-SH",
+          "cachedResultUrl": "https://github.com/Uke13/symmetrical-eureka-SH"
+        },
+        "release_id": "={{ $json['GITHUB RELEASE ID'] }}"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        864,
+        -112
+      ],
+      "id": "fc6f9b83-ed3c-4bf5-afe2-b36bc07c0bb9",
+      "name": "Delete GitHub Release",
+      "webhookId": "63758e39-62e8-4d3e-92ee-c7013bb8f40f",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "SkPviyNYURtVqRGy",
+          "name": "GitHub OAUTH APP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('Check if Older Than 7 Days').item.json.TITLE }}",
+            "CLEANED FROM GITHUB?": "YES"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Creation Status",
+              "displayName": "Creation Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DATE CREATED",
+              "displayName": "DATE CREATED",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "GITHUB URL",
+              "displayName": "GITHUB URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "SCRIPT",
+              "displayName": "SCRIPT",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "BACKGROUND MUSIC URL",
+              "displayName": "BACKGROUND MUSIC URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "BACKGROUND MUSIC CREDITS",
+              "displayName": "BACKGROUND MUSIC CREDITS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "GITHUB RELEASE ID",
+              "displayName": "GITHUB RELEASE ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "FB",
+              "displayName": "FB",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "INSTA",
+              "displayName": "INSTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CLEANED FROM GITHUB?",
+              "displayName": "CLEANED FROM GITHUB?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1456,
+        32
+      ],
+      "id": "0a2e2675-88e7-42c2-a255-f302919b48dc",
+      "name": "Archive Sheet Row",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "7439997846",
+        "text": "🧹 GitHub Cleanup Complete!\n\n📊 Archived {{ $('Archive Sheet Row').all().length }} completed posts\n💾 Cleaned up {{ $('Delete GitHub Release').all().length }} GitHub releases\n\nAll done! ✅",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1664,
+        304
+      ],
+      "id": "9f092c3c-77ec-49b2-b209-4d3dcd865138",
+      "name": "Send Cleanup Summary",
+      "webhookId": "2e760596-0e67-4b11-8b47-a66e7f08ff72",
+      "credentials": {
+        "telegramApi": {
+          "id": "HHgbp1SZSR5uC5wr",
+          "name": "Telegram account - ALERTS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Daily Cleanup Workflow\n\nThis workflow runs every day at 2AM and:\n\n1. **Archives completed posts** older than 7 days\n2. **Deletes GitHub releases** to save storage\n3. **Sends summary** to Telegram\n\nHelps keep your system clean and efficient! 🧹",
+        "height": 300,
+        "width": 400,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        48,
+        -224
+      ],
+      "id": "44d8a45d-a6fc-4453-a886-0aa732004f0f",
+      "name": "Cleanup Info"
+    },
+    {
+      "parameters": {
+        "method": "DELETE",
+        "url": "=https://api.github.com/repos/{{ $json.owner }}/{{ $json.repo }}/git/refs/tags/{{ $json.tag_name }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        -64
+      ],
+      "id": "bdc11799-3785-46c8-8756-2cc846008117",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-08-02T18:56:26.268Z",
+      "updatedAt": "2025-08-02T18:56:26.268Z",
+      "id": "nnDA7isE4OxnQFwX",
+      "name": "Development"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-16T18:24:52.159Z",
+  "versionId": "976db35f-1476-4bd3-a63f-4b0a1a926f59"
+}
