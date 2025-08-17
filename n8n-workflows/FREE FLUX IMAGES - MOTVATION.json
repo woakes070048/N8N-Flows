@@ -1,0 +1,2930 @@
+{
+  "active": false,
+  "connections": {
+    "Download Image": {
+      "main": [
+        [
+          {
+            "node": "Add Text Overlay to Title Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facebook": {
+      "main": [
+        [
+          {
+            "node": "IS POSTED?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Instagram Container ID": {
+      "main": [
+        [
+          {
+            "node": "Wait 30",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Parse Video Titles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Video Titles": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Title Image",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fact Part 1 Image",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Fact Part 2 Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 15 sec": {
+      "main": [
+        [
+          {
+            "node": "Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 30": {
+      "main": [
+        [
+          {
+            "node": "Publish to Instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish to Instagram": {
+      "main": [
+        [
+          {
+            "node": "IS POSTED?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IS POSTED?": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IS POSTED?1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Title Image": {
+      "main": [
+        [
+          {
+            "node": "GEN Title Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fact Part 1 Image": {
+      "main": [
+        [
+          {
+            "node": "GEN Fact Part 1 Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fact Part 2 Image": {
+      "main": [
+        [
+          {
+            "node": "GEN Fact Part 2 Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GEN Title Image": {
+      "main": [
+        [
+          {
+            "node": "Wait 15 sec",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GEN Fact Part 1 Image": {
+      "main": [
+        [
+          {
+            "node": "Wait 15 sec1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GEN Fact Part 2 Image": {
+      "main": [
+        [
+          {
+            "node": "Wait 15 sec2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 15 sec1": {
+      "main": [
+        [
+          {
+            "node": "Download Image1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 15 sec2": {
+      "main": [
+        [
+          {
+            "node": "Download Image2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Prepare Carousel Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image1": {
+      "main": [
+        [
+          {
+            "node": "Add Text Overlay to Fact 1 Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image2": {
+      "main": [
+        [
+          {
+            "node": "Add Text Overlay to Fact 2 Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Text Overlay to Title Image": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add Text Overlay to Fact 1 Image": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Add Text Overlay to Fact 2 Image": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-16T18:30:18.522Z",
+  "id": "tBaMB9lYv4OyBl3N",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "FREE FLUX IMAGES - MOTVATION",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "={{ $json.data[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -16,
+        -208
+      ],
+      "id": "2eb04414-c3c8-42f8-9dd5-b4670186e872",
+      "name": "Download Image"
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "659232113940352",
+        "edge": "photos",
+        "sendBinaryData": true,
+        "binaryPropertyName": "=data",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption",
+                "value": "={{ $('AI Agent').item.json.output.socialCaption }} Check out the video on #ShockedHistory "
+              },
+              {
+                "name": "url",
+                "value": "={{ $('Generate Images Flux Free').item.json.data[0].url }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        1472,
+        -144
+      ],
+      "id": "56a81743-ca52-4e56-9551-32080d101877",
+      "name": "Facebook",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "CYWxhjKL7rYymFbu",
+          "name": "FB - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "17841475088389536",
+        "edge": "media",
+        "sendBinaryData": true,
+        "binaryPropertyName": "=data",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption",
+                "value": "={{ $('AI Agent').item.json.output.socialCaption }} "
+              },
+              {
+                "name": "media_type",
+                "value": "IMAGE"
+              },
+              {
+                "name": "image_url",
+                "value": "={{ $('Generate Images Flux Free').item.json.data[0].url }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        1248,
+        48
+      ],
+      "id": "a1ca9009-7f12-43ca-a5b1-3441ecb47a00",
+      "name": "Instagram Container ID",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "GXj6j3l91g5YTl3Y",
+          "name": "INSTA - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "17841475088389536",
+        "edge": "media_publish",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption"
+              },
+              {
+                "name": "image_url",
+                "value": "={{ $('Generate Images Flux Free').item.json.data[0].url }}"
+              },
+              {
+                "name": "creation_id",
+                "value": "={{ $json.id }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        1696,
+        48
+      ],
+      "id": "50ec1cbb-792a-4543-9d0b-1b0c8bfd7bf9",
+      "name": "Publish to Instagram",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "GXj6j3l91g5YTl3Y",
+          "name": "INSTA - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * *"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -2224,
+        -48
+      ],
+      "id": "2a31d830-0b69-45a1-b232-5a03c70d8d9a",
+      "name": "Schedule Trigger",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc",
+          "mode": "list",
+          "cachedResultName": "INNER UPGRADE PHOTO TOPICS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -1856,
+        -48
+      ],
+      "id": "a19ed360-978b-430b-9815-8e05907d3c09",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all input items (each item is a row)\nconst inputItems = $input.all();\n\nif (!inputItems || inputItems.length === 0) {\n  return [{ json: { error: 'No rows returned from Google Sheets' } }];\n}\n\nconst availableTitles = [];\n\n// Each input item is a row object\nfor (let i = 0; i < inputItems.length; i++) {\n  const rowData = inputItems[i].json;\n  \n  const title = rowData.TITLE;\n  const factPart1 = rowData['FACT PART 1'];\n  const factPart2 = rowData['FACT PART 2'];\n  const photoPosted = rowData['PHOTO POSTED'];\n  \n  // Skip if no title or if it's a header\n  if (!title || title.toLowerCase() === 'title') continue;\n  \n  // Check if PHOTO POSTED is empty\n  if (title.trim().length > 0 && (!photoPosted || photoPosted.toString().trim() === '')) {\n    availableTitles.push({\n      title: title.trim(),\n      factPart1: factPart1 ? factPart1.trim() : '',\n      factPart2: factPart2 ? factPart2.trim() : '',\n      rowNumber: rowData.row_number,\n      date: rowData.DATE,\n      description: rowData.DESC\n    });\n  }\n}\n\nif (availableTitles.length === 0) {\n  return [{ json: { \n    error: 'No available titles found',\n    totalRows: inputItems.length,\n    sampleRow: inputItems[0].json\n  }}];\n}\n\n// Random selection\nconst randomIndex = Math.floor(Math.random() * availableTitles.length);\nconst randomSelection = availableTitles[randomIndex];\n\nconsole.log(`Selected \"${randomSelection.title}\" (${randomIndex + 1} of ${availableTitles.length} available)`);\n\nreturn [{\n  json: {\n    selectedTitle: randomSelection.title,\n    selectedFactPart1: randomSelection.factPart1,\n    selectedFactPart2: randomSelection.factPart2,\n    rowNumber: randomSelection.rowNumber,\n    availableCount: availableTitles.length,\n    selectedDate: randomSelection.date\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1632,
+        -48
+      ],
+      "id": "7a79da4a-f407-4c7a-bada-9498bdd9711f",
+      "name": "Parse Video Titles"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Given this motivational theme: \"{{ $json.selectedTitle }}\", fact part 1: \"{{ $json.selectedFactPart1 }}\", and fact part 2: \"{{ $json.selectedFactPart2 }}\", provide:\n\n1. Three distinct visual descriptions for a gritty, desaturated garage gym aesthetic:\n   - Image 1: Focus on the main theme/title with weathered equipment and dramatic lighting\n   - Image 2: Visual representation of fact part 1 with industrial elements\n   - Image 3: Visual representation of fact part 2 with raw concrete and metal textures\n\n2. Social media content for each image\n\nReturn your response in this exact JSON format:\n{\n  \"originalTheme\": \"{{ $json.selectedTitle }}\",\n  \"factPart1\": \"{{ $json.selectedFactPart1 }}\",\n  \"factPart2\": \"{{ $json.selectedFactPart2 }}\",\n  \"image1\": {\n    \"context\": \"Gritty garage gym visual for the main theme\",\n    \"socialTitle\": \"Catchy title for main theme\",\n    \"socialCaption\": \"Caption with hashtags for main theme\"\n  },\n  \"image2\": {\n    \"context\": \"Gritty garage gym visual for fact part 1\",\n    \"socialTitle\": \"Catchy title for fact part 1\", \n    \"socialCaption\": \"Caption with hashtags for fact part 1\"\n  },\n  \"image3\": {\n    \"context\": \"Gritty garage gym visual for fact part 2\",\n    \"socialTitle\": \"Catchy title for fact part 2\",\n    \"socialCaption\": \"Caption with hashtags for fact part 2\"\n  }\n}",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        -1392,
+        -48
+      ],
+      "id": "def7b9a3-024d-47e4-9257-2e2c6cda34ed",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3-0324:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -1376,
+        176
+      ],
+      "id": "f6d3e49d-c636-4c79-b9c6-6e38cc0f0224",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"originalTheme\": \"{{ $json.selectedTitle }}\",\n  \"factPart1\": \"{{ $json.selectedFactPart1 }}\",\n  \"factPart2\": \"{{ $json.selectedFactPart2 }}\",\n  \"image1\": {\n    \"context\": \"Gritty garage gym visual for the main theme\",\n    \"socialTitle\": \"Catchy title for main theme\",\n    \"socialCaption\": \"Caption with hashtags for main theme\"\n  },\n  \"image2\": {\n    \"context\": \"Gritty garage gym visual for fact part 1\",\n    \"socialTitle\": \"Catchy title for fact part 1\", \n    \"socialCaption\": \"Caption with hashtags for fact part 1\"\n  },\n  \"image3\": {\n    \"context\": \"Gritty garage gym visual for fact part 2\",\n    \"socialTitle\": \"Catchy title for fact part 2\",\n    \"socialCaption\": \"Caption with hashtags for fact part 2\"\n  }\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1248,
+        176
+      ],
+      "id": "cbdc6838-730f-4e86-a034-bf58ae70ae7b",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "amount": 15
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -208,
+        -208
+      ],
+      "id": "6507310d-397c-4b96-b07f-0b38c89ec90f",
+      "name": "Wait 15 sec",
+      "webhookId": "d4acf82f-69de-4e7e-9164-c5b35894c948"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1472,
+        48
+      ],
+      "id": "b476e71b-8349-4d5d-ad14-945b857c0044",
+      "name": "Wait 30",
+      "webhookId": "c76f4b66-534f-4993-a082-7a63ebebeb42"
+    },
+    {
+      "parameters": {
+        "graphApiVersion": "v23.0",
+        "node": "={{ $json.post_id }}",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "fields",
+                "value": "is_published,scheduled_publish_time,permalink_url"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        1696,
+        -144
+      ],
+      "id": "9ee025d8-301b-4d29-b446-774d714c06e6",
+      "name": "IS POSTED?",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "CYWxhjKL7rYymFbu",
+          "name": "FB - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "graphApiVersion": "v23.0",
+        "node": "={{ $json.id }}",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "fields",
+                "value": "permalink,id,timestamp"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        1904,
+        48
+      ],
+      "id": "5c9d3681-eca7-472a-90fa-e07352789b26",
+      "name": "IS POSTED?1",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "GXj6j3l91g5YTl3Y",
+          "name": "INSTA - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// This code reads the simple list of items from the Merge node and finds\n// the Facebook and Instagram data within it.\n\nlet fbData = null;\nlet igData = null;\n\n// 1. Loop through the list of items to identify and store the data for each platform.\nfor (const item of items) {\n  const data = item.json;\n\n  // Identify Facebook data by its unique keys: 'is_published' and 'permalink_url'.\n  if (data.is_published !== undefined && data.permalink_url) {\n    fbData = data;\n  }\n  // Identify Instagram data by its unique keys: 'permalink' and 'timestamp'.\n  else if (data.permalink && data.timestamp) {\n    igData = data;\n  }\n}\n\n// 2. After checking all items, perform the final check to see if both were found and successful.\nif (fbData && fbData.is_published === true && igData && igData.permalink) {\n  // If yes, return the single success message.\n  return [{\n    json: {\n      status: \"All posts succeeded! 🎉\",\n      facebook_url: fbData.permalink_url,\n      instagram_url: igData.permalink\n    }\n  }];\n} else {\n  // If not, return a debug message showing exactly what was found.\n  return [{\n    json: {\n      status: \"Condition check failed. ❌\",\n      debug_info: {\n        facebook_data_found: fbData || \"Facebook data not found in the list.\",\n        instagram_data_found: igData || \"Instagram data not found in the list.\"\n      }\n    }\n  }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2416,
+        -64
+      ],
+      "id": "4a2a36d2-4e88-4bfb-8851-26d7c6ff95e9",
+      "name": "Code"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        2176,
+        -64
+      ],
+      "id": "69a471ad-79ad-4506-8518-18d0e3df6d3d",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc",
+          "mode": "list",
+          "cachedResultName": "INNER UPGRADE PHOTO TOPICS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "PHOTO POSTED": "YES",
+            "TITLE": "=",
+            "row_number": "={{ $('Parse Video Titles').first().json.rowNumber }}\n\n"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "PHOTO POSTED",
+              "displayName": "PHOTO POSTED",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        2624,
+        -64
+      ],
+      "id": "114848f2-c57e-424f-93c0-100c1f11bf20",
+      "name": "Update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2224,
+        176
+      ],
+      "id": "6b48c852-ca7e-47b3-9864-f39559335f8b",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Fallout-style prompt generator 1\nconst inputData = $input.all()[0].json;\nconst agentData = inputData.output || inputData;\nconst image1Data = agentData.image1;\n\nconst technicalDetails = [\n  'highly detailed desaturated gritty garage gym photography',\n  'photorealistic industrial garage gym with harsh lighting',\n  'cinematic raw garage gym aesthetic with film grain'\n];\n\nconst selectedTechnical = technicalDetails[Math.floor(Math.random() * technicalDetails.length)];\nconst finalPrompt = `${image1Data.context}, ${selectedTechnical}, cinematic composition`;\n\nreturn [{\n  json: {\n    prompt: finalPrompt,\n    imageType: 'title',\n    imageIndex: 1,\n    text_overlay: agentData.originalTheme,\n    socialData: agentData // Pass through all social data\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -672,
+        -208
+      ],
+      "id": "49cfd40a-a0c5-429e-aa89-656853dfdfeb",
+      "name": "Title Image"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Similar but for image2/factPart1\nconst finalPrompt = `${agentData.image2.context}, ${selectedTechnical}, cinematic composition`;\nreturn [{\n  json: {\n    prompt: finalPrompt,\n    imageType: 'fact1',\n    imageIndex: 2,\n    text_overlay: agentData.factPart1,\n    socialData: agentData\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -672,
+        -48
+      ],
+      "id": "9616bee0-552b-4c6e-b066-529dcc439b63",
+      "name": "Fact Part 1 Image"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Similar but for image3/factPart2\nconst finalPrompt = `${agentData.image3.context}, ${selectedTechnical}, cinematic composition`;\nreturn [{\n  json: {\n    prompt: finalPrompt,\n    imageType: 'fact2',\n    imageIndex: 3,\n    text_overlay: agentData.factPart2,\n    socialData: agentData\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -672,
+        112
+      ],
+      "id": "717b0264-0a9e-4174-8a21-4870a8379ec1",
+      "name": "Fact Part 2 Image"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.together.xyz/v1/images/generations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"black-forest-labs/FLUX.1-schnell-Free\",\n  \"prompt\": \"{{ $json.prompt }}\",\n  \"width\": 720,\n  \"height\": 1280,\n  \"steps\": 4,\n  \"seed\": 1,\n  \"response_format\": \"url\",\n  \"output_format\": \"jpeg\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -448,
+        -208
+      ],
+      "id": "278c45a0-fcf5-44df-b722-dae891f4b70e",
+      "name": "GEN Title Image",
+      "retryOnFail": true,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "JdfDCxKTwaEVNBKO",
+          "name": "TOGETHER_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.together.xyz/v1/images/generations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"black-forest-labs/FLUX.1-schnell-Free\",\n  \"prompt\": \"{{ $json.prompt }}\",\n  \"width\": 720,\n  \"height\": 1280,\n  \"steps\": 4,\n  \"seed\": 1,\n  \"response_format\": \"url\",\n  \"output_format\": \"jpeg\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -448,
+        -48
+      ],
+      "id": "3e331e4e-053e-4c3d-a883-41dae6455015",
+      "name": "GEN Fact Part 1 Image",
+      "retryOnFail": true,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "JdfDCxKTwaEVNBKO",
+          "name": "TOGETHER_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.together.xyz/v1/images/generations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"black-forest-labs/FLUX.1-schnell-Free\",\n  \"prompt\": \"{{ $json.prompt }}\",\n  \"width\": 720,\n  \"height\": 1280,\n  \"steps\": 4,\n  \"seed\": 1,\n  \"response_format\": \"url\",\n  \"output_format\": \"jpeg\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -448,
+        112
+      ],
+      "id": "007fed00-6c13-4235-98a2-83fc20e71be0",
+      "name": "GEN Fact Part 2 Image",
+      "retryOnFail": true,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "JdfDCxKTwaEVNBKO",
+          "name": "TOGETHER_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 15
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -208,
+        -48
+      ],
+      "id": "3633871c-059c-486b-8376-600e6f302c0f",
+      "name": "Wait 15 sec1",
+      "webhookId": "d4acf82f-69de-4e7e-9164-c5b35894c948"
+    },
+    {
+      "parameters": {
+        "amount": 15
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -208,
+        112
+      ],
+      "id": "9ab12502-37e9-4f38-85a9-06e7a0aec2bf",
+      "name": "Wait 15 sec2",
+      "webhookId": "d4acf82f-69de-4e7e-9164-c5b35894c948"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -16,
+        -48
+      ],
+      "id": "17e77331-80f0-4618-820c-01a6a44d5560",
+      "name": "Download Image1"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -16,
+        112
+      ],
+      "id": "83e062ec-3878-48df-8f0e-46382d8139ca",
+      "name": "Download Image2"
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        592,
+        -64
+      ],
+      "id": "85296e59-3e93-4b94-8797-166c9864cf09",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nif (items.length !== 3) {\n  return [{ json: { error: `Expected 3 images, got ${items.length}` } }];\n}\n\n// Sort by imageIndex to ensure correct order\nconst sortedItems = items.sort((a, b) => a.json.imageIndex - b.json.imageIndex);\n\nconst images = [];\nconst imageUrls = [];\n\nsortedItems.forEach((item, index) => {\n  if (item.json.data && item.json.data[0] && item.json.data[0].url) {\n    images.push({\n      url: item.json.data[0].url,\n      type: item.json.imageType,\n      textOverlay: item.json.text_overlay\n    });\n    imageUrls.push(item.json.data[0].url);\n  }\n});\n\n// Get social data from first item (they should all be the same)\nconst socialData = sortedItems[0].json.socialData;\n\n// Create combined caption\nconst combinedCaption = `${socialData.originalTheme}\n\n💪 ${socialData.factPart1}\n\n🔥 ${socialData.factPart2}\n\nCheck out the video on #ShockedHistory\n\n#motivation #fitness #mindset #strength #discipline #garageGym #mentalToughness #success #grind #ironmind #fitnessmotivation #strengthtraining #nevergiveup #pushyourlimits #mindovermatter`;\n\nreturn [{\n  json: {\n    images: images,\n    imageUrls: imageUrls,\n    caption: combinedCaption,\n    originalTheme: socialData.originalTheme,\n    rowNumber: sortedItems[0].json.socialData.rowNumber || $('Parse Video Titles').first().json.rowNumber\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        -48
+      ],
+      "id": "a0a836da-7301-4ae5-b3d2-174ea3795adc",
+      "name": "Prepare Carousel Data"
+    },
+    {
+      "parameters": {
+        "jsCode": "const puppeteer = require('puppeteer');\n\n// Function to add text overlay\nasync function addTextOverlay(imageBuffer, text, options = {}) {\n  // Use the system-installed, ARM-compatible version of Chromium\n  const BROWSER_PATH = '/usr/bin/chromium-browser';\n\n  const SERVICE_URL = 'https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/?api=true';\n  \n  const {\n    fontSize = 48,\n    position = 'bottom',\n    color = 'white'\n  } = options;\n  \n  if (!imageBuffer) {\n    throw new Error('No image buffer provided');\n  }\n  \n  const base64Image = imageBuffer.toString('base64');\n  const imageDataUrl = `data:image/jpeg;base64,${base64Image}`;\n  \n  const browser = await puppeteer.launch({\n    headless: true,\n    // ** THIS IS THE FIX **\n    executablePath: BROWSER_PATH, \n    args: [\n      '--no-sandbox',\n      '--disable-setuid-sandbox',\n      '--disable-dev-shm-usage',\n      '--disable-gpu'\n    ]\n  });\n  \n  const page = await browser.newPage();\n  await page.goto(SERVICE_URL, { waitUntil: 'networkidle0' });\n  await page.waitForSelector('canvas', { timeout: 10000 });\n  \n  const result = await page.evaluate(async (imageDataUrl, text, fontSize, position, color) => {\n    return new Promise((resolve, reject) => {\n      const timeout = setTimeout(() => reject(new Error('Timeout waiting for text overlay processing')), 30000);\n      \n      const messageHandler = (event) => {\n        clearTimeout(timeout);\n        window.removeEventListener('message', messageHandler);\n        \n        if (event.data.success) {\n          resolve(event.data);\n        } else {\n          reject(new Error(event.data.error || 'Processing failed'));\n        }\n      };\n      \n      window.addEventListener('message', messageHandler);\n      \n      window.postMessage({\n        imageUrl: imageDataUrl,\n        text: text,\n        fontSize: parseInt(fontSize),\n        position: position,\n        color: color\n      }, '*');\n    });\n  }, imageDataUrl, text, fontSize, position, color);\n  \n  await browser.close();\n  \n  if (!result.success) {\n    throw new Error(result.error || 'Processing failed');\n  }\n  \n  const processedBase64 = result.imageData.split(',')[1];\n  return Buffer.from(processedBase64, 'base64');\n}\n\n// Main execution\ntry {\n  const imageBuffer = $binary.data;\n  const textOverlay = $json.text_overlay;\n  const imageType = $json.imageType || 'unknown';\n  \n  // Different font sizes for different image types\n  const fontSizes = {\n    'title': 64,\n    'fact1': 56,\n    'fact2': 48\n  };\n  \n  const fontSize = fontSizes[imageType] || 48;\n  \n  console.log(`Processing ${imageType} with text: \"${textOverlay}\"`);\n  \n  const processedBuffer = await addTextOverlay(imageBuffer, textOverlay, {\n    fontSize: fontSize,\n    position: 'bottom',\n    color: 'white'\n  });\n  \n  return [{\n    binary: {\n      data: processedBuffer,\n      mimeType: 'image/jpeg',\n      fileName: `${imageType}-with-text-${Date.now()}.jpg`\n    },\n    json: {\n      success: true,\n      originalText: textOverlay,\n      imageType: imageType,\n      fontSize: fontSize\n    }\n  }];\n  \n} catch (error) {\n  console.error('Text overlay failed:', error);\n  \n  // Return original image on failure\n  return [{\n    binary: {\n      data: $binary.data,\n      mimeType: 'image/jpeg',\n      fileName: `${$json.imageType || 'image'}-original-${Date.now()}.jpg`\n    },\n    json: {\n      error: error.message,\n      fallback: 'returned_original_image'\n    }\n  }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        192,
+        -208
+      ],
+      "id": "c32d499b-b4ec-4154-9a11-9cbe8cede315",
+      "name": "Add Text Overlay to Title Image"
+    },
+    {
+      "parameters": {
+        "jsCode": "const puppeteer = require('puppeteer');\n\n// Function to add text overlay\nasync function addTextOverlay(imageBuffer, text, options = {}) {\n  // Use the system-installed, ARM-compatible version of Chromium\n  const BROWSER_PATH = '/usr/bin/chromium-browser';\n\n  const SERVICE_URL = 'https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/?api=true';\n  \n  const {\n    fontSize = 48,\n    position = 'bottom',\n    color = 'white'\n  } = options;\n  \n  if (!imageBuffer) {\n    throw new Error('No image buffer provided');\n  }\n  \n  const base64Image = imageBuffer.toString('base64');\n  const imageDataUrl = `data:image/jpeg;base64,${base64Image}`;\n  \n  const browser = await puppeteer.launch({\n    headless: true,\n    // ** THIS IS THE FIX **\n    executablePath: BROWSER_PATH, \n    args: [\n      '--no-sandbox',\n      '--disable-setuid-sandbox',\n      '--disable-dev-shm-usage',\n      '--disable-gpu'\n    ]\n  });\n  \n  const page = await browser.newPage();\n  await page.goto(SERVICE_URL, { waitUntil: 'networkidle0' });\n  await page.waitForSelector('canvas', { timeout: 10000 });\n  \n  const result = await page.evaluate(async (imageDataUrl, text, fontSize, position, color) => {\n    return new Promise((resolve, reject) => {\n      const timeout = setTimeout(() => reject(new Error('Timeout waiting for text overlay processing')), 30000);\n      \n      const messageHandler = (event) => {\n        clearTimeout(timeout);\n        window.removeEventListener('message', messageHandler);\n        \n        if (event.data.success) {\n          resolve(event.data);\n        } else {\n          reject(new Error(event.data.error || 'Processing failed'));\n        }\n      };\n      \n      window.addEventListener('message', messageHandler);\n      \n      window.postMessage({\n        imageUrl: imageDataUrl,\n        text: text,\n        fontSize: parseInt(fontSize),\n        position: position,\n        color: color\n      }, '*');\n    });\n  }, imageDataUrl, text, fontSize, position, color);\n  \n  await browser.close();\n  \n  if (!result.success) {\n    throw new Error(result.error || 'Processing failed');\n  }\n  \n  const processedBase64 = result.imageData.split(',')[1];\n  return Buffer.from(processedBase64, 'base64');\n}\n\n// Main execution\ntry {\n  const imageBuffer = $binary.data;\n  const textOverlay = $json.text_overlay;\n  const imageType = $json.imageType || 'unknown';\n  \n  // Different font sizes for different image types\n  const fontSizes = {\n    'title': 64,\n    'fact1': 56,\n    'fact2': 48\n  };\n  \n  const fontSize = fontSizes[imageType] || 48;\n  \n  console.log(`Processing ${imageType} with text: \"${textOverlay}\"`);\n  \n  const processedBuffer = await addTextOverlay(imageBuffer, textOverlay, {\n    fontSize: fontSize,\n    position: 'bottom',\n    color: 'white'\n  });\n  \n  return [{\n    binary: {\n      data: processedBuffer,\n      mimeType: 'image/jpeg',\n      fileName: `${imageType}-with-text-${Date.now()}.jpg`\n    },\n    json: {\n      success: true,\n      originalText: textOverlay,\n      imageType: imageType,\n      fontSize: fontSize\n    }\n  }];\n  \n} catch (error) {\n  console.error('Text overlay failed:', error);\n  \n  // Return original image on failure\n  return [{\n    binary: {\n      data: $binary.data,\n      mimeType: 'image/jpeg',\n      fileName: `${$json.imageType || 'image'}-original-${Date.now()}.jpg`\n    },\n    json: {\n      error: error.message,\n      fallback: 'returned_original_image'\n    }\n  }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        192,
+        -48
+      ],
+      "id": "95bb736f-52ba-4396-8391-63c96d637da2",
+      "name": "Add Text Overlay to Fact 1 Image"
+    },
+    {
+      "parameters": {
+        "jsCode": "const puppeteer = require('puppeteer');\n\n// Function to add text overlay\nasync function addTextOverlay(imageBuffer, text, options = {}) {\n  // Use the system-installed, ARM-compatible version of Chromium\n  const BROWSER_PATH = '/usr/bin/chromium-browser';\n\n  const SERVICE_URL = 'https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/?api=true';\n  \n  const {\n    fontSize = 48,\n    position = 'bottom',\n    color = 'white'\n  } = options;\n  \n  if (!imageBuffer) {\n    throw new Error('No image buffer provided');\n  }\n  \n  const base64Image = imageBuffer.toString('base64');\n  const imageDataUrl = `data:image/jpeg;base64,${base64Image}`;\n  \n  const browser = await puppeteer.launch({\n    headless: true,\n    // ** THIS IS THE FIX **\n    executablePath: BROWSER_PATH, \n    args: [\n      '--no-sandbox',\n      '--disable-setuid-sandbox',\n      '--disable-dev-shm-usage',\n      '--disable-gpu'\n    ]\n  });\n  \n  const page = await browser.newPage();\n  await page.goto(SERVICE_URL, { waitUntil: 'networkidle0' });\n  await page.waitForSelector('canvas', { timeout: 10000 });\n  \n  const result = await page.evaluate(async (imageDataUrl, text, fontSize, position, color) => {\n    return new Promise((resolve, reject) => {\n      const timeout = setTimeout(() => reject(new Error('Timeout waiting for text overlay processing')), 30000);\n      \n      const messageHandler = (event) => {\n        clearTimeout(timeout);\n        window.removeEventListener('message', messageHandler);\n        \n        if (event.data.success) {\n          resolve(event.data);\n        } else {\n          reject(new Error(event.data.error || 'Processing failed'));\n        }\n      };\n      \n      window.addEventListener('message', messageHandler);\n      \n      window.postMessage({\n        imageUrl: imageDataUrl,\n        text: text,\n        fontSize: parseInt(fontSize),\n        position: position,\n        color: color\n      }, '*');\n    });\n  }, imageDataUrl, text, fontSize, position, color);\n  \n  await browser.close();\n  \n  if (!result.success) {\n    throw new Error(result.error || 'Processing failed');\n  }\n  \n  const processedBase64 = result.imageData.split(',')[1];\n  return Buffer.from(processedBase64, 'base64');\n}\n\n// Main execution\ntry {\n  const imageBuffer = $binary.data;\n  const textOverlay = $json.text_overlay;\n  const imageType = $json.imageType || 'unknown';\n  \n  // Different font sizes for different image types\n  const fontSizes = {\n    'title': 64,\n    'fact1': 56,\n    'fact2': 48\n  };\n  \n  const fontSize = fontSizes[imageType] || 48;\n  \n  console.log(`Processing ${imageType} with text: \"${textOverlay}\"`);\n  \n  const processedBuffer = await addTextOverlay(imageBuffer, textOverlay, {\n    fontSize: fontSize,\n    position: 'bottom',\n    color: 'white'\n  });\n  \n  return [{\n    binary: {\n      data: processedBuffer,\n      mimeType: 'image/jpeg',\n      fileName: `${imageType}-with-text-${Date.now()}.jpg`\n    },\n    json: {\n      success: true,\n      originalText: textOverlay,\n      imageType: imageType,\n      fontSize: fontSize\n    }\n  }];\n  \n} catch (error) {\n  console.error('Text overlay failed:', error);\n  \n  // Return original image on failure\n  return [{\n    binary: {\n      data: $binary.data,\n      mimeType: 'image/jpeg',\n      fileName: `${$json.imageType || 'image'}-original-${Date.now()}.jpg`\n    },\n    json: {\n      error: error.message,\n      fallback: 'returned_original_image'\n    }\n  }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        192,
+        112
+      ],
+      "id": "142189cd-bc72-462e-817f-a129c92f03ea",
+      "name": "Add Text Overlay to Fact 2 Image"
+    }
+  ],
+  "pinData": {
+    "When clicking ‘Execute workflow’": [
+      {
+        "json": {}
+      }
+    ],
+    "AI Agent": [
+      {
+        "json": {
+          "output": {
+            "originalTheme": "Pareto Principle (80/20 Rule)",
+            "factPart1": "Where do most of your gym results really come from?",
+            "factPart2": "The Pareto Principle. Roughly 80% of your results will come from just 20% of your exercises and efforts. Identify and master that 20%.",
+            "image1": {
+              "context": "A dimly lit garage gym with a rustic barbell and dumbbells on a weathered wooden rack, dramatic shadows emphasizing the '80/20' painted faintly on the wall.",
+              "socialTitle": "Master the 20% for 80% of Your Gains",
+              "socialCaption": "The 80/20 Rule in action—where focus meets results. #ParetoPrinciple #GymLife #Efficiency"
+            },
+            "image2": {
+              "context": "Close-up of a chipped kettlebell on a concrete floor with an industrial fan in the background, symbolizing the core of gym efforts.",
+              "socialTitle": "Where Do Your Results Really Come From?",
+              "socialCaption": "Pinpoint the 20% that drives your progress—stop wasting time on the rest. #GymHacks #WorkoutSmart #Efficiency"
+            },
+            "image3": {
+              "context": "A chalkboard in the garage gym scrawled with '80/20' alongside a rusted weight plate, surrounded by raw metal dumbbells.",
+              "socialTitle": "80% Results from 20% Effort",
+              "socialCaption": "Identify your key exercises and dominate them. #ParetoGains #TrainSmarter #NoFluff"
+            }
+          }
+        }
+      }
+    ],
+    "Parse Video Titles": [
+      {
+        "json": {
+          "selectedTitle": "Pareto Principle (80/20 Rule)",
+          "selectedFactPart1": "Where do most of your gym results really come from?",
+          "selectedFactPart2": "The Pareto Principle. Roughly 80% of your results will come from just 20% of your exercises and efforts. Identify and master that 20%.",
+          "rowNumber": 82,
+          "availableCount": 196
+        }
+      }
+    ],
+    "Get row(s) in sheet": [
+      {
+        "json": {
+          "row_number": 2,
+          "TITLE": "Abundance Mindset",
+          "FACT PART 1": "Think there's only a limited amount of success to go around?",
+          "FACT PART 2": "That's a scarcity mindset. An abundance mindset sees opportunity everywhere, believing one person's success doesn't diminish their own.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 3,
+          "TITLE": "Accountability Mirror",
+          "FACT PART 1": "Who is the one person you can never lie to about your effort and discipline?",
+          "FACT PART 2": "The person in the mirror. Use a partner or a journal as that mirror to hold yourself to the standard you committed to.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 4,
+          "TITLE": "Action Over Feeling",
+          "FACT PART 1": "Should you wait until you feel motivated to take action?",
+          "FACT PART 2": "It's the other way around. Action is the spark that creates motivation, not the other way around. Don't wait, just start.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 5,
+          "TITLE": "Analysis Paralysis",
+          "FACT PART 1": "Why does overthinking a decision often lead to making no decision at all?",
+          "FACT PART 2": "Having too many options or too much information overwhelms the brain's executive function, leading to inaction as a defense mechanism.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 6,
+          "TITLE": "Antifragility",
+          "FACT PART 1": "What's stronger than being resilient?",
+          "FACT PART 2": "Being antifragile. It means you don't just withstand shocks and chaos; you actually get stronger and better because of them.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 7,
+          "TITLE": "Auditory Exclusion",
+          "FACT PART 1": "Ever been so focused on a heavy lift that the world goes silent?",
+          "FACT PART 2": "That's auditory exclusion. Under extreme stress or focus, your brain actively filters out sounds it deems unimportant to survival.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 8,
+          "TITLE": "BDNF Secret",
+          "FACT PART 1": "Want to literally grow your brain and protect it from aging?",
+          "FACT PART 2": "Intense exercise triggers the release of BDNF (Brain-Derived Neurotrophic Factor), a protein that builds and repairs brain cells. Lift to get smarter.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 9,
+          "TITLE": "Beginner's Mind",
+          "FACT PART 1": "Why do experts sometimes fail to see obvious solutions?",
+          "FACT PART 2": "Their knowledge can blind them. A \"beginner's mind\" approaches problems without preconceptions, allowing for more creative solutions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 10,
+          "TITLE": "Brain Priming",
+          "FACT PART 1": "Can simple words change how you behave?",
+          "FACT PART 2": "Yes. Exposing your brain to certain words or ideas (like \"strength\" or \"success\") subconsciously primes you to act in alignment with them.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 11,
+          "TITLE": "Building Confidence Through Competence",
+          "FACT PART 1": "What's the most sustainable way to build genuine self-confidence in your fitness journey?",
+          "FACT PART 2": "Through developing competence: mastering skills, achieving tangible progress, and proving to yourself what you are capable of through consistent effort.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 12,
+          "TITLE": "Building Habits Through Identity",
+          "FACT PART 1": "Instead of focusing on outcomes, what's a more powerful way to create lasting habits in your fitness journey?",
+          "FACT PART 2": "Focus on your identity. Ask yourself, \"What kind of person do I want to be?\" and build habits that align with that identity.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 13,
+          "TITLE": "Building Mental Resilience",
+          "FACT PART 1": "Life in the iron game (and life in general) throws punches. How do you learn to absorb them?",
+          "FACT PART 2": "By cultivating mental resilience: the ability to bounce back from stress, adversity, and setbacks with strength and determination.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 14,
+          "TITLE": "Burning the Boats",
+          "FACT PART 1": "How do you make failure an absolute impossibility?",
+          "FACT PART 2": "You \"burn the boats.\" By eliminating your path of retreat, you commit 100% to the fight forward. Victory or death; there is no other option.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 15,
+          "TITLE": "Catastrophizing",
+          "FACT PART 1": "Do you turn a small mistake, like a missed rep, into a catastrophe?",
+          "FACT PART 2": "This cognitive distortion magnifies a single negative event into a sign of complete and utter failure. Isolate the event from your identity.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 16,
+          "TITLE": "Choice Architecture",
+          "FACT PART 1": "Want to make better choices without using willpower?",
+          "FACT PART 2": "Design your environment. Make good choices the easiest path and bad choices difficult. Your environment dictates your actions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 17,
+          "TITLE": "Cognitive Dissonance",
+          "FACT PART 1": "Ever feel deep discomfort when your actions don't match your beliefs?",
+          "FACT PART 2": "That's cognitive dissonance. Your mind craves consistency and will force you to either change your beliefs or your actions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 18,
+          "TITLE": "Cognitive Load",
+          "FACT PART 1": "Why is it impossible to learn a new, complex lift when the gym is chaotic?",
+          "FACT PART 2": "Your working memory has a limited capacity. Too much external noise or internal stress creates excessive cognitive load, preventing learning.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 19,
+          "TITLE": "Cognitive Reappraisal",
+          "FACT PART 1": "How can you change your emotional response to a stressful situation?",
+          "FACT PART 2": "By changing your interpretation of it. Reappraise the anxiety before a big lift not as fear, but as excitement and readiness.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 20,
+          "TITLE": "Cognitive Reframing",
+          "FACT PART 1": "How can you change your feelings about a situation without changing the situation?",
+          "FACT PART 2": "Change the story you tell yourself about it. Reframe \"I have to do this\" into \"I get to do this.\"",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 21,
+          "TITLE": "Confirmation Bias",
+          "FACT PART 1": "Ever notice you only find evidence that supports what you already believe?",
+          "FACT PART 2": "Your brain actively filters reality to protect your ego, ignoring facts that contradict your current beliefs.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 22,
+          "TITLE": "Cortisol Control",
+          "FACT PART 1": "Why does chronic stress sabotage your gym gains and mental clarity?",
+          "FACT PART 2": "Chronic stress floods you with cortisol, a hormone that breaks down muscle, stores fat, and impairs cognitive function. Master stress, master growth.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 23,
+          "TITLE": "Creating a Growth-Oriented Environment",
+          "FACT PART 1": "Does your surroundings influence your mindset in your garage gym?",
+          "FACT PART 2": "Absolutely. Surround yourself with reminders of your goals, inspiring figures, and a challenging yet supportive atmosphere.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 24,
+          "TITLE": "Cultivating a Bias for Action",
+          "FACT PART 1": "Do you tend to overthink or take decisive action in pursuit of your goals?",
+          "FACT PART 2": "Developing a bias for action—a tendency to act rather than procrastinate—is crucial for turning intentions into results.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 25,
+          "TITLE": "Cultivating Mental Clarity",
+          "FACT PART 1": "How do you cut through the mental fog and stay focused on what truly matters in your training and life?",
+          "FACT PART 2": "Through practices like mindfulness, journaling, and prioritizing tasks to eliminate distractions and enhance mental sharpness.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 26,
+          "TITLE": "Cultivating Self-Discipline",
+          "FACT PART 1": "Is self-discipline an innate trait or a skill you can develop in your garage?",
+          "FACT PART 2": "It's a muscle. Like any muscle, it grows stronger with consistent training through small, deliberate acts of willpower.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 27,
+          "TITLE": "Decision Fatigue",
+          "FACT PART 1": "Why are your worst decisions made at the end of the day?",
+          "FACT PART 2": "Your willpower is like a muscle. It gets exhausted from making too many small choices, leading to poor impulse control later.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 28,
+          "TITLE": "Declarative Memory",
+          "FACT PART 1": "How does saying your goals out loud make them more real?",
+          "FACT PART 2": "It transfers the goal from a vague idea into a concrete, declarative memory, which your brain treats as a more serious command.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 29,
+          "TITLE": "Deindividuation",
+          "FACT PART 1": "Ever lose yourself in the energy of a group training session?",
+          "FACT PART 2": "That's deindividuation. A loss of self-awareness in groups can lead you to push past limits you'd normally obey when training alone.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 30,
+          "TITLE": "Delayed Gratification",
+          "FACT PART 1": "What's the number one predictor of long-term success in life?",
+          "FACT PART 2": "The ability to delay gratification. Sacrificing a small, immediate reward for a much larger one later is a superpower.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 31,
+          "TITLE": "Deliberate Practice",
+          "FACT PART 1": "Just showing up to the gym isn't enough. What's the secret to real progress?",
+          "FACT PART 2": "Deliberate practice: focused, strategic training with specific goals and constant feedback. It’s about quality over quantity.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 32,
+          "TITLE": "Developing a Growth Mindset in the Face of Plateaus",
+          "FACT PART 1": "What happens when your progress in the gym seems to stall? How do you respond?",
+          "FACT PART 2": "A growth mindset sees plateaus not as limitations, but as opportunities to learn, adapt your training, and break through to new levels.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 33,
+          "TITLE": "Developing a Strong Inner Dialogue",
+          "FACT PART 1": "What kind of conversations are you having with yourself during a tough set or a challenging moment?",
+          "FACT PART 2": "Cultivating a strong, positive, and encouraging inner dialogue is key to pushing past perceived limitations.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 34,
+          "TITLE": "Developing Emotional Agility",
+          "FACT PART 1": "How do you prevent negative emotions from derailing your progress in the iron sanctuary?",
+          "FACT PART 2": "By practicing emotional agility: acknowledging your feelings without judgment, learning from them, and continuing to move forward aligned with your values.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 35,
+          "TITLE": "Developing Grit: Passion and Perseverance",
+          "FACT PART 1": "What's the combination of traits that allows individuals to pursue long-term goals with unwavering dedication, even in the face of setbacks?",
+          "FACT PART 2": "Grit: the combination of passion for a long-term goal and the perseverance to overcome obstacles along the way.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 36,
+          "TITLE": "Developing Self-Awareness in Your Training",
+          "FACT PART 1": "How well do you understand your body's limits, strengths, and weaknesses in your garage gym?",
+          "FACT PART 2": "Cultivating self-awareness allows you to train smarter, avoid injury, and optimize your progress based on your individual needs.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 37,
+          "TITLE": "Dopamine Detox",
+          "FACT PART 1": "Feeling unmotivated and distracted all the time?",
+          "FACT PART 2": "You might be overstimulated. Intentionally reducing high-dopamine activities (like social media) resets your brain's reward system.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 38,
+          "TITLE": "Eating the Frog",
+          "FACT PART 1": "What's the secret to winning your day before it has barely begun?",
+          "FACT PART 2": "Eat the frog. Do your hardest, most dreaded task first thing in the morning. The rest of your day will feel easy by comparison.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 39,
+          "TITLE": "Ego Depletion",
+          "FACT PART 1": "Is your willpower a limited resource that can actually run out during the day?",
+          "FACT PART 2": "Yes. Psychologists call it ego depletion. Each act of self-control uses up mental energy, making the next one harder. Refuel with rest.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 40,
+          "TITLE": "Embracing Discomfort",
+          "FACT PART 1": "What's the secret weapon for growth that most people actively avoid?",
+          "FACT PART 2": "Deliberately seeking discomfort. It expands your comfort zone, builds mental fortitude, and unlocks new levels of potential.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 41,
+          "TITLE": "Embracing the Process, Not Just the Outcome",
+          "FACT PART 1": "Where does true satisfaction and growth come from in your pursuit of fitness and self-improvement?",
+          "FACT PART 2": "From embracing the process: the daily dedication, the challenges overcome, and the continuous learning, regardless of immediate results.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 42,
+          "TITLE": "Emotional Contagion in Training",
+          "FACT PART 1": "Can one person's bad attitude ruin the entire gym's atmosphere?",
+          "FACT PART 2": "Absolutely. Emotions are contagious. A training partner with a weak mindset will weaken you. A strong one will strengthen you. Choose wisely.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 43,
+          "TITLE": "Emotional Granularity",
+          "FACT PART 1": "What's the difference between saying \"I feel bad\" and \"I feel frustrated and impatient\"?",
+          "FACT PART 2": "That's emotional granularity. The ability to specifically name your emotions gives you immense power to manage them effectively.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 44,
+          "TITLE": "Emotional Regulation",
+          "FACT PART 1": "Are you your emotions, or do you simply experience them?",
+          "FACT PART 2": "You are the observer. Learning to name your emotions (\"I feel anger\") separates you from them and gives you power over your reactions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 45,
+          "TITLE": "Enclothed Cognition",
+          "FACT PART 1": "Why does wearing your gym gear make you feel more athletic and ready to train?",
+          "FACT PART 2": "That's enclothed cognition. The clothes you wear carry symbolic meaning and can systematically influence your thoughts and actions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 46,
+          "TITLE": "Eudaimonia",
+          "FACT PART 1": "What is the ultimate goal beyond just being \"happy\"?",
+          "FACT PART 2": "Eudaimonia. A Greek concept meaning human flourishing and living a life of virtue. It's about striving to be your highest self, not just chasing pleasure.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 47,
+          "TITLE": "Fear of Failure",
+          "FACT PART 1": "Is your fear of failure really about the failure itself?",
+          "FACT PART 2": "No. It's often a fear of the shame or judgment you believe will come with it. The fear is social, not practical.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 48,
+          "TITLE": "Finding Meaning in Struggle",
+          "FACT PART 1": "How can you transform tough workouts and challenging times into sources of strength?",
+          "FACT PART 2": "By finding meaning in the struggle. Connecting your efforts to a larger purpose and understanding the value of overcoming adversity.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 49,
+          "TITLE": "Finding Your \"Why\"",
+          "FACT PART 1": "When the initial excitement fades, what fuels your long-term dedication?",
+          "FACT PART 2": "A powerful \"why\"—your core reason for pursuing your goals. It provides intrinsic motivation and resilience in tough times.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 50,
+          "TITLE": "Finding Your Inner Anchor",
+          "FACT PART 1": "In the face of external pressures and distractions, what can keep you grounded and focused on your path?",
+          "FACT PART 2": "Cultivating an inner anchor—a set of core values and principles that guide your decisions and actions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 51,
+          "TITLE": "First Principles Thinking",
+          "FACT PART 1": "Want to solve problems like a genius?",
+          "FACT PART 2": "Break a problem down to its most basic, fundamental truths and reason up from there, ignoring assumptions and common beliefs.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 52,
+          "TITLE": "Functional Fixedness",
+          "FACT PART 1": "Do you see a weight plate only as a weight plate?",
+          "FACT PART 2": "Or can it be used for calf raises, pullovers, or farmer's walks? Overcoming functional fixedness means seeing things for what they can do.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 53,
+          "TITLE": "Goodhart's Law",
+          "FACT PART 1": "What happens when a measure of progress becomes the main goal?",
+          "FACT PART 2": "It ceases to be a good measure. Chasing numbers on the scale can lead to bad habits. Focus on the process, not just the metric.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 54,
+          "TITLE": "Gratitude Practice",
+          "FACT PART 1": "What’s a two-minute habit that can rewire your brain for happiness?",
+          "FACT PART 2": "Daily gratitude practice. It trains your mind to scan for positives, increasing serotonin and dopamine levels over time.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 55,
+          "TITLE": "Group Polarization",
+          "FACT PART 1": "What happens when a group of people with the same mindset train together?",
+          "FACT PART 2": "Their beliefs become even more extreme and convicted. This is group polarization. Use it to forge an ironclad, supportive culture.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 56,
+          "TITLE": "Growth vs. Fixed",
+          "FACT PART 1": "What's the one word that separates success from stagnation?",
+          "FACT PART 2": "The word \"yet.\" It shifts your brain from a state of limitation to a state of possibility.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 57,
+          "TITLE": "Habit Loops",
+          "FACT PART 1": "Why are bad habits so incredibly hard to break?",
+          "FACT PART 2": "Every habit has a three-part loop: Cue, Routine, Reward. To break a habit, you must replace the routine, not just resist it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 58,
+          "TITLE": "Harnessing the Power of Your Inner Critic (Constructively)",
+          "FACT PART 1": "Is the voice of self-doubt always negative? How can you use it?",
+          "FACT PART 2": "It can be a source of valuable feedback. Learn to identify its valid points and use them to improve, without letting it paralyze you.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 59,
+          "TITLE": "Harnessing Your Inner Fire for Motivation",
+          "FACT PART 1": "What's the internal drive that pushes you through tough workouts and challenging times? How do you stoke it?",
+          "FACT PART 2": "Your inner fire—your deep-seated passion, purpose, and will to succeed. Nurture it by connecting with your \"why\" and celebrating your progress.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 60,
+          "TITLE": "Heuristics vs. Algorithms",
+          "FACT PART 1": "Are you using a mental shortcut or a proven formula to solve a problem?",
+          "FACT PART 2": "A heuristic is a fast mental shortcut (a rule of thumb). An algorithm is a step-by-step process. Know which one you're using and why.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 61,
+          "TITLE": "Hofstadter's Law",
+          "FACT PART 1": "Why do you always underestimate how long it will take to reach a new PR?",
+          "FACT PART 2": "Hofstadter's Law states that any complex task will always take longer than you expect, even when you account for Hofstadter's Law. Plan for it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 62,
+          "TITLE": "Home-Field Advantage",
+          "FACT PART 1": "Why do you almost always lift better and feel stronger in your own gym?",
+          "FACT PART 2": "It's a real psychological phenomenon. Familiarity, territoriality, and ritual all contribute to a measurable performance boost.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 63,
+          "TITLE": "Hormesis",
+          "FACT PART 1": "Ever wonder why a little stress, like a brutal workout, actually makes you stronger?",
+          "FACT PART 2": "That's hormesis. Your body adapts to low-dose stressors by building powerful defense systems, making you more resilient overall.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 64,
+          "TITLE": "Hyperbolic Discounting",
+          "FACT PART 1": "Why does the immediate comfort of the couch often beat the future reward of being fit?",
+          "FACT PART 2": "Your brain values immediate rewards far more than future ones. This is hyperbolic discounting. To win, make the future reward feel present.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 65,
+          "TITLE": "Ideomotor Effect",
+          "FACT PART 1": "How can your thoughts create tiny, involuntary physical movements?",
+          "FACT PART 2": "The Ideomotor Effect shows that simply thinking about an action can prime your muscles to perform it. Visualization is a physical act.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 66,
+          "TITLE": "Impostor Syndrome",
+          "FACT PART 1": "Ever feel like a fraud, despite your success?",
+          "FACT PART 2": "It's a sign of high achievement. It means your standards for yourself are growing faster than your current level of confidence.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 67,
+          "TITLE": "Inattentional Blindness",
+          "FACT PART 1": "Can you be looking directly at something and not see it at all?",
+          "FACT PART 2": "Yes. If your attention is focused intensely on one task, you can become blind to other unexpected, but obvious, things. Focus is a filter.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 68,
+          "TITLE": "Intrinsic Motivation",
+          "FACT PART 1": "Why does doing something you love feel effortless?",
+          "FACT PART 2": "That's intrinsic motivation. The reward is the activity itself, not some external prize. This is the most powerful form of fuel.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 69,
+          "TITLE": "Learning from Failure (The Right Way)",
+          "FACT PART 1": "How do the truly successful view failure?",
+          "FACT PART 2": "As a learning opportunity, a crucial step on the path to mastery. They analyze what went wrong without self-blame and adjust accordingly.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 70,
+          "TITLE": "Learning to Say \"No\"",
+          "FACT PART 1": "What's a crucial skill for protecting your mental energy and staying focused on your priorities?",
+          "FACT PART 2": "The ability to say \"no\" to commitments that don't align with your goals or drain your resources.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 71,
+          "TITLE": "Loss Aversion",
+          "FACT PART 1": "Why does the fear of losing strength feel twice as bad as the joy of gaining it?",
+          "FACT PART 2": "Your brain is hardwired for loss aversion. The pain of losing is psychologically about twice as powerful as the pleasure of an equal gain.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 72,
+          "TITLE": "Maslow's Hammer",
+          "FACT PART 1": "Are you trying to solve every problem in the gym with the same solution?",
+          "FACT PART 2": "If all you have is a hammer, everything looks like a nail. Broaden your mental toolkit to use the right approach for the right problem.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 73,
+          "TITLE": "Mental Models",
+          "FACT PART 1": "How do the world's best thinkers make such great decisions?",
+          "FACT PART 2": "They use mental models—frameworks for thinking—like \"Inversion,\" where you think about what you want to avoid, not just what to achieve.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 74,
+          "TITLE": "Mental Toughness",
+          "FACT PART 1": "What separates those who quit when it gets hard from those who push through?",
+          "FACT PART 2": "Mental toughness isn't about being fearless; it's about acting despite the fear. It’s a skill honed through adversity.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 75,
+          "TITLE": "Mind-Body Connection",
+          "FACT PART 1": "Can your physical posture change your mental state?",
+          "FACT PART 2": "Absolutely. Adopting a \"power pose\"—standing tall and open—for just two minutes can increase confidence and decrease stress hormones.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 76,
+          "TITLE": "Mind-Muscle Connection",
+          "FACT PART 1": "Is lifting just about moving weight, or is it about intention?",
+          "FACT PART 2": "A strong mind-muscle connection—consciously feeling the target muscle work—is proven to increase muscle activation and growth.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 77,
+          "TITLE": "Mindful Presence",
+          "FACT PART 1": "Where does most of your suffering and anxiety actually come from?",
+          "FACT PART 2": "It comes from regretting the past or fearing the future. True peace is found by grounding yourself in the present moment.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 78,
+          "TITLE": "Narrative Identity",
+          "FACT PART 1": "Who are you, really?",
+          "FACT PART 2": "You are the story you tell yourself. If you want to change your life, you must first change the narrative you live by.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 79,
+          "TITLE": "Neuroplasticity",
+          "FACT PART 1": "Think your brain is set in stone after a certain age?",
+          "FACT PART 2": "Your brain physically reorganizes itself based on your repeated thoughts, habits, and focus. You can literally build a new mind.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 80,
+          "TITLE": "Occam's Razor",
+          "FACT PART 1": "When your progress stalls, what's usually the simplest explanation?",
+          "FACT PART 2": "The one that's most likely true. Are you overtraining, or did you just not sleep well? Occam's Razor says start with the simplest answer.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 81,
+          "TITLE": "Optimism Bias",
+          "FACT PART 1": "Why do most people believe they are less likely to experience negative events?",
+          "FACT PART 2": "The optimism bias is a cognitive illusion that makes us underestimate future risks, which is essential for taking chances and pursuing goals.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 82,
+          "TITLE": "Pareto Principle (80/20 Rule)",
+          "FACT PART 1": "Where do most of your gym results really come from?",
+          "FACT PART 2": "The Pareto Principle. Roughly 80% of your results will come from just 20% of your exercises and efforts. Identify and master that 20%.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 83,
+          "TITLE": "Parkinson's Law",
+          "FACT PART 1": "Why does a task expand to fill the time you allot for it?",
+          "FACT PART 2": "That's Parkinson's Law. Give yourself one hour for the gym, it'll take an hour. Give yourself 45 minutes, you'll find a way.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 84,
+          "TITLE": "Prefrontal Cortex",
+          "FACT PART 1": "What part of your brain is the CEO of your discipline and willpower?",
+          "FACT PART 2": "Your prefrontal cortex. Every time you choose the hard rep over quitting, you are physically strengthening the command center of your mind.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 85,
+          "TITLE": "Premeditatio Malorum",
+          "FACT PART 1": "How do Stoics build unbreakable resilience before ever facing a challenge?",
+          "FACT PART 2": "They practice \"Premeditatio Malorum\"—the premeditation of evils. By visualizing what could go wrong, they prepare their minds for any outcome.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 86,
+          "TITLE": "Psychological Resilience",
+          "FACT PART 1": "What makes some people bounce back from adversity so quickly?",
+          "FACT PART 2": "They see setbacks as temporary, contained to one area of life, and not personal. This \"3 P's\" model builds resilience.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 87,
+          "TITLE": "Reactance Theory",
+          "FACT PART 1": "Why do you immediately want to do something when someone tells you that you can't?",
+          "FACT PART 2": "That's reactance. It's a psychological urge to resist threats to your freedom. Use this defiance to crush self-imposed limitations.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 88,
+          "TITLE": "Self-Determination Theory",
+          "FACT PART 1": "What are the three core needs you must meet for peak motivation?",
+          "FACT PART 2": "Autonomy (control over your actions), Competence (feeling effective), and Relatedness (connecting with others). Nail these, and drive becomes automatic.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 89,
+          "TITLE": "Shadow Work",
+          "FACT PART 1": "What are the disowned parts of yourself that secretly control your behavior?",
+          "FACT PART 2": "Your \"shadow.\" This is the part of your unconscious mind with repressed weaknesses and desires. Integrating it is key to wholeness.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 90,
+          "TITLE": "Sharpening the Axe",
+          "FACT PART 1": "Why is taking time to rest and learn just as important as the work itself?",
+          "FACT PART 2": "If you have six hours to chop a tree, spend the first four sharpening the axe. Preparation, recovery, and learning are not wasted time.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 91,
+          "TITLE": "Sleep & Mindset",
+          "FACT PART 1": "What's the most overlooked factor in maintaining a positive mindset?",
+          "FACT PART 2": "Sleep. A single night of poor sleep can significantly increase activity in the brain's fear and anxiety centers.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 92,
+          "TITLE": "Social Contagion",
+          "FACT PART 1": "Did you know that moods and mindsets are as contagious as a virus?",
+          "FACT PART 2": "You subconsciously absorb the emotional states and beliefs of those around you. Protect your mind by curating your social environment.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 93,
+          "TITLE": "Spaced Repetition",
+          "FACT PART 1": "What's the secret to mastering a new lift or skill permanently?",
+          "FACT PART 2": "Spaced repetition. Practice the skill at increasing intervals over time. This tells your brain the information is critical to remember.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 94,
+          "TITLE": "Stoic Mindset",
+          "FACT PART 1": "How can you find peace in a world you can't control?",
+          "FACT PART 2": "Focus only on what you can control: your own thoughts, judgments, and actions. Release the rest. That is the core of stoicism.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 95,
+          "TITLE": "Sunk Cost Fallacy",
+          "FACT PART 1": "Ever keep doing something you hate just because you've already invested so much?",
+          "FACT PART 2": "That's the Sunk Cost Fallacy. Your brain irrationally values what you've already lost over making the right choice for the future.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 96,
+          "TITLE": "Survivorship Bias",
+          "FACT PART 1": "Why is it dangerous to only study the habits of successful people?",
+          "FACT PART 2": "You ignore the vast number who used the exact same habits and failed. This is survivorship bias. Focus on principles, not just personalities.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 97,
+          "TITLE": "System 1 vs. System 2",
+          "FACT PART 1": "Are you making decisions with your gut or your head?",
+          "FACT PART 2": "Your brain has two systems. System 1 is fast, intuitive, and emotional (your gut). System 2 is slow, deliberate, and logical (your head). Know which one is in charge.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 98,
+          "TITLE": "The \"Flow State\"",
+          "FACT PART 1": "What's the secret to losing track of time while being highly productive?",
+          "FACT PART 2": "The \"flow state.\" It happens when the challenge of a task is perfectly matched to your skill level, silencing your inner critic.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 99,
+          "TITLE": "The Amygdala Hijack",
+          "FACT PART 1": "Ever overreact in a split second and regret it later?",
+          "FACT PART 2": "That was an amygdala hijack. Your brain's threat center took over before your rational mind could even engage. Train to pause.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 100,
+          "TITLE": "The Anchoring Bias",
+          "FACT PART 1": "Does the first number you see affect all your future judgments?",
+          "FACT PART 2": "Yes. If you see someone lift 400 lbs first, your judgment of a 300 lb lift will be \"anchored\" by that initial number.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 101,
+          "TITLE": "The Anti-Fragile Ego",
+          "FACT PART 1": "What's the difference between a big ego and a strong ego?",
+          "FACT PART 2": "A big ego is fragile and shatters with criticism. A strong, anti-fragile ego welcomes feedback and uses it to grow even stronger.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 102,
+          "TITLE": "The Art of Letting Go",
+          "FACT PART 1": "What do you need to release to make space for growth and progress?",
+          "FACT PART 2": "Letting go of limiting beliefs, past failures, and the need for external validation. Embrace the present moment and your potential.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 103,
+          "TITLE": "The Availability Heuristic",
+          "FACT PART 1": "Why do you worry more about a rare, dramatic injury than a common, simple one?",
+          "FACT PART 2": "Your brain judges the likelihood of an event by how easily it can recall an example. This is the availability heuristic.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 104,
+          "TITLE": "The Baader-Meinhof Phenomenon",
+          "FACT PART 1": "Ever learn a new word or exercise and suddenly see it everywhere?",
+          "FACT PART 2": "That's a frequency illusion. Your brain, now primed to see it, selectively notices it more, making it seem like it's suddenly ubiquitous.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 105,
+          "TITLE": "The Backfire Effect",
+          "FACT PART 1": "What happens when a deeply held belief is challenged by facts?",
+          "FACT PART 2": "It often gets even stronger. The Backfire Effect shows that our brains protect core beliefs by rejecting contradictory evidence.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 106,
+          "TITLE": "The Ben Franklin Effect",
+          "FACT PART 1": "How can asking someone for a small favor make them like you more?",
+          "FACT PART 2": "When they do you a favor, their brain justifies it by deciding they must like you. We align our beliefs with our past actions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 107,
+          "TITLE": "The Bystander Apathy",
+          "FACT PART 1": "Why might no one correct your bad form in a crowded commercial gym?",
+          "FACT PART 2": "Bystander Apathy. Everyone assumes someone else will step in, leading to collective inaction. Don't rely on others for your safety.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 108,
+          "TITLE": "The Bystander Effect",
+          "FACT PART 1": "Why do people fail to act in a crisis when they're in a crowd?",
+          "FACT PART 2": "They assume someone else will. The diffusion of responsibility makes individuals feel less personal obligation to intervene.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 109,
+          "TITLE": "The Cocktail Party Effect",
+          "FACT PART 1": "How can you hear your name whispered across a loud, crowded gym?",
+          "FACT PART 2": "Your brain is always listening for personally relevant information. This is your reticular activating system (RAS) at work.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 110,
+          "TITLE": "The Comfort Zone",
+          "FACT PART 1": "Why does staying comfortable actually lead to more anxiety?",
+          "FACT PART 2": "Your comfort zone shrinks over time. Avoiding small discomforts makes you less resilient and more fearful of the unknown.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 111,
+          "TITLE": "The Consistency Principle",
+          "FACT PART 1": "How do you get yourself to follow through on big goals?",
+          "FACT PART 2": "Start by making a small, public commitment. Our brains have a powerful, subconscious need to remain consistent with our past selves.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 112,
+          "TITLE": "The Curse of Knowledge",
+          "FACT PART 1": "Once you master a lift, why is it so hard to teach it to a beginner?",
+          "FACT PART 2": "The curse of knowledge makes it difficult to remember what it was like to not know something. You forget the struggles of a novice.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 113,
+          "TITLE": "The Cynefin Framework",
+          "FACT PART 1": "How do you make decisions when you don't know what to do?",
+          "FACT PART 2": "The Cynefin framework helps you identify if a problem is simple, complicated, complex, or chaotic, each requiring a different approach.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 114,
+          "TITLE": "The Default Effect",
+          "FACT PART 1": "What's the easiest way to guarantee you stick to a good habit?",
+          "FACT PART 2": "Make it the default option. Lay out your gym clothes the night before. Your brain loves the path of least resistance.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 115,
+          "TITLE": "The Desire for Control",
+          "FACT PART 1": "What is one of the most fundamental drivers of human motivation?",
+          "FACT PART 2": "The innate desire for control over one's life and environment. Lifting weights is a direct way to exert and experience that control.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 116,
+          "TITLE": "The Dichotomy of Control",
+          "FACT PART 1": "What's the Stoic's key to unwavering inner peace in the chaos of life?",
+          "FACT PART 2": "Understanding the dichotomy of control: focusing solely on what you can influence (your thoughts, actions) and accepting what you can't.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 117,
+          "TITLE": "The Diderot Effect",
+          "FACT PART 1": "Ever buy one new piece of gym gear and suddenly feel the urge to upgrade everything else?",
+          "FACT PART 2": "That's the Diderot Effect. One new possession can create a spiral of consumption as you seek to create a cohesive whole.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 118,
+          "TITLE": "The Discipline of Detachment (Stoic Principle)",
+          "FACT PART 1": "How can you protect your inner peace from external outcomes in your training and life?",
+          "FACT PART 2": "Through the discipline of detachment: focusing on the process and your effort, rather than being solely fixated on results you can't fully control.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 119,
+          "TITLE": "The Dunning-Kruger Effect",
+          "FACT PART 1": "Why do incompetent people often seem the most confident?",
+          "FACT PART 2": "They lack the self-awareness to accurately judge their own skills, creating a cognitive bias of illusory superiority.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 120,
+          "TITLE": "The Dunning-Kruger Effect (Revisited)",
+          "FACT PART 1": "What happens right after you break through the peak of \"Mount Stupid\"?",
+          "FACT PART 2": "You fall into the \"valley of despair,\" where you suddenly realize how much you don't know. This is a critical step towards true mastery.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 121,
+          "TITLE": "The Einstellung Effect",
+          "FACT PART 1": "Why does your first successful solution to a problem often blind you to better ones?",
+          "FACT PART 2": "Your mind gets stuck on a familiar solution, preventing you from seeing more efficient or creative alternatives. Always be willing to adapt.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 122,
+          "TITLE": "The Empathy Gap",
+          "FACT PART 1": "Why is it so hard to remember the pain of a brutal workout when you're resting?",
+          "FACT PART 2": "The empathy gap. It's difficult to predict how you'll behave in a \"hot\" state (like exhaustion) when you're in a \"cold\" state (like resting).",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 123,
+          "TITLE": "The Endowment Effect",
+          "FACT PART 1": "Why do you value something you own more than an identical item you don't?",
+          "FACT PART 2": "The Endowment Effect. Ownership creates an emotional attachment that makes you overvalue your own possessions and ideas.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 124,
+          "TITLE": "The Feynman Technique",
+          "FACT PART 1": "How can you truly test if you understand a concept or a movement?",
+          "FACT PART 2": "Try to teach it to a complete beginner in simple terms. If you can't, you don't understand it well enough yourself.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 125,
+          "TITLE": "The Forer Effect",
+          "FACT PART 1": "Why do generic motivational quotes sometimes feel profoundly personal?",
+          "FACT PART 2": "Your brain is primed to accept vague statements as specifically tailored to you, especially if they are positive. Be a discerning consumer of advice.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 126,
+          "TITLE": "The Forgetting Curve",
+          "FACT PART 1": "Why do you forget almost everything you learn so quickly?",
+          "FACT PART 2": "Without active recall, you're destined to forget. The brain discards information it doesn't regularly retrieve to save energy.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 127,
+          "TITLE": "The Framing Effect",
+          "FACT PART 1": "Can you change your reality just by changing your words?",
+          "FACT PART 2": "Yes. Framing a 90% success rate is motivating, while a 10% failure rate is discouraging. They're the same fact. Master your frame.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 128,
+          "TITLE": "The Fundamental Attribution Error",
+          "FACT PART 1": "When someone else fails, is it their character? When you fail, is it the situation?",
+          "FACT PART 2": "That's the fundamental attribution error. We tend to blame others' character for their failures, but our own situation for ours. Grant others grace.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 129,
+          "TITLE": "The Galatea Effect",
+          "FACT PART 1": "What is the most powerful set of expectations that governs your life?",
+          "FACT PART 2": "Your own. The Galatea Effect is the power of an individual's self-expectations. If you believe you can, you are already halfway there.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 130,
+          "TITLE": "The Halo Effect",
+          "FACT PART 1": "Why do we assume attractive people are also smart and kind?",
+          "FACT PART 2": "It's a cognitive bias called the Halo Effect, where one positive trait creates an overall \"halo\" that influences our other judgments.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 131,
+          "TITLE": "The Hard-Easy Effect",
+          "FACT PART 1": "Do you overestimate your ability on hard tasks and underestimate it on easy ones?",
+          "FACT PART 2": "That's the Hard-Easy effect. This bias leads to misplaced confidence and can cause you to neglect fundamentals while rushing into advanced work.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 132,
+          "TITLE": "The Hawthorne Effect",
+          "FACT PART 1": "Ever notice you perform better in the gym when you know someone is watching?",
+          "FACT PART 2": "That's the Hawthorne Effect. The simple act of being observed can change your behavior and increase your performance. Use it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 133,
+          "TITLE": "The Hedonic Treadmill",
+          "FACT PART 1": "Why doesn't achieving a big goal make you happy for very long?",
+          "FACT PART 2": "We quickly adapt to new circumstances, and our happiness level returns to its baseline. The joy is in the pursuit, not the prize.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 134,
+          "TITLE": "The Ikea Effect",
+          "FACT PART 1": "Why do you value the results you built yourself more than those given to you?",
+          "FACT PART 2": "The Ikea Effect. We place a disproportionately high value on things we partially created ourselves. Your struggle imbues your results with meaning.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 135,
+          "TITLE": "The Illusion of Transparency",
+          "FACT PART 1": "Do people know you're nervous or struggling just by looking at you?",
+          "FACT PART 2": "You feel they do, but they don't. We vastly overestimate how much our internal states are visible to others.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 136,
+          "TITLE": "The Importance of Having a Challenging Vision",
+          "FACT PART 1": "What kind of goals truly ignite your inner fire and push you beyond your perceived limits?",
+          "FACT PART 2": "A challenging vision—a compelling future you are striving towards—provides powerful motivation and direction.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 137,
+          "TITLE": "The Importance of Rest and Recovery (Mental Aspect)",
+          "FACT PART 1": "It's not just about physical recovery. What does your mind need to recharge and stay sharp?",
+          "FACT PART 2": "Mental rest: intentional breaks from demanding tasks, mindfulness practices, and activities that help you de-stress and refocus.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 138,
+          "TITLE": "The Importance of Self-Compassion",
+          "FACT PART 1": "When you fall short of your goals, what's the most constructive way to respond to yourself?",
+          "FACT PART 2": "With self-compassion. Treating yourself with the same kindness and understanding you would offer a friend in the same situation.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 139,
+          "TITLE": "The Importance of Solitude",
+          "FACT PART 1": "In our hyper-connected world, what's a crucial practice for self-awareness and mental clarity?",
+          "FACT PART 2": "Regular periods of solitude. It allows for introspection, reflection, and a deeper understanding of your inner self.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 140,
+          "TITLE": "The Impostor Cycle",
+          "FACT PART 1": "Feeling like a fraud? Does that feeling push you to work harder, leading to more success and a bigger feeling of being a fraud?",
+          "FACT PART 2": "That's the Impostor Cycle. Break it by internalizing your successes and attributing them to your own skill and hard work.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 141,
+          "TITLE": "The Inner Citadel",
+          "FACT PART 1": "Where is the one fortress that no one can ever conquer?",
+          "FACT PART 2": "Your mind. The Stoics called it the Inner Citadel. You can retreat there at any moment to find peace, regardless of external chaos.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 142,
+          "TITLE": "The Internal Locus of Control",
+          "FACT PART 1": "Do you believe your life is determined by fate or your own actions?",
+          "FACT PART 2": "A strong internal locus of control—believing you are the primary driver of your outcomes—is crucial for taking ownership and achieving goals.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 143,
+          "TITLE": "The Johari Window",
+          "FACT PART 1": "What are the \"blind spots\" in your own character that everyone else can see?",
+          "FACT PART 2": "The Johari Window is a model for self-awareness. You must actively seek feedback to understand the parts of yourself you're blind to.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 144,
+          "TITLE": "The Just-World Fallacy",
+          "FACT PART 1": "Do you believe that if you just work hard, you are guaranteed success?",
+          "FACT PART 2": "The world isn't inherently fair. Believing it is can lead to immense bitterness. Focus on your effort, but accept that outcomes aren't guaranteed.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 145,
+          "TITLE": "The Law of Attraction",
+          "FACT PART 1": "Is \"The Law of Attraction\" just wishful thinking?",
+          "FACT PART 2": "No, it's about focus. What you consistently focus on, you will start to notice and act upon, creating opportunities you'd otherwise miss.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 146,
+          "TITLE": "The Law of Diminishing Returns",
+          "FACT PART 1": "Is more training always better?",
+          "FACT PART 2": "No. At a certain point, the benefit you get from each additional set or session decreases significantly and risk of injury increases.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 147,
+          "TITLE": "The Law of Instrument",
+          "FACT PART 1": "Are you trying to solve every fitness problem with your favorite exercise?",
+          "FACT PART 2": "This is an extension of Maslow's Hammer. Don't let your familiarity with one tool blind you to the existence of better ones.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 148,
+          "TITLE": "The Law of Requisite Variety",
+          "FACT PART 1": "In any system, who holds the power?",
+          "FACT PART 2": "The part with the most flexibility and options. To dominate any situation, you must be more adaptable than your environment.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 149,
+          "TITLE": "The Locus of Control",
+          "FACT PART 1": "Is your life something you control, or something that happens to you?",
+          "FACT PART 2": "An internal locus of control means you believe you are in the driver's seat. This belief is a prerequisite for taking meaningful action.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 150,
+          "TITLE": "The Matthew Principle",
+          "FACT PART 1": "Why do those who are already strong seem to get stronger the fastest?",
+          "FACT PART 2": "To those who have, more will be given. Success and advantage tend to accumulate. Momentum is a powerful, real-world force.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 151,
+          "TITLE": "The Need for Closure",
+          "FACT PART 1": "Why does an unfinished workout or an unanswered question gnaw at your mind?",
+          "FACT PART 2": "Your brain has a strong need for cognitive closure. It craves firm answers and dislikes ambiguity. Use this to drive you to finish what you start.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 152,
+          "TITLE": "The Negativity Bias",
+          "FACT PART 1": "Why do you remember insults more vividly than compliments?",
+          "FACT PART 2": "It's an evolutionary survival trait. Your brain is wired to pay more attention to threats and dangers (negativity) than to positives.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 153,
+          "TITLE": "The OODA Loop",
+          "FACT PART 1": "How do fighter pilots make elite decisions under extreme pressure?",
+          "FACT PART 2": "They use the OODA loop: Observe, Orient, Decide, Act. By cycling through this process faster than your challenges, you stay in control.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 154,
+          "TITLE": "The Overjustification Effect",
+          "FACT PART 1": "Can you kill your passion for lifting by getting paid for it?",
+          "FACT PART 2": "Sometimes. When an external reward is given for an activity you love, your intrinsic motivation can decrease. Protect your \"why.\"",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 155,
+          "TITLE": "The Paradox of Choice",
+          "FACT PART 1": "Does having more options make you happier?",
+          "FACT PART 2": "No, it often leads to more anxiety and less satisfaction. Limiting your options can dramatically increase your peace of mind.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 156,
+          "TITLE": "The Peak-End Rule",
+          "FACT PART 1": "How does your brain remember an entire workout?",
+          "FACT PART 2": "It doesn't. It remembers the peak moment of intensity and how you felt at the very end. Finish every session strong to build a positive memory.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 157,
+          "TITLE": "The Placebo Effect",
+          "FACT PART 1": "Can you really think yourself well?",
+          "FACT PART 2": "Believing a treatment will work can cause your brain to release its own natural chemicals that produce real, measurable healing effects.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 158,
+          "TITLE": "The Planning Fallacy",
+          "FACT PART 1": "Why do your ambitious workout plans always seem to fall apart?",
+          "FACT PART 2": "The planning fallacy is our tendency to underestimate the time, costs, and risks of future actions, while overestimating their benefits.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 159,
+          "TITLE": "The Power of Affirmations (Used Correctly)",
+          "FACT PART 1": "Can simply repeating positive statements actually change your mindset?",
+          "FACT PART 2": "Yes, when done with intention and belief, aligning with your actions. Empty repetition is ineffective; felt affirmations can rewire your subconscious.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 160,
+          "TITLE": "The Power of Consistency Over Intensity",
+          "FACT PART 1": "What's more crucial for long-term progress in your garage gym: sporadic bursts of high intensity or consistent effort?",
+          "FACT PART 2": "Consistency. Showing up regularly and putting in the work, even when you don't feel like it, yields greater results over time.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 161,
+          "TITLE": "The Power of Focused Attention",
+          "FACT PART 1": "In a world of distractions, what's your most valuable asset in achieving your goals?",
+          "FACT PART 2": "Focused attention. The ability to concentrate deeply on the task at hand, blocking out noise and distractions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 162,
+          "TITLE": "The Power of Incremental Improvement",
+          "FACT PART 1": "How do you conquer seemingly insurmountable challenges in your fitness and life goals?",
+          "FACT PART 2": "Through incremental improvement: focusing on getting just a little bit better each day. Small, consistent progress compounds over time.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 163,
+          "TITLE": "The Power of Intention Setting",
+          "FACT PART 1": "Before each workout or each day, do you clearly define what you want to achieve?",
+          "FACT PART 2": "Setting clear intentions provides focus, direction, and a greater sense of purpose to your actions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 164,
+          "TITLE": "The Power of Journaling for Self-Reflection",
+          "FACT PART 1": "What's a simple yet profound practice for gaining insights into your thoughts, emotions, and progress?",
+          "FACT PART 2": "Regular journaling. It provides a space for self-reflection, tracking your journey, and identifying patterns in your mindset.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 165,
+          "TITLE": "The Power of Ritual",
+          "FACT PART 1": "Why is having a consistent pre-lift routine so critical for performance?",
+          "FACT PART 2": "Rituals signal to your brain and body that it's time to perform. They reduce anxiety, increase focus, and make excellence a habit.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 166,
+          "TITLE": "The Power of Self-Talk",
+          "FACT PART 1": "Does the voice inside your head really have that much power?",
+          "FACT PART 2": "Your internal monologue directly influences your emotional state and dictates the subconscious commands your body and mind follow.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 167,
+          "TITLE": "The Power of Small Wins",
+          "FACT PART 1": "Overwhelmed by a massive goal? What's the first step to building unstoppable momentum?",
+          "FACT PART 2": "Focus on small, achievable wins. Each success builds confidence and reinforces the belief in your ability to progress.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 168,
+          "TITLE": "The Practice of Gratitude for Small Things",
+          "FACT PART 1": "Amidst the grind, what simple habit can shift your perspective towards positivity?",
+          "FACT PART 2": "Practicing gratitude for the small things. Recognizing and appreciating the progress you've made and the resources you have.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 169,
+          "TITLE": "The Proteus Effect",
+          "FACT PART 1": "Can the way you present yourself online actually change who you are?",
+          "FACT PART 2": "Yes. The Proteus Effect shows that people conform to the behavior of their avatars or online personas. Build an identity worth living up to.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 170,
+          "TITLE": "The Proximity Principle",
+          "FACT PART 1": "What is the single greatest predictor of your habits and success?",
+          "FACT PART 2": "Proximity. You are the average of the people you spend the most time with. To upgrade yourself, upgrade your circle.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 171,
+          "TITLE": "The Pygmalion Effect",
+          "FACT PART 1": "Do other people's expectations of you actually matter?",
+          "FACT PART 2": "Yes. We subconsciously live up (or down) to the expectations others place on us, a powerful self-fulfilling prophecy.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 172,
+          "TITLE": "The Pygmalion Effect (Revisited)",
+          "FACT PART 1": "Can your belief in your training partner's potential actually make them stronger?",
+          "FACT PART 2": "Yes. The Pygmalion Effect shows that our high expectations for others can become a self-fulfilling prophecy, improving their performance.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 173,
+          "TITLE": "The Reciprocity Norm",
+          "FACT PART 1": "How can a simple act of support in the gym create a powerful bond?",
+          "FACT PART 2": "When someone helps you (like with a spot), you feel a deep-seated urge to reciprocate. This builds the foundation of a strong community.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 174,
+          "TITLE": "The Reversibility Principle",
+          "FACT PART 1": "How quickly do you lose your hard-earned gains when you stop training?",
+          "FACT PART 2": "Faster than you think. The reversibility principle, or \"use it or lose it,\" means your body will shed adaptations it no longer needs.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 175,
+          "TITLE": "The Second Arrow",
+          "FACT PART 1": "The first arrow is the pain of a failed lift. What's the second, more painful one?",
+          "FACT PART 2": "The second arrow is your own judgment about it. It's the self-criticism and shame you add. The first is unavoidable; the second is a choice.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 176,
+          "TITLE": "The Self-Serving Bias",
+          "FACT PART 1": "When you succeed, is it skill? When you fail, is it bad luck?",
+          "FACT PART 2": "That's the self-serving bias. We attribute successes to our own character but blame failures on external factors. Take radical ownership of both.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 177,
+          "TITLE": "The Solomon Paradox",
+          "FACT PART 1": "Why is it easier to solve other people's problems than your own?",
+          "FACT PART 2": "The Solomon Paradox. We can think more rationally and wisely about others' situations because we have emotional distance from them.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 178,
+          "TITLE": "The Specificity Principle",
+          "FACT PART 1": "Want to get better at squats? What's the one thing you must do?",
+          "FACT PART 2": "Squat. The specificity principle states that your body adapts specifically to the demands placed upon it. You become what you repeatedly do.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 179,
+          "TITLE": "The Spotlight Effect",
+          "FACT PART 1": "Worried everyone is noticing your every mistake?",
+          "FACT PART 2": "They aren't. We vastly overestimate how much attention people pay to us. This is the \"spotlight effect.\" You are mostly invisible.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 180,
+          "TITLE": "The Stoic Concept of Negative Visualization",
+          "FACT PART 1": "How can contemplating what you have to lose actually increase your appreciation for what you have?",
+          "FACT PART 2": "Through negative visualization: imagining the absence of the good things in your life to cultivate gratitude and resilience.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 181,
+          "TITLE": "The Stoic Ideal of Inner Independence",
+          "FACT PART 1": "Where should your ultimate source of strength and contentment reside?",
+          "FACT PART 2": "Within yourself. Cultivating inner independence means not relying on external factors for your well-being and sense of purpose.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 182,
+          "TITLE": "The Stoic Practice of Amor Fati",
+          "FACT PART 1": "How can you find joy and purpose even in the face of hardship?",
+          "FACT PART 2": "Through Amor Fati: loving your fate. Accepting and even embracing everything that happens, both good and bad, as part of your journey.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 183,
+          "TITLE": "The Stoic Practice of Memento Mori",
+          "FACT PART 1": "How can contemplating your own mortality actually enhance your appreciation for life and fuel your actions?",
+          "FACT PART 2": "Memento Mori: remembering that you will die. This awareness can bring a sense of urgency and focus to living a meaningful life.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 184,
+          "TITLE": "The Stoic Practice of Voluntary Hardship",
+          "FACT PART 1": "Why would you intentionally subject yourself to discomfort in your training and life?",
+          "FACT PART 2": "To build resilience, appreciate comfort, and prove to yourself that you can handle adversity. It strengthens your inner core.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 185,
+          "TITLE": "The Stoic Understanding of Virtue",
+          "FACT PART 1": "What is the ultimate measure of success and fulfillment for a Stoic?",
+          "FACT PART 2": "Living a virtuous life: acting with wisdom, justice, courage, and temperance, regardless of external circumstances.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 186,
+          "TITLE": "The Stoic View on External Validation",
+          "FACT PART 1": "Should your sense of worth and progress depend on the approval of others in your fitness journey?",
+          "FACT PART 2": "No. True strength comes from internal validation—measuring your progress against your own standards and values.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 187,
+          "TITLE": "The Tetris Effect",
+          "FACT PART 1": "Ever finish a long workout and see the world in terms of reps and sets?",
+          "FACT PART 2": "That's the Tetris Effect. Your brain gets locked into patterns from repeated activity. Use it to your advantage by focusing on positive patterns.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 188,
+          "TITLE": "The Tyranny of Choice",
+          "FACT PART 1": "Does having endless workout variations actually help or hurt your progress?",
+          "FACT PART 2": "It often hurts. The tyranny of choice can lead to paralysis and dissatisfaction. Embrace the liberating power of constraints.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 189,
+          "TITLE": "The Vagus Nerve",
+          "FACT PART 1": "What's the physical link between your gut feelings and your brain's calm?",
+          "FACT PART 2": "The vagus nerve. You can stimulate it with deep, slow breathing to physically command your body to exit \"fight or flight\" mode.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 190,
+          "TITLE": "The Value of Patience",
+          "FACT PART 1": "In the pursuit of strength and mastery, what virtue is often underestimated?",
+          "FACT PART 2": "Patience. True progress takes time, consistent effort, and the willingness to embrace the long game.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 191,
+          "TITLE": "The Yerkes-Dodson Law",
+          "FACT PART 1": "Can being too \"hyped up\" for a lift actually hurt your performance?",
+          "FACT PART 2": "Yes. The Yerkes-Dodson law shows that performance increases with arousal, but only up to a point. Too much anxiety impairs performance.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 192,
+          "TITLE": "The Zeigarnik Effect",
+          "FACT PART 1": "Why can't you stop thinking about that unfinished task?",
+          "FACT PART 2": "Your brain is hardwired to remember incomplete tasks better than completed ones, creating a mental tension that pushes for closure.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 193,
+          "TITLE": "The Zeigarnik Effect (Revisited)",
+          "FACT PART 1": "How can you use the urge to finish things to your advantage?",
+          "FACT PART 2": "Start a task for just five minutes. The Zeigarnik effect will create a mental tension that will push you to go back and complete it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 194,
+          "TITLE": "Turning Obstacles into Opportunities",
+          "FACT PART 1": "How do the mentally strong view setbacks?",
+          "FACT PART 2": "Not as roadblocks, but as valuable feedback and opportunities to learn, adapt, and emerge stronger.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 195,
+          "TITLE": "Using Setbacks as Fuel",
+          "FACT PART 1": "How can you turn disappointment into motivation in your training?",
+          "FACT PART 2": "By using setbacks as fuel. Channeling the frustration and desire to improve into intensified effort and strategic adjustments.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 196,
+          "TITLE": "Victim vs. Creator",
+          "FACT PART 1": "What's the fundamental difference between a victim and a creator mindset?",
+          "FACT PART 2": "A victim believes life happens to them. A creator believes life happens for them, and they respond accordingly.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 197,
+          "TITLE": "Visualization",
+          "FACT PART 1": "Can imagining success actually help you achieve it?",
+          "FACT PART 2": "Elite athletes use it constantly. Visualizing an action activates the same neural pathways as actually performing it, building muscle memory.",
+          "PHOTO POSTED": ""
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-08-02T18:56:26.268Z",
+      "updatedAt": "2025-08-02T18:56:26.268Z",
+      "id": "nnDA7isE4OxnQFwX",
+      "name": "Development"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-17T17:00:14.548Z",
+  "versionId": "cb26fc7e-1a5f-4ef9-a185-524bbb67567b"
+}
