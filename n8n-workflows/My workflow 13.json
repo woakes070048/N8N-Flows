@@ -1,0 +1,56 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-17T15:33:00.677Z",
+  "id": "LZDpixcbkls164uV",
+  "isArchived": false,
+  "meta": null,
+  "name": "My workflow 13",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "29fbd386-0793-47b4-aa32-b56248eba831",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Test if Sharp is available\ntry {\n  const sharp = require('sharp');\n  console.log('Sharp version:', sharp.versions);\n  \n  return [{\n    json: {\n      sharp_available: true,\n      sharp_version: sharp.versions.sharp,\n      vips_version: sharp.versions.vips,\n      message: \"Sharp is available! ✅\"\n    }\n  }];\n  \n} catch (error) {\n  console.log('Sharp error:', error.message);\n  \n  return [{\n    json: {\n      sharp_available: false,\n      error: error.message,\n      message: \"Sharp is NOT available ❌\",\n      suggestion: \"Try Canvas or external API instead\"\n    }\n  }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "04c55561-8989-4f8a-ac0f-99735377ecdb",
+      "name": "Code"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-17T15:33:00.677Z",
+  "versionId": "d82447f3-afc9-4298-b5f2-98412cb872d5"
+}
