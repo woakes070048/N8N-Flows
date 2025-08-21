@@ -1,0 +1,155 @@
+{
+  "active": false,
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Execute Bag Alert Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-16T21:12:12.903Z",
+  "id": "3DQkYrqphhTDeBq1",
+  "isArchived": false,
+  "meta": null,
+  "name": "ERROR ALERTER ACTIVE",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        208,
+        32
+      ],
+      "id": "86fc60b3-252e-4551-92ed-518fdd60c417"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "ErJsFIMzI5GAr6Io",
+          "mode": "list",
+          "cachedResultName": "ERROR NOTIFIER"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        432,
+        32
+      ],
+      "id": "e44f24f9-530a-4bb2-b128-eac260cf06f6",
+      "name": "Execute Bag Alert Workflow"
+    },
+    {
+      "parameters": {
+        "content": "# ERROR ALERTER",
+        "height": 80,
+        "width": 440,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        160,
+        -80
+      ],
+      "typeVersion": 1,
+      "id": "aa58e05e-7699-4048-8724-26ddea8765f3",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {
+    "Error Trigger": [
+      {
+        "json": {
+          "execution": {
+            "id": "1323",
+            "url": "https://webhook.wtfkreative.com/workflow/tsqIevjhu8MVicm2/executions/1323",
+            "error": {
+              "level": "warning",
+              "tags": {},
+              "timestamp": 1755655393612,
+              "context": {},
+              "functionality": "regular",
+              "name": "NodeApiError",
+              "node": {
+                "parameters": {
+                  "authentication": "oAuth2",
+                  "resource": "file",
+                  "operation": "create",
+                  "owner": {
+                    "__rl": true,
+                    "value": "={{ $('Config').item.json.repo_owner }}",
+                    "mode": "name"
+                  },
+                  "repository": {
+                    "__rl": true,
+                    "value": "={{ $('Config').item.json.repo_name }}",
+                    "mode": "name"
+                  },
+                  "filePath": "={{ $('Config').item.json.repo_path + '/' + ($('Loop Over Items').item.json.name.endsWith('.json') ? $('Loop Over Items').item.json.name : $('Loop Over Items').item.json.name + '.json') }}",
+                  "binaryData": false,
+                  "fileContent": "={{$('isDiffOrNew').item.json[\"n8n_data_stringy\"]}}",
+                  "commitMessage": "={{ $('Loop Over Items').item.json.name + ' (Updated on ' + $now.toFormat(\"yyyy-MM-dd\") + ')' }}",
+                  "additionalParameters": {}
+                },
+                "id": "2a3b368c-73b9-449c-93ac-015e2376056f",
+                "name": "Create Updated File",
+                "type": "n8n-nodes-base.github",
+                "position": [
+                  2320,
+                  -48
+                ],
+                "typeVersion": 1,
+                "webhookId": "b440dead-fad0-4546-8ca7-201aa2ea2936",
+                "credentials": {
+                  "githubOAuth2Api": {
+                    "id": "SkPviyNYURtVqRGy",
+                    "name": "GitHub OAUTH APP"
+                  }
+                }
+              },
+              "messages": [
+                "connect ETIMEDOUT 140.82.114.5:443",
+                "connect ETIMEDOUT 140.82.114.5:443"
+              ],
+              "httpCode": "ETIMEDOUT",
+              "message": "The connection timed out, consider setting the 'Retry on Fail' option in the node settings",
+              "stack": "NodeApiError: The connection timed out, consider setting the 'Retry on Fail' option in the node settings\n    at ExecuteContext.requestWithAuthentication (/usr/local/lib/node_modules/n8n/node_modules/n8n-core/src/execution-engine/node-execution-context/utils/request-helper-functions.ts:1463:10)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at ExecuteContext.requestWithAuthentication (/usr/local/lib/node_modules/n8n/node_modules/n8n-core/src/execution-engine/node-execution-context/utils/request-helper-functions.ts:1749:11)\n    at ExecuteContext.githubApiRequest (/usr/local/lib/node_modules/n8n/node_modules/n8n-nodes-base/nodes/Github/GenericFunctions.ts:61:10)\n    at ExecuteContext.execute (/usr/local/lib/node_modules/n8n/node_modules/n8n-nodes-base/nodes/Github/Github.node.ts:2760:21)\n    at WorkflowExecute.runNode (/usr/local/lib/node_modules/n8n/node_modules/n8n-core/src/execution-engine/workflow-execute.ts:1212:9)\n    at /usr/local/lib/node_modules/n8n/node_modules/n8n-core/src/execution-engine/workflow-execute.ts:1582:27\n    at /usr/local/lib/node_modules/n8n/node_modules/n8n-core/src/execution-engine/workflow-execute.ts:2158:11"
+            },
+            "lastNodeExecuted": "Create Updated File",
+            "mode": "trigger"
+          },
+          "workflow": {
+            "id": "tsqIevjhu8MVicm2",
+            "name": "GITHUB BACKUP"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-20T12:21:52.545Z",
+  "versionId": "a8750d96-f90b-4305-8654-39e57d4f51a9"
+}
