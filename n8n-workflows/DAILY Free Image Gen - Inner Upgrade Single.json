@@ -1,0 +1,797 @@
+{
+  "active": true,
+  "connections": {
+    "Generate Images Flux Free": {
+      "main": [
+        [
+          {
+            "node": "Wait 15 sec",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image": {
+      "main": [
+        [
+          {
+            "node": "Instagram Container ID",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Facebook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facebook": {
+      "main": [
+        [
+          {
+            "node": "IS POSTED?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Instagram Container ID": {
+      "main": [
+        [
+          {
+            "node": "Wait 30",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish to Instagram": {
+      "main": [
+        [
+          {
+            "node": "IS POSTED?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Parse Video Titles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Video Titles": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fallout-style prompt generator": {
+      "main": [
+        [
+          {
+            "node": "Generate Images Flux Free",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Fallout-style prompt generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 15 sec": {
+      "main": [
+        [
+          {
+            "node": "Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 30": {
+      "main": [
+        [
+          {
+            "node": "Publish to Instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IS POSTED?": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IS POSTED?1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-17T19:23:37.345Z",
+  "id": "KDuulu0Exls6Vix5",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "DAILY Free Image Gen - Inner Upgrade Single",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.together.xyz/v1/images/generations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"black-forest-labs/FLUX.1-schnell-Free\",\n  \"prompt\": \"{{ $json.prompt }}\",\n  \"width\": 720,\n  \"height\": 1280,\n  \"steps\": 4,\n  \"seed\": 1,\n  \"response_format\": \"url\",\n  \"output_format\": \"jpeg\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -896,
+        96
+      ],
+      "id": "e4794837-7bee-4f31-838c-741ed05ea87e",
+      "name": "Generate Images Flux Free",
+      "retryOnFail": true,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "JdfDCxKTwaEVNBKO",
+          "name": "TOGETHER_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -448,
+        96
+      ],
+      "id": "04186dc2-ec78-4496-a411-0aff90e3a6b6",
+      "name": "Download Image"
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "659232113940352",
+        "edge": "photos",
+        "sendBinaryData": true,
+        "binaryPropertyName": "=data",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption",
+                "value": "={{ $('AI Agent').item.json.output.socialTitle }}.{{ $('AI Agent').item.json.output.socialCaption }}"
+              },
+              {
+                "name": "url",
+                "value": "={{ $('Generate Images Flux Free').item.json.data[0].url }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "711b7da0-9700-4c8c-998b-300a55e2c7ad",
+      "name": "Facebook",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "CYWxhjKL7rYymFbu",
+          "name": "FB - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "17841475088389536",
+        "edge": "media",
+        "sendBinaryData": true,
+        "binaryPropertyName": "=data",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption",
+                "value": "={{ $('AI Agent').item.json.output.socialTitle }}.{{ $('AI Agent').item.json.output.socialCaption }}"
+              },
+              {
+                "name": "media_type",
+                "value": "IMAGE"
+              },
+              {
+                "name": "image_url",
+                "value": "={{ $('Generate Images Flux Free').item.json.data[0].url }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        192
+      ],
+      "id": "0ed00986-2ca9-47bd-bb05-51015393f508",
+      "name": "Instagram Container ID",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "GXj6j3l91g5YTl3Y",
+          "name": "INSTA - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "17841475088389536",
+        "edge": "media_publish",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption",
+                "value": "={{ $('AI Agent').item.json.output.socialTitle }}.{{ $('AI Agent').item.json.output.socialCaption }}"
+              },
+              {
+                "name": "image_url",
+                "value": "={{ $('Generate Images Flux Free').item.json.data[0].url }}"
+              },
+              {
+                "name": "creation_id",
+                "value": "={{ $json.id }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        224,
+        192
+      ],
+      "id": "f189d1e9-d4fb-4008-8d6f-56a8c728a349",
+      "name": "Publish to Instagram",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "GXj6j3l91g5YTl3Y",
+          "name": "INSTA - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 7
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -2336,
+        96
+      ],
+      "id": "e1c3fa69-c388-4155-a435-aebe0c01f4bb",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc",
+          "mode": "list",
+          "cachedResultName": "INNER UPGRADE PHOTO TOPICS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1263742919,
+          "mode": "list",
+          "cachedResultName": "SIMPLIFIED SINGLE IMAGE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc/edit#gid=1263742919"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -1968,
+        96
+      ],
+      "id": "eb2bf937-7036-491a-8e4c-e4900c408848",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all input items (each item is a row)\nconst inputItems = $input.all();\n\nif (!inputItems || inputItems.length === 0) {\n  return [{ json: { error: 'No rows returned from Google Sheets' } }];\n}\n\nconst availableTitles = [];\n\n// Each input item is a row object\nfor (let i = 0; i < inputItems.length; i++) {\n  const rowData = inputItems[i].json;\n  \n  const title = rowData.TITLE;\n  const photoPosted = rowData['PHOTO POSTED'];\n  \n  // Skip if no title or if it's a header\n  if (!title || title.toLowerCase() === 'title') continue;\n  \n  // Check if PHOTO POSTED is empty\n  if (title.trim().length > 0 && (!photoPosted || photoPosted.toString().trim() === '')) {\n    availableTitles.push({\n      title: title.trim(),\n      rowNumber: rowData.row_number,\n      date: rowData.DATE,\n      description: rowData.DESC\n    });\n  }\n}\n\nif (availableTitles.length === 0) {\n  return [{ json: { \n    error: 'No available titles found',\n    totalRows: inputItems.length,\n    sampleRow: inputItems[0].json\n  }}];\n}\n\n// Random selection\nconst randomIndex = Math.floor(Math.random() * availableTitles.length);\nconst randomSelection = availableTitles[randomIndex];\n\nconsole.log(`Selected \"${randomSelection.title}\" (${randomIndex + 1} of ${availableTitles.length} available)`);\n\nreturn [{\n  json: {\n    selectedTitle: randomSelection.title,\n    rowNumber: randomSelection.rowNumber,\n    availableCount: availableTitles.length,\n    selectedDate: randomSelection.date\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1744,
+        96
+      ],
+      "id": "c7ed3b70-218c-404d-a3d0-44b279aeb49f",
+      "name": "Parse Video Titles"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the agent's response\nconst inputData = $input.all()[0].json;\nconst agentData = inputData.output || inputData;\nconst originalTheme = agentData.originalTheme;\nconst context = agentData.context;\n\n// Check for necessary input\nif (!originalTheme || !context) {\n  return [{\n    json: {\n      error: 'Missing originalTheme or context from the upstream agent.',\n      receivedData: agentData\n    }\n  }];\n}\n\n// --- REVISED & MORE AGGRESSIVE STYLE DESCRIPTORS ---\nconst styleDescriptors = [\n  'ultrawide shot on gritty 35mm film, brutalist concrete gym, dramatic chiaroscuro lighting, heavy atmospheric dust, in the style of a Fallout game screenshot, desaturated, focus on environmental storytelling, no characters too close to the foreground',\n  'wide angle hyperrealistic render, vast post-apocalyptic setting, rusted weights scattered in the environment, volumetric god rays, stark and emotionless figure in the mid-distance',\n  'cinematic ultrawide photo, industrial grunge aesthetic, expansive weathered metal walls, cracked concrete stretching into the distance, single harsh light source illuminating the scene, figures in the background',\n  'dieselpunk art style, panoramic view of utilitarian machinery and desolate landscape, deeply desaturated muted tones, photorealistic texture, rendered in Unreal Engine 5, emphasis on the scale of the environment',\n  'raw, ultrawide cinematic photo, lone subject with an unflinching gaze, vast decaying industrial surroundings, high contrast black and white, emphasizing the environment\\'s scale, subject not in the immediate foreground'\n];\n\n// Pick a random style descriptor\nconst selectedStyle = styleDescriptors[Math.floor(Math.random() * styleDescriptors.length)];\n\n// Combine the AGENT'S context (the scene) with our technical style (the look)\nconst finalPrompt = `${context}, ${selectedStyle}, cinematic composition`;\n\nconsole.log(`Applied style \"${selectedStyle}\" to context for theme \"${originalTheme}\"`);\n\n// Return the final structured data\nreturn [{\n  json: {\n    prompt: finalPrompt,\n    motivationalTheme: originalTheme,\n    context: context, // The original, unmodified context\n    technicalStyle: selectedStyle, // The style we added\n    generatedAt: new Date().toISOString()\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1120,
+        96
+      ],
+      "id": "69b2f961-a18b-4a2e-bf7d-5ad75b872c25",
+      "name": "Fallout-style prompt generator"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Given this motivational theme or topic: \"{{ $json.selectedTitle }}\", provide:\n\nA brief 2-3 sentence visual context that powerfully illustrates the theme by describing an environment without any people present.\n\nFocus on the setting, atmosphere, and any objects that strongly evoke the theme.\n\nThe scene should still feel stoic and resilient, reflecting the desired mood.\n\nDescribe the environment as if it were a still photograph of a place that embodies the motivational idea.\n\nAbsolutely no descriptions of people should be included in the context.\n\nDo NOT describe the artistic style (e.g., 'gritty', 'desaturated'). Just describe the content of the scene.\n\nA catchy social media title (50 characters or less).\n\nAn inspiring Instagram caption that educates on the theme or topic with relevant hashtags.\n\nReturn your response in this exact JSON format:\n{\n  \"originalTheme\": \"{{ $json.selectedTitle }}\",\n  \"context\": \"Your 2-3 sentence theme-relevant visual description of an environment without people.\",\n  \"socialTitle\": \"Catchy title about the motivational theme.\",\n  \"socialCaption\": \"Inspiring caption with emojis and hashtags.\"\n}",
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        -1520,
+        96
+      ],
+      "id": "2453dc04-69a0-4ff4-b0d9-032177c312d6",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-4-maverick:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -1632,
+        320
+      ],
+      "id": "2540c0c2-5273-44fd-94b7-6ea0505df41a",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"originalTheme\": \"{{ $json.selectedTitle }}\",\n  \"context\": \"Your 2-3 sentence theme-relevant visual description of an environment without people.\",\n  \"socialTitle\": \"Catchy title about the motivational theme.\",\n  \"socialCaption\": \"Inspiring caption with emojis and hashtags.\"\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1360,
+        320
+      ],
+      "id": "56b13c7c-7ba2-4907-9d32-4034803a8ce9",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "amount": 15
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -672,
+        96
+      ],
+      "id": "dd53a49a-524c-4037-9365-191e67b6d87c",
+      "name": "Wait 15 sec",
+      "webhookId": "ac6fc71c-635c-473c-889d-833bc6b799b3"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        192
+      ],
+      "id": "2c44efac-f4f3-4874-8b1b-aa3f39daebe5",
+      "name": "Wait 30",
+      "webhookId": "ce6f5f84-4919-469a-b86d-f1d1cc882852"
+    },
+    {
+      "parameters": {
+        "graphApiVersion": "v23.0",
+        "node": "={{ $json.post_id }}",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "fields",
+                "value": "is_published,scheduled_publish_time,permalink_url"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "642e410d-bcc7-415e-9346-96eec5b6b34a",
+      "name": "IS POSTED?",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "CYWxhjKL7rYymFbu",
+          "name": "FB - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "graphApiVersion": "v23.0",
+        "node": "={{ $json.id }}",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "fields",
+                "value": "permalink,id,timestamp"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        432,
+        192
+      ],
+      "id": "e7310e8e-da67-4a9c-a526-ea62a2fd7695",
+      "name": "IS POSTED?1",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "GXj6j3l91g5YTl3Y",
+          "name": "INSTA - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// This code reads the simple list of items from the Merge node and finds\n// the Facebook and Instagram data within it.\n\nlet fbData = null;\nlet igData = null;\n\n// 1. Loop through the list of items to identify and store the data for each platform.\nfor (const item of items) {\n  const data = item.json;\n\n  // Identify Facebook data by its unique keys: 'is_published' and 'permalink_url'.\n  if (data.is_published !== undefined && data.permalink_url) {\n    fbData = data;\n  }\n  // Identify Instagram data by its unique keys: 'permalink' and 'timestamp'.\n  else if (data.permalink && data.timestamp) {\n    igData = data;\n  }\n}\n\n// 2. After checking all items, perform the final check to see if both were found and successful.\nif (fbData && fbData.is_published === true && igData && igData.permalink) {\n  // If yes, return the single success message.\n  return [{\n    json: {\n      status: \"All posts succeeded! 🎉\",\n      facebook_url: fbData.permalink_url,\n      instagram_url: igData.permalink\n    }\n  }];\n} else {\n  // If not, return a debug message showing exactly what was found.\n  return [{\n    json: {\n      status: \"Condition check failed. ❌\",\n      debug_info: {\n        facebook_data_found: fbData || \"Facebook data not found in the list.\",\n        instagram_data_found: igData || \"Instagram data not found in the list.\"\n      }\n    }\n  }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        944,
+        80
+      ],
+      "id": "7171f03a-f8b9-47e9-9201-5b49dac10deb",
+      "name": "Code"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        704,
+        80
+      ],
+      "id": "5dc1ceca-15e2-40b8-ba33-fa1b75ba090a",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc",
+          "mode": "list",
+          "cachedResultName": "INNER UPGRADE PHOTO TOPICS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1263742919,
+          "mode": "list",
+          "cachedResultName": "SIMPLIFIED SINGLE IMAGE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc/edit#gid=1263742919"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": "={{ $('Parse Video Titles').first().json.rowNumber }}",
+            "PHOTO POSTED": "YES"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "PHOTO POSTED",
+              "displayName": "PHOTO POSTED",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1152,
+        80
+      ],
+      "id": "5cabb011-a1b8-454b-91e4-132cc818d74b",
+      "name": "Update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-3.3-70b-instruct:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -1536,
+        448
+      ],
+      "id": "d730b440-af27-448b-a7e1-aa6b22077909",
+      "name": "OpenRouter Chat Model1",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-3.3-70b-instruct:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -1312,
+        480
+      ],
+      "id": "5dbf4385-0aa1-4d56-a31a-9ef5de4cfe17",
+      "name": "OpenRouter Chat Model2",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Chicago",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "3DQkYrqphhTDeBq1"
+  },
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2025-08-03T13:57:08.438Z",
+      "updatedAt": "2025-08-03T13:57:08.438Z",
+      "id": "Mas1jE28bXSMu19L",
+      "name": "Fully Functional"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-08-29T14:18:56.426Z",
+  "versionId": "2aadaab0-ff90-49fa-8554-ae1aa43a7d4b"
+}
