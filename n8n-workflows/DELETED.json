@@ -1,0 +1,19 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2025-09-06T16:13:14.395Z",
+  "id": "4F1h9hAdzzXT7WNe",
+  "isArchived": true,
+  "meta": null,
+  "name": "DELETED",
+  "nodes": [],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-06T16:34:14.036Z",
+  "versionId": "6bdb0459-5103-491d-8022-101d8843ff91"
+}
