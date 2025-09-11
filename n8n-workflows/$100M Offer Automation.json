@@ -1,0 +1,1072 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Context and Niche",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Input Gathering Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Input Gathering Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Value Equation Generator Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Value Equation Generator Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Business Solutions Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser2": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Business Solutions Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model3": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Offer Refinement Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser3": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Offer Refinement Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model4": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Offer Bonus Generator Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser4": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Offer Bonus Generator Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Priority Offers": {
+      "main": [
+        [
+          {
+            "node": "Offer Bonus Generator Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bonus Offers": {
+      "main": [
+        [
+          {
+            "node": "Scarcity Tactics Generator Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Value Equation": {
+      "main": [
+        [
+          {
+            "node": "Business Solutions Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model5": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Scarcity Tactics Generator Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Context and Niche": {
+      "main": [
+        [
+          {
+            "node": "Input Gathering Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser5": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Scarcity Tactics Generator Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scarcity Tactics": {
+      "main": [
+        [
+          {
+            "node": "Guarantee and Risk Analysis Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model6": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Guarantee and Risk Analysis Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser6": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Guarantee and Risk Analysis Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Risk Guarantees": {
+      "main": [
+        [
+          {
+            "node": "Grand Slam Offer Generator Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser7": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Grand Slam Offer Generator Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model7": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Grand Slam Offer Generator Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guarantee and Risk Analysis Agent": {
+      "main": [
+        [
+          {
+            "node": "Risk Guarantees",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scarcity Tactics Generator Agent": {
+      "main": [
+        [
+          {
+            "node": "Scarcity Tactics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Grand Slam Offer": {
+      "main": [
+        [
+          {
+            "node": "Google Docs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Grand Slam Offer Generator Agent": {
+      "main": [
+        [
+          {
+            "node": "Grand Slam Offer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Input Gathering Agent": {
+      "main": [
+        [
+          {
+            "node": "Value Equation Generator Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Value Equation Generator Agent": {
+      "main": [
+        [
+          {
+            "node": "Value Equation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Business Solutions Agent": {
+      "main": [
+        [
+          {
+            "node": "Offer Refinement Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Offer Refinement Agent": {
+      "main": [
+        [
+          {
+            "node": "Priority Offers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Offer Bonus Generator Agent": {
+      "main": [
+        [
+          {
+            "node": "Bonus Offers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-16T21:05:18.477Z",
+  "id": "ni6m9tDzvqkC2Jr7",
+  "isArchived": false,
+  "meta": null,
+  "name": "$100M Offer Automation",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "b415edb6-cde1-4265-89f2-c176ab3b3dc5",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-70b-versatile",
+        "options": {}
+      },
+      "id": "d45a5d07-db24-4656-b080-e54b98e60daa",
+      "name": "Groq Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        440,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"Target Market\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"Defines the audience (niche) and their specific characteristics.\"\n\t\t},\n\t\t\"Dream Outcome\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"Identifies the ideal result the customer desires.\"\n\t\t},\n\t\t\"Core Problem\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"description\": \"Describes the key challenge preventing the customer from achieving their dream outcome.\"\n\t\t}\n\t},\n\t\"required\": [\"Target Market\", \"Dream Outcome\", \"Core Problem\"]\n}\n"
+      },
+      "id": "2e76bbac-654f-46a2-ad1d-9017a6ce32a1",
+      "name": "Structured Output Parser",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        600,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-70b-versatile",
+        "options": {}
+      },
+      "id": "94da181b-4b0f-4815-8ad2-71ef52ead4cf",
+      "name": "Groq Chat Model1",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        800,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"DreamOutcome\": {\n      \"type\": \"string\",\n      \"description\": \"Specifies a transformative result and why it matters to the customer.\"\n    },\n    \"PerceivedLikelihoodOfAchievement\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"methods\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"description\": \"Methods to make success seem inevitable (e.g., testimonials, guarantees).\"\n        }\n      }\n    },\n    \"TimeDelay\": {\n      \"type\": \"string\",\n      \"description\": \"Minimizes delays by identifying quick wins.\"\n    },\n    \"EffortAndSacrifice\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"steps\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"string\"\n          },\n          \"description\": \"Simplifies steps to reduce perceived difficulty.\"\n        }\n      }\n    }\n  },\n  \"required\": [\"DreamOutcome\", \"PerceivedLikelihoodOfAchievement\", \"TimeDelay\", \"EffortAndSacrifice\"]\n}\n"
+      },
+      "id": "cc7796c0-ad1d-4174-8a05-5c7bfb73eca0",
+      "name": "Structured Output Parser1",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        960,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-70b-versatile",
+        "options": {}
+      },
+      "id": "3fff2be5-5195-492c-90de-c490f810c7ba",
+      "name": "Groq Chat Model2",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"Problems\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"description\": \"List of obstacles the customer might face in achieving the desired outcome.\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t},\n\t\t\"Solutions\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"description\": \"List of solutions corresponding to each obstacle, with compelling names.\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t},\n\t\"required\": [\"Problems\", \"Solutions\"]\n}\n"
+      },
+      "id": "12866c58-7b0f-441b-a3cf-f0de43181b18",
+      "name": "Structured Output Parser2",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1460,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-70b-versatile",
+        "options": {}
+      },
+      "id": "541a4676-f050-4fad-b5b0-12e21a2392b5",
+      "name": "Groq Chat Model3",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"high_value_low_cost_solutions\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"object\",\n\t\t\t\t\"properties\": {\n\t\t\t\t\t\"solution_name\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t},\n\t\t\t\t\t\"description\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"required\": [\"solution_name\", \"description\"]\n\t\t\t}\n\t\t}\n\t},\n\t\"required\": [\"high_value_low_cost_solutions\"]\n}\n"
+      },
+      "id": "ea5b2f31-4742-4c77-ae8d-3ce132987d06",
+      "name": "Structured Output Parser3",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1800,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-70b-versatile",
+        "options": {}
+      },
+      "id": "c1cd8299-7ce3-4616-8740-0b7a8e7fca00",
+      "name": "Groq Chat Model4",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        400,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"additional_bonuses\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"object\",\n\t\t\t\t\"properties\": {\n\t\t\t\t\t\"bonus_name\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t},\n\t\t\t\t\t\"description\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"required\": [\"bonus_name\", \"description\"]\n\t\t\t}\n\t\t}\n\t},\n\t\"required\": [\"additional_bonuses\"]\n}\n"
+      },
+      "id": "b97e2355-5755-4157-a937-208559cae73e",
+      "name": "Structured Output Parser4",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        540,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6c8f3bd7-84f8-45c7-b8df-be32200ab2a0",
+              "name": "Priority Offers",
+              "value": "={{ $json.output.high_value_low_cost_solutions }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1abc8697-a22f-46c5-945f-4f6d469f61d1",
+      "name": "Priority Offers",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        280,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ff70ed7b-5c4c-4793-9772-62ab08471d1f",
+              "name": "Bonus Offers",
+              "value": "={{ $json.output.additional_bonuses }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a83eddd0-bcc7-493c-9826-c91ec324deab",
+      "name": "Bonus Offers",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6de5a21e-f390-4a43-95ef-8bb2b9bade17",
+              "name": "Dream Outcome",
+              "value": "={{ $json.output.DreamOutcome }}",
+              "type": "string"
+            },
+            {
+              "id": "39a5c071-96f5-402e-82a2-dd5f625e9e84",
+              "name": "Perceived Likelihood of Success",
+              "value": "={{ $json.output.PerceivedLikelihoodOfAchievement.methods }}",
+              "type": "array"
+            },
+            {
+              "id": "879ea6c7-cd55-4115-93d0-78857b8b6d55",
+              "name": "Time Delay",
+              "value": "={{ $json.output.TimeDelay }}",
+              "type": "string"
+            },
+            {
+              "id": "0a36769c-7503-4029-ba7d-4558242074f8",
+              "name": "Effort and Sacrifice",
+              "value": "={{ $json.output.EffortAndSacrifice.steps }}",
+              "type": "array"
+            },
+            {
+              "id": "8d77b5ce-8242-4502-b7d6-8a7b51f3cbe5",
+              "name": "Target Audience",
+              "value": "={{ $('Input Gathering Agent').item.json.output['Target Market'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "16265224-561d-4128-8096-d1900ae62e2b",
+      "name": "Value Equation",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-70b-versatile",
+        "options": {}
+      },
+      "id": "37cfdc20-7e27-495b-b299-ba5b030c645d",
+      "name": "Groq Chat Model5",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        960,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d0742a3e-c7e7-43f1-a27b-f2c6f4794a93",
+              "name": "AI Context",
+              "value": "We are creating a $100 Million Offer based on Alex Hormozi's principles. The goal is to design an offer so valuable that customers feel 'stupid saying no.' Focus on maximizing the perceived value and reducing all points of friction.",
+              "type": "string"
+            },
+            {
+              "id": "011a918f-ec24-4f07-a0a9-bca68c319908",
+              "name": "Target Market",
+              "value": "Social Media Marketing Businesses",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "36f633c0-a933-4590-9149-db9e4a1349c5",
+      "name": "Context and Niche",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        300,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"scarcity_tactics\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"object\",\n\t\t\t\t\"properties\": {\n\t\t\t\t\t\"tactic_name\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t},\n\t\t\t\t\t\"description\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"required\": [\"tactic_name\", \"description\"]\n\t\t\t}\n\t\t}\n\t},\n\t\"required\": [\"scarcity_tactics\"]\n}\n"
+      },
+      "id": "8ab0504b-c7ed-428b-914b-5c0cd72a370e",
+      "name": "Structured Output Parser5",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1100,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ee105d05-bda4-4594-98d1-4fb0d2738332",
+              "name": "Scarcity Tactics",
+              "value": "={{ $json.output.scarcity_tactics }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d390a2c5-c3ed-4d34-af53-016a1a2ebf6a",
+      "name": "Scarcity Tactics",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1400,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-70b-versatile",
+        "options": {}
+      },
+      "id": "567f60d1-5be4-4bd0-b99a-69b2a1c5d534",
+      "name": "Groq Chat Model6",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"risk_guarantees\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"object\",\n\t\t\t\t\"properties\": {\n\t\t\t\t\t\"guarantee_name\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t},\n\t\t\t\t\t\"description\": {\n\t\t\t\t\t\t\"type\": \"string\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"required\": [\"guarantee_name\", \"description\"]\n\t\t\t}\n\t\t}\n\t},\n\t\"required\": [\"risk_guarantees\"]\n}\n"
+      },
+      "id": "cb113a69-872b-41f0-a893-befc0bacb223",
+      "name": "Structured Output Parser6",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        1680,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "08e6a54a-da40-447c-8ba5-653ab5ae831f",
+              "name": "Risk Guarantees",
+              "value": "={{ $json.output.risk_guarantees }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "73b3dfef-9071-4148-8f79-b9abbcc70fa3",
+      "name": "Risk Guarantees",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1900,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n\t\"type\": \"object\",\n\t\"properties\": {\n\t\t\"scenario\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"dream_outcome\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"bonuses\": {\n\t\t\t\"type\": \"array\",\n\t\t\t\"items\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t},\n\t\t\"risk_reversal\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"scarcity\": {\n\t\t\t\"type\": \"string\"\n\t\t},\n\t\t\"price_anchoring\": {\n\t\t\t\"type\": \"string\"\n\t\t}\n\t},\n\t\"required\": [\"scenario\", \"dream_outcome\", \"bonuses\", \"risk_reversal\", \"scarcity\", \"price_anchoring\"]\n}\n"
+      },
+      "id": "71d8f681-dc73-41ba-b72b-9c693d84dd82",
+      "name": "Structured Output Parser7",
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.2,
+      "position": [
+        2220,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "model": "llama-3.1-70b-versatile",
+        "options": {}
+      },
+      "id": "553e0606-be46-4151-bd32-6c1d5ca860f0",
+      "name": "Groq Chat Model7",
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        2060,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7d4a9e41-1a50-453b-b8b7-73c1d75a63cd",
+              "name": "Target Market",
+              "value": "={{ $('Context and Niche').item.json['Target Market'] }}",
+              "type": "string"
+            },
+            {
+              "id": "10a99414-e94a-40cc-a9e6-bf6be7ae5048",
+              "name": "Core Problem",
+              "value": "={{ $('Input Gathering Agent').item.json.output['Core Problem'] }}",
+              "type": "string"
+            },
+            {
+              "id": "b8ff43f6-9571-43bd-9d58-c662c61d48d4",
+              "name": "Dream Outcome",
+              "value": "={{ $('Value Equation').item.json['Dream Outcome'] }}",
+              "type": "string"
+            },
+            {
+              "id": "346de830-ba1b-452f-8fa3-ab4d7962bbfd",
+              "name": "Perceived Likelihood of Success",
+              "value": "={{ $('Value Equation').item.json['Perceived Likelihood of Success'] }}",
+              "type": "array"
+            },
+            {
+              "id": "2111080c-7b28-49a8-85e7-90917b98399f",
+              "name": "Time Delay",
+              "value": "={{ $('Value Equation').item.json['Time Delay'] }}",
+              "type": "string"
+            },
+            {
+              "id": "d20b8809-35e4-401b-8880-0d2aeb0dfcba",
+              "name": "Effort and Sacrifice",
+              "value": "={{ $('Value Equation').item.json['Effort and Sacrifice'] }}",
+              "type": "array"
+            },
+            {
+              "id": "ab541fb1-4c98-474d-92aa-7e2e5d8ebcc7",
+              "name": "Target Audience",
+              "value": "={{ $('Value Equation').item.json['Target Audience'] }}",
+              "type": "string"
+            },
+            {
+              "id": "3a7f8251-d323-4a5a-8f97-e2a6cbd757fd",
+              "name": "Priority Offers (High Value, Low Cost Solutions)",
+              "value": "={{ $('Priority Offers').item.json['Priority Offers'] }}",
+              "type": "array"
+            },
+            {
+              "id": "717bdd93-735c-4e23-9981-cfa12d83d2b8",
+              "name": "Bonus Offers",
+              "value": "={{ $('Bonus Offers').item.json['Bonus Offers'] }}",
+              "type": "array"
+            },
+            {
+              "id": "ca0c838a-ba52-4d4a-8203-c3f720628547",
+              "name": "Scarcity Tactics",
+              "value": "={{ $('Scarcity Tactics').item.json['Scarcity Tactics'] }}",
+              "type": "array"
+            },
+            {
+              "id": "91237bc1-9ec0-4a37-9834-1858446416a4",
+              "name": "Risk Guarantees",
+              "value": "={{ $('Risk Guarantees').item.json['Risk Guarantees'] }}",
+              "type": "array"
+            },
+            {
+              "id": "1ef26a70-40da-461b-b351-6f276601db48",
+              "name": "Grand Slam Offer",
+              "value": "={{ $json.output }}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "daa4be2e-90a7-4324-93b8-a60f9fa02bc1",
+      "name": "Grand Slam Offer",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2500,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an excellent Business Analyst, your goal is to propose a strong guarantee that eliminates risk for the customer. Include phrases like \"or your money back,\" or unique performance-based guarantees to boost confidence in the offer. Always make sure it is achievable and realistic to avoid over promising.\n\nThese are the High Value Low Cost Solutions/Offers (Priority Offers) : \"{{ $('Priority Offers').item.json['Priority Offers'] }}\"\n\nExample Output:\n\"risk_guarantees\":[\n   {\n      \"guarantee_name\":\"Transform in 30\",\n      \"description\":\"Lose at least 10 lbs in 30 days or get double your money back.\"\n   },\n   {\n      \"guarantee_name\":\"Scale Your Agency Now\",\n      \"description\":\"Generate $25,000 in new revenue within 90 days, or we’ll refund your money and cover your next ad campaign up to $1,000.\"\n   },\n   {\n      \"guarantee_name\":\"Shopify Profit Accelerator\",\n      \"description\":\"Hit $10,000/month in revenue within 90 days, or we’ll refund your investment and reimburse your ad spend up to $500.\"\n   },\n   {\n      \"guarantee_name\":\"Scale Your Agency Now\",\n      \"description\":\"If you don’t generate $25,000 in revenue within 90 days, we’ll personally manage your lead generation for the next 30 days at no extra cost.\"\n   },\n   {\n      \"guarantee_name\":\"Fluent Fast Track\",\n      \"description\":\"If you don’t feel conversationally fluent in 90 days, you’ll get free unlimited group practice sessions until you do.\"\n   }\n]",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=Propose a strong guarantee that eliminates risk for the customer. Include phrases like \"or your money back,\" or unique performance-based guarantees to boost confidence in the offer.\n\nHere's a context for this objective: {{ $('Context and Niche').item.json['AI Context'] }}\nMake use of this context as a guiding principle.\n\nThis is our Target Customer Profile: {{ $('Value Equation').item.json['Target Audience'] }}\n\nHere's the Value Equation based on Alex Hormozi's Book:\nValue = (Dream Outcome×Perceived Likelihood of Achievement)/(Time Delay+Effort and Sacrifice)\n\nThese are our Value Equation elements:\n - Dream Outcome: {{ $('Value Equation').item.json['Dream Outcome'] }}\n - Perceived Likelihood of Achievement: {{ $('Value Equation').item.json['Perceived Likelihood of Success'] }}\n - Time Delay: {{ $('Value Equation').item.json['Time Delay'] }}\n - Effort and Sacrifice: {{ $('Value Equation').item.json['Effort and Sacrifice'] }}"
+            }
+          ]
+        }
+      },
+      "id": "17314459-35c9-4484-9d45-7a89a82bfca4",
+      "name": "Guarantee and Risk Analysis Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        1560,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an excellent Business Analyst, your goal is to Suggest scarcity tactics to increase perceived value without reducing the price. to refine the identified High Value Low Cost Solutions.\n\nThese are the High Value Low Cost Solutions/Offers (Priority Offers) : \"{{ $('Priority Offers').item.json['Priority Offers'] }}\"\n\nExample Output:\n\"scarcity_tactics\":[\n   {\n      \"tactic_name\":\"Limited Enrollment\",\n      \"description\":\"Only open for enrollment for the first 100 applicants to ensure quality support and attention.\"\n   },\n   {\n      \"tactic_name\":\"Early Bird Discount\",\n      \"description\":\"Exclusive discounts for those who enroll within the next 48 hours, enhancing urgency to join.\"\n   },\n   {\n      \"tactic_name\":\"Success Stories Spotlight\",\n      \"description\":\"Share success stories from recent graduates during the launch period to create social proof.\"\n   },\n   {\n      \"tactic_name\":\"Countdown Timer\",\n      \"description\":\"Add a countdown timer on the registration page to create urgency before enrollment closes.\"\n   },\n   {\n      \"tactic_name\":\"Limited-Time Bonuses\",\n      \"description\":\"Offer dynamic bonuses that change weekly (e.g., additional one-on-one coaching, new resources) that are time-sensitive.\"\n   }\n]",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=Suggest additional bonuses to increase perceived value without reducing the price to refine the identified High Value Low Cost Solutions.\n\nHere's a context for this objective: {{ $('Context and Niche').item.json['AI Context'] }}\nMake use of this context as a guiding principle.\n\nThis is our Target Customer Profile: {{ $('Value Equation').item.json['Target Audience'] }}\n\nHere's the Value Equation based on Alex Hormozi's Book:\nValue = (Dream Outcome×Perceived Likelihood of Achievement)/(Time Delay+Effort and Sacrifice)\n\nThese are our Value Equation elements:\n - Dream Outcome: {{ $('Value Equation').item.json['Dream Outcome'] }}\n - Perceived Likelihood of Achievement: {{ $('Value Equation').item.json['Perceived Likelihood of Success'] }}\n - Time Delay: {{ $('Value Equation').item.json['Time Delay'] }}\n - Effort and Sacrifice: {{ $('Value Equation').item.json['Effort and Sacrifice'] }}"
+            }
+          ]
+        }
+      },
+      "id": "74bcf4b1-f84c-4633-8d5f-f9c489225f46",
+      "name": "Scarcity Tactics Generator Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        1040,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentURL": "1aCa3H4gng6_6qk06m3dwoBjZGPKPZPfMRZupoSjEkMc",
+        "actionsUi": {
+          "actionFields": [
+            {
+              "action": "insert",
+              "text": "=Target Market: {{ $json['Target Market'] }}\n\nCore Problem: {{ $json['Core Problem'] }}\n\nTHE VALUE EQUATION:\n\nDream Outcome: {{ $json['Dream Outcome'] }}\n\nPerceived Likelihood of Success: {{ $json['Perceived Likelihood of Success'] }}\n\nTime Delay: {{ $json['Time Delay'] }}\n\nEfforts and Sacrifices: {{ $json['Effort and Sacrifice'] }}\n\nTarget Audience: {{ $json['Target Audience'] }}\n\nGrand Slam Offer:\nScenario: {{ $json['Grand Slam Offer'].scenario }}\n\nDream Outcome: {{ $json['Grand Slam Offer'].dream_outcome }}\n\nBonuses:\n{{ $json['Grand Slam Offer'].bonuses }}\n\nRisk Reversal: {{ $json['Grand Slam Offer'].risk_reversal }}\n\nScarcity Tactics: {{ $json['Grand Slam Offer'].scarcity }}\n\nPrice Anchoring: {{ $json['Grand Slam Offer'].price_anchoring }}"
+            }
+          ]
+        }
+      },
+      "id": "cf5efaf8-af28-4134-8d64-b4ecb2fb9444",
+      "name": "Google Docs",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        2700,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an excellent Grand Slam Business Offer Creator, your goal is to combine all components to generate a $100 Million Dollar Grand Slam Offer based on the principles and framework taught by Alex Hormozi, into a finalized pitch. Ensure the offer includes the core solution, bonuses, guarantees, and scarcity. Write the pitch in a way that makes it emotionally compelling and logically sound without over-promising and ensure you do not make unrealistic offers.\n\nThese are the High Value Low Cost Solutions/Offers (Priority Offers) : \"{{ $('Priority Offers').item.json['Priority Offers'] }}\"\n\nThese are the High value-Low cost Bonus Offers: \"{{ $('Bonus Offers').item.json['Bonus Offers'] }}\"\n\nThese are the strategic Scarcity, urgency, and exclusivity to enhance the offer: \"{{ $('Scarcity Tactics').item.json['Scarcity Tactics'] }}\"\n\nThese are the Guarantees and Risk Reversal: \"{{ $json['Risk Guarantees'] }}\"\n\nExample Output:\n\n### **Grand Slam Offer 1: 30-Day Body Boost Program**\n- **Scenario:** Online Fitness Program for Busy Professionals  \n- **Dream Outcome:** Lose 10 lbs in 30 days with a simple system designed for busy schedules.  \n- **Bonuses:**  \n  - Customized 7-day meal prep plans based on your favorite foods.  \n  - On-demand library of 10-minute workouts for all fitness levels.  \n  - Private accountability group with daily motivational check-ins.  \n  - Exclusive progress tracking app with visual milestone achievements.  \n- **Risk Reversal:** “Lose 10 lbs or more in 30 days, or we’ll refund your payment AND give you a free 3-month subscription to our premium plan.”  \n- **Scarcity:** “Only 25 spots available for hands-on coaching this month to ensure personal attention.”  \n- **Price Anchoring:** “This program is worth $1,200, but today’s offer is only $249.”\n\n---\n\n### **Grand Slam Offer 2: Fit in 30: Results Made Simple**\n- **Scenario:** Online Fitness Program for Busy Professionals  \n- **Dream Outcome:** Lose 10 lbs in 30 days while gaining energy and confidence.  \n- **Bonuses:**  \n  - Ready-to-use grocery shopping lists tailored to your goals.  \n  - 30 exclusive \"Desk-Friendly\" 10-minute workout videos.  \n  - Weekly live coaching calls for troubleshooting and goal setting.  \n  - Interactive app that provides daily habit streaks and fitness gamification.  \n- **Risk Reversal:** “If you don’t hit your goal, we’ll refund your money and offer a free 60-minute nutrition consultation.”  \n- **Scarcity:** “Only 15 spots left for this month’s one-on-one coaching program.”  \n- **Price Anchoring:** “Regularly $1,500. Special price today: $297.”\n\n---\n\n### **Key Elements Across All Offers**\n1. **Dream Outcome:** Clearly define and target a compelling goal with measurable results.  \n2. **Bonuses:** Add elements that directly address common pain points while enhancing the customer experience.  \n3. **Risk Reversal:** Incorporate guarantees that go beyond monetary refunds to build trust.  \n4. **Scarcity:** Limit availability to create urgency.  \n5. **Price Anchoring:** Present a high perceived value with a discounted price to make the offer irresistible.  \n\nThese examples embody Hormozi’s approach to making offers that customers \"feel stupid saying no\" to.",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=Combine all components into a finalized pitch. Ensure the offer includes the core solution, bonuses, guarantees, and scarcity. Write the pitch in a way that makes it emotionally compelling and logically sound.\n\nHere's a context for this objective: {{ $('Context and Niche').item.json['AI Context'] }}\nMake use of this context as a guiding principle.\n\nThis is our Target Customer Profile: {{ $('Value Equation').item.json['Target Audience'] }}\n\nHere's the Value Equation based on Alex Hormozi's Book:\nValue = (Dream Outcome×Perceived Likelihood of Achievement)/(Time Delay+Effort and Sacrifice)\n\nThese are our Value Equation elements:\n - Dream Outcome: {{ $('Value Equation').item.json['Dream Outcome'] }}\n - Perceived Likelihood of Achievement: {{ $('Value Equation').item.json['Perceived Likelihood of Success'] }}\n - Time Delay: {{ $('Value Equation').item.json['Time Delay'] }}\n - Effort and Sacrifice: {{ $('Value Equation').item.json['Effort and Sacrifice'] }}"
+            }
+          ]
+        }
+      },
+      "id": "4c1a9bbf-df62-4d3c-92c1-033b89bc452f",
+      "name": "Grand Slam Offer Generator Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        2120,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an excellent Business Offer generation assistant, your goal is to identify the Target Audience for a business offer based on the given Target Market or niche.\n\nThis is the Target Market or niche :{{ $json['Target Market'] }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=Identify the audience for this offer, including their specific needs, fears, and desires. Outline their dream outcome and the biggest problem they face in achieving it.\n\nHere is the context for our primary goal: {{ $json['AI Context'] }}\nMake use of this context as a guiding principle."
+            }
+          ]
+        }
+      },
+      "id": "86633f1e-3251-4870-a839-59514bc93b0b",
+      "name": "Input Gathering Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        500,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an excellent Business Offer generation assistant and Value Equation Analyst, your goal is to construct a value equation based on the target audience and their dream outcome by increasing the dream outcome, boosting the perceived likelihood of achievement, reducing time delays, and minimizing effort and sacrifice.\n\nThis is the Target Audience : \"{{ $json.output['Target Market'] }}\"\n\nThis is their Dream Outcome: \"{{ $json.output['Dream Outcome'] }}\"",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=Based on the Target Audience and their Dream Outcome, construct a value equation by increasing the dream outcome, boosting the perceived likelihood of achievement, reducing time delays, and minimizing effort and sacrifice.\n\nHere's a context for this objective: {{ $('Context and Niche').item.json['AI Context'] }}\nMake use of this context as a guiding principle.\n\nHere's the Value Equation based on Alex Hormozi's Book:\nValue = (Dream Outcome×Perceived Likelihood of Achievement)/(Time Delay+Effort and Sacrifice)\n\nFor each element:\n - Dream Outcome: Specify a transformative result and why it matters to the customer.\n - Perceived Likelihood of Achievement: Provide methods to make success seem inevitable (e.g., testimonials, guarantees).\n - Time Delay: Minimize delays by identifying quick wins.\n - Effort and Sacrifice: Simplify steps and reduce perceived difficulty."
+            }
+          ]
+        }
+      },
+      "id": "faa42dd8-f360-451b-bf0f-9d2ea3b97e82",
+      "name": "Value Equation Generator Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        860,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an excellent Business Analyst, your goal is to list all potential obstacles a customer may encounter in achieving the dream outcome. For each obstacle, propose a corresponding solution with a unique, attractive name.\n\nThis is the Target Audience : \"{{ $json['Target Audience'] }}\"\n\nThis is their Dream Outcome: \"{{ $json['Dream Outcome'] }}\"",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=List all potential obstacles a customer may encounter in achieving the dream outcome. For each obstacle, propose a corresponding solution with a unique, attractive name.\n\nHere's a context for this objective: {{ $('Context and Niche').item.json['AI Context'] }}\nMake use of this context as a guiding principle.\n\nThis is our Target Customer Profile: {{ $json['Target Audience'] }}\n\nHere's the Value Equation based on Alex Hormozi's Book:\nValue = (Dream Outcome×Perceived Likelihood of Achievement)/(Time Delay+Effort and Sacrifice)\n\nThese are our Value Equation elements:\n - Dream Outcome: {{ $json['Dream Outcome'] }}\n - Perceived Likelihood of Achievement: {{ $json['Perceived Likelihood of Success'] }}\n - Time Delay: {{ $json['Time Delay'] }}\n - Effort and Sacrifice: {{ $json['Effort and Sacrifice'] }}"
+            }
+          ]
+        }
+      },
+      "id": "5cec4e30-a9f0-4193-9b04-ea8e7c9d66cc",
+      "name": "Business Solutions Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        1380,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an excellent Business Analyst, your goal is to identify and prioritize high-value, low-cost solutions from the list and refine the offer/solutions\n\nThese are the List of Problems Identified : \"\"{{ $json.output.Problems }}\n\nThese are the Corresponding Solutions Identified: \"{{ $json.output.Solutions }}\"\n\nExample Output:\n\"high_value_low_cost_solutions\":[\n   {\n      \"solution_name\":\"USP Ignition\",\n      \"description\":\"A guided process to discover and refine your unique value proposition, ensuring it resonates with high-paying clients.\"\n   },\n   {\n      \"solution_name\":\"Client Attraction Blueprint\",\n      \"description\":\"A proven system for identifying and attracting high-paying clients, tailored to your service offerings.\"\n   },\n   {\n      \"solution_name\":\"Lead Generation Accelerator\",\n      \"description\":\"A comprehensive program for creating effective lead generation and conversion strategies that work.\"\n   },\n   {\n      \"solution_name\":\"Social Media Mastery\",\n      \"description\":\"Expert training and coaching on the latest social media marketing trends and strategies that can be implemented immediately.\"\n   },\n   {\n      \"solution_name\":\"Resource Optimization\",\n      \"description\":\"A personalized plan for allocating and leveraging resources to scale your business efficiently.\"\n   },\n   {\n      \"solution_name\":\"Agency Branding Catalyst\",\n      \"description\":\"A step-by-step program for defining and establishing a strong agency brand to stand out in the market.\"\n   }\n]",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=Refine each of the solutions/offer by prioritizing high-value, low-cost solutions.\n\nHere's a context for this objective: {{ $('Context and Niche').item.json['AI Context'] }}\nMake use of this context as a guiding principle.\n\nThis is our Target Customer Profile: {{ $('Value Equation').item.json['Target Audience'] }}\n\nHere's the Value Equation based on Alex Hormozi's Book:\nValue = (Dream Outcome×Perceived Likelihood of Achievement)/(Time Delay+Effort and Sacrifice)\n\nThese are our Value Equation elements:\n - Dream Outcome: {{ $('Value Equation').item.json['Dream Outcome'] }}\n - Perceived Likelihood of Achievement: {{ $('Value Equation').item.json['Perceived Likelihood of Success'] }}\n - Time Delay: {{ $('Value Equation').item.json['Time Delay'] }}\n - Effort and Sacrifice: {{ $('Value Equation').item.json['Effort and Sacrifice'] }}"
+            }
+          ]
+        }
+      },
+      "id": "711cf097-521c-4f68-b1f8-9ca5f4e89f3a",
+      "name": "Offer Refinement Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        1740,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an excellent Business Analyst, your goal is to Suggest additional bonuses to increase perceived value without reducing the price to refine the identified High Value Low Cost Solutions.\n\nThese are the High Value Low Cost Solutions/Offers (Priority Offers) : \"{{ $json['Priority Offers'] }}\"\n\nExample Output:\n\"additional_bonuses\":[\n   {\n      \"bonus_name\":\"Exclusive Access to Expert Webinars\",\n      \"description\":\"Monthly live webinars with industry leaders providing insights and strategies for scaling your business.\"\n   },\n   {\n      \"bonus_name\":\"Comprehensive Resource Library\",\n      \"description\":\"Access to a library of templates, guides, and tools to streamline your marketing efforts.\"\n   },\n   {\n      \"bonus_name\":\"1-on-1 Strategy Session\",\n      \"description\":\"A 60-minute personalized strategy session to address your unique business challenges and opportunities.\"\n   },\n   {\n      \"bonus_name\":\"Community of High-Achieving Peers\",\n      \"description\":\"Lifetime access to a private community of successful agency owners for networking and collaboration.\"\n   },\n   {\n      \"bonus_name\":\"Priority Support\",\n      \"description\":\"Receive priority support from our team for any questions or issues encountered during the program.\"\n   }\n]",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=Suggest additional bonuses to increase perceived value without reducing the price to refine the identified High Value Low Cost Solutions.\n\nHere's a context for this objective: {{ $('Context and Niche').item.json['AI Context'] }}\nMake use of this context as a guiding principle.\n\nThis is our Target Customer Profile: {{ $('Value Equation').item.json['Target Audience'] }}\n\nHere's the Value Equation based on Alex Hormozi's Book:\nValue = (Dream Outcome×Perceived Likelihood of Achievement)/(Time Delay+Effort and Sacrifice)\n\nThese are our Value Equation elements:\n - Dream Outcome: {{ $('Value Equation').item.json['Dream Outcome'] }}\n - Perceived Likelihood of Achievement: {{ $('Value Equation').item.json['Perceived Likelihood of Success'] }}\n - Time Delay: {{ $('Value Equation').item.json['Time Delay'] }}\n - Effort and Sacrifice: {{ $('Value Equation').item.json['Effort and Sacrifice'] }}"
+            }
+          ]
+        }
+      },
+      "id": "45e70841-2f6f-439a-8965-38e2c5bc5f94",
+      "name": "Offer Bonus Generator Agent",
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        460,
+        440
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-16T21:05:18.477Z",
+      "updatedAt": "2025-07-16T21:05:18.477Z",
+      "role": "workflow:owner",
+      "workflowId": "ni6m9tDzvqkC2Jr7",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-16T21:05:18.477Z",
+  "versionId": "d9201719-7c71-46f7-ad15-081ff2a06dd5"
+}
