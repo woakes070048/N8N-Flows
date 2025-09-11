@@ -1,0 +1,771 @@
+{
+  "active": false,
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Video Story",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Images": {
+      "main": [
+        [
+          {
+            "node": "30  Seconds",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Videos": {
+      "main": [
+        [
+          {
+            "node": "5 Minutes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "5 Minutes": {
+      "main": [
+        [
+          {
+            "node": "Get Videos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Audio": {
+      "main": [
+        [
+          {
+            "node": "Upload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Share File": {
+      "main": [
+        [
+          {
+            "node": "Grab Elements",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Grab Elements": {
+      "main": [
+        [
+          {
+            "node": "Render Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Render Video": {
+      "main": [
+        [
+          {
+            "node": "60 Seconds",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "60 Seconds": {
+      "main": [
+        [
+          {
+            "node": "Download Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Video": {
+      "main": [
+        [
+          {
+            "node": "30 Seconds",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "30 Seconds": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets Upload to Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Images": {
+      "main": [
+        [
+          {
+            "node": "Grab Elements",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Videos": {
+      "main": [
+        [
+          {
+            "node": "Grab Elements",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Upload to Notion": {
+      "main": [
+        [
+          {
+            "node": "Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out": {
+      "main": [
+        [
+          {
+            "node": "OpenAI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video Story": {
+      "main": [
+        [
+          {
+            "node": "Brands",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Brands": {
+      "main": [
+        [
+          {
+            "node": "Split Out",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI": {
+      "main": [
+        [
+          {
+            "node": "Generate Images",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Generate Videos",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Generate Audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "30  Seconds": {
+      "main": [
+        [
+          {
+            "node": "Get Images",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload": {
+      "main": [
+        [
+          {
+            "node": "Share File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-08T20:06:58.275Z",
+  "id": "XXcrBf0QUItgKVdR",
+  "isArchived": false,
+  "meta": null,
+  "name": "SHORTS MACHINE",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression"
+            }
+          ]
+        }
+      },
+      "id": "5eb5f995-3f0e-4621-9ec3-d9e89bcf6a2f",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        180,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/images/generations",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "id": "41628545-988a-4f19-a51f-ceaea93f98fb",
+      "name": "Generate Images",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        180,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "url": "{{ $json.image_url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "ff11386c-7afa-43a1-9edd-287dcf211923",
+      "name": "Get Images",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        620,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.runwayml.com/v1/generate",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "runwayApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "id": "acc740ef-13ce-4606-a6a9-80c77d537ae1",
+      "name": "Generate Videos",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        940,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "unit": "minutes"
+      },
+      "id": "2596196b-b415-4d8f-8ff1-4e86a12103cc",
+      "name": "5 Minutes",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        500
+      ],
+      "webhookId": "60f67525-88f1-4998-91af-ad7429158942"
+    },
+    {
+      "parameters": {
+        "url": "{{ $json.video_url }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "0d4c7c20-99a0-44f0-bedf-1e4c07ed9a88",
+      "name": "Get Videos",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1380,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.elevenlabs.io/v1/text-to-speech/{{VOICE_ID}}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "elevenLabsApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "id": "e58f6352-c716-48b1-9ade-2d499f55ae95",
+      "name": "Generate Audio",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        180,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "{{ $('Upload to Drive').first().json.webViewLink }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "id": "a3c7829f-4b11-46d9-91e0-6b67f70a00d9",
+      "name": "Share File",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        580,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aggregate all media elements\nconst story = $('Split Out').first().json.choices[0].message.content;\nconst images = $('Get Images').all();\nconst videos = $('Get Videos').all();\nconst audio = $('Share File').first().json;\n\nreturn {\n  story: story,\n  images: images.map(img => img.binary),\n  videos: videos.map(vid => vid.binary), \n  audio: audio.webViewLink,\n  timestamp: new Date().toISOString()\n};"
+      },
+      "id": "7232a8e3-8591-4e48-ad2f-a81c31ca1e93",
+      "name": "Grab Elements",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        780,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.renderforest.com/render-api/v2/projects",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "renderforestApi",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "id": "5b753aa1-b71d-46e1-b66f-13d53c2618d8",
+      "name": "Render Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        180,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "unit": "seconds"
+      },
+      "id": "07cbd0cc-e0cc-4808-b3d3-0dd7ec8299e2",
+      "name": "60 Seconds",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        380,
+        940
+      ],
+      "webhookId": "32dde09a-cd95-42eb-915c-f38b46de539f"
+    },
+    {
+      "parameters": {
+        "url": "https://api.renderforest.com/render-api/v2/projects/{{ $('Render Video').first().json.projectId }}/status",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "renderforestApi",
+        "options": {}
+      },
+      "id": "6ee1a22a-e2f3-464d-90bd-730022892501",
+      "name": "Download Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        580,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "unit": "seconds"
+      },
+      "id": "0671ef65-9615-4af8-9cfe-2d0afcbaab38",
+      "name": "30 Seconds",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        780,
+        940
+      ],
+      "webhookId": "5e7287db-1c86-429b-b84f-8eb41a2e50af"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "mode": "list",
+          "value": "{{SHEET_ID}}"
+        },
+        "sheetName": {
+          "mode": "list",
+          "value": "Sheet1"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {}
+        },
+        "options": {}
+      },
+      "id": "e77ac685-2eda-4cbe-93c7-9eaf438e43c6",
+      "name": "Google Sheets Upload to Notion",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        1140,
+        800
+      ]
+    },
+    {
+      "parameters": {
+        "pageId": {
+          "mode": "list",
+          "value": "{{NOTION_DATABASE_ID}}"
+        },
+        "title": "Content - {{ $now.format('YYYY-MM-DD') }}",
+        "blockUi": {
+          "blockValues": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "id": "38263f5a-617b-4189-bb40-65f5e1bca6ab",
+      "name": "Notion",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        1360,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "a",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        180
+      ],
+      "id": "b6b337d5-0183-45d0-8172-30166189c601",
+      "name": "Split Out"
+    },
+    {
+      "parameters": {
+        "content": "## Prompt Generation\n",
+        "height": 340,
+        "width": 1520,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        60,
+        80
+      ],
+      "id": "28dec73f-b94e-4d54-bfad-c9745fa262fd",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## Create Image",
+        "height": 240,
+        "width": 740,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        60,
+        440
+      ],
+      "id": "4a9a31b0-34ef-416b-970b-bc072ec8bce2",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Create Video",
+        "height": 240,
+        "width": 760,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        820,
+        440
+      ],
+      "id": "d1909dbf-08c0-42e3-8cc5-a82661fe0b14",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## Audio and Compile\n",
+        "height": 420,
+        "width": 940,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        60,
+        700
+      ],
+      "id": "9512f2f6-aab1-4c8b-b244-ddafea38dc6b",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Saving ",
+        "height": 420,
+        "width": 560,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        700
+      ],
+      "id": "a065a06c-ea1a-414c-acfa-1e9e4caa72c2",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "resource": "spreadsheet",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        460,
+        180
+      ],
+      "id": "63d197cd-22aa-4d31-967d-96d80805ebdb",
+      "name": "Video Story"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        760,
+        180
+      ],
+      "id": "788043e7-8814-4182-9e6c-cdd59983c9ec",
+      "name": "Brands"
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "=gpt-4o",
+          "mode": "id"
+        },
+        "messages": {
+          "values": [
+            {}
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        1320,
+        180
+      ],
+      "id": "d2a91c90-5057-4885-adcc-68ea8e5e9b98",
+      "name": "OpenAI"
+    },
+    {
+      "parameters": {
+        "unit": "seconds"
+      },
+      "id": "4fe04a66-5bed-4aee-96aa-3a2d7194bdb4",
+      "name": "30  Seconds",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        400,
+        500
+      ],
+      "webhookId": "93019c96-3266-4a34-99a6-33792c0f70c7"
+    },
+    {
+      "parameters": {
+        "name": "audio_{{ $now.format('YYYY-MM-DD_HH-mm') }}.mp3",
+        "driveId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "My Drive"
+        },
+        "folderId": {
+          "__rl": true,
+          "mode": "list",
+          "value": "root",
+          "cachedResultName": "/ (Root folder)"
+        },
+        "options": {}
+      },
+      "id": "2c6cfdee-4edb-40a1-8bdc-b5df80a3d01d",
+      "name": "Upload",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        380,
+        740
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-08T20:06:58.275Z",
+      "updatedAt": "2025-07-08T20:06:58.275Z",
+      "role": "workflow:owner",
+      "workflowId": "XXcrBf0QUItgKVdR",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-08T20:07:19.310Z",
+  "versionId": "b8b68c2d-2118-42d1-9fcb-054e652aa577"
+}
