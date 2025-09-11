@@ -1,0 +1,326 @@
+{
+  "active": false,
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Chat GPT Promt Generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "RunwayML Image to Video Generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chat GPT Promt Generator": {
+      "main": [
+        [
+          {
+            "node": "Hugging Face Image Generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Hugging Face Image Generator": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Getting Video URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RunwayML Image to Video Generator": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LINK Update in Sheet": {
+      "main": [
+        [
+          {
+            "node": "UPDATE STATUS",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Getting Video URL": {
+      "main": [
+        [
+          {
+            "node": "LINK Update in Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-13T13:19:58.127Z",
+  "id": "TJbl9aPppM7duPAk",
+  "isArchived": false,
+  "meta": null,
+  "name": "POV - VIDEO GENERATOR",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Video Idea",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Drop you idea here ",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "eac47229-b115-4e4c-aa29-db51881542c7",
+      "name": "On form submission",
+      "webhookId": "7e37cb63-20bf-47bc-b47b-4ef921638bed"
+    },
+    {
+      "parameters": {
+        "operation": "binaryToPropery",
+        "binaryPropertyName": "=data",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        20,
+        200
+      ],
+      "id": "d24ea39e-e6a6-48a6-87de-0a05a8f8d705",
+      "name": "Extract from File"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://models.inference.ai.azure.com/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer ghp_DlU6dXVJZzHrVoVtZ1qVcMmFJ4o2"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"gpt-4o\",\n  \"temperature\": 0.7,\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a prompt generator that creates realistic, first-person POV image prompts for AI models like Flux. Every prompt should describe a single frame from the point of view of the character—as if the viewer is seeing through their own eyes.\\n\\nInstructions:\\n- Begin with 'First-person view...'\\n- The viewer should see their own hands or feet interacting with the environment.\\n- Focus on what the character sees directly ahead—include physical depth.\\n- Describe lighting, textures, and small background movements.\\n- Keep the paragraph under 950 characters.\\n- Do NOT include the character's face, name, or narration—this is not third-person.\\n- It must feel like the viewer is standing there, seeing it in real-time.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"My scene idea: {{ $json['Drop you idea here '] }}\"\n    }\n  ]\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        200,
+        0
+      ],
+      "id": "c0af565c-3c54-4669-93ef-a0a3c82c5343",
+      "name": "Chat GPT Promt Generator"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer hf_NhlOAeSNSc"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"inputs\": \"{{ $json.choices[0].message.content }}\",\n  \"size\": \"1024x1024\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        400,
+        0
+      ],
+      "id": "03742d94-9204-4436-b0e9-4a6c2ff037a6",
+      "name": "Hugging Face Image Generator"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        400,
+        200
+      ],
+      "id": "a318fbdb-2161-4770-8d16-e06085425acc",
+      "name": "Wait",
+      "webhookId": "ef067fae-eb31-414f-9704-41cda26bd8bb"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.dev.runwayml.com/v1/image_to_video",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer key_00e49975c2b3b66fe10326df6efc35e13bca93f22cdd99ef07c1772650d08d03b5b36bc94d8455d81663a95b289a55a56253c2aefb132bbd4"
+            },
+            {
+              "name": "X-Runway-Version",
+              "value": "2024-11-06"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"gen4_turbo\",\n  \"promptImage\": \"data:image/png;base64,{{ $json.data }}\",\n  \"promptText\": \"First-person view. My hands stretch forward, fingers brushing past tall grass as I walk. Light flickers across the lens from shifting leaves above. My boots crunch on gravel, and the distant hum of water grows louder. Each step sends tiny ripples through a shallow puddle. A breeze rustles my sleeves. The world reacts—branches sway, dust swirls, sunlight breaks through in patterns. The camera mimics natural human motion, with slight head bob and fluid steps.\",\n  \"ratio\": \"1280:720\",\n  \"motion\": {\n    \"limbs\": \"hands in front, touching/interacting\",\n    \"camera\": \"head movement, walking rhythm\",\n    \"environment\": \"wind effects, dynamic lighting, physical interaction\"\n  },\n  \"duration\": 5\n}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        200,
+        200
+      ],
+      "id": "27f2258e-71ee-4fdf-bbb5-e326e6aac17d",
+      "name": "RunwayML Image to Video Generator"
+    },
+    {
+      "parameters": {
+        "resource": "spreadsheet",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        200,
+        420
+      ],
+      "id": "ad15aa33-d949-47c8-8926-bf28f6b107c2",
+      "name": "LINK Update in Sheet"
+    },
+    {
+      "parameters": {
+        "resource": "spreadsheet",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        400,
+        420
+      ],
+      "id": "d6b31323-7e7c-47fd-bbc5-1b75d5daa75d",
+      "name": "UPDATE STATUS"
+    },
+    {
+      "parameters": {
+        "url": "=https://api.dev.runwayml.com/v1/tasks/{{ $json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer key_00e49975c2b3b66fe10326df6efc35e13bca077f68925e62f9a93f22cdd99ef07c1772650d08d03b5b36bc94d8455d81663a95b289a55a56253c2aefb132bbd4"
+            },
+            {
+              "name": "X-Runway-Version",
+              "value": "2024-11-06"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        20,
+        420
+      ],
+      "id": "f7e370c1-92e2-4211-b681-be3abc35af51",
+      "name": "Getting Video URL"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-13T13:19:58.127Z",
+      "updatedAt": "2025-07-13T13:19:58.127Z",
+      "role": "workflow:owner",
+      "workflowId": "TJbl9aPppM7duPAk",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-07-13T13:19:58.127Z",
+  "versionId": "9899d580-a3f8-419f-9d47-94d9a573fc9a"
+}
