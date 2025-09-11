@@ -1,0 +1,137 @@
+{
+  "active": false,
+  "connections": {
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Think": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-06T14:09:32.119Z",
+  "id": "CO30nMjVRE798xJ4",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "PYTHON TEST",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "c6151f62-0e20-407e-8d31-4de8a1d5b6bd",
+      "name": "When chat message received",
+      "webhookId": "ef47d7b2-f017-4ee8-b58d-79e2df0fbde8"
+    },
+    {
+      "parameters": {
+        "model": "mistralai/mistral-7b-instruct:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        384,
+        224
+      ],
+      "id": "d03be4ff-2648-437e-8a66-16251ba1fbfa",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=title/topic: {{ $json.chatInput }}\n\n",
+        "options": {
+          "systemMessage": "=YOU ARE A PROFESSIONAL SOCIAL MEDIA CONTENT CREATOR WRITING SCRIPTS TO ENSURE VIEWERS ARE HOOKED AND WANT TO STAY TIL THE END.\n\nWrite a 200 word short viral story script for a 60-second video based on the title/topic PROVIDED BY THE USER\n\nThe script should:\n- Follow this structure: Hook (1–2 seconds), Setup, Conflict, Twist/Resolution, Call to Action.\n- Use simple, casual, spoken-style English, as if someone is telling the story directly to the viewer.\n- Aim for emotional impact, intrigue, relatability, or shock value.\n- Be about 180 - 200 words long (ideal for 60 seconds of natural speech).\n- Be engaging and relatable for teenagers and adults.\n- include a call to action at the end (example= \"Stick around to see what history has for us next!\")\n\nPlease ensure the script is optimized for text-to-speech generators—using simple, clear sentences with natural rhythm and conversational tone.\n\n\n**Output Requirements**\nOutput ONLY the SCRIPT in **paragraph form**.\n**DO NOT INCLUDE any director Speak, Headings, Labels or any other verbiage.** \nALWAYS Output only a script. Do not ask additional questions or add any unneccessary filler."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        416,
+        0
+      ],
+      "id": "44d5cd14-0663-4a2e-ab61-2057ceaea7c8",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolThink",
+      "typeVersion": 1.1,
+      "position": [
+        576,
+        208
+      ],
+      "id": "4d30beb8-499a-4153-9d73-beb73328a78b",
+      "name": "Think"
+    }
+  ],
+  "pinData": {
+    "When chat message received": [
+      {
+        "json": {
+          "sessionId": "c9b7f8758e8c49a18cc0c8a0d0c7d9b0",
+          "action": "sendMessage",
+          "chatInput": "The Boston Tea Party"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-06T14:09:32.119Z",
+      "updatedAt": "2025-07-06T14:09:32.119Z",
+      "role": "workflow:owner",
+      "workflowId": "CO30nMjVRE798xJ4",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-05T21:39:24.759Z",
+  "versionId": "525f5bda-e874-4f6c-aa6a-90176a13bf94"
+}
