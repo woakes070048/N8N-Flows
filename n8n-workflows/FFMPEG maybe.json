@@ -1,0 +1,508 @@
+{
+  "active": false,
+  "connections": {
+    "Generate Video": {
+      "main": [
+        [
+          {
+            "node": "Combine files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Video Sheet": {
+      "main": [
+        [
+          {
+            "node": "Download Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Music Sheet": {
+      "main": [
+        [
+          {
+            "node": "Download Music",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Video": {
+      "main": [
+        [
+          {
+            "node": "Save Videos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Music": {
+      "main": [
+        [
+          {
+            "node": "Save Music",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Videos": {
+      "main": [
+        [
+          {
+            "node": "Re-encode Videos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Music": {
+      "main": [
+        [
+          {
+            "node": "Combine files",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Read Text Sheet",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read Music Sheet",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read Video Sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Re-encode Videos": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Generate file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate file": {
+      "main": [
+        [
+          {
+            "node": "Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Text Sheet": {
+      "main": [
+        [
+          {
+            "node": "Combine files",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Combine files": {
+      "main": [
+        [
+          {
+            "node": "Add music",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Add music": {
+      "main": [
+        [
+          {
+            "node": "Add Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-03T13:23:49.626Z",
+  "id": "lme1NRb4jL4hb07W",
+  "isArchived": false,
+  "meta": null,
+  "name": "FFMPEG maybe",
+  "nodes": [
+    {
+      "parameters": {
+        "command": "=cmd /c \"ffmpeg -y -f concat -safe 0 -i C:/n8ndata/appdata/video_output/videolist.txt  -c:v libx264 -c:a aac C:/n8ndata/appdata/video_output/video_merged.mp4 && echo C:/n8ndata/appdata/video_output/video_merged.mp4\"\n\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        352,
+        304
+      ],
+      "id": "406704db-44d4-4f74-baf9-e87f292e2b78",
+      "name": "Generate Video"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1TSha-69B1Thp_OuAFW-X3gTGNPipwMsC-H0cAy4ZvRA",
+          "mode": "list",
+          "cachedResultName": "AIS ffmpeg use",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TSha-69B1Thp_OuAFW-X3gTGNPipwMsC-H0cAy4ZvRA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1259678853,
+          "mode": "list",
+          "cachedResultName": "Video",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TSha-69B1Thp_OuAFW-X3gTGNPipwMsC-H0cAy4ZvRA/edit#gid=1259678853"
+        },
+        "options": {}
+      },
+      "id": "472e4c87-7290-4e86-af2a-1137cae234db",
+      "name": "Read Video Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        -976,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1TSha-69B1Thp_OuAFW-X3gTGNPipwMsC-H0cAy4ZvRA",
+          "mode": "list",
+          "cachedResultName": "AIS ffmpeg use",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TSha-69B1Thp_OuAFW-X3gTGNPipwMsC-H0cAy4ZvRA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Music",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TSha-69B1Thp_OuAFW-X3gTGNPipwMsC-H0cAy4ZvRA/edit#gid=0"
+        },
+        "options": {}
+      },
+      "id": "3f15903f-a6eb-4a33-a01c-8d4d75f9012a",
+      "name": "Read Music Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        -96,
+        512
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json[\"Video url\"] }}",
+        "options": {}
+      },
+      "id": "e6b6adcc-5c8e-4ebb-b779-037b52b42730",
+      "name": "Download Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -768,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json[\"Music url\"] }}",
+        "options": {}
+      },
+      "id": "91d065ec-6e5d-40dc-8d2d-a1816931e803",
+      "name": "Download Music",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        128,
+        512
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=C:/n8ndata/appdata/video_input/video_{{$itemIndex + 1}}.mp4",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        -544,
+        304
+      ],
+      "id": "86266be6-17c0-4c05-8d93-a59d685ed9c1",
+      "name": "Save Videos"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=C:/n8ndata/appdata/video_output/Music_{{$itemIndex + 1}}.mp4",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        352,
+        512
+      ],
+      "id": "4b540a4d-2e2e-4514-b419-191aa4b83e17",
+      "name": "Save Music"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1200,
+        512
+      ],
+      "id": "34331830-7e92-4448-be2d-a95a94f902b6",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "executeOnce": false,
+        "command": "=cmd /c cd /d C:\\n8ndata\\appdata && ffmpeg -y -i \"C:\\\\n8ndata\\\\appdata\\\\video_input\\\\{{$json.fileName.split('/').pop()}}\" -vf \"scale=1280:720,fps=30\" -c:v libx264 -preset fast -crf 23 -c:a aac -b:a 128k \"C:\\\\n8ndata\\\\appdata\\\\video_output\\\\{{$json.fileName.split('/').pop()}}\"\n\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -320,
+        304
+      ],
+      "id": "f4a13971-1e06-4c68-b6a2-1f8307d389ee",
+      "name": "Re-encode Videos"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5aa82e54-f1bb-4e67-841a-3d38e9e16ddb",
+              "name": "fileListLine",
+              "value": "=file 'C:/n8ndata/appdata/video_output/{{$('Save Videos').item.json.fileName.split('/').pop()}}'",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -96,
+        304
+      ],
+      "id": "aa69c51e-e1b0-4d64-9a13-beb7b550cb05",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "executeOnce": false,
+        "command": "=cmd /c {{ $itemIndex === 0 \n  ? 'echo ' + $json.fileListLine + ' > C:\\\\n8ndata\\\\appdata\\\\video_output\\\\videolist.txt' \n  : 'echo ' + $json.fileListLine + ' >> C:\\\\n8ndata\\\\appdata\\\\video_output\\\\videolist.txt' }}\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        128,
+        304
+      ],
+      "id": "c0ce5c60-d4fc-4553-a899-1f92ff31a25e",
+      "name": "Generate file"
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        560,
+        512
+      ],
+      "id": "bccde7ba-c4a1-4d43-aab0-22c4390e24b2",
+      "name": "Combine files"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1TSha-69B1Thp_OuAFW-X3gTGNPipwMsC-H0cAy4ZvRA",
+          "mode": "list",
+          "cachedResultName": "AIS ffmpeg use",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TSha-69B1Thp_OuAFW-X3gTGNPipwMsC-H0cAy4ZvRA/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1426888093,
+          "mode": "list",
+          "cachedResultName": "Text",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1TSha-69B1Thp_OuAFW-X3gTGNPipwMsC-H0cAy4ZvRA/edit#gid=1426888093"
+        },
+        "options": {}
+      },
+      "id": "f3dab8d2-bb20-44eb-b7ae-868007302261",
+      "name": "Read Text Sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        352,
+        704
+      ]
+    },
+    {
+      "parameters": {
+        "command": "=cmd /c ffmpeg -y -i \"{{ $json.stdout }}\" -i \"{{$node[\"Save Music\"].json.fileName}}\" -c:v copy -c:a aac -shortest \"C:/n8ndata/appdata/video_output/video_with_music.mp4\" && echo C:/n8ndata/appdata/video_output/video_with_music.mp4"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        848,
+        512
+      ],
+      "id": "4c734d66-ecf4-4cbb-8249-141be95b67ac",
+      "name": "Add music"
+    },
+    {
+      "parameters": {
+        "command": "=cmd /c ffmpeg -y -i \"{{ $json.stdout }}\" -vf \"drawtext=text='{{ $items(\"Read Text Sheet\")[0].json['Text ']}}':fontcolor=red:fontsize=60:x=(w-text_w)/2:y=100:enable='between(t,0,5)',drawtext=text='{{ $items(\"Read Text Sheet\")[1].json['Text ']}}':fontcolor=white:fontsize=60:x=(w-text_w)/2:y=100:enable='between(t,5,16)',drawtext=text='{{ $items(\"Read Text Sheet\")[2].json['Text ']}}':fontcolor=black:fontsize=60:x=(w-text_w)/2:y=100:enable='between(t,16,27)'\" -c:a copy \"C:/n8ndata/appdata/video_output/video_with_text.mp4\"\n\n\n"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        512
+      ],
+      "id": "c6710706-18a2-4076-be30-fc9735fc9db4",
+      "name": "Add Text"
+    },
+    {
+      "parameters": {
+        "content": "# Prepare And Generate Video\n",
+        "height": 720,
+        "width": 1960
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1280,
+        192
+      ],
+      "id": "2c132cce-a50f-45a4-aed7-d146a6fc7a83",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "# Add Music",
+        "height": 720,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        768,
+        192
+      ],
+      "id": "66c0894d-91d1-484d-aec4-05a656f3722b",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "# Add Text",
+        "height": 720,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1072,
+        192
+      ],
+      "id": "225fe8bf-1118-4db4-b9c6-403b2a9e1696",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "# FFMPEG Use Case",
+        "height": 80,
+        "width": 340,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "4dd9a2df-3906-4a8d-bfdf-b6297661b468",
+      "name": "Sticky Note3"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-03T13:23:49.626Z",
+      "updatedAt": "2025-08-03T13:23:49.626Z",
+      "role": "workflow:owner",
+      "workflowId": "lme1NRb4jL4hb07W",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-08-03T13:23:49.626Z",
+  "versionId": "d7547958-570c-4a2a-b252-64e86ce22717"
+}
