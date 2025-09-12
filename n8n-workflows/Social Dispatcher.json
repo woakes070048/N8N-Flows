@@ -1,0 +1,853 @@
+{
+  "active": false,
+  "connections": {
+    "Publishing Agent": {
+      "main": [
+        [
+          {
+            "node": "Get a release",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Publishing Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "READY TO POST?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "READY TO POST?": {
+      "main": [
+        [
+          {
+            "node": "Limit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a release": {
+      "main": [
+        [
+          {
+            "node": "Get Direct Link",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Direct Link": {
+      "main": [
+        [
+          {
+            "node": "Download File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download File": {
+      "main": [
+        [
+          {
+            "node": "Call YOUTUBE AGENT",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Call TIKTOK  AGENT",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Execute Bag Alert Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Limit": {
+      "main": [
+        [
+          {
+            "node": "Publishing Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Openrouter Free": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Publishing Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Structured Output Parser1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Publishing Agent",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Call FACEBOOK POSTING AGENT": {
+      "main": [
+        []
+      ]
+    },
+    "Call INSTA POSTING AGENT": {
+      "main": [
+        []
+      ]
+    },
+    "Call TIKTOK  AGENT": {
+      "main": [
+        []
+      ]
+    },
+    "Call YOUTUBE AGENT": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2025-08-16T12:18:22.302Z",
+  "id": "awlCCd5uHJ0LODVm",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Social Dispatcher",
+  "nodes": [
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Title:{{ $json.TITLE }}\n\nScript:{{ $json.SCRIPT }}\n\nBackground Music Credits:{{ $json['BACKGROUND MUSIC CREDITS'] }}",
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=You are an AI specialized in crafting high-impact, viral titles and descriptions optimized for TikTok Shorts, Instagram Reels, YouTube Shorts, and Facebook Reels. You are skilled at writing detailed captions/descriptions based on the info you are given. Write clear, engaging captions that help viewers understand and appreciate the post without using too many whimsical words or excessive adjectives. Make it relatable and suitable for your audience, encouraging people to connect with the post and respond in the comments. Do not use emojis. Use fewer adjectives.\n\nYou will receive input containing a title, script, and background music credits. Your task is to generate platform-specific content tailored to each platform's unique style and audience engagement patterns.\n\n\n## Platform-specific output requirements:\n\n### Instagram Reels:\n- Description: Brief, visually descriptive, up to 5 hashtags, strong call-to-action\n- One hashtag must be \"#ShockedHistory\"\n- AT THE END include: \"CREDIT: [Background Music Credits]\"\n\n### YouTube Shorts:\n- Title: Maximum 50 characters, direct, suspenseful, clickbait style\n- Description: Concise, keyword-rich, with engagement prompts and up to 5 hashtags\n- One hashtag must be \"#ShockedHistory\" \n- AT THE END include: \"CREDIT: [Background Music Credits]\"\n\n### Facebook Reels:\n- Description: Short, emotional hook encouraging reactions and up to 5 hashtags\n- One hashtag must be \"#ShockedHistory\"\n- AT THE END include: \"CREDIT: [Background Music Credits]\"\n\n### TikTok:\n- Description: Creative, catchy, platform-appropriate and up to 5 hashtags\n- One hashtag must be \"#ShockedHistory\"\n- AT THE END include: \"CREDIT: [Background Music Credits]\"\n\n## Output format:\nReturn strictly this JSON structure, adapting content tone according to the provided style_tone:\n\n```json\n{\n  \"instagram\": {\n    \"description\": \"...\"\n  },\n  \"youtube\": {\n    \"title\": \"...\",\n    \"description\": \"...\"\n  },\n  \"facebook\": {\n    \"description\": \"...\"\n  },\n  \"tiktok\": {\n    \"description\": \"...\"\n  }\n}"
+            },
+            {
+              "type": "HumanMessagePromptTemplate",
+              "message": "=Generate viral social media content for the following:\n\nTitle: {{ $json.TITLE }} \nScript: {{ $json.SCRIPT }} \nStyle Tone: History Channel or Unsolved Mysteries TV SHOW HOST \nBackground Music Credits: {{ $json['BACKGROUND MUSIC CREDITS'] }}  \n\nFollow all the platform-specific requirements I outlined in the system prompt."
+            }
+          ]
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.5,
+      "position": [
+        -1632,
+        -368
+      ],
+      "id": "47afdbd0-b086-44ee-a0d6-cb26f6de2201",
+      "name": "Publishing Agent"
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"instagram\": {\n    \"description\": \"...\"\n  },\n  \"youtube\": {\n    \"title\": \"...\",\n    \"description\": \"...\"\n  },\n  \"facebook\": {\n    \"description\": \"...\"\n  },\n  \"tiktok\": {\n    \"description\": \"...\"\n  }\n}\n\n",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1424,
+        -144
+      ],
+      "id": "45088bb1-a8d1-43fd-b474-f25bce14683a",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "content": "## TikTok Agent - SENDS TO SHEET FOR ZAPIER TO POST - BECAUSE TIKTOK IS A DICK",
+        "height": 264,
+        "width": 444
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -352,
+        -768
+      ],
+      "id": "7fc59fb5-a6b0-467e-9755-ee766248f131",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "content": "## Youtube Agent\n",
+        "height": 204,
+        "width": 452,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -352,
+        -496
+      ],
+      "id": "6a55de1f-826e-4ba8-b8f7-e837b674644b",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "custom",
+              "cronExpression": "0 14 * * 1-5"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "event": "rowUpdate",
+        "options": {
+          "columnsToWatch": [
+            "POSTING STATUS"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2384,
+        -288
+      ],
+      "id": "86bfac9a-42b4-47c7-8e90-203734ae3930",
+      "name": "Google Sheets Trigger",
+      "executeOnce": true,
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "VSbrzZq1ivBuJJOU",
+          "name": "Google Sheets Trigger account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f11eddfe-410f-4eab-a146-e7ba09bb7635",
+              "leftValue": "={{ $json['POSTING STATUS'] }}",
+              "rightValue": "READY TO POST",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -2160,
+        -288
+      ],
+      "id": "efba7cd9-e275-400e-90dd-b320a03fda95",
+      "name": "READY TO POST?",
+      "executeOnce": false
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "release",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "value": "Uke13",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "symmetrical-eureka-SH",
+          "mode": "list",
+          "cachedResultName": "symmetrical-eureka-SH",
+          "cachedResultUrl": "https://github.com/Uke13/symmetrical-eureka-SH"
+        },
+        "release_id": "={{ $('READY TO POST?').first().json['GITHUB RELEASE ID'] }}"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        -1168,
+        -368
+      ],
+      "id": "7991a800-c930-4113-9cc4-4984bf1d6a74",
+      "name": "Get a release",
+      "webhookId": "a78f958d-3a63-4268-b62e-fbce68ea36b6",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "SkPviyNYURtVqRGy",
+          "name": "GitHub OAUTH APP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.assets[0].url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "githubOAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Accept",
+              "value": "application/octet-stream"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {
+              "followRedirects": false
+            }
+          },
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "neverError": true
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -944,
+        -368
+      ],
+      "id": "a110e021-a234-4df5-ad14-0bc1f84c4fb4",
+      "name": "Get Direct Link",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "SkPviyNYURtVqRGy",
+          "name": "GitHub OAUTH APP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $('READY TO POST?').first().json['GITHUB URL'] }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -560,
+        -368
+      ],
+      "id": "e4210e21-18c1-440f-99df-ade62cb9a825",
+      "name": "Download File"
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2352,
+        144
+      ],
+      "id": "2d508116-92f7-4bbb-9e66-d5eb752bf190"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "ErJsFIMzI5GAr6Io",
+          "mode": "list",
+          "cachedResultName": "ERROR NOTIFIER"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -2128,
+        144
+      ],
+      "id": "f451d50b-4591-493c-af0c-803b9d5dd760",
+      "name": "Execute Bag Alert Workflow"
+    },
+    {
+      "parameters": {
+        "content": "# ERROR ALERTER",
+        "height": 80,
+        "width": 440,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2400,
+        32
+      ],
+      "typeVersion": 1,
+      "id": "a160cb2f-7352-46af-aef1-1830db0e87ff",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## Facebook Agent",
+        "height": 256,
+        "width": 452,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -352,
+        -288
+      ],
+      "id": "1e9dbc37-7fd6-495d-946b-056d77fa0596",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.limit",
+      "typeVersion": 1,
+      "position": [
+        -1904,
+        -368
+      ],
+      "id": "1f80abae-b775-4832-af3f-781f82fbb060",
+      "name": "Limit"
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-3.3-70b-instruct:free",
+        "options": {
+          "maxRetries": 6
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -1728,
+        -128
+      ],
+      "id": "5c8c6337-c223-467d-a87f-d51b97fed6a6",
+      "name": "Openrouter Free",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3-0324:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -1568,
+        -192
+      ],
+      "id": "59091b00-b12a-4bd0-8192-07d26dbcec04",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "1YS6G09G1SR5fFlF",
+          "mode": "list",
+          "cachedResultName": "FACEBOOK POSTING AGENT"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "_firstItem": "={{ $('Limit').item.json.TITLE }}",
+            "output_facebook_description_firstItem": "={{ $('Publishing Agent').item.json.output.facebook.description }}",
+            "github_url": "={{ $('Get a release').item.json.assets[0].url }}"
+          },
+          "matchingColumns": [
+            "_firstItem",
+            "output_facebook_description_firstItem",
+            "output_facebook_description",
+            "headers_location_firstItem"
+          ],
+          "schema": [
+            {
+              "id": "_firstItem",
+              "displayName": "_firstItem",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "output_facebook_description_firstItem",
+              "displayName": "output_facebook_description_firstItem",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "headers_location_firstItem",
+              "displayName": "headers_location_firstItem",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "github_url",
+              "displayName": "github_url",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -128,
+        -208
+      ],
+      "name": "Call FACEBOOK POSTING AGENT",
+      "id": "63ee64fe-ee71-46a7-8fd9-127a6cef6ddc"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "648IwHN1YeuY9iCB",
+          "mode": "list",
+          "cachedResultName": "INSTA POSTING AGENT"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "output_instagram_description": "={{ $('Publishing Agent').item.json.output.instagram.description }}",
+            "headers_location": "={{ $json.headers.location }}"
+          },
+          "matchingColumns": [
+            "output_instagram_description",
+            "headers_location"
+          ],
+          "schema": [
+            {
+              "id": "output_instagram_description",
+              "displayName": "output_instagram_description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "headers_location",
+              "displayName": "headers_location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -128,
+        16
+      ],
+      "name": "Call INSTA POSTING AGENT",
+      "id": "52d277c6-9a49-4c42-b4ec-280edabe7cbf"
+    },
+    {
+      "parameters": {
+        "content": "## INSTA Agent",
+        "height": 240,
+        "width": 452,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -352,
+        -32
+      ],
+      "id": "68de83ba-3263-4bf5-a343-f99968b67cfc",
+      "name": "Sticky Note11"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "3P7NYoE7paOivuL5",
+          "mode": "list",
+          "cachedResultName": "TIKTOK  AGENT"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('READY TO POST?').item.json.TITLE }}",
+            "output_tiktok_description": "={{ $('Publishing Agent').item.json.output.tiktok.description }}",
+            "": "={{ $('READY TO POST?').item.json }}",
+            "TITLE_firstItem": "={{ $('READY TO POST?').first().json.TITLE }}"
+          },
+          "matchingColumns": [
+            "TITLE",
+            "output_tiktok_description",
+            "",
+            "TITLE_firstItem"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "output_tiktok_description",
+              "displayName": "output_tiktok_description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "",
+              "displayName": "",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TITLE_firstItem",
+              "displayName": "TITLE_firstItem",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -128,
+        -656
+      ],
+      "name": "Call TIKTOK  AGENT",
+      "id": "e07efaed-763f-4ed8-b5cf-739d155e9dd8"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "37xd0GPIwWIdXIMZ",
+          "mode": "list",
+          "cachedResultName": "YOUTUBE AGENT"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "output_youtube_title": "={{ $('Publishing Agent').item.json.output.youtube.title }}",
+            "output_youtube_description": "={{ $('Publishing Agent').item.json.output.youtube.description }}",
+            "TITLE_firstItem": "={{ $('READY TO POST?').first().json.TITLE }}"
+          },
+          "matchingColumns": [
+            "output_youtube_title",
+            "output_youtube_description",
+            "TITLE_firstItem"
+          ],
+          "schema": [
+            {
+              "id": "output_youtube_title",
+              "displayName": "output_youtube_title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "output_youtube_description",
+              "displayName": "output_youtube_description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TITLE_firstItem",
+              "displayName": "TITLE_firstItem",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -128,
+        -448
+      ],
+      "name": "Call YOUTUBE AGENT",
+      "id": "c59ac9cc-0b34-4b43-9c20-15752d2c9e0b"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Chicago",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "3DQkYrqphhTDeBq1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-16T12:18:22.302Z",
+      "updatedAt": "2025-08-16T12:18:22.302Z",
+      "role": "workflow:owner",
+      "workflowId": "awlCCd5uHJ0LODVm",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": {
+    "node:Google Sheets Trigger": {
+      "documentId": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+      "sheetId": 0,
+      "lastRevision": 583,
+      "lastRevisionLink": "https://docs.google.com/spreadsheets/export?id=1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY&revision=583&exportFormat=xlsx"
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2025-08-03T13:57:08.438Z",
+      "updatedAt": "2025-08-03T13:57:08.438Z",
+      "id": "Mas1jE28bXSMu19L",
+      "name": "Fully Functional"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-11T14:51:01.979Z",
+  "versionId": "6b749d41-cf9e-458b-b4c6-34f010cb8cd2"
+}
