@@ -1,0 +1,2161 @@
+{
+  "active": false,
+  "connections": {
+    "Generate Images Flux Free": {
+      "main": [
+        [
+          {
+            "node": "Wait 15 sec",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image": {
+      "main": [
+        [
+          {
+            "node": "Instagram Container ID",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Facebook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facebook": {
+      "main": [
+        [
+          {
+            "node": "IS POSTED?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Instagram Container ID": {
+      "main": [
+        [
+          {
+            "node": "Wait 30",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish to Instagram": {
+      "main": [
+        [
+          {
+            "node": "IS POSTED?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Parse Video Titles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Video Titles": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fallout-style prompt generator": {
+      "main": [
+        [
+          {
+            "node": "Generate Images Flux Free",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Fallout-style prompt generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 15 sec": {
+      "main": [
+        [
+          {
+            "node": "Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 30": {
+      "main": [
+        [
+          {
+            "node": "Publish to Instagram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IS POSTED?": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IS POSTED?1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-08-17T18:38:25.833Z",
+  "id": "AUvRYyJIRX8bwjlv",
+  "isArchived": false,
+  "meta": null,
+  "name": "Free Image Gen - Inner Upgrade Single",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.together.xyz/v1/images/generations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"black-forest-labs/FLUX.1-schnell-Free\",\n  \"prompt\": \"{{ $json.prompt }}\",\n  \"width\": 720,\n  \"height\": 1280,\n  \"steps\": 4,\n  \"seed\": 1,\n  \"response_format\": \"url\",\n  \"output_format\": \"jpeg\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -896,
+        96
+      ],
+      "id": "f4fd685e-e54e-4a46-882a-360463762d25",
+      "name": "Generate Images Flux Free",
+      "retryOnFail": true,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "JdfDCxKTwaEVNBKO",
+          "name": "TOGETHER_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -448,
+        96
+      ],
+      "id": "746ff0c4-cc50-4666-8f72-bf9d0411484e",
+      "name": "Download Image"
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "659232113940352",
+        "edge": "photos",
+        "sendBinaryData": true,
+        "binaryPropertyName": "=data",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption",
+                "value": "={{ $('AI Agent').item.json.output.socialCaption }}"
+              },
+              {
+                "name": "url",
+                "value": "={{ $('Generate Images Flux Free').item.json.data[0].url }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "a51609ac-921e-4a8d-913e-f391ff0ad5e4",
+      "name": "Facebook",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "CYWxhjKL7rYymFbu",
+          "name": "FB - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "17841475088389536",
+        "edge": "media",
+        "sendBinaryData": true,
+        "binaryPropertyName": "=data",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption",
+                "value": "={{ $('AI Agent').item.json.output.socialCaption }} "
+              },
+              {
+                "name": "media_type",
+                "value": "IMAGE"
+              },
+              {
+                "name": "image_url",
+                "value": "={{ $('Generate Images Flux Free').item.json.data[0].url }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        192
+      ],
+      "id": "2909e879-4c50-4cdd-84cd-b4af00437b09",
+      "name": "Instagram Container ID",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "GXj6j3l91g5YTl3Y",
+          "name": "INSTA - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "17841475088389536",
+        "edge": "media_publish",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "caption"
+              },
+              {
+                "name": "image_url",
+                "value": "={{ $('Generate Images Flux Free').item.json.data[0].url }}"
+              },
+              {
+                "name": "creation_id",
+                "value": "={{ $json.id }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        224,
+        192
+      ],
+      "id": "a907eab6-3276-4862-9872-5c539c9bbf8f",
+      "name": "Publish to Instagram",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "GXj6j3l91g5YTl3Y",
+          "name": "INSTA - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * *"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -2336,
+        96
+      ],
+      "id": "29dea41a-cf6c-445a-a77a-ee2aece10df5",
+      "name": "Schedule Trigger",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc",
+          "mode": "list",
+          "cachedResultName": "INNER UPGRADE PHOTO TOPICS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1263742919,
+          "mode": "list",
+          "cachedResultName": "SIMPLIFIED SINGLE IMAGE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc/edit#gid=1263742919"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -1968,
+        96
+      ],
+      "id": "019f3bd6-b735-40da-87b2-6517ef5c0d56",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all input items (each item is a row)\nconst inputItems = $input.all();\n\nif (!inputItems || inputItems.length === 0) {\n  return [{ json: { error: 'No rows returned from Google Sheets' } }];\n}\n\nconst availableTitles = [];\n\n// Each input item is a row object\nfor (let i = 0; i < inputItems.length; i++) {\n  const rowData = inputItems[i].json;\n  \n  const title = rowData.TITLE;\n  const photoPosted = rowData['PHOTO POSTED'];\n  \n  // Skip if no title or if it's a header\n  if (!title || title.toLowerCase() === 'title') continue;\n  \n  // Check if PHOTO POSTED is empty\n  if (title.trim().length > 0 && (!photoPosted || photoPosted.toString().trim() === '')) {\n    availableTitles.push({\n      title: title.trim(),\n      rowNumber: rowData.row_number,\n      date: rowData.DATE,\n      description: rowData.DESC\n    });\n  }\n}\n\nif (availableTitles.length === 0) {\n  return [{ json: { \n    error: 'No available titles found',\n    totalRows: inputItems.length,\n    sampleRow: inputItems[0].json\n  }}];\n}\n\n// Random selection\nconst randomIndex = Math.floor(Math.random() * availableTitles.length);\nconst randomSelection = availableTitles[randomIndex];\n\nconsole.log(`Selected \"${randomSelection.title}\" (${randomIndex + 1} of ${availableTitles.length} available)`);\n\nreturn [{\n  json: {\n    selectedTitle: randomSelection.title,\n    rowNumber: randomSelection.rowNumber,\n    availableCount: availableTitles.length,\n    selectedDate: randomSelection.date\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1744,
+        96
+      ],
+      "id": "1f39f690-991a-42cf-b1e7-29e28351b6d4",
+      "name": "Parse Video Titles"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the agent's response\nconst inputData = $input.all()[0].json;\nconst agentData = inputData.output || inputData;\nconst originalTheme = agentData.originalTheme;\nconst context = agentData.context;\n\n// Check for necessary input\nif (!originalTheme || !context) {\n  return [{\n    json: {\n      error: 'Missing originalTheme or context from the upstream agent.',\n      receivedData: agentData\n    }\n  }];\n}\n\n// --- REVISED & MORE AGGRESSIVE STYLE DESCRIPTORS ---\nconst styleDescriptors = [\n  'ultrawide shot on gritty 35mm film, brutalist concrete gym, dramatic chiaroscuro lighting, heavy atmospheric dust, in the style of a Fallout game screenshot, desaturated, focus on environmental storytelling, no characters too close to the foreground',\n  'wide angle hyperrealistic render, vast post-apocalyptic setting, rusted weights scattered in the environment, volumetric god rays, stark and emotionless figure in the mid-distance',\n  'cinematic ultrawide photo, industrial grunge aesthetic, expansive weathered metal walls, cracked concrete stretching into the distance, single harsh light source illuminating the scene, figures in the background',\n  'dieselpunk art style, panoramic view of utilitarian machinery and desolate landscape, deeply desaturated muted tones, photorealistic texture, rendered in Unreal Engine 5, emphasis on the scale of the environment',\n  'raw, ultrawide cinematic photo, lone subject with an unflinching gaze, vast decaying industrial surroundings, high contrast black and white, emphasizing the environment\\'s scale, subject not in the immediate foreground'\n];\n\n// Pick a random style descriptor\nconst selectedStyle = styleDescriptors[Math.floor(Math.random() * styleDescriptors.length)];\n\n// Combine the AGENT'S context (the scene) with our technical style (the look)\nconst finalPrompt = `${context}, ${selectedStyle}, cinematic composition`;\n\nconsole.log(`Applied style \"${selectedStyle}\" to context for theme \"${originalTheme}\"`);\n\n// Return the final structured data\nreturn [{\n  json: {\n    prompt: finalPrompt,\n    motivationalTheme: originalTheme,\n    context: context, // The original, unmodified context\n    technicalStyle: selectedStyle, // The style we added\n    generatedAt: new Date().toISOString()\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1120,
+        96
+      ],
+      "id": "72b01360-6923-492b-90af-0d2294f8472a",
+      "name": "Fallout-style prompt generator"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Given this motivational theme or topic: \"{{ $json.selectedTitle }}\", provide:\n\n1.  A brief 2-3 sentence visual `context` that powerfully illustrates the theme. **CRITICAL INSTRUCTIONS FOR THIS CONTEXT:**\n    * **The scene must feel stoic and resilient.** Describe characters who are focused, determined, or showing grit.\n    * **AVOID positive emotions.** Do NOT use words like \"smile,\" \"happy,\" \"joy,\" or \"camaraderie.\"\n    * **Describe a physically and emotionally grounded scene.** Focus on actions, expressions of intense focus, or quiet determination. The characters should look like they are enduring or overcoming, not enjoying themselves.\n    * **Do NOT describe the artistic style** (e.g., 'gritty', 'desaturated'). Just describe the content of the scene.\n\n2.  A catchy social media title (50 characters or less).\n3.  An inspiring Instagram caption with relevant hashtags.\n\nReturn your response in this exact JSON format:\n{\n  \"originalTheme\": \"{{ $json.selectedTitle }}\",\n  \"context\": \"Your 2-3 sentence theme-relevant visual description that follows all the critical instructions above.\",\n  \"socialTitle\": \"Catchy title about the motivational theme.\",\n  \"socialCaption\": \"Inspiring caption with emojis and hashtags.\"\n}",
+        "hasOutputParser": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        -1520,
+        96
+      ],
+      "id": "2f755eb6-f183-4f0f-b989-e601def6925d",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3-0324:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -1488,
+        320
+      ],
+      "id": "0cc57637-003d-4ec2-bdab-f860328f907d",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"originalTheme\": \"{{ $json.selectedTitle }}\",\n  \"context\": \"Your 2-3 sentence theme-relevant visual description that follows all the critical instructions above.\",\n  \"socialTitle\": \"Catchy title about the motivational theme.\",\n  \"socialCaption\": \"Inspiring caption with emojis and hashtags.\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -1360,
+        320
+      ],
+      "id": "0d0a0434-0af5-4bc3-a2cc-d8bfac03b6b8",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "amount": 15
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -672,
+        96
+      ],
+      "id": "45971a23-52ce-4de6-8265-320d5918bbbd",
+      "name": "Wait 15 sec",
+      "webhookId": "d4acf82f-69de-4e7e-9164-c5b35894c948"
+    },
+    {
+      "parameters": {
+        "amount": 30
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        192
+      ],
+      "id": "ce7f55be-bca5-4c99-96bb-fcff2cc81920",
+      "name": "Wait 30",
+      "webhookId": "c76f4b66-534f-4993-a082-7a63ebebeb42"
+    },
+    {
+      "parameters": {
+        "graphApiVersion": "v23.0",
+        "node": "={{ $json.post_id }}",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "fields",
+                "value": "is_published,scheduled_publish_time,permalink_url"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "b31f4bd9-2f05-49f0-b212-9688eb75a51a",
+      "name": "IS POSTED?",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "CYWxhjKL7rYymFbu",
+          "name": "FB - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "graphApiVersion": "v23.0",
+        "node": "={{ $json.id }}",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "fields",
+                "value": "permalink,id,timestamp"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        432,
+        192
+      ],
+      "id": "0d897a0f-ce1b-4e1b-b6ad-00230bbb212c",
+      "name": "IS POSTED?1",
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "GXj6j3l91g5YTl3Y",
+          "name": "INSTA - Inner Upgrade"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// This code reads the simple list of items from the Merge node and finds\n// the Facebook and Instagram data within it.\n\nlet fbData = null;\nlet igData = null;\n\n// 1. Loop through the list of items to identify and store the data for each platform.\nfor (const item of items) {\n  const data = item.json;\n\n  // Identify Facebook data by its unique keys: 'is_published' and 'permalink_url'.\n  if (data.is_published !== undefined && data.permalink_url) {\n    fbData = data;\n  }\n  // Identify Instagram data by its unique keys: 'permalink' and 'timestamp'.\n  else if (data.permalink && data.timestamp) {\n    igData = data;\n  }\n}\n\n// 2. After checking all items, perform the final check to see if both were found and successful.\nif (fbData && fbData.is_published === true && igData && igData.permalink) {\n  // If yes, return the single success message.\n  return [{\n    json: {\n      status: \"All posts succeeded! 🎉\",\n      facebook_url: fbData.permalink_url,\n      instagram_url: igData.permalink\n    }\n  }];\n} else {\n  // If not, return a debug message showing exactly what was found.\n  return [{\n    json: {\n      status: \"Condition check failed. ❌\",\n      debug_info: {\n        facebook_data_found: fbData || \"Facebook data not found in the list.\",\n        instagram_data_found: igData || \"Instagram data not found in the list.\"\n      }\n    }\n  }];\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        944,
+        80
+      ],
+      "id": "fb82ed9b-245b-4095-a5c1-502317600f52",
+      "name": "Code"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        704,
+        80
+      ],
+      "id": "535fbdd1-df72-4bfe-ae45-d619975adc16",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc",
+          "mode": "list",
+          "cachedResultName": "INNER UPGRADE PHOTO TOPICS",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XxHCK1eKmlbkB8G1fykneIQL6S15w-t6V0JKhOP_4Dc/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "PHOTO POSTED": "YES",
+            "TITLE": "=",
+            "row_number": "={{ $('Parse Video Titles').first().json.rowNumber }}\n\n"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "PHOTO POSTED",
+              "displayName": "PHOTO POSTED",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1152,
+        80
+      ],
+      "id": "d54002e3-63d5-4aa4-b893-1c0fd6a937ea",
+      "name": "Update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2336,
+        320
+      ],
+      "id": "d2d69d44-b114-42f4-b58a-c40afcb5cef9",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "pinData": {
+    "When clicking ‘Execute workflow’": [
+      {
+        "json": {}
+      }
+    ],
+    "Get row(s) in sheet": [
+      {
+        "json": {
+          "row_number": 2,
+          "TITLE": "Abundance Mindset: Success isn't a limited resource; opportunity is everywhere.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 3,
+          "TITLE": "Accountability Mirror: The person in the mirror is the one you can't lie to about your effort.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 4,
+          "TITLE": "Action Over Feeling: Action creates motivation; don't wait for motivation to create action.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 5,
+          "TITLE": "Analysis Paralysis: Overthinking paralyzes you; inaction is a defense mechanism against overwhelm.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 6,
+          "TITLE": "Antifragility: Don't just withstand chaos; use it to get stronger.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 7,
+          "TITLE": "Auditory Exclusion: Under extreme focus, your brain intentionally filters out sound.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 8,
+          "TITLE": "BDNF Secret: Intense exercise releases a protein that literally builds a better brain.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 9,
+          "TITLE": "Beginner's Mind: Approach problems without preconceptions to see the solutions experts miss.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 10,
+          "TITLE": "Brain Priming: Exposing your brain to words like \"strength\" primes you to act stronger.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 11,
+          "TITLE": "Building Confidence Through Competence: True confidence comes from mastering skills, not just from hype.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 12,
+          "TITLE": "Building Habits Through Identity: Don't just do the habit; become the person who does the habit.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 13,
+          "TITLE": "Building Mental Resilience: Resilience is the skill of bouncing back from adversity with strength.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 14,
+          "TITLE": "Burning the Boats: Make failure impossible by eliminating your option for retreat.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 15,
+          "TITLE": "Catastrophizing: Don't let one small mistake define you as a total failure.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 16,
+          "TITLE": "Choice Architecture: Design your environment to make good choices easy and bad choices hard.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 17,
+          "TITLE": "Cognitive Dissonance: When your actions and beliefs don't align, you're forced to change one.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 18,
+          "TITLE": "Cognitive Load: Your brain has limited bandwidth; chaos prevents new learning.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 19,
+          "TITLE": "Cognitive Reappraisal: Change your emotional response by changing your interpretation of the event.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 20,
+          "TITLE": "Cognitive Reframing: Change your feelings about a situation by changing the story you tell yourself.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 21,
+          "TITLE": "Confirmation Bias: Your brain actively seeks evidence to support what you already believe is true.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 22,
+          "TITLE": "Cortisol Control: Chronic stress breaks down muscle and clouds your mind; master stress to master growth.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 23,
+          "TITLE": "Creating a Growth-Oriented Environment: Your surroundings dictate your mindset; build a space that inspires you.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 24,
+          "TITLE": "Cultivating a Bias for Action: In the fight between thinking and doing, choose doing.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 25,
+          "TITLE": "Cultivating Mental Clarity: Cut through the fog by focusing only on what truly matters.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 26,
+          "TITLE": "Cultivating Self-Discipline: Discipline is a muscle; train it daily with small acts of willpower.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 27,
+          "TITLE": "Decision Fatigue: Your willpower is a limited resource that runs out by the end of the day.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 28,
+          "TITLE": "Declarative Memory: Saying your goals out loud makes them a concrete command in your brain.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 29,
+          "TITLE": "Deindividuation: Losing yourself in a group's energy can help you push past your normal limits.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 30,
+          "TITLE": "Delayed Gratification: The ability to sacrifice a small reward now for a bigger one later is a superpower.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 31,
+          "TITLE": "Deliberate Practice: Real progress comes from focused, strategic training—quality over mere quantity.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 32,
+          "TITLE": "Developing a Growth Mindset in the Face of Plateaus: A plateau isn't a wall; it's an opportunity to learn and adapt.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 33,
+          "TITLE": "Developing a Strong Inner Dialogue: The conversation you have with yourself determines your limits.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 34,
+          "TITLE": "Developing Emotional Agility: Acknowledge your feelings without letting them derail your actions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 35,
+          "TITLE": "Developing Grit: Grit is the fusion of passion for a long-term goal and the perseverance to see it through.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 36,
+          "TITLE": "Developing Self-Awareness in Your Training: Knowing your body's limits is essential for smarter training.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 37,
+          "TITLE": "Dopamine Detox: Reset your brain's reward system by intentionally reducing overstimulation.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 38,
+          "TITLE": "Eating the Frog: Do your hardest task first thing in the morning to win the day early.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 39,
+          "TITLE": "Ego Depletion: Willpower is a muscle that gets tired; use it wisely and let it recover.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 40,
+          "TITLE": "Embracing Discomfort: Deliberately seeking discomfort is the secret weapon for mental and physical growth.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 41,
+          "TITLE": "Embracing the Process: True satisfaction comes from the daily dedication, not just the final outcome.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 42,
+          "TITLE": "Emotional Contagion in Training: You absorb the mindset of those around you, so choose your partners wisely.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 43,
+          "TITLE": "Emotional Granularity: The ability to specifically name your emotions gives you power over them.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 44,
+          "TITLE": "Emotional Regulation: You are not your emotions; you are the observer with the power to choose your reaction.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 45,
+          "TITLE": "Enclothed Cognition: The clothes you wear carry symbolic meaning that can change how you think and act.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 46,
+          "TITLE": "Eudaimonia: Strive for human flourishing and living a life of virtue, not just chasing temporary happiness.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 47,
+          "TITLE": "Fear of Failure: The fear of failure is actually the fear of the shame you believe comes with it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 48,
+          "TITLE": "Finding Meaning in Struggle: Transform hardship into strength by connecting it to a larger purpose.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 49,
+          "TITLE": "Finding Your \"Why\": Your core reason for starting is the fuel that will keep you going.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 50,
+          "TITLE": "Finding Your Inner Anchor: Your core values keep you grounded in the face of external chaos.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 51,
+          "TITLE": "First Principles Thinking: Solve any problem by breaking it down to its fundamental truths and building up from there.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 52,
+          "TITLE": "Functional Fixedness: Overcome mental blocks by seeing things for all they can do, not just what they are.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 53,
+          "TITLE": "Goodhart's Law: When a measure becomes the goal, it ceases to be a good measure.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 54,
+          "TITLE": "Gratitude Practice: A daily two-minute gratitude habit can rewire your brain for positivity.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 55,
+          "TITLE": "Group Polarization: Training with like-minded people makes the entire group's belief system stronger.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 56,
+          "TITLE": "Growth vs. Fixed: Adding the word \"yet\" to your vocabulary shifts your brain from limitation to possibility.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 57,
+          "TITLE": "Habit Loops: To break a bad habit, you must identify its cue, routine, and reward, then replace the routine.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 58,
+          "TITLE": "Harnessing the Power of Your Inner Critic: Your inner critic can be a source of valuable feedback if you learn to listen without judgment.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 59,
+          "TITLE": "Harnessing Your Inner Fire: Stoke your motivation by connecting with your \"why\" and celebrating progress.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 60,
+          "TITLE": "Heuristics vs. Algorithms: Know if you're using a quick mental shortcut or a proven step-by-step formula.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 61,
+          "TITLE": "Hofstadter's Law: Any complex task will always take longer than you expect, even when you plan for it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 62,
+          "TITLE": "Home-Field Advantage: Familiarity with your own gym provides a real, measurable performance boost.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 63,
+          "TITLE": "Hormesis: Small, controlled doses of stress, like a hard workout, make your entire system more resilient.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 64,
+          "TITLE": "Hyperbolic Discounting: Your brain values immediate rewards far more than future ones; make the future feel present.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 65,
+          "TITLE": "Ideomotor Effect: Simply visualizing an action primes your muscles to perform it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 66,
+          "TITLE": "Impostor Syndrome: Feeling like a fraud is often a sign that your standards for yourself are growing.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 67,
+          "TITLE": "Inattentional Blindness: Intense focus on one thing can make you completely blind to other obvious things.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 68,
+          "TITLE": "Intrinsic Motivation: The most powerful fuel is when the reward for doing something is the activity itself.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 69,
+          "TITLE": "Learning from Failure: The successful see failure not as a personal defeat, but as a crucial learning opportunity.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 70,
+          "TITLE": "Learning to Say \"No\": Saying \"no\" to things that don't align with your goals protects your energy.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 71,
+          "TITLE": "Loss Aversion: The pain of losing something is psychologically twice as powerful as the pleasure of gaining it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 72,
+          "TITLE": "Maslow's Hammer: If your only tool is a hammer, you'll treat every problem like a nail. Broaden your toolkit.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 73,
+          "TITLE": "Mental Models: The best thinkers use frameworks for thinking, like \"Inversion,\" to make better decisions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 74,
+          "TITLE": "Mental Toughness: Toughness is not the absence of fear; it's the ability to act in spite of it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 75,
+          "TITLE": "Mind-Body Connection: Changing your physical posture can instantly change your mental and emotional state.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 76,
+          "TITLE": "Mind-Muscle Connection: Consciously feeling the target muscle work is proven to increase growth.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 77,
+          "TITLE": "Mindful Presence: Most anxiety comes from regretting the past or fearing the future; find peace in the present.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 78,
+          "TITLE": "Narrative Identity: You are the story you tell yourself; change the story to change your life.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 79,
+          "TITLE": "Neuroplasticity: You can physically build a new mind through your repeated thoughts and actions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 80,
+          "TITLE": "Occam's Razor: The simplest explanation for a problem is usually the correct one.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 81,
+          "TITLE": "Optimism Bias: Your brain's tendency to underestimate future risks is what allows you to take them.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 82,
+          "TITLE": "Pareto Principle (80/20 Rule): Roughly 80% of your results come from 20% of your efforts.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 83,
+          "TITLE": "Parkinson's Law: A task will expand to fill the time you give it; create urgency with shorter deadlines.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 84,
+          "TITLE": "Prefrontal Cortex: Every time you choose discipline over quitting, you strengthen the CEO of your brain.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 85,
+          "TITLE": "Premeditatio Malorum: Mentally preparing for what could go wrong builds unbreakable resilience.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 86,
+          "TITLE": "Psychological Resilience: The resilient see setbacks as temporary, contained, and not personal.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 87,
+          "TITLE": "Reactance Theory: When someone tells you that you can't do something, a part of you wants to prove them wrong.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 88,
+          "TITLE": "Self-Determination Theory: Peak motivation requires Autonomy, Competence, and Relatedness.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 89,
+          "TITLE": "Shadow Work: Integrating the repressed, hidden parts of yourself is the key to becoming whole.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 90,
+          "TITLE": "Sharpening the Axe: Preparation and recovery are not wasted time; they are essential for performance.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 91,
+          "TITLE": "Sleep & Mindset: Poor sleep significantly increases activity in the brain's fear and anxiety centers.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 92,
+          "TITLE": "Social Contagion: You subconsciously absorb the moods and mindsets of the people around you.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 93,
+          "TITLE": "Spaced Repetition: To master a skill permanently, practice it at increasing intervals over time.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 94,
+          "TITLE": "Stoic Mindset: Find peace by focusing only on what you can control: your thoughts and your actions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 95,
+          "TITLE": "Sunk Cost Fallacy: Don't keep doing something you hate just because you've already invested in it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 96,
+          "TITLE": "Survivorship Bias: Don't just copy the habits of the successful; many who failed had the same habits.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 97,
+          "TITLE": "System 1 vs. System 2: Know if you're making a decision with your fast, emotional gut or your slow, logical head.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 98,
+          "TITLE": "The \"Flow State\": When a task's challenge perfectly matches your skill level, you achieve effortless focus.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 99,
+          "TITLE": "The Amygdala Hijack: Your brain's threat center can take over before your rational mind engages; learn to pause.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 100,
+          "TITLE": "The Anchoring Bias: The first piece of information you see biases all subsequent judgments.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 101,
+          "TITLE": "The Anti-Fragile Ego: A strong ego welcomes criticism and uses it to grow; a fragile one shatters.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 102,
+          "TITLE": "The Art of Letting Go: You must release limiting beliefs and past failures to make space for future growth.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 103,
+          "TITLE": "The Availability Heuristic: Your brain overestimates the likelihood of things that are easy to remember.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 104,
+          "TITLE": "The Baader-Meinhof Phenomenon: When you learn something new, you start seeing it everywhere.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 105,
+          "TITLE": "The Backfire Effect: When challenged with facts, a deeply held belief often becomes even stronger.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 106,
+          "TITLE": "The Ben Franklin Effect: Asking someone for a favor makes them justify their action by deciding they like you.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 107,
+          "TITLE": "The Bystander Apathy: In a crowd, everyone assumes someone else will act, leading to collective inaction.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 108,
+          "TITLE": "The Bystander Effect: Diffusion of responsibility in a crowd makes individuals feel less obligated to act.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 109,
+          "TITLE": "The Cocktail Party Effect: Your brain is always listening for personally relevant information, like your name.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 110,
+          "TITLE": "The Comfort Zone: Staying comfortable makes your world smaller and your anxiety bigger.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 111,
+          "TITLE": "The Consistency Principle: Our brains have a powerful need to act in a way that is consistent with our past selves.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 112,
+          "TITLE": "The Curse of Knowledge: Once you know something, it's incredibly difficult to imagine not knowing it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 113,
+          "TITLE": "The Cynefin Framework: Different problems require different approaches: simple, complicated, complex, or chaotic.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 114,
+          "TITLE": "The Default Effect: To guarantee a habit, make it the path of least resistance.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 115,
+          "TITLE": "The Desire for Control: A fundamental human driver is the need for control over one's own life.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 116,
+          "TITLE": "The Dichotomy of Control: Inner peace comes from separating what you can control from what you cannot.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 117,
+          "TITLE": "The Diderot Effect: Buying one new thing can create a spiral of consumption to make everything match.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 118,
+          "TITLE": "The Discipline of Detachment: Protect your inner peace by focusing on your effort, not the outcome.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 119,
+          "TITLE": "The Dunning-Kruger Effect: The incompetent are often the most confident because they can't see their own flaws.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 120,
+          "TITLE": "The Dunning-Kruger Effect (Revisited): Realizing how much you don't know is a critical step toward true mastery.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 121,
+          "TITLE": "The Einstellung Effect: Your mind gets stuck on the first solution that works, blinding you to better ones.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 122,
+          "TITLE": "The Empathy Gap: It's hard to predict how you'll act in a \"hot\" state (like pain) when you're in a \"cold\" one.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 123,
+          "TITLE": "The Endowment Effect: You overvalue things simply because you own them.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 124,
+          "TITLE": "The Feynman Technique: If you can't explain something simply, you don't understand it well enough.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 125,
+          "TITLE": "The Forer Effect: The brain accepts vague, positive statements as if they were written specifically for you.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 126,
+          "TITLE": "The Forgetting Curve: If you don't actively recall information, your brain quickly discards it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 127,
+          "TITLE": "The Framing Effect: The way you frame information (90% success vs. 10% failure) changes how you feel about it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 128,
+          "TITLE": "The Fundamental Attribution Error: We blame others' character for their failures but our situation for our own.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 129,
+          "TITLE": "The Galatea Effect: The most powerful expectations that govern your life are your own.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 130,
+          "TITLE": "The Halo Effect: One positive trait, like attractiveness, makes us assume other positive traits exist.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 131,
+          "TITLE": "The Hard-Easy Effect: We overestimate our ability on hard tasks and underestimate it on easy ones.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 132,
+          "TITLE": "The Hawthorne Effect: The simple act of being watched can change your behavior and improve performance.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 133,
+          "TITLE": "The Hedonic Treadmill: Achieving a goal provides only temporary happiness before you return to your baseline.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 134,
+          "TITLE": "The Ikea Effect: We place a disproportionately high value on things we helped create.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 135,
+          "TITLE": "The Illusion of Transparency: We vastly overestimate how much our internal states are visible to others.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 136,
+          "TITLE": "The Importance of Having a Challenging Vision: A compelling future vision provides the fuel to overcome present obstacles.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 137,
+          "TITLE": "The Importance of Rest and Recovery: Mental rest is just as crucial as physical recovery for staying sharp.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 138,
+          "TITLE": "The Importance of Self-Compassion: Treat yourself with the same kindness you would offer a good friend.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 139,
+          "TITLE": "The Importance of Solitude: Regular solitude is crucial for introspection and understanding your inner self.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 140,
+          "TITLE": "The Impostor Cycle: Feeling like a fraud can push you to succeed more, which then makes you feel like a bigger fraud.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 141,
+          "TITLE": "The Inner Citadel: Your mind is a fortress that no one can conquer without your permission.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 142,
+          "TITLE": "The Internal Locus of Control: Believing you are the driver of your own outcomes is essential for success.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 143,
+          "TITLE": "The Johari Window: You have blind spots in your character that you can only see through feedback from others.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 144,
+          "TITLE": "The Just-World Fallacy: The belief that the world is inherently fair can lead to bitterness and inaction.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 145,
+          "TITLE": "The Law of Attraction: What you consistently focus on, you begin to notice and act upon.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 146,
+          "TITLE": "The Law of Diminishing Returns: More is not always better; at some point, the returns on your effort decrease.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 147,
+          "TITLE": "The Law of Instrument: Don't let your familiarity with one tool blind you to better solutions.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 148,
+          "TITLE": "The Law of Requisite Variety: The most adaptable and flexible part of any system is the one that holds the power.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 149,
+          "TITLE": "The Locus of Control: Your life is either something you control or something that happens to you. Choose.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 150,
+          "TITLE": "The Matthew Principle: Advantage accumulates; those who have, get more.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 151,
+          "TITLE": "The Need for Closure: Your brain craves firm answers and dislikes ambiguity, pushing you to finish tasks.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 152,
+          "TITLE": "The Negativity Bias: Your brain is wired to pay more attention to negative experiences than positive ones.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 153,
+          "TITLE": "The OODA Loop: Make elite decisions by cycling through Observe, Orient, Decide, and Act faster than your opponent.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 154,
+          "TITLE": "The Overjustification Effect: Giving an external reward for an activity you love can kill your intrinsic motivation.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 155,
+          "TITLE": "The Paradox of Choice: Having too many options leads to anxiety, not freedom.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 156,
+          "TITLE": "The Peak-End Rule: You don't remember an entire experience, just its peak moment and how it ended.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 157,
+          "TITLE": "The Placebo Effect: The belief that a treatment will work can cause real, measurable physiological changes.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 158,
+          "TITLE": "The Planning Fallacy: We are terrible at estimating how long a task will take, even when we know this.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 159,
+          "TITLE": "The Power of Affirmations: Affirmations work when they are felt and aligned with your actions, not just repeated.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 160,
+          "TITLE": "The Power of Consistency Over Intensity: Consistent, daily effort beats sporadic, high intensity every time.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 161,
+          "TITLE": "The Power of Focused Attention: In a world of distraction, your ability to focus is your most valuable asset.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 162,
+          "TITLE": "The Power of Incremental Improvement: Small, daily gains compound into massive results over time.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 163,
+          "TITLE": "The Power of Intention Setting: Clearly defining your intent before you act provides focus and purpose.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 164,
+          "TITLE": "The Power of Journaling: Journaling provides a space for self-reflection, allowing you to see your own patterns.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 165,
+          "TITLE": "The Power of Ritual: Rituals signal to your brain that it's time to perform, reducing anxiety and increasing focus.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 166,
+          "TITLE": "The Power of Self-Talk: Your internal monologue is a set of commands that your subconscious mind is forced to obey.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 167,
+          "TITLE": "The Power of Small Wins: Small, achievable wins build the confidence and momentum needed to tackle huge goals.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 168,
+          "TITLE": "The Practice of Gratitude: Practicing gratitude trains your mind to scan for the positive instead of the negative.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 169,
+          "TITLE": "The Proteus Effect: We subconsciously conform to the behavior of our online personas or avatars.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 170,
+          "TITLE": "The Proximity Principle: You are the average of the people you spend the most time with.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 171,
+          "TITLE": "The Pygmalion Effect: We subconsciously live up, or down, to the expectations others place on us.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 172,
+          "TITLE": "The Pygmalion Effect (Revisited): Your high expectations for others can become a self-fulfilling prophecy for them.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 173,
+          "TITLE": "The Reciprocity Norm: When someone helps you, you feel a deep-seated urge to help them back.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 174,
+          "TITLE": "The Reversibility Principle: Use it or lose it; your body will not maintain adaptations it no longer needs.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 175,
+          "TITLE": "The Second Arrow: The first arrow is pain; the second, optional arrow is the suffering you add with your judgment.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 176,
+          "TITLE": "The Self-Serving Bias: We attribute our successes to skill but our failures to bad luck. Take ownership of both.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 177,
+          "TITLE": "The Solomon Paradox: We are better at solving other people's problems than our own because we have distance.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 178,
+          "TITLE": "The Specificity Principle: Your body adapts specifically to the demands you place on it; you become what you do.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 179,
+          "TITLE": "The Spotlight Effect: You overestimate how much people notice you; you are mostly invisible to others.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 180,
+          "TITLE": "The Stoic Concept of Negative Visualization: To appreciate what you have, imagine losing it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 181,
+          "TITLE": "The Stoic Ideal of Inner Independence: Your ultimate source of strength must reside within you, not in external things.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 182,
+          "TITLE": "The Stoic Practice of Amor Fati: Love your fate; accept and embrace everything that happens on your journey.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 183,
+          "TITLE": "The Stoic Practice of Memento Mori: Remember you will die, so you can remember to live.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 184,
+          "TITLE": "The Stoic Practice of Voluntary Hardship: Intentionally embrace discomfort to build resilience and appreciate comfort.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 185,
+          "TITLE": "The Stoic Understanding of Virtue: The ultimate measure of a good life is acting with wisdom, justice, and courage.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 186,
+          "TITLE": "The Stoic View on External Validation: True strength comes from measuring yourself against your own standards, not others'.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 187,
+          "TITLE": "The Tetris Effect: Repeatedly focusing on one activity can change the patterns your brain sees in the world.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 188,
+          "TITLE": "The Tyranny of Choice: Having endless options often leads to paralysis; embrace liberating constraints.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 189,
+          "TITLE": "The Vagus Nerve: You can physically calm your brain's fight-or-flight response by using deep, slow breathing.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 190,
+          "TITLE": "The Value of Patience: True mastery requires time, consistent effort, and embracing the long game.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 191,
+          "TITLE": "The Yerkes-Dodson Law: A little stress improves performance, but too much anxiety impairs it.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 192,
+          "TITLE": "The Zeigarnik Effect: Your brain is hardwired to remember unfinished tasks more than finished ones.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 193,
+          "TITLE": "The Zeigarnik Effect (Revisited): Start a task for just five minutes; the mental need to finish it will bring you back.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 194,
+          "TITLE": "Turning Obstacles into Opportunities: The mentally strong see setbacks not as roadblocks, but as valuable feedback.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 195,
+          "TITLE": "Using Setbacks as Fuel: Channel the frustration from a setback into intensified, strategic effort.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 196,
+          "TITLE": "Victim vs. Creator: A victim thinks life happens to them; a creator knows life responds to them.",
+          "PHOTO POSTED": ""
+        }
+      },
+      {
+        "json": {
+          "row_number": 197,
+          "TITLE": "Visualization: Imagining an action activates the same neural pathways as doing it, building real muscle memory.",
+          "PHOTO POSTED": ""
+        }
+      }
+    ],
+    "Parse Video Titles": [
+      {
+        "json": {
+          "selectedTitle": "The Ben Franklin Effect: Asking someone for a favor makes them justify their action by deciding they like you.",
+          "selectedFactPart1": "",
+          "selectedFactPart2": "",
+          "rowNumber": 106,
+          "availableCount": 196
+        }
+      }
+    ],
+    "AI Agent": [
+      {
+        "json": {
+          "output": {
+            "originalTheme": "The Ben Franklin Effect: Asking someone for a favor makes them justify their action by deciding they like you.",
+            "context": "A stern-faced worker grips the handle of a heavy toolbox as a colleague wordlessly extends a gloved hand to help lift it. Their eyes meet briefly—no words exchanged—just a silent acknowledgment of the unspoken pact formed by the ask.",
+            "socialTitle": "The Silent Bond of a Favor",
+            "socialCaption": "A favor asked is a bond forged silently. 💪 #PsychologyFacts #HumanNature #StoicMindset #Resilience"
+          }
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-08-17T18:38:25.833Z",
+      "updatedAt": "2025-08-17T18:38:25.833Z",
+      "role": "workflow:owner",
+      "workflowId": "AUvRYyJIRX8bwjlv",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-09-12T17:32:18.111Z",
+      "updatedAt": "2025-09-12T17:32:18.111Z",
+      "id": "BmDshSOyEp5T1nbE",
+      "name": "OLD"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-12T17:37:29.789Z",
+  "versionId": "ee961feb-d4de-4d3b-a220-84d22721efbf"
+}
