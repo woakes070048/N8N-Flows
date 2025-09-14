@@ -1,0 +1,796 @@
+{
+  "active": true,
+  "connections": {
+    "Generate Images Flux Free": {
+      "main": [
+        [
+          {
+            "node": "Wait 15 sec",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image": {
+      "main": [
+        [
+          {
+            "node": "Postiz",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Parse Video Titles",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Video Titles": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Fallout-style prompt generator",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fallout-style prompt generator": {
+      "main": [
+        [
+          {
+            "node": "Generate Images Flux Free",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 15 sec": {
+      "main": [
+        [
+          {
+            "node": "Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Execute Bag Alert Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postiz": {
+      "main": [
+        [
+          {
+            "node": "Channel IDs - SH",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postiz1": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Channel IDs - SH": {
+      "main": [
+        [
+          {
+            "node": "Postiz1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-11T16:08:10.903Z",
+  "id": "irAwAYex5ljhSGyD",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Shocked History Fallout Image Posts copy - Postiz",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.together.xyz/v1/images/generations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"black-forest-labs/FLUX.1-schnell-Free\",\n  \"prompt\": \"{{ $json.prompt }}\",\n  \"width\": 720,\n  \"height\": 1280,\n  \"steps\": 4,\n  \"seed\": 1,\n  \"response_format\": \"url\",\n  \"output_format\": \"jpeg\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        576,
+        -48
+      ],
+      "id": "632e84f0-9d77-4d2a-91a4-e61e8d86e1ff",
+      "name": "Generate Images Flux Free",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "JdfDCxKTwaEVNBKO",
+          "name": "TOGETHER_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1024,
+        -48
+      ],
+      "id": "d515ce12-13a4-4ca7-a250-3ea53c28405f",
+      "name": "Download Image"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1uxOHb33pGIhAtbwjIjtTevhAZ6dWNg3el0VwJ8xInbc",
+          "mode": "list",
+          "cachedResultName": "SHOCKED HISTORY POST TO TIKTOK",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uxOHb33pGIhAtbwjIjtTevhAZ6dWNg3el0VwJ8xInbc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uxOHb33pGIhAtbwjIjtTevhAZ6dWNg3el0VwJ8xInbc/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -496,
+        -48
+      ],
+      "id": "c04beeca-fd7c-4a69-b276-04b078797b32",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get all input items (each item is a row)\nconst inputItems = $input.all();\n\nif (!inputItems || inputItems.length === 0) {\n  return [{ json: { error: 'No rows returned from Google Sheets' } }];\n}\n\nconst availableTitles = [];\n\n// Each input item is a row object\nfor (let i = 0; i < inputItems.length; i++) {\n  const rowData = inputItems[i].json;\n  \n  const title = rowData.TITLE;\n  const photoPosted = rowData['PHOTO POSTED'];\n  \n  // Skip if no title or if it's a header\n  if (!title || title.toLowerCase() === 'title') continue;\n  \n  // Check if PHOTO POSTED is empty\n  if (title.trim().length > 0 && (!photoPosted || photoPosted.toString().trim() === '')) {\n    availableTitles.push({\n      title: title.trim(),\n      rowNumber: rowData.row_number,\n      date: rowData.DATE,\n      description: rowData.DESC\n    });\n  }\n}\n\nif (availableTitles.length === 0) {\n  return [{ json: { \n    error: 'No available titles found',\n    totalRows: inputItems.length,\n    sampleRow: inputItems[0].json\n  }}];\n}\n\n// Random selection\nconst randomIndex = Math.floor(Math.random() * availableTitles.length);\nconst randomSelection = availableTitles[randomIndex];\n\nconsole.log(`Selected \"${randomSelection.title}\" (${randomIndex + 1} of ${availableTitles.length} available)`);\n\nreturn [{\n  json: {\n    selectedTitle: randomSelection.title,\n    rowNumber: randomSelection.rowNumber,\n    availableCount: availableTitles.length,\n    selectedDate: randomSelection.date\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -272,
+        -48
+      ],
+      "id": "c10a7a1f-1dd7-4262-a27c-1f840c3c5e1a",
+      "name": "Parse Video Titles"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the agent's response\nconst inputData = $input.all()[0].json;\nconst agentData = inputData.output || inputData;\n\nconst originalTitle = agentData.originalTitle;\nconst context = agentData.context;\n\nif (!originalTitle || !context) {\n  return [{\n    json: {\n      error: 'Missing title or context from agent',\n      receivedData: agentData\n    }\n  }];\n}\n\n// Function to escape only the characters that break JSON strings\nfunction escapeForJson(str) {\n  if (typeof str !== 'string') return str;\n  \n  return str\n    .replace(/\\\\/g, '\\\\\\\\')  // Escape backslashes first\n    .replace(/\"/g, '\\\\\"')    // Escape double quotes\n    .replace(/\\n/g, '\\\\n')   // Escape newlines\n    .replace(/\\r/g, '\\\\r')   // Escape carriage returns  \n    .replace(/\\t/g, '\\\\t');  // Escape tabs\n}\n\n// Technical/style enhancements - all include \"Fallout game style\"\nconst technicalDetails = [\n  'highly detailed Fallout game concept art style',\n  'photorealistic Fallout game documentary style',\n  'cinematic Fallout game photography style',\n  'weathered Fallout game aesthetic with rich atmospheric depth',\n  'vintage atomic age Fallout game style with film grain'\n];\n\n// Pick a random technical style (but all mention Fallout)\nconst selectedTechnical = technicalDetails[Math.floor(Math.random() * technicalDetails.length)];\n\n// Add technical enhancement to the agent's context\nconst finalPrompt = `${context}, ${selectedTechnical}, cinematic composition`;\n\nconsole.log(`Using agent's context with Fallout-focused technical enhancement for \"${originalTitle}\"`);\n\n// Return with proper escaping for JSON compatibility\nreturn [{\n  json: {\n    prompt: escapeForJson(finalPrompt),\n    videoTitle: escapeForJson(originalTitle),\n    context: escapeForJson(context),\n    technicalStyle: escapeForJson(selectedTechnical),\n    generatedAt: new Date().toISOString()\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        352,
+        -48
+      ],
+      "id": "d661982a-8a68-4b9b-b55d-1058703b7b3b",
+      "name": "Fallout-style prompt generator"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=Given this video title: \"{{ $('Parse Video Titles').item.json.selectedTitle }}\", provide:\n\n1. A brief 2-3 sentence visual description focusing on key elements that would appear in Fallout video game style as weathered, post-apocalyptic remnants (this is for image generation only)\n2. A catchy social media title (50 characters or less) about the historical topic itself\n3. A Facebook/Instagram caption about the historical mystery/topic that's engaging and educational\n\nReturn your response in this exact JSON format:\n{\n  \"originalTitle\": \"{{ $('Parse Video Titles').item.json.selectedTitle }}\",\n  \"context\": \"Your 2-3 sentence Fallout-style visual description for image generation\",\n  \"socialTitle\": \"Historical topic title (no mention of Fallout)\",\n  \"socialCaption\": \"Engaging caption about the actual historical topic with emojis and relevant hashtags\"\n}",
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        -48,
+        -48
+      ],
+      "id": "d4698126-44d8-45ea-8a93-e852bf90fe54",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-4-maverick:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -144,
+        160
+      ],
+      "id": "9610d944-1423-4bb2-8cc4-2adde1fcd49c",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"originalTitle\": \"{{ $('Parse Video Titles').item.json.selectedTitle }}\",\n  \"context\": \"Your 2-3 sentence Fallout-style visual description for image generation\",\n  \"socialTitle\": \"Historical topic title (no mention of Fallout)\",\n  \"socialCaption\": \"Engaging caption about the actual historical topic with emojis and relevant hashtags\"\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        112,
+        176
+      ],
+      "id": "61b2637d-4d06-4bb9-8604-1c8138223374",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "amount": 15
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        800,
+        -48
+      ],
+      "id": "659113c0-2f5f-4368-a0b3-967f8fffdcd9",
+      "name": "Wait 15 sec",
+      "webhookId": "b290bb3d-d8a7-482a-b195-7a3c219be7dc"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1uxOHb33pGIhAtbwjIjtTevhAZ6dWNg3el0VwJ8xInbc",
+          "mode": "list",
+          "cachedResultName": "SHOCKED HISTORY POST TO TIKTOK",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uxOHb33pGIhAtbwjIjtTevhAZ6dWNg3el0VwJ8xInbc/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1uxOHb33pGIhAtbwjIjtTevhAZ6dWNg3el0VwJ8xInbc/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "PHOTO POSTED": "YES",
+            "row_number": "={{ $('Parse Video Titles').first().json.rowNumber }}\n\n"
+          },
+          "matchingColumns": [
+            "row_number"
+          ],
+          "schema": [
+            {
+              "id": "DATE",
+              "displayName": "DATE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "DESC",
+              "displayName": "DESC",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "URL",
+              "displayName": "URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "PHOTO POSTED",
+              "displayName": "PHOTO POSTED",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        2128,
+        -48
+      ],
+      "id": "9efad594-7672-4c57-93c7-f8495086b32c",
+      "name": "Update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -768,
+        -48
+      ],
+      "id": "38d3ba38-2a27-4e82-9315-dfa9968fd597",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        1504,
+        -672
+      ],
+      "id": "815bb00d-0ce5-458e-a1e9-869787f153ab"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "ErJsFIMzI5GAr6Io",
+          "mode": "list",
+          "cachedResultName": "ERROR NOTIFIER"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1728,
+        -672
+      ],
+      "id": "741d9427-a60f-4d18-b683-a215763d2b68",
+      "name": "Execute Bag Alert Workflow"
+    },
+    {
+      "parameters": {
+        "content": "# ERROR ALERTER",
+        "height": 80,
+        "width": 440,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1472,
+        -784
+      ],
+      "typeVersion": 1,
+      "id": "08b40ada-f542-4bd4-82a9-ab456f91399f",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-3.3-70b-instruct:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -16,
+        320
+      ],
+      "id": "f87a4814-203a-4ba9-b370-7472df42bee1",
+      "name": "OpenRouter Chat Model1",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-3.3-70b-instruct:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        128,
+        384
+      ],
+      "id": "479ddf00-b821-485a-9ab0-8ba794a5d42a",
+      "name": "OpenRouter Chat Model2",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "uploadFile",
+        "binaryProperty": "={{ $('Download Image').item.binary }}"
+      },
+      "type": "n8n-nodes-postiz.postiz",
+      "typeVersion": 1,
+      "position": [
+        1232,
+        -48
+      ],
+      "id": "33902f08-0467-42f8-afe7-c44ce8a4ff2b",
+      "name": "Postiz",
+      "credentials": {
+        "postizApi": {
+          "id": "w48sNDeInJhYBUtQ",
+          "name": "Postiz WTF Kreative"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "date": "={{ $now }}",
+        "posts": {
+          "post": [
+            {
+              "integrationId": "={{ $json.Facebook }}",
+              "value": {
+                "contentItem": [
+                  {
+                    "content": "={{ $('AI Agent').item.json.output.socialCaption }}",
+                    "image": {
+                      "imageItem": [
+                        {
+                          "id": "={{ $('Postiz').item.json.id }}",
+                          "path": "={{ $('Postiz').item.json.path }}"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "integrationId": "={{ $json.Instagram }}",
+              "settings": {
+                "setting": [
+                  {
+                    "key": "post_type",
+                    "stringValue": "post"
+                  }
+                ]
+              },
+              "value": {
+                "contentItem": [
+                  {
+                    "content": "={{ $('AI Agent').item.json.output.socialCaption }}",
+                    "image": {
+                      "imageItem": [
+                        {
+                          "id": "={{ $('Postiz').item.json.id }}",
+                          "path": "={{ $('Postiz').item.json.path }}"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-postiz.postiz",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        -48
+      ],
+      "id": "f9bee083-e8f2-4d10-a2d3-4bc6cfe2cfbd",
+      "name": "Postiz1",
+      "credentials": {
+        "postizApi": {
+          "id": "w48sNDeInJhYBUtQ",
+          "name": "Postiz WTF Kreative"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "aggregate": "aggregateAllItemData",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1872,
+        -48
+      ],
+      "id": "bcd1575d-b628-4053-b0b2-ee804ad1b6d8",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "88612fe5-9484-4237-986d-6230a62aa083",
+              "name": "Facebook",
+              "value": "cmffiqzxd0001rw7fscyhjn0h",
+              "type": "string"
+            },
+            {
+              "id": "26eea580-acd3-4d0a-93d6-1052021ddd9f",
+              "name": "Instagram",
+              "value": "cmffitjag0005rw7fsw5rr0pn",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1440,
+        -48
+      ],
+      "id": "2624fa73-409c-4c1c-9771-2be5d3a7c8d9",
+      "name": "Channel IDs - SH"
+    }
+  ],
+  "pinData": {
+    "Schedule Trigger": [
+      {
+        "json": {
+          "timestamp": "2025-09-13T09:00:53.014-05:00",
+          "Readable date": "September 13th 2025, 9:00:53 am",
+          "Readable time": "9:00:53 am",
+          "Day of week": "Saturday",
+          "Year": "2025",
+          "Month": "September",
+          "Day of month": "13",
+          "Hour": "09",
+          "Minute": "00",
+          "Second": "53",
+          "Timezone": "America/Chicago (UTC-05:00)"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Chicago",
+    "callerPolicy": "workflowsFromSameOwner",
+    "errorWorkflow": "3DQkYrqphhTDeBq1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-11T16:08:10.903Z",
+      "updatedAt": "2025-09-11T16:08:10.903Z",
+      "role": "workflow:owner",
+      "workflowId": "irAwAYex5ljhSGyD",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": [
+        235
+      ]
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2025-09-12T17:38:42.049Z",
+      "updatedAt": "2025-09-12T17:38:42.049Z",
+      "id": "aGfv27TDHqLUsUfB",
+      "name": "CURRENTLY IN USE"
+    },
+    {
+      "createdAt": "2025-09-12T16:16:08.199Z",
+      "updatedAt": "2025-09-12T16:16:08.199Z",
+      "id": "INWGn4QkkMHIr8M0",
+      "name": "SHOCKED HISTORY"
+    },
+    {
+      "createdAt": "2025-08-03T13:57:08.438Z",
+      "updatedAt": "2025-08-03T13:57:08.438Z",
+      "id": "Mas1jE28bXSMu19L",
+      "name": "Fully Functional"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-09-13T14:08:02.907Z",
+  "versionId": "507ebb1a-d036-4da1-8fa5-6d218b07b6c4"
+}
