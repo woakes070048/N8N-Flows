@@ -1,0 +1,468 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Zenquotes Quote",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zenquotes Quote": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "set prompt portrait": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "text to image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-07-16T20:58:31.357Z",
+  "id": "9qXRXC5FFa9bTqGW",
+  "isArchived": false,
+  "meta": null,
+  "name": "FREE APIS",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://zenquotes.io/api/random",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        80,
+        48
+      ],
+      "id": "77157751-2db0-4357-939f-c3075d2b2c0c",
+      "name": "Zenquotes Quote"
+    },
+    {
+      "parameters": {
+        "content": "Quotes",
+        "height": 220,
+        "width": 920
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "fc8f7ff6-5429-4ce6-bf1c-0941d0dffd82",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "url": "https://endpoint.api2.news/techcrunch",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        80,
+        304
+      ],
+      "id": "f7e268ae-cab3-4472-8a8a-d735796be1d4",
+      "name": "Endpoint News"
+    },
+    {
+      "parameters": {
+        "content": "News",
+        "height": 220,
+        "width": 920
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        240
+      ],
+      "typeVersion": 1,
+      "id": "cf6010af-9c29-4800-b050-100b788003ab",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "url": "https://api.first.org/data/v1/news",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        304,
+        304
+      ],
+      "id": "499544ab-6b5e-4851-bf04-4b9cbebf6bcf",
+      "name": "first.org news"
+    },
+    {
+      "parameters": {
+        "url": "https://elonmu.sh/api",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        512,
+        304
+      ],
+      "id": "d0afa6c5-ff7f-4407-bae6-3fe3a88682ac",
+      "name": "elon musk news"
+    },
+    {
+      "parameters": {
+        "content": "Available source for,\nhttps://endpoint.api2.news/{source}\n\njust change the {source} with the real one.\n\nsources:\nBBC\nTOI\nTechCrunch\nNYT\nCNN\nGoogle News\nWSJ\nABC\nArstechnica\nBusiness Insider\nBloomberg\nBuzzfeed\nCBC\nCBS\nEngadget\nMashable\nNationalReview\nNBC\nnews24\nWashington Post\nWired\nTime\nYahoo News",
+        "height": 580,
+        "width": 280
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -304,
+        240
+      ],
+      "id": "f33c57d7-3dbd-4f62-9900-eafb4b8971e2",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "url": "https://gomezmig03.github.io/MotivationalAPI/en.json",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        320,
+        48
+      ],
+      "id": "49619c8b-1cc6-4b35-8746-7fc5f8775c1b",
+      "name": "Motivational Quotes"
+    },
+    {
+      "parameters": {
+        "content": "Text to image",
+        "height": 220,
+        "width": 280
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        528
+      ],
+      "typeVersion": 1,
+      "id": "26a7506f-633f-4f51-beac-407eb7156e1a",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://image.pollinations.ai/prompt/{{ $json.prompt }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "width",
+              "value": "1000"
+            },
+            {
+              "name": "height",
+              "value": "1500"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        80,
+        576
+      ],
+      "id": "7b2c25d6-d67e-4fcc-8362-abb020ea39ad",
+      "name": "text to image"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -256,
+        64
+      ],
+      "id": "5c71743d-12bc-42e9-b317-5f8fc1b0a2f3",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "url": "https://api.worldnewsapi.com/top-news",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "source-country",
+              "value": "us"
+            },
+            {
+              "name": "language",
+              "value": "en"
+            },
+            {
+              "name": "date",
+              "value": "={{ $now.format('yyyy-MM-dd') }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "your api key"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        704,
+        304
+      ],
+      "id": "515b567e-6955-4599-bede-ecc995977bf7",
+      "name": "worldnewsapi"
+    },
+    {
+      "parameters": {
+        "content": "Get your api key for wprldnewsapi here,\n\nhttps://worldnewsapi.com/console/\n\n",
+        "height": 120,
+        "width": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        944,
+        272
+      ],
+      "typeVersion": 1,
+      "id": "e18e35bb-5128-4039-92cd-d3c3f17d57d5",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "Web scraping",
+        "height": 220,
+        "width": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        320,
+        528
+      ],
+      "typeVersion": 1,
+      "id": "41d6f4be-c07f-4c99-bc63-4709aebef286",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "content": "Web search",
+        "height": 220,
+        "width": 300
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        624,
+        528
+      ],
+      "typeVersion": 1,
+      "id": "8b6ac9e2-9976-43db-8679-63a9022a0b1a",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "url": "https://api.apileague.com/extract-content",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "url",
+              "value": "enter url to scrape data"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "enter your api key from api league"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        384,
+        592
+      ],
+      "id": "62f771a9-be63-4d2a-8737-29151941a491",
+      "name": "web scraping"
+    },
+    {
+      "parameters": {
+        "url": "https://api.apileague.com/search-web",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "query",
+              "value": "enter query to search"
+            },
+            {
+              "name": "number",
+              "value": "1"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "x-api-key",
+              "value": "your api key from api league"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        704,
+        592
+      ],
+      "id": "6b603130-1358-43e9-8046-bfc897f155de",
+      "name": "web search"
+    },
+    {
+      "parameters": {
+        "content": "Access more api,\n\nhttps://apileague.com/console/",
+        "height": 120,
+        "width": 260
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        944,
+        528
+      ],
+      "typeVersion": 1,
+      "id": "85bc39f7-6e06-4711-b1d8-581c99dbc3c6",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        -240
+      ],
+      "id": "e4cf7a08-522a-45a2-9f5c-e0c0169c858f",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e2cf0f81-45be-45f3-a079-0c6c4dd3d66f",
+              "name": "prompt",
+              "value": "=Subject: {{ $json.a }} - Moody, stoic portrait photography — subject in natural light with soft shadows, muted color palette (deep greys, slate blues, olive greens), high contrast but not black and white. Subtle desaturation to give a timeless, filmic quality. Emphasize texture and depth, with dramatic lighting, cinematic atmosphere, and a slightly grainy finish.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        304,
+        -224
+      ],
+      "id": "9fe3e639-02c1-4d8a-8abf-6ee327cbdec4",
+      "name": "set prompt portrait"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4a1d5bd2-aab2-48e4-80ec-a4a11ca39070",
+              "name": "prompt",
+              "value": "=Visualize the meaning of the quote: ‘{{ $json.q }}’ by {{ $json.a }}, without using any words. Create a photorealistic, cinematic scene that embodies its essence. Moody, stoic style with muted color palette (deep greys, slate blues, olive greens), high contrast, subtle desaturation (not black and white). Natural dramatic lighting with soft shadows and rich texture. No words, letters, symbols, logos, or text of any kind in the image. ",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        -144
+      ],
+      "id": "5173984a-64b6-4f82-92b8-5a0816baf1e3",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-07-16T20:58:31.357Z",
+      "updatedAt": "2025-07-16T20:58:31.357Z",
+      "role": "workflow:owner",
+      "workflowId": "9qXRXC5FFa9bTqGW",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-13T13:08:09.223Z",
+  "versionId": "9985e415-e179-4b6e-92c2-00e742245b25"
+}
