@@ -1,0 +1,154 @@
+{
+  "active": false,
+  "connections": {
+    "Zenquotes Quote": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "text to image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-13T13:08:51.498Z",
+  "id": "mIkImaVkMqFtBMYS",
+  "isArchived": false,
+  "meta": null,
+  "name": "zen quotes images",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://zenquotes.io/api/random",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -768,
+        96
+      ],
+      "id": "82b33b03-1b3b-4f63-a291-9054a6b1db6c",
+      "name": "Zenquotes Quote"
+    },
+    {
+      "parameters": {
+        "url": "https://gomezmig03.github.io/MotivationalAPI/en.json",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -784,
+        304
+      ],
+      "id": "e5a82144-bfdc-432b-9905-96ebb7cd520d",
+      "name": "Motivational Quotes"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://image.pollinations.ai/prompt/{{ $json.prompt }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "width",
+              "value": "1000"
+            },
+            {
+              "name": "height",
+              "value": "1500"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        320,
+        240
+      ],
+      "id": "8f9eb37e-8cbb-420c-bd12-73a3456bf315",
+      "name": "text to image"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e2cf0f81-45be-45f3-a079-0c6c4dd3d66f",
+              "name": "prompt",
+              "value": "=Subject: {{ $json.a }} - Moody, stoic portrait photography — subject in natural light with soft shadows, muted color palette (deep greys, slate blues, olive greens), high contrast but not black and white. Subtle desaturation to give a timeless, filmic quality. Emphasize texture and depth, with dramatic lighting, cinematic atmosphere, and a slightly grainy finish.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -304,
+        -48
+      ],
+      "id": "bd825eef-4e44-4d2f-a2e8-819e563ae080",
+      "name": "set prompt portrait"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4a1d5bd2-aab2-48e4-80ec-a4a11ca39070",
+              "name": "prompt",
+              "value": "=Visualize the meaning of the quote: ‘{{ $json.q }}’ by {{ $json.a }}, without using any words. Create a photorealistic, cinematic scene that embodies its essence. Moody, stoic style with muted color palette (deep greys, slate blues, olive greens), high contrast, subtle desaturation (not black and white). Natural dramatic lighting with soft shadows and rich texture. No words, letters, symbols, logos, or text of any kind in the image. ",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -288,
+        224
+      ],
+      "id": "76929015-98f8-4bae-862f-c353794898c8",
+      "name": "Edit Fields"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-13T13:08:51.498Z",
+      "updatedAt": "2025-09-13T13:08:51.498Z",
+      "role": "workflow:owner",
+      "workflowId": "mIkImaVkMqFtBMYS",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-13T16:42:11.916Z",
+  "versionId": "cd8f45b3-e5ea-47f4-8891-beab0175c459"
+}
