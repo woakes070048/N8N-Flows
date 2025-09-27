@@ -1,0 +1,3191 @@
+{
+  "active": false,
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Script Writer",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Global Variables1": {
+      "main": [
+        [
+          {
+            "node": "Script Writer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Images Flux Free": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Image": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bridge Code1": {
+      "main": [
+        [
+          {
+            "node": "Format JSON2VIDEO Structure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk": {
+      "main": [
+        [
+          {
+            "node": "Bridge Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "SET VOICE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Script Writer": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Script Writer",
+            "type": "ai_languageModel",
+            "index": 1
+          },
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 1
+          },
+          {
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format JSON2VIDEO Structure": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SET VOICE": {
+      "main": [
+        [
+          {
+            "node": "Set Global Variables1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command": {
+      "main": [
+        [
+          {
+            "node": "Parse and prepare data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk2": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse and prepare data": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "Download Image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet1": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Runware AI": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Runware AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Runware AI1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Runware AI1": {
+      "main": [
+        [
+          {
+            "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait4": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Video": {
+      "main": [
+        [
+          {
+            "node": "10 Secs1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Video": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Created Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "10 Secs",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "10 Secs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Created Video": {
+      "main": [
+        [
+          {
+            "node": "Create GitHub Release",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error": {
+      "main": [
+        [
+          {
+            "node": "Send a text message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "10 Secs": {
+      "main": [
+        [
+          {
+            "node": "Get Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "10 Secs1": {
+      "main": [
+        [
+          {
+            "node": "Get Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Video": {
+      "main": [
+        [
+          {
+            "node": "Upload Video Asset",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create GitHub Release": {
+      "main": [
+        [
+          {
+            "node": "Download Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload Video Asset": {
+      "main": [
+        [
+          {
+            "node": "Update Sheet with GitHub URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "node": "Execute Bag Alert Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Set Global Variables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser1": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Video Scene Producer1",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Next Music Track1": {
+      "main": [
+        [
+          {
+            "node": "Video Scene Producer1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Script Length1": {
+      "main": [
+        [
+          {
+            "node": "Too Long?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Too Long?1": {
+      "main": [
+        [
+          {
+            "node": "Script Writer1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get Next Music Track1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Script Writer1": {
+      "main": [
+        [
+          {
+            "node": "Check Script Length1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Video Scene Producer1": {
+      "main": [
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "instruct free1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Structured Output Parser1",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Script Writer1",
+            "type": "ai_languageModel",
+            "index": 1
+          },
+          {
+            "node": "Video Scene Producer1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "405 instruct": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Script Writer1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deepseek backup": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Video Scene Producer1",
+            "type": "ai_languageModel",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "Generate Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Global Variables": {
+      "main": [
+        [
+          {
+            "node": "Script Writer1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-26T16:36:55.640Z",
+  "id": "CXgd0sRug25P6wGj",
+  "isArchived": false,
+  "meta": null,
+  "name": "J2VC.PY_FLUX - SH",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "0420b9c6-2026-4840-a268-a7e25e4f71f2",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -352,
+        544
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a social media marketing specialist creating a YouTube video.\nYour task is to generate a series of detailed scenes based on provided input variables, optimized for engagement.\n\n---\n\n### Input Variables:\n\n- **SCRIPT_CONTENT**: The full video script to break down into individual scenes. \n- **VIDEO_TOPIC**: The main subject or title of the video.\n- **SCRIPT_NARRATION_TONE**: A detailed description of the desired tone/style for the script's voice-over and overall feel.\n\n",
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "options": {
+          "systemMessage": "=You are a technical video scene parser.  \nYour one and only function is to take a pre-written script and convert it into the required JSON configuration for the AI video maker.  \nYou do NOT have creative license to alter the script.\n\n---\n\n### CRITICAL DIRECTIVES\n\n1. **USE THE SCRIPT VERBATIM**  \n   The provided `SCRIPT_CONTENT` is the final, approved narration.  \n   You MUST use the sentences from it exactly as they are written for the `text` field.\n\n2. **NO NEW CONTENT**  \n   DO NOT invent, add, paraphrase, expand, shorten, or rewrite any narrative content.  \n   Your job is to segment the existing text, not create new text.\n\n3. **JSON ONLY**  \n   You MUST return ONLY a valid JSON object.  \n   Do not include explanations, apologies, or any text before or after the JSON structure.\n\n4. **NO QUESTIONS**  \n   Make reasonable assumptions silently.  \n   Never ask for clarification.\n\n---\n\n### INPUT VARIABLES\n\n- **SCRIPT_CONTENT**: {{ $('Script Writer').item.json.output }}\n- **VIDEO_TOPIC**: {{ $('Set Global Variables1').item.json.TITLE }}\n- **SCRIPT_NARRATION_TONE**: {{ $('Set Global Variables1').item.json.Script_Tone }}\n\n---\n\n### SCENE GENERATION PLAN\n\n- Process the `SCRIPT_CONTENT` sequentially.  \n- Generate one scene for each sentence or short pair of sentences.  \n- The `text` for each scene = exactly that sentence or sentences from the script.  \n- The `imagePrompt` must describe the scene visually, reflecting the text exactly, without including any words, text, or letters. **CRITICAL - ENSURE THE IMAGE PROMPTS DO NOT HAVE ANY WRITTEN WORDS FOR THE IMAGE GENERATOR TO CREATE I.E: NO WHITEBOARD WITH WRITTEN TO DO LISTS, NO WORDS ON BANNERS OR SIGNS. The image genertor is NOT good with correctly reproducing images that contain words.**\n- The `searchTerms` should be the same as the `imagePrompt`.\n- End each `imagePrompt` with: `ultra-realistic, 8K, cinematic, portrait 9:16`.  \n- Do NOT rewrite, summarize, or modify any text to fit a word count.  \n\n---\n\n### OUTPUT FORMAT\n\nYou must ONLY respond with valid JSON in this exact format:\n\n{\n  \"scenes\": [\n    {\n      \"text\": \"\",\n      \"imagePrompt\": \"\",\n      \"searchTerms\": \"\"\n    }\n  ],\n  \"config\": {\n    \"music\": \"MUSIC_MOOD\",\n    \"voice\": \"VOICE_NAME\",\n    \"orientation\": \"portrait\"\n  }\n}\n\n## AVAILABLE VOICES:\nam_adam, am_liam, bm_george\n\n## AVAILABLE MUSIC MOODS (MUST USE EXACT VALUES):\nsad, melancholic, happy, euphoric/high, excited, chill, uneasy, angry, dark, hopeful, contemplative, funny/quirky\n\n## IMPORTANT:\n- Respond ONLY with the JSON. No explanations or extra text.\n- Ensure the JSON is valid and properly formatted.\n- Do NOT wrap the JSON in any other object or tool call.\n- The `searchTerms` field is required and should match the `imagePrompt`."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        1136,
+        544
+      ],
+      "id": "06a6c65a-aa64-411b-a7f6-a2d75b3a1486",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-4-maverick:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        736,
+        864
+      ],
+      "id": "07686a3e-7825-4d92-ba21-2ab4146190b2",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"scenes\": [\n    {\n      \"text\": \"Narration text for the scene (15-25 words).\",\n      \"imagePrompt\": \"A detailed, cinematic image prompt for FLUX. Describe the scene, lighting, and mood. End with 'ultra-realistic, 8K, cinematic, portrait 9:16'.\"\n    }\n  ],\n  \"config\": {\n    \"music\": \"MUSIC_MOOD\",\n    \"voice\": \"VOICE_NAME\",\n    \"orientation\": \"portrait\"\n  }\n}\n",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1328,
+        848
+      ],
+      "id": "126641b5-c3a1-4a18-aa67-39011b6b7541",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b674fe0d-b8c0-4141-98f4-dad8f0d8aa0d",
+              "name": "Script_Tone",
+              "value": "UNFILTERED LIFE COACH - HARSH AND IN YOUR FACE",
+              "type": "string"
+            },
+            {
+              "id": "b3099542-7b43-403b-ad7c-f4182d803d90",
+              "name": "Target_Word_Count",
+              "value": "50",
+              "type": "string"
+            },
+            {
+              "id": "26f642b6-eaf1-447b-89df-9265e3193b67",
+              "name": "TITLE",
+              "value": "={{ $('Get row(s) in sheet').item.json.TITLE }}",
+              "type": "string"
+            },
+            {
+              "id": "33965433-feff-4245-9d14-18f45ad31364",
+              "name": "ELEVENLABS_VOICE_ID",
+              "value": "={{ $json.VOICE }}",
+              "type": "string"
+            },
+            {
+              "id": "d6450946-94cb-48ad-aec3-245e87bbcd7e",
+              "name": "BACKGROUND_AUDIO_URL",
+              "value": "https://drive.google.com/uc?export=download&id=1-g_ibAZj7fwncaLTdEzVBtewa_BlIJtX",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        352,
+        544
+      ],
+      "id": "4e9d0b8c-54d7-453e-b223-5e2f642ae3ef",
+      "name": "Set Global Variables1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.together.xyz/v1/images/generations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"black-forest-labs/FLUX.1-schnell-Free\",\n  \"prompt\": \"{{ $json.imagePrompt }}\",\n  \"width\": 720,\n  \"height\": 1280,\n  \"steps\": 4,\n  \"seed\": 1,\n  \"response_format\": \"url\",\n  \"output_format\": \"jpeg\"\n}",
+        "options": {
+          "batching": {
+            "batch": {
+              "batchSize": 5
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1984,
+        1232
+      ],
+      "id": "5ca83550-8cc5-452e-aeef-034e01cc1369",
+      "name": "Generate Images Flux Free",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "JdfDCxKTwaEVNBKO",
+          "name": "TOGETHER_API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data[0].url }}",
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true,
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2384,
+        1232
+      ],
+      "id": "7bf4a918-ddaf-4257-8d0c-0eabddd0769f",
+      "name": "Download Image"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1904,
+        624
+      ],
+      "id": "791dc71e-8866-4d2b-a5db-2ee916b27421",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "jsCode": "// This is the most fundamental way to get data in n8n.\n// It retrieves the array of all incoming items, and we select the first one.\nconst firstItem = $input.all()[0];\n\n// Now we can safely get the JSON data from that item.\nconst agentData = firstItem.json;\n\n// This variable will hold our final array of scenes.\nlet scenesArray = [];\n\n// The rest of this logic is correct and will now work.\nif (agentData.output && agentData.output.scenes) {\n  scenesArray = agentData.output.scenes;\n} else if (agentData.scenes) {\n  scenesArray = agentData.scenes;\n}\n\n// If we successfully found a scenes array, return it.\nif (scenesArray && scenesArray.length > 0) {\n  return scenesArray;\n} else {\n  // If no scenes were found, stop with a clear error.\n  throw new Error(\"Could not find a 'scenes' array in the input data. Check the AI Agent output.\");\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1616,
+        544
+      ],
+      "id": "5f2e7c03-417b-44c5-9b1e-baaaa83ce1f8",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "jsCode": "// This code assumes it's receiving binary image data from the Download Image node\n\nconst items = $input.all();\nconst output = [];\n\nitems.forEach((item, index) => {\n  const timestamp = Date.now();\n  const filename = `temp_scene_${index}_${timestamp}.jpg`;\n  const filepath = `/short_video_maker/images/${filename}`;\n\n  output.push({\n    json: {\n      ...item.json,\n      sceneIndex: index,\n      imageFilename: filename,\n      imagePath: filepath\n    },\n    binary: item.binary  // Ensure binary data is passed through for writing\n  });\n});\n\nreturn output;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2688,
+        512
+      ],
+      "id": "0f6c4103-3fc6-4357-95d9-079e97c6d134",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Bridge Code1 - Simplified Version\n// This node processes items coming from \"Read/Write Files from Disk\"\nconst allItems = $input.all();\n\n// Validation\nif (!allItems || allItems.length === 0) {\n  throw new Error(\"No items received from Read/Write Files node\");\n}\n\n// Get the original AI Agent output scenes\nconst originalAgentData = $('AI Agent').first().json.output;\n\n// Validation for AI Agent data\nif (!originalAgentData || !originalAgentData.scenes) {\n  throw new Error(\"Could not find scenes data from AI Agent node\");\n}\n\nconsole.log(`Processing ${allItems.length} items from file write operations`);\n\n// Process each item that was written to disk\nconst outputItems = allItems.map((item, index) => {\n  // Get the corresponding scene data from AI Agent\n  const sceneData = originalAgentData.scenes[index];\n  \n  if (!sceneData) {\n    throw new Error(`No scene data found for index ${index}`);\n  }\n\n  // Create output item with all necessary data (videoConfig removed)\n  return {\n    json: {\n      text: sceneData.text,\n      imagePrompt: sceneData.imagePrompt,\n      sceneIndex: index,\n      imagePath: item.json.imagePath,\n      imageFilename: item.json.imageFilename,\n    },\n    // Pass through binary data if it exists\n    ...(item.binary ? { binary: item.binary } : {})\n  };\n});\n\nconsole.log(`Bridge Code1 processed ${outputItems.length} items successfully`);\n\nreturn outputItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3568,
+        512
+      ],
+      "id": "851cdff7-526e-44e7-acc6-08a542c30f2d",
+      "name": "Bridge Code1"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $json.imagePath }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        3200,
+        512
+      ],
+      "id": "c4b593d0-e2eb-4a66-b5d6-fe617c079e44",
+      "name": "Read/Write Files from Disk"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -144,
+        544
+      ],
+      "id": "d54f6dba-b70b-4c84-aa19-ca13624d1177",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=### PRIMARY DIRECTIVE\n\nYOUR ONLY OUTPUT MUST BE THE RAW, SPOKEN-WORD SCRIPT, WRITTEN IN FLAWLESS, STANDARD AMERICAN ENGLISH. PRODUCE NO HEADINGS, LABELS, TITLES, DIRECTOR'S NOTES, MARKDOWN, BOLDING, OR ITALICS OF ANY KIND. THE OUTPUT MUST BE PURE TEXT AND CONTAIN NO FOREIGN CHARACTERS.\n\n---\n\nYOU ARE AN AI MASTERMIND, specialized in creating high-impact, viral story scripts for social media.\nYour task is to generate a full, complete script based on the provided variables, adhering exactly to the specified word count.\n\nThe script must provide complete, actionable advice or a fully developed story. Do not give instructions or suggestions without explaining how to do them, and do not leave ideas unfinished. Every recommendation, tip, or concept must be fully explained and understandable to the viewer.\n\n---\n\n### Input Variables:\n\n* **TITLE**: The main topic to base the story script on.\n* **Script_Tone**: A detailed description of the desired tone and persona for the narration.\n* **Target_Word_Count**: The exact word count the final script must achieve.\n\n---\n\n### Script Generation Requirements:\n\n1.  **The HARD LIMIT: Word Count**: The **ABSOLUTE MOST IMPORTANT RULE** is the word count. The final script **MUST BE EXACTLY {{ $json.Target_Word_Count }} words.** This is a non-negotiable limit. Do not go over or under this number. If the story feels too short, you must creatively expand it. If it is too long, you must concisely rewrite it until it meets the target precisely.\n\n2.  **Topic Focus**: Generate a VIRAL story script based on the title: **{{ $json.TITLE }}**\n\n3.  **Narrative Structure**: The script's content must seamlessly integrate the following four elements in order, without ever labeling them:\n    * **A Scroll-Stopping Hook**: The first 1-2 sentences must be jaw-dropping or intensely curious.\n    * **An Escalating Flow**: The middle of the script must build suspense or intrigue. Maintain a punchy, in-your-face, informational flow with tight sentences to keep the viewer engaged.\n    * **A Shocking Twist**: Near the end, introduce a surprising turn or reveal that changes the story's meaning.\n    * **A Compelling CTA**: End the script with a powerful final line that includes a call to action matching the script's tone.\n\n4.  **Tone and Style**:\n    * The entire script must be written in the style of a(n) **{{ $json.Script_Tone }}**.\n    * Use simple, casual, spoken-style English.\n    * **TTS Optimization:** The script must be optimized for Text-to-Speech. Avoid all abbreviations and acronyms. For example, always write \"World War Two\" instead of \"WWII\".\n\n---\n\n### Final Review Protocol:\n\nBefore providing the output, perform a final word count check to confirm the script is **EXACTLY {{ $json.Target_Word_Count }}** words. This is a mandatory final step.\n\n---\n\n### Final Check:\n\nThe final output is ONLY the text of the script, meeting the exact word count. Nothing else.\n",
+        "needsFallback": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        640,
+        544
+      ],
+      "id": "6e379b9c-a670-4c63-9445-734ffb522cb3",
+      "name": "Script Writer"
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-3.3-70b-instruct:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        1024,
+        880
+      ],
+      "id": "1f65348e-b3c6-4a37-b1c7-0d43e2e7b0d7",
+      "name": "OpenRouter Chat Model1",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://image.pollinations.ai/prompt/{{ $json.imagePrompt }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "width",
+              "value": "1000"
+            },
+            {
+              "name": "height",
+              "value": "1500"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3072,
+        1264
+      ],
+      "id": "f034c1ce-d1db-451a-a974-cdcb3eef33d7",
+      "name": "text to image"
+    },
+    {
+      "parameters": {
+        "jsCode": "// N8N Node: \"Format JSON2VIDEO Structure\"\nconst allItems = $input.all();\n\nif (!allItems || allItems.length === 0) {\n  throw new Error(\"No items received from Bridge Code1\");\n}\n\n// Get global variables from n8n (set these in your \"Set Global Variables\" node)\nconst globalVars = $('Set Global Variables1').item.json;\nconst voiceId = globalVars.ELEVENLABS_VOICE_ID || \"2ajXGJNYBR0iNHpS4VZb\"; // Default voice\nconst backgroundAudioUrl = globalVars.BACKGROUND_AUDIO_URL || \"\"; // Optional background music URL\n\n// --- NEW ---\n// Get the video title from the global variables node\nconst videoTitle = globalVars.TITLE || \"Untitled_Video\";\n// --- END NEW ---\n\nconsole.log(`Formatting ${allItems.length} scenes for JSON2VIDEO clone`);\n\n// Build scenes array in JSON2VIDEO format\nconst scenes = [];\n\nfor (const [index, item] of allItems.entries()) {\n  if (!item.json.imagePath) {\n    console.warn(`Skipping scene ${index} - no image path`);\n    continue;\n  }\n  scenes.push({\n    imageData: item.json.imagePath,\n    text: item.json.text,\n    voiceOverText: item.json.text,\n    imagePrompt: item.json.imagePrompt,\n    overlaidText: item.json.text.substring(0, 50) + \"...\", // Shortened for overlay\n    sceneIndex: index\n  });\n}\n\n// Create JSON2VIDEO-compatible structure\nconst json2videoConfig = {\n  // --- NEW ---\n  // Add the title to the JSON object so the Python script can access it\n  title: videoTitle,\n  // --- END NEW ---\n  id: \"n8n_generated\",\n  comment: \"Video created by n8n JSON2VIDEO clone\",\n  height: 1920,\n  width: 1080,\n  quality: \"medium\",\n  draft: false,\n  resolution: \"instagram-story\",\n  fps: 25,\n  cache: true,\n  \n  scenes: scenes,\n  \n  variables: {\n    voice: voiceId,\n    background_audio_url: backgroundAudioUrl,\n    scenes: scenes.map(scene => ({\n      overlaidText: scene.overlaidText,\n      voiceOverText: scene.voiceOverText,\n      imagePrompt: scene.imagePrompt\n    }))\n  },\n  \n  elements: [\n    ...(backgroundAudioUrl ? [{\n      id: \"background-music\",\n      type: \"audio\",\n      src: backgroundAudioUrl,\n      duration: -2,\n      \"fade-out\": 2,\n      volume: 0.2\n    }] : []),\n    \n    {\n      id: \"subtitles\",\n      type: \"subtitles\",\n      settings: {\n        \"font-family\": \"Oswald Bold\",\n        \"font-size\": 140,\n        \"outline-color\": \"#000000\",\n        \"outline-width\": 8,\n        \"position\": \"mid-bottom-center\"\n      },\n      language: \"auto\",\n      comment: \"Auto-generated subtitles\"\n    }\n  ]\n};\n\nconsole.log(`JSON2VIDEO structure created with ${scenes.length} scenes`);\nconsole.log(`Title: ${videoTitle}`); // Log the title for debugging\nconsole.log(`Voice ID: ${voiceId}`);\nconsole.log(`Background Audio: ${backgroundAudioUrl || 'None'}`);\n\n// Return the formatted structure\nreturn [{\n  json: json2videoConfig\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3888,
+        512
+      ],
+      "id": "cc978e1c-a76d-4693-abcf-23e1d0c22e2f",
+      "name": "Format JSON2VIDEO Structure"
+    },
+    {
+      "parameters": {
+        "content": "# Voices\n## ROB - Gritty British Guy:\n### 2ajXGJNYBR0iNHpS4VZb\n## Deacon Deane - New American:\n### ZRhQAAUuJfgKYOWgHWbg\n## Declan Sage - Deep American:\n### kqVT88a5QfII1HNAEPTJ\n## James - Husky and Engaging:\n### EkK5I93UQWFDigLMpZcX\n## Vincent C. Michaels - Dramatic Storyteller:\n### n1PvBOwxb8X6m7tahp2h\n## Nathaniel C - Original Suspenseful British Guy:\n### AeRdCCKzvd23BpJoofzx\n",
+        "height": 704,
+        "width": 592
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c7658929-d6e2-49bd-a365-68877c5bae20",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9580e6ae-7bd9-438d-8856-49be1efccd79",
+              "name": "VOICE",
+              "value": "n1PvBOwxb8X6m7tahp2h",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        96,
+        544
+      ],
+      "id": "0118d24e-19e5-4ca2-9cf7-4138daab26c2",
+      "name": "SET VOICE"
+    },
+    {
+      "parameters": {
+        "command": "cd /short_video_maker && python3 json2video_clone.py input.json"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        4624,
+        512
+      ],
+      "id": "fbaec01f-5b80-4895-b479-9e84cd15deac",
+      "name": "Execute Command"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=/short_video_maker/input.json",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        4352,
+        496
+      ],
+      "id": "95ad40fe-87d8-4629-ac93-79c5a2a55dd7",
+      "name": "Read/Write Files from Disk2"
+    },
+    {
+      "parameters": {
+        "operation": "toJson",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        4128,
+        496
+      ],
+      "id": "306b90da-9c55-41d3-8c85-a72f2bbf6b6f",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the output from the previous Execute Command node\nconst executeNodeOutput = items[0].json;\nconst stdout = executeNodeOutput.stdout;\n\n// Find the starting position of the JSON object\n// We use lastIndexOf('{') because the JSON is the last thing printed\nconst jsonStartIndex = stdout.lastIndexOf('{');\n\n// Check if a JSON object was found\nif (jsonStartIndex === -1) {\n  throw new Error(\"Could not find a JSON object in the stdout from the previous node.\");\n}\n\n// Extract the JSON string from the full stdout\nconst jsonString = stdout.substring(jsonStartIndex);\n\ntry {\n  // Parse the extracted string into a usable JavaScript object\n  const cleanData = JSON.parse(jsonString);\n  \n  // Return the clean data for the next node (e.g., Google Sheets)\n  return [{\n    json: cleanData\n  }];\n} catch (error) {\n  console.error(\"Failed to parse JSON string:\", jsonString);\n  throw new Error(\"The extracted string could not be parsed as JSON. Check the execute node's output.\");\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4864,
+        512
+      ],
+      "id": "9425dfc2-52cc-4b27-8f18-3514e960f218",
+      "name": "Parse and prepare data"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1jlAIziQl3cFqugXsuMqduVc-6ArFwfHmyPjcAjjV2Gs",
+          "mode": "list",
+          "cachedResultName": "IUP - VIDEO IDEAS -N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jlAIziQl3cFqugXsuMqduVc-6ArFwfHmyPjcAjjV2Gs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jlAIziQl3cFqugXsuMqduVc-6ArFwfHmyPjcAjjV2Gs/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('Get row(s) in sheet').first().json.TITLE }}",
+            "Status": "DONE",
+            "VIDEO_PATH": "={{ $json.video_path }}",
+            "DATE": "={{ $json.created_at }}",
+            "POSTING STATUS": "READY",
+            "ERRORS?": "={{ $json.error }}"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "VIDEO_PATH",
+              "displayName": "VIDEO_PATH",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DATE",
+              "displayName": "DATE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "INSTAGRAM",
+              "displayName": "INSTAGRAM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FACEBOOK",
+              "displayName": "FACEBOOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "THREADS",
+              "displayName": "THREADS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ERRORS?",
+              "displayName": "ERRORS?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        5072,
+        512
+      ],
+      "id": "976ebaab-614e-4bef-b153-74f7f7ec0614",
+      "name": "Update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "minutes"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2576,
+        1232
+      ],
+      "id": "6ecf89b6-79c5-4815-bf6f-4e38804d5fbc",
+      "name": "Wait1",
+      "webhookId": "2511de41-64de-4b3e-9ea1-1fb306c1da9f"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.wavespeed.ai/api/v3/wavespeed-ai/flux-schnell",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n\t\"prompt\": \"{{ $json.imagePrompt }}\",\n\t\"strength\": 0.8,\n\t\"size\": \"720*1280\",\n\t\"num_images\": 1,\n\t\"seed\": -1,\n\t\"output_format\": \"jpeg\",\n\t\"enable_base64_output\": true,\n\t\"enable_sync_mode\": false\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1984,
+        1616
+      ],
+      "id": "d3f744b6-f07b-45eb-bb1e-0def70795b5e",
+      "name": "HTTP Request",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "Eb409FBmxO3djyPB",
+          "name": "WaveSpeed AI"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data.urls.get }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2416,
+        1616
+      ],
+      "id": "fa8c0f16-9b51-4669-b86c-139aeecbae94",
+      "name": "HTTP Request1",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "Eb409FBmxO3djyPB",
+          "name": "WaveSpeed AI"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\n\nfor (let i = 0; i < items.length; i++) {\n  const item = items[i];\n  \n  try {\n    // Check different possible paths for the base64 data\n    let base64String = null;\n    \n    // Try different possible locations for the base64 data\n    if (item.json.data && item.json.data.outputs && item.json.data.outputs[0]) {\n      base64String = item.json.data.outputs[0];\n    } else if (item.json.outputs && item.json.outputs[0]) {\n      base64String = item.json.outputs[0];\n    } else if (item.json.data && item.json.data.output) {\n      base64String = item.json.data.output;\n    } else if (item.json.image) {\n      base64String = item.json.image;\n    } else if (item.json.data && item.json.data.image) {\n      base64String = item.json.data.image;\n    }\n    \n    // Log the structure to debug\n    console.log('Item JSON structure:', JSON.stringify(item.json, null, 2));\n    \n    if (!base64String) {\n      throw new Error(`Base64 string not found. Available keys: ${Object.keys(item.json)}`);\n    }\n    \n    // Remove data URL prefix if present (e.g., \"data:image/jpeg;base64,\")\n    const cleanBase64 = base64String.replace(/^data:image\\/[a-z]+;base64,/, '');\n    \n    // Convert Base64 to binary\n    const binaryData = Buffer.from(cleanBase64, 'base64');\n    \n    // Create binary data object\n    const binaryDataObj = await this.helpers.prepareBinaryData(\n      binaryData, \n      `generated_image_${Date.now()}.jpg`, \n      'image/jpeg'\n    );\n    \n    // Set the binary data\n    item.binary = {\n      data: binaryDataObj\n    };\n    \n    // Clean up the JSON to save memory\n    if (item.json.data && item.json.data.outputs) {\n      delete item.json.data.outputs;\n    }\n    \n  } catch (error) {\n    console.error('Error processing item:', error);\n    item.json.error = error.message;\n  }\n}\n\nreturn items;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2656,
+        1616
+      ],
+      "id": "7918e4c0-431c-4549-ad24-db2e029bb539",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2224,
+        1616
+      ],
+      "id": "78cf4fa4-7f44-443a-9985-01cec8bed382",
+      "name": "Wait2",
+      "webhookId": "df494ca8-2ed4-4b91-a708-e8fe87546133"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2176,
+        1232
+      ],
+      "id": "32d6eae3-1301-4602-b21d-1a04c388251c",
+      "name": "Wait3",
+      "webhookId": "0a1f54e8-5ccf-4a3f-bc89-390b4a2f0607"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1jlAIziQl3cFqugXsuMqduVc-6ArFwfHmyPjcAjjV2Gs",
+          "mode": "list",
+          "cachedResultName": "IUP - VIDEO IDEAS -N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jlAIziQl3cFqugXsuMqduVc-6ArFwfHmyPjcAjjV2Gs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jlAIziQl3cFqugXsuMqduVc-6ArFwfHmyPjcAjjV2Gs/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('Get row(s) in sheet').first().json.TITLE }}",
+            "SCRIPT": "={{ $json.output }}"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "SCRIPT",
+              "displayName": "SCRIPT",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "VIDEO_PATH",
+              "displayName": "VIDEO_PATH",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "DATE",
+              "displayName": "DATE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "INSTAGRAM",
+              "displayName": "INSTAGRAM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "FACEBOOK",
+              "displayName": "FACEBOOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "THREADS",
+              "displayName": "THREADS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ERRORS?",
+              "displayName": "ERRORS?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        976,
+        544
+      ],
+      "id": "164e93ee-7725-46a2-8678-3784bbb22e0a",
+      "name": "Update row in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## TOGETHER.AI   FREE BUT  RATE LIMITS BAD. LIKE 0.6 IMAGES PER MINUTE",
+        "height": 304,
+        "width": 896
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        1136
+      ],
+      "id": "7fc78572-ad0c-4dcd-84f1-58aefbd14c92",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## POLINATIONS.AI. FREE  FAST. KINDA CRAPPY THOUGH",
+        "height": 288,
+        "width": 352
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2928,
+        1136
+      ],
+      "id": "70789f22-9fcc-43d8-95f3-2939a75b3217",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## WAVESPEED.AI  .003 per image. used with my API Key",
+        "height": 208,
+        "width": 912
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1936,
+        1552
+      ],
+      "id": "f3ea2c32-25a7-42bf-85df-b85c24bb6632",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.runware.ai/v1",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "=[\n  {\n    \"taskType\": \"imageInference\",\n    \"taskUUID\": \"{{ $json.taskUUID }}\",\n    \"outputType\": \"URL\",\n    \"outputFormat\": \"jpg\",\n    \"positivePrompt\": \"{{ $('Loop Over Items').item.json.imagePrompt }}\",\n    \"height\": 1280,\n    \"width\": 768,\n    \"model\": \"runware:100@1\",\n    \"steps\": 30,\n    \"CFGScale\": 5,\n    \"numberResults\": 1\n  }\n]\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2448,
+        768
+      ],
+      "id": "8cf3da93-e218-44d6-b14b-be8581bf27f0",
+      "name": "Runware AI",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "ZmymRg9YW2V2PZgq",
+          "name": "RUNWARE.AI"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// This function creates a unique identifier that looks like a UUID\n// without using any external modules. It's random enough for API tracking.\nfunction generateUUID() {\n  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {\n    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);\n    return v.toString(16);\n  });\n}\n\nconst randomTaskUUID = generateUUID();\n\nreturn {\n  taskUUID: randomTaskUUID\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2176,
+        768
+      ],
+      "id": "83118a8d-0c65-4cc0-8933-1fa9efcb9cc7",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2656,
+        768
+      ],
+      "id": "800db1f2-c313-4517-9051-c67fc04235cf",
+      "name": "Wait",
+      "webhookId": "604ea61f-1e19-4086-85ec-fd01d34ef8db"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.data[0].imageURL }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBearerAuth",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2864,
+        768
+      ],
+      "id": "4bbab81d-ff51-44c8-8f60-68a295805c59",
+      "name": "Runware AI1",
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "ZmymRg9YW2V2PZgq",
+          "name": "RUNWARE.AI"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3072,
+        768
+      ],
+      "id": "ab6f4748-6457-49c6-b3cb-7376b19a65de",
+      "name": "Wait4",
+      "webhookId": "602a6436-99a8-45df-aedf-33c59302248e"
+    },
+    {
+      "parameters": {
+        "content": "## RUNWARE.AI  .0018 per image. used with my API Key",
+        "height": 304,
+        "width": 1104,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2128,
+        704
+      ],
+      "id": "ab246ea9-c4c8-47aa-9d74-0274c1fbf5b5",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.json2video.com/v2/movies",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "json",
+        "body": "={{ $json.json2videoPayload }}",
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2096,
+        2224
+      ],
+      "id": "d4535868-9ef8-43b7-b883-f8115e8c6ef7",
+      "name": "Generate Video",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "nTtnzQa0DjKsKnct",
+          "name": "json2video"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://api.json2video.com/v2/movies",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "project",
+              "value": "={{ $('Generate Video').item.json.project }}"
+            }
+          ]
+        },
+        "options": {
+          "redirect": {
+            "redirect": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2096,
+        2512
+      ],
+      "id": "1d0ad515-5cf6-454b-bf31-9b664b724ca1",
+      "name": "Get Video",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "nTtnzQa0DjKsKnct",
+          "name": "json2video"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "5b858d82-0a7c-44ea-940b-ae83a7c22f3c",
+                    "leftValue": "={{ $json.movie.status }}",
+                    "rightValue": "done",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Done"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.movie.status }}",
+                    "rightValue": "error",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "2e627457-06c8-411e-b6e0-f2e0207a3882"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Error"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "6ebbf3c8-599e-451d-acf6-4e63fef69ae0",
+                    "leftValue": "={{ $json.movie.status }}",
+                    "rightValue": "running",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Running"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e22298ac-6f08-4f73-a361-768a17ea9a3a",
+                    "leftValue": "={{ $json.movie.status }}",
+                    "rightValue": "preparing",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Preparing"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        2400,
+        2480
+      ],
+      "id": "9b770116-a884-44a7-b128-156ab92235e4",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Video URL": "={{ $json.movie.url }}",
+            "TITLE": "={{ $('Get row(s) in sheet1').item.json.TITLE }}",
+            "Creation Status": "IN PROGRESS",
+            "DATE CREATED": "={{ new Date().toISOString().split('T')[0] }}"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Creation Status",
+              "displayName": "Creation Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DATE CREATED",
+              "displayName": "DATE CREATED",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "GITHUB URL",
+              "displayName": "GITHUB URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "SCRIPT",
+              "displayName": "SCRIPT",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "BACKGROUND MUSIC URL",
+              "displayName": "BACKGROUND MUSIC URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "BACKGROUND MUSIC CREDITS",
+              "displayName": "BACKGROUND MUSIC CREDITS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "GITHUB RELEASE ID",
+              "displayName": "GITHUB RELEASE ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "FB",
+              "displayName": "FB",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "INSTA",
+              "displayName": "INSTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CLEANED FROM GITHUB?",
+              "displayName": "CLEANED FROM GITHUB?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2864,
+        2176
+      ],
+      "id": "bafec2c3-a4a1-4f5a-883b-efa78dc194fc",
+      "name": "Created Video",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('Get row(s) in sheet').item.json.TITLE }}",
+            "Video URL": "ERROR"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Creation Status",
+              "displayName": "Creation Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DATE CREATED",
+              "displayName": "DATE CREATED",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "GITHUB URL",
+              "displayName": "GITHUB URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "SCRIPT",
+              "displayName": "SCRIPT",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "BACKGROUND MUSIC URL",
+              "displayName": "BACKGROUND MUSIC URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "BACKGROUND MUSIC CREDITS",
+              "displayName": "BACKGROUND MUSIC CREDITS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "GITHUB RELEASE ID",
+              "displayName": "GITHUB RELEASE ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FB",
+              "displayName": "FB",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "INSTA",
+              "displayName": "INSTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "CLEANED FROM GITHUB?",
+              "displayName": "CLEANED FROM GITHUB?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        2752,
+        2432
+      ],
+      "id": "acc5bfc8-7c37-4524-88d0-23819df457a4",
+      "name": "Error",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "# Polling\n",
+        "height": 180,
+        "width": 340,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2736,
+        2608
+      ],
+      "id": "82ebecf2-95f6-460b-96de-11b46f23d7ef",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "chatId": "7439997846",
+        "text": "ERROR ON N8N FLOW",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2928,
+        2432
+      ],
+      "id": "d9856de8-b73d-446a-926d-19287257f439",
+      "name": "Send a text message1",
+      "webhookId": "601faab6-70ad-4019-9397-30c45c699e23",
+      "credentials": {
+        "telegramApi": {
+          "id": "HHgbp1SZSR5uC5wr",
+          "name": "Telegram account - ALERTS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2896,
+        2656
+      ],
+      "id": "693a2b61-149f-475d-9cb9-fc599ad44c13",
+      "name": "10 Secs",
+      "webhookId": "1ce236fe-fb6b-430c-a4b0-91223200a44a"
+    },
+    {
+      "parameters": {
+        "amount": 10
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        2400,
+        2224
+      ],
+      "id": "4e6e1fb3-b509-4dab-af55-506623504b41",
+      "name": "10 Secs1",
+      "webhookId": "1ce236fe-fb6b-430c-a4b0-91223200a44a"
+    },
+    {
+      "parameters": {
+        "url": "={{ $('Switch').item.json.movie.url }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3440,
+        2176
+      ],
+      "id": "bfce2cf6-3f32-45e9-973e-855769da3c67",
+      "name": "Download Video",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "nTtnzQa0DjKsKnct",
+          "name": "json2video"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "release",
+        "owner": {
+          "__rl": true,
+          "value": "Uke13",
+          "mode": "name"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "symmetrical-eureka-SH",
+          "mode": "list"
+        },
+        "releaseTag": "=temp-ig-files-{{ DateTime.now().toFormat('yyyyMMdd') }}",
+        "additionalFields": {
+          "name": "={{ $('Get row(s) in sheet1').item.json.TITLE }}",
+          "body": "=Video: {{ $('Get row(s) in sheet1').item.json.TITLE }} \\nGenerated: {{ new Date().toISOString() }}",
+          "prerelease": true
+        }
+      },
+      "id": "1bb9859f-b2da-47ec-9d34-c491469a1f7d",
+      "name": "Create GitHub Release",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        3232,
+        2176
+      ],
+      "webhookId": "f4f26119-2431-4b44-8411-997fef70dfdd",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "SkPviyNYURtVqRGy",
+          "name": "GitHub OAUTH APP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://uploads.github.com/repos/Uke13/symmetrical-eureka-SH/releases/{{ $('Create GitHub Release').item.json.id }}/assets?name=video.mp4",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "githubOAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "video/mp4"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "binaryData",
+        "inputDataFieldName": "data",
+        "options": {}
+      },
+      "id": "6ba598d3-9d93-4e51-bceb-bca13c7becb3",
+      "name": "Upload Video Asset",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3616,
+        2176
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "nTtnzQa0DjKsKnct",
+          "name": "json2video"
+        },
+        "githubOAuth2Api": {
+          "id": "SkPviyNYURtVqRGy",
+          "name": "GitHub OAUTH APP"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('Download Video').item.json.name }}",
+            "GITHUB URL": "={{ $json.browser_download_url }}",
+            "POSTING STATUS": "READY TO POST",
+            "SCRIPT": "={{ $('Script Writer1').item.json.output }}",
+            "BACKGROUND MUSIC URL": "={{ $('Get Next Music Track1').item.json.backgroundMusicUrl }}",
+            "BACKGROUND MUSIC CREDITS": "={{ $('Get Next Music Track1').item.json.backgroundMusicCredits }}",
+            "GITHUB RELEASE ID": "={{ $('Create GitHub Release').item.json.id }}",
+            "Creation Status": "DONE"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Creation Status",
+              "displayName": "Creation Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DATE CREATED",
+              "displayName": "DATE CREATED",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "GITHUB URL",
+              "displayName": "GITHUB URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "SCRIPT",
+              "displayName": "SCRIPT",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "BACKGROUND MUSIC URL",
+              "displayName": "BACKGROUND MUSIC URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "BACKGROUND MUSIC CREDITS",
+              "displayName": "BACKGROUND MUSIC CREDITS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "GITHUB RELEASE ID",
+              "displayName": "GITHUB RELEASE ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "FB",
+              "displayName": "FB",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "INSTA",
+              "displayName": "INSTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CLEANED FROM GITHUB?",
+              "displayName": "CLEANED FROM GITHUB?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "f5490610-8c1f-447d-9eec-ec458f49e260",
+      "name": "Update Sheet with GitHub URL",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        3840,
+        2176
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        3456,
+        2640
+      ],
+      "id": "accd179b-4fd6-41fe-879b-26e42474a8b5"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "ErJsFIMzI5GAr6Io",
+          "mode": "list",
+          "cachedResultName": "ERROR NOTIFIER"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        3680,
+        2640
+      ],
+      "id": "71a744f7-03ef-468a-9435-08bf45bfa7f8",
+      "name": "Execute Bag Alert Workflow"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 12 * * 1-5"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -304,
+        2192
+      ],
+      "id": "9d911b63-b15f-4dbf-a4ca-ec8964d850cf",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Creation Status",
+              "lookupValue": "NEW"
+            }
+          ]
+        },
+        "options": {
+          "returnFirstMatch": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -112,
+        2192
+      ],
+      "id": "3d1067e4-e167-4d98-987b-5a25abbe4296",
+      "name": "Get row(s) in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "schemaType": "manual",
+        "inputSchema": "{\n  \"scenes\": [{\n    \"overlaidText\": \"\",\n    \"voiceOverText\": \"\",\n    \"imagePrompt\": \"\"\n  }]\n}",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1024,
+        2560
+      ],
+      "id": "ff9e2493-eec5-4985-be8e-c6557665fa1a",
+      "name": "Structured Output Parser1"
+    },
+    {
+      "parameters": {
+        "content": "# SCRIPT WRITER - MUSIC DIRECTOR - SCENE PRODUCER",
+        "height": 680,
+        "width": 2100
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -352,
+        2112
+      ],
+      "id": "d577082a-871e-4c3f-9e73-e96e80f9abc6",
+      "name": "Sticky Note11"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "VS0Ij3WEYwFW12jN",
+          "mode": "list",
+          "cachedResultName": "SH SONG Cycler"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1104,
+        2272
+      ],
+      "id": "c0c4e617-ebe9-470f-afa6-c3c90634f23d",
+      "name": "Get Next Music Track1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const script = $json.output || $json.text || \"\";\nconst words = script.trim().split(/\\s+/).length;\nconst wordsPerSecond = 2;\nconst estDuration = words / wordsPerSecond;\n\nconst maxSeconds = 85;\nconst tooLong = estDuration > maxSeconds;\n\nreturn [{\n  json: {\n    script,\n    words,\n    estDuration,\n    tooLong\n  }\n}];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        656,
+        2224
+      ],
+      "id": "cbf4a24c-4cfb-4e9d-878a-51a4b1735e17",
+      "name": "Check Script Length1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "cb720da5-b866-419a-a9e2-3fb85d153552",
+              "leftValue": "={{$json.tooLong}}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        880,
+        2304
+      ],
+      "id": "d66ef0ce-86fb-4c40-b803-548c2d6634dd",
+      "name": "Too Long?1",
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=### PRIMARY DIRECTIVE\n\nYOUR ONLY OUTPUT MUST BE THE RAW, SPOKEN-WORD SCRIPT, WRITTEN IN FLAWLESS, STANDARD AMERICAN ENGLISH. PRODUCE NO HEADINGS, LABELS, TITLES, DIRECTOR'S NOTES, MARKDOWN, BOLDING, OR ITALICS OF ANY KIND. THE OUTPUT MUST BE PURE TEXT AND CONTAIN NO FOREIGN CHARACTERS.\n\n---\n\nYOU ARE AN AI MASTERMIND specialized in crafting high-impact, viral story scripts for social media.\nYour task is to generate a complete, unformatted script based on the provided variables, adhering to a strict word count.\n\n---\n\n### Input Variables:\n\n* **TITLE**: The main topic to base the story script on.\n* **Script_Tone**: A detailed description of the desired tone and persona for the narration.\n* **Target_Word_Count**: The exact word count the final script must achieve.\n\n---\n\n### Script Generation Requirements:\n\n1.  **The HARD LIMIT: Word Count**: The **ABSOLUTE MOST IMPORTANT RULE** is the word count. The final script **MUST BE EXACTLY {{ $json.Target_Word_Count }} words.** This is a non-negotiable limit. Do not go over or under this number. If the story feels too short, you must creatively expand it. If it is too long, you must concisely rewrite it until it meets the target precisely.\n\n2.  **Topic Focus**: Generate a VIRAL story script based on the title: **{{ $json.TITLE }}**\n\n3.  **Narrative Structure**: The script's content must seamlessly integrate the following four elements in order, without ever labeling them:\n    * **A Scroll-Stopping Hook**: The first 1-2 sentences must be jaw-dropping or intensely curious.\n    * **An Escalating Flow**: The middle of the script must build suspense or intrigue. Maintain a punchy, in-your-face, informational flow with tight sentences to keep the viewer engaged.\n    * **A Shocking Twist**: Near the end, introduce a surprising turn or reveal that changes the story's meaning.\n    * **A Compelling CTA**: End the script with a powerful final line that includes a call to action matching the script's tone.\n\n4.  **Tone and Style**:\n    * The entire script must be written in a **{{ $json.Script_Tone }}**.\n    * Use simple, casual, spoken-style English.\n    * **TTS Optimization:** The script must be optimized for Text-to-Speech. Avoid all abbreviations and acronyms. For example, always write \"World War Two\" instead of \"WWII\".\n\n---\n\n### Final Review Protocol:\n\nBefore providing the output, perform a final word count check to confirm the script is **EXACTLY {{ $json.Target_Word_Count }}** words. This is a mandatory final step.\n\n---\n\n### Final Check:\n\nThe final output is ONLY the text of the script, meeting the exact word count. Nothing else.",
+        "needsFallback": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        320,
+        2288
+      ],
+      "id": "2155d330-9e97-48fa-97c0-f501b24a74ea",
+      "name": "Script Writer1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a technical video scene parser. Your one and only function is to take a pre-written script and break it down into a structured JSON array of scenes. You do not have creative license to alter the script.\n\n---\n\n### CRITICAL DIRECTIVES\n\n1.  **USE THE SCRIPT VERBATIM**: The provided `SCRIPT_CONTENT` is the final, approved narration. You MUST use the sentences from it exactly as they are written for the `voiceOverText`.\n2.  **NO NEW CONTENT**: DO NOT invent, add, paraphrase, or rewrite any narrative content. Your job is to segment the existing text, not create new text.\n3.  **JSON ONLY**: You MUST return ONLY a valid JSON object. Do not include any explanations, apologies, or any text before or after the JSON structure.\n4.  **NO QUESTIONS**: Make reasonable assumptions and proceed. Never ask for clarification.\n\n---\n\n### INPUT VARIABLES\n\n* **VIDEO_TOPIC**: `{{ $('Get row(s) in sheet1').item.json.TITLE }}`\n* **SCRIPT_CONTENT**: {{ $('Script Writer1').item.json.output }}\n\n---\n\n### SCENE GENERATION PLAN\n\nYour primary task is to process the `SCRIPT_CONTENT` sequentially and create one scene for each sentence.\n\n1.  **Processing Method**: Go through the `SCRIPT_CONTENT` sentence by sentence, from beginning to end.\n2.  **Scene Creation**: Each sentence will become the `voiceOverText` for a new scene. If a sentence is very long, you may split it at a natural pause (like a comma). If two sentences are very short and directly related, you may combine them.\n3.  **Scene Count**: The number of scenes you generate will be determined ONLY by the number of sentences in the `SCRIPT_CONTENT`. Do not try to hit a target number of scenes or a target video length.\n\n---\n\n### SCENE CONTENT REQUIREMENTS\n\nEach generated scene object in the JSON array MUST contain these three key-value pairs, derived directly from the script segment for that scene:\n\n1.  `voiceOverText`:\n    * **This MUST be the next sequential sentence (or short pair of sentences) copied VERBATIM from the `SCRIPT_CONTENT`.** Do not change a single word.\n\n2.  `overlaidText`:\n    * A short, punchy text overlay, **3-5 words maximum**.\n    * This text MUST be a direct summary **of the `voiceOverText` you just used for this specific scene.**\n\n3.  `imagePrompt`:\n    * A detailed, photorealistic visual description for an AI image generator.\n    * The visual described MUST directly represent the action, location, or concept **from the `voiceOverText` for this specific scene.**\n    * **CRITICAL**: The prompt MUST NOT contain any words like \"text,\" \"words,\" or \"letters.\" The generated image must be purely visual.\n    * Use descriptive terms (e.g., \"cinematic lighting,\" \"macro shot,\" \"wide-angle view,\" \"hyper-realistic\").\n\n---\n\n### OUTPUT FORMAT\n\nReturn ONLY the JSON object below.\n\n{\n  \"scenes\": [\n    {\n      \"overlaidText\": \"\",\n      \"voiceOverText\": \"\",\n      \"imagePrompt\": \"\"\n    }\n  ]\n}",
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        1360,
+        2256
+      ],
+      "id": "65cf2215-0e2f-4e0d-8dd3-fafdd515d262",
+      "name": "Video Scene Producer1"
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-3.3-70b-instruct:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        512,
+        2528
+      ],
+      "id": "7e1ef0c0-983b-482b-9490-8c6a77b17ffc",
+      "name": "instruct free1",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-3.1-405b-instruct:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        384,
+        2528
+      ],
+      "id": "ab7ec774-a223-408d-b8ac-5e43c763acea",
+      "name": "405 instruct",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": "deepseek/deepseek-chat-v3.1:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        896,
+        2560
+      ],
+      "id": "5ff7c4b3-656a-4945-b47d-816ce59bef77",
+      "name": "deepseek backup",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "\n# Template IDs for Json2Video\n \n## Set in Global Variables\n\n## 1. Nathaniel British Guy - BugEreBZEcQSTdsKALbN\n## 2. ROB - New British Guy - TEXIJF9igDcJ9bIHbD4q\n## 3. Deacon - American Guy - NDS8jmLFkve9CcgF6Uct",
+        "height": 384,
+        "width": 560,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -336,
+        2384
+      ],
+      "id": "31c79597-4f4e-471e-866f-e5883c6a7980",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "# Generate Video",
+        "height": 680,
+        "width": 600,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2016,
+        2096
+      ],
+      "id": "a94a7cec-e691-4d54-b172-3a274ebbc27e",
+      "name": "Sticky Note7"
+    },
+    {
+      "parameters": {
+        "content": "# Success",
+        "height": 260,
+        "width": 340,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2736,
+        2096
+      ],
+      "id": "49a06cba-7f29-4535-bc66-516d72b7b796",
+      "name": "Sticky Note8"
+    },
+    {
+      "parameters": {
+        "content": "# Error",
+        "height": 240,
+        "width": 340,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2736,
+        2368
+      ],
+      "id": "61583bcb-393b-4a66-a494-22b582b668a1",
+      "name": "Sticky Note9"
+    },
+    {
+      "parameters": {
+        "content": "# ERROR ALERTER",
+        "height": 80,
+        "width": 440,
+        "color": 6
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3424,
+        2528
+      ],
+      "typeVersion": 1,
+      "id": "fbc2e812-970c-4d55-a11e-d8478e6b7196",
+      "name": "Sticky Note10"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Access the scenes array from the Video Scene Producer output\nconst producerScenes = $input.first().json.output.scenes;\n\n// Access the music data from the renamed sub-workflow node output\nconst backgroundMusicUrl = $('Get Next Music Track1').first().json.backgroundMusicUrl;\nconst backgroundMusicCredits = $('Get Next Music Track1').first().json.backgroundMusicCredits;\n\n// Access the template ID from the 'Set Global Variables1' node\nconst json2videoTemplateId = $('Set Global Variables').first().json.json2video_template_id;\n\n// Construct the JSON2Video payload (voice parameter removed)\nconst json2videoPayload = {\n  \"template\": json2videoTemplateId,\n  \"variables\": { // This 'variables' block fills the variables defined within your J2V template\n    \"scenes\": producerScenes, // Your scenes data for the template's 'iterate' variable\n    \"background_audio_url\": backgroundMusicUrl // Pass the actual audio URL here as this variable\n  }\n};\n\n// Return both the constructed JSON2Video payload AND the background music credits\nreturn [{\n  json: {\n    json2videoPayload: json2videoPayload, // The payload to send to JSON2Video\n    backgroundMusicCredits: backgroundMusicCredits // The credits for later use\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1456,
+        2576
+      ],
+      "id": "f3744396-704f-4ba6-b2e6-39681b791fa3",
+      "name": "Code2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b674fe0d-b8c0-4141-98f4-dad8f0d8aa0d",
+              "name": "Script_Tone",
+              "value": "Spooky, intense tone like a narrator telling a forbidden historical secret or \"Don Wilder\" - the host of \"cities of the underworld\" from the History Channel",
+              "type": "string"
+            },
+            {
+              "id": "b3099542-7b43-403b-ad7c-f4182d803d90",
+              "name": "Target_Word_Count",
+              "value": "100",
+              "type": "string"
+            },
+            {
+              "id": "7d6070a4-e09e-4d82-a93a-b2a2829bdbe7",
+              "name": "json2video_template_id",
+              "value": "NDS8jmLFkve9CcgF6Uct",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        96,
+        2192
+      ],
+      "id": "72634e15-0e28-4626-a025-ceb7627b2b1d",
+      "name": "Set Global Variables"
+    },
+    {
+      "parameters": {
+        "content": "# Create GitHub Release",
+        "height": 336,
+        "width": 872,
+        "color": 7
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        3168,
+        2096
+      ],
+      "typeVersion": 1,
+      "id": "83eb2b41-5c30-46e8-8b41-536767dffb7c",
+      "name": "Sticky Note12"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-26T16:36:55.640Z",
+      "updatedAt": "2025-09-26T16:36:55.640Z",
+      "role": "workflow:owner",
+      "workflowId": "CXgd0sRug25P6wGj",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-09-12T16:16:08.199Z",
+      "updatedAt": "2025-09-12T16:16:08.199Z",
+      "id": "INWGn4QkkMHIr8M0",
+      "name": "SHOCKED HISTORY"
+    },
+    {
+      "createdAt": "2025-08-03T14:46:00.650Z",
+      "updatedAt": "2025-08-03T14:46:00.650Z",
+      "id": "7wfuZNHPxfbgubll",
+      "name": "Costs $"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-26T16:39:06.182Z",
+  "versionId": "d81379a2-0e36-4d98-be6b-b5c1890b3bf3"
+}
