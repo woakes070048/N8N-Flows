@@ -1,0 +1,941 @@
+{
+  "active": false,
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          },
+          {
+            "node": "Script Writer",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Global Variables1": {
+      "main": [
+        [
+          {
+            "node": "Script Writer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Pollinations.AI",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Bridge Code1": {
+      "main": [
+        [
+          {
+            "node": "Format JSON2VIDEO Structure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk": {
+      "main": [
+        [
+          {
+            "node": "Bridge Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "SET VOICE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Script Writer": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenRouter Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Script Writer",
+            "type": "ai_languageModel",
+            "index": 1
+          },
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 1
+          },
+          {
+            "node": "Structured Output Parser",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "text to image": {
+      "main": [
+        []
+      ]
+    },
+    "Format JSON2VIDEO Structure": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SET VOICE": {
+      "main": [
+        [
+          {
+            "node": "Set Global Variables1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read/Write Files from Disk2": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Read/Write Files from Disk2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command": {
+      "main": [
+        [
+          {
+            "node": "Parse and prepare data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse and prepare data": {
+      "main": [
+        [
+          {
+            "node": "Update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        []
+      ]
+    },
+    "Pollinations.AI": {
+      "main": [
+        [
+          {
+            "node": "Wait1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-26T14:04:41.415Z",
+  "id": "VzjdvK4JN5iQEG80",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "J2VC.PY - TOGETHER FLUX - IUP",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "9054d0a8-cbc8-4b72-b76d-cb0b22accb83",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -6304,
+        16
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a social media marketing specialist creating a YouTube video.\nYour task is to generate a series of detailed scenes based on provided input variables, optimized for engagement.\n\n---\n\n### Input Variables:\n\n- **SCRIPT_CONTENT**: The full video script to break down into individual scenes. \n- **VIDEO_TOPIC**: The main subject or title of the video.\n- **SCRIPT_NARRATION_TONE**: A detailed description of the desired tone/style for the script's voice-over and overall feel.\n\n",
+        "hasOutputParser": true,
+        "needsFallback": true,
+        "options": {
+          "systemMessage": "=You are a technical video scene parser.  \nYour one and only function is to take a pre-written script and convert it into the required JSON configuration for the AI video maker.  \nYou do NOT have creative license to alter the script.\n\n---\n\n### CRITICAL DIRECTIVES\n\n1. **USE THE SCRIPT VERBATIM**  \n   The provided `SCRIPT_CONTENT` is the final, approved narration.  \n   You MUST use the sentences from it exactly as they are written for the `text` field.\n\n2. **NO NEW CONTENT**  \n   DO NOT invent, add, paraphrase, expand, shorten, or rewrite any narrative content.  \n   Your job is to segment the existing text, not create new text.\n\n3. **JSON ONLY**  \n   You MUST return ONLY a valid JSON object.  \n   Do not include explanations, apologies, or any text before or after the JSON structure.\n\n4. **NO QUESTIONS**  \n   Make reasonable assumptions silently.  \n   Never ask for clarification.\n\n---\n\n### INPUT VARIABLES\n\n- **SCRIPT_CONTENT**: {{ $json.output }}\n- **VIDEO_TOPIC**: {{ $('Set Global Variables1').item.json.TITLE }}\n- **SCRIPT_NARRATION_TONE**: {{ $('Set Global Variables1').item.json.Script_Tone }}\n\n---\n\n### SCENE GENERATION PLAN\n\n- Process the `SCRIPT_CONTENT` sequentially.  \n- Generate one scene for each sentence or short pair of sentences.  \n- The `text` for each scene = exactly that sentence or sentences from the script.  \n- The `imagePrompt` must describe the scene visually, reflecting the text exactly, without including any words, text, or letters.  \n- The `searchTerms` should be the same as the `imagePrompt`.\n- End each `imagePrompt` with: `ultra-realistic, 8K, cinematic, portrait 9:16`.  \n- Do NOT rewrite, summarize, or modify any text to fit a word count.  \n\n---\n\n### OUTPUT FORMAT\n\nYou must ONLY respond with valid JSON in this exact format:\n\n{\n  \"scenes\": [\n    {\n      \"text\": \"\",\n      \"imagePrompt\": \"\",\n      \"searchTerms\": \"\"\n    }\n  ],\n  \"config\": {\n    \"music\": \"MUSIC_MOOD\",\n    \"voice\": \"VOICE_NAME\",\n    \"orientation\": \"portrait\"\n  }\n}\n\n## AVAILABLE VOICES:\nam_adam, am_liam, bm_george\n\n## AVAILABLE MUSIC MOODS (MUST USE EXACT VALUES):\nsad, melancholic, happy, euphoric/high, excited, chill, uneasy, angry, dark, hopeful, contemplative, funny/quirky\n\n## IMPORTANT:\n- Respond ONLY with the JSON. No explanations or extra text.\n- Ensure the JSON is valid and properly formatted.\n- Do NOT wrap the JSON in any other object or tool call.\n- The `searchTerms` field is required and should match the `imagePrompt`."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        -4816,
+        16
+      ],
+      "id": "69febef1-8f3d-4802-8b94-b8efb587c654",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "x-ai/grok-4-fast:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -5216,
+        336
+      ],
+      "id": "bcee3492-0f27-4f26-a2c0-7fefe5dfe3b1",
+      "name": "OpenRouter Chat Model",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"scenes\": [\n    {\n      \"text\": \"Narration text for the scene (15-25 words).\",\n      \"imagePrompt\": \"A detailed, cinematic image prompt for FLUX. Describe the scene, lighting, and mood. End with 'ultra-realistic, 8K, cinematic, portrait 9:16'.\"\n    }\n  ],\n  \"config\": {\n    \"music\": \"MUSIC_MOOD\",\n    \"voice\": \"VOICE_NAME\",\n    \"orientation\": \"portrait\"\n  }\n}\n",
+        "autoFix": true
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        -4624,
+        320
+      ],
+      "id": "83bf8d57-72b1-4ae5-aec7-807d39a4b7cd",
+      "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b674fe0d-b8c0-4141-98f4-dad8f0d8aa0d",
+              "name": "Script_Tone",
+              "value": "UNFILTERED LIFE COACH - HARSH AND IN YOUR FACE",
+              "type": "string"
+            },
+            {
+              "id": "b3099542-7b43-403b-ad7c-f4182d803d90",
+              "name": "Target_Word_Count",
+              "value": "50",
+              "type": "string"
+            },
+            {
+              "id": "26f642b6-eaf1-447b-89df-9265e3193b67",
+              "name": "TITLE",
+              "value": "={{ $('Get row(s) in sheet').item.json.TITLE }}",
+              "type": "string"
+            },
+            {
+              "id": "33965433-feff-4245-9d14-18f45ad31364",
+              "name": "ELEVENLABS_VOICE_ID",
+              "value": "={{ $json.VOICE }}",
+              "type": "string"
+            },
+            {
+              "id": "d6450946-94cb-48ad-aec3-245e87bbcd7e",
+              "name": "BACKGROUND_AUDIO_URL",
+              "value": "https://drive.google.com/uc?export=download&id=1-g_ibAZj7fwncaLTdEzVBtewa_BlIJtX",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -5632,
+        16
+      ],
+      "id": "b1ad58ca-17a2-4d31-9096-fae9d9f22bf6",
+      "name": "Set Global Variables1"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -4048,
+        96
+      ],
+      "id": "7d430bdb-dc09-48bf-a20a-533d052068b6",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "jsCode": "// This is the most fundamental way to get data in n8n.\n// It retrieves the array of all incoming items, and we select the first one.\nconst firstItem = $input.all()[0];\n\n// Now we can safely get the JSON data from that item.\nconst agentData = firstItem.json;\n\n// This variable will hold our final array of scenes.\nlet scenesArray = [];\n\n// The rest of this logic is correct and will now work.\nif (agentData.output && agentData.output.scenes) {\n  scenesArray = agentData.output.scenes;\n} else if (agentData.scenes) {\n  scenesArray = agentData.scenes;\n}\n\n// If we successfully found a scenes array, return it.\nif (scenesArray && scenesArray.length > 0) {\n  return scenesArray;\n} else {\n  // If no scenes were found, stop with a clear error.\n  throw new Error(\"Could not find a 'scenes' array in the input data. Check the AI Agent output.\");\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -4336,
+        16
+      ],
+      "id": "a1330657-3361-40d5-a0c6-b322ce36497c",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "jsCode": "// This code assumes it's receiving binary image data from the Download Image node\n\nconst items = $input.all();\nconst output = [];\n\nitems.forEach((item, index) => {\n  const timestamp = Date.now();\n  const filename = `temp_scene_${index}_${timestamp}.jpg`;\n  const filepath = `/short_video_maker/images/${filename}`;\n\n  output.push({\n    json: {\n      ...item.json,\n      sceneIndex: index,\n      imageFilename: filename,\n      imagePath: filepath\n    },\n    binary: item.binary  // Ensure binary data is passed through for writing\n  });\n});\n\nreturn output;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -3472,
+        -16
+      ],
+      "id": "53c4ce64-feaa-43f5-931e-c504a544679d",
+      "name": "Code1"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Bridge Code1 - Simplified Version\n// This node processes items coming from \"Read/Write Files from Disk\"\nconst allItems = $input.all();\n\n// Validation\nif (!allItems || allItems.length === 0) {\n  throw new Error(\"No items received from Read/Write Files node\");\n}\n\n// Get the original AI Agent output scenes\nconst originalAgentData = $('AI Agent').first().json.output;\n\n// Validation for AI Agent data\nif (!originalAgentData || !originalAgentData.scenes) {\n  throw new Error(\"Could not find scenes data from AI Agent node\");\n}\n\nconsole.log(`Processing ${allItems.length} items from file write operations`);\n\n// Process each item that was written to disk\nconst outputItems = allItems.map((item, index) => {\n  // Get the corresponding scene data from AI Agent\n  const sceneData = originalAgentData.scenes[index];\n  \n  if (!sceneData) {\n    throw new Error(`No scene data found for index ${index}`);\n  }\n\n  // Create output item with all necessary data (videoConfig removed)\n  return {\n    json: {\n      text: sceneData.text,\n      imagePrompt: sceneData.imagePrompt,\n      sceneIndex: index,\n      imagePath: item.json.imagePath,\n      imageFilename: item.json.imageFilename,\n    },\n    // Pass through binary data if it exists\n    ...(item.binary ? { binary: item.binary } : {})\n  };\n});\n\nconsole.log(`Bridge Code1 processed ${outputItems.length} items successfully`);\n\nreturn outputItems;"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2592,
+        -16
+      ],
+      "id": "abd83003-e361-4700-8c98-680565d81255",
+      "name": "Bridge Code1"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $json.imagePath }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        -2960,
+        -16
+      ],
+      "id": "3985e8fc-a006-4faf-8700-7cb289c0b0ca",
+      "name": "Read/Write Files from Disk"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1jlAIziQl3cFqugXsuMqduVc-6ArFwfHmyPjcAjjV2Gs",
+          "mode": "list",
+          "cachedResultName": "IUP - VIDEO IDEAS -N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jlAIziQl3cFqugXsuMqduVc-6ArFwfHmyPjcAjjV2Gs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jlAIziQl3cFqugXsuMqduVc-6ArFwfHmyPjcAjjV2Gs/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Status",
+              "lookupValue": "NEW"
+            }
+          ]
+        },
+        "options": {
+          "returnFirstMatch": true
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -6096,
+        16
+      ],
+      "id": "03a68164-e3dd-4dd6-b84b-ac145d2aefc8",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=### PRIMARY DIRECTIVE\n\nYOUR ONLY OUTPUT MUST BE THE RAW, SPOKEN-WORD SCRIPT, WRITTEN IN FLAWLESS, STANDARD AMERICAN ENGLISH. PRODUCE NO HEADINGS, LABELS, TITLES, DIRECTOR'S NOTES, MARKDOWN, BOLDING, OR ITALICS OF ANY KIND. THE OUTPUT MUST BE PURE TEXT AND CONTAIN NO FOREIGN CHARACTERS.\n\n---\n\nYOU ARE AN AI MASTERMIND, specialized in creating high-impact, viral story scripts for social media.\nYour task is to generate a full, complete script based on the provided variables, adhering exactly to the specified word count.\n\nThe script must provide complete, actionable advice or a fully developed story. Do not give instructions or suggestions without explaining how to do them, and do not leave ideas unfinished. Every recommendation, tip, or concept must be fully explained and understandable to the viewer.\n\n---\n\n### Input Variables:\n\n* **TITLE**: The main topic to base the story script on.\n* **Script_Tone**: A detailed description of the desired tone and persona for the narration.\n* **Target_Word_Count**: The exact word count the final script must achieve.\n\n---\n\n### Script Generation Requirements:\n\n1.  **The HARD LIMIT: Word Count**: The **ABSOLUTE MOST IMPORTANT RULE** is the word count. The final script **MUST BE EXACTLY {{ $json.Target_Word_Count }} words.** This is a non-negotiable limit. Do not go over or under this number. If the story feels too short, you must creatively expand it. If it is too long, you must concisely rewrite it until it meets the target precisely.\n\n2.  **Topic Focus**: Generate a VIRAL story script based on the title: **{{ $json.TITLE }}**\n\n3.  **Narrative Structure**: The script's content must seamlessly integrate the following four elements in order, without ever labeling them:\n    * **A Scroll-Stopping Hook**: The first 1-2 sentences must be jaw-dropping or intensely curious.\n    * **An Escalating Flow**: The middle of the script must build suspense or intrigue. Maintain a punchy, in-your-face, informational flow with tight sentences to keep the viewer engaged.\n    * **A Shocking Twist**: Near the end, introduce a surprising turn or reveal that changes the story's meaning.\n    * **A Compelling CTA**: End the script with a powerful final line that includes a call to action matching the script's tone.\n\n4.  **Tone and Style**:\n    * The entire script must be written in the style of a(n) **{{ $json.Script_Tone }}**.\n    * Use simple, casual, spoken-style English.\n    * **TTS Optimization:** The script must be optimized for Text-to-Speech. Avoid all abbreviations and acronyms. For example, always write \"World War Two\" instead of \"WWII\".\n\n---\n\n### Final Review Protocol:\n\nBefore providing the output, perform a final word count check to confirm the script is **EXACTLY {{ $json.Target_Word_Count }}** words. This is a mandatory final step.\n\n---\n\n### Final Check:\n\nThe final output is ONLY the text of the script, meeting the exact word count. Nothing else.\n",
+        "needsFallback": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -5264,
+        16
+      ],
+      "id": "cbefe25e-ced4-4da9-9fd5-fdee7c1254db",
+      "name": "Script Writer"
+    },
+    {
+      "parameters": {
+        "model": "meta-llama/llama-3.3-70b-instruct:free",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "typeVersion": 1,
+      "position": [
+        -4928,
+        352
+      ],
+      "id": "4b19e915-e598-4061-b569-a4ee11c90c24",
+      "name": "OpenRouter Chat Model1",
+      "credentials": {
+        "openRouterApi": {
+          "id": "Z0qdSGsCKeFZM9R5",
+          "name": "OpenRouter account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://image.pollinations.ai/prompt/{{ $json.imagePrompt }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "width",
+              "value": "1000"
+            },
+            {
+              "name": "height",
+              "value": "1500"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -3072,
+        -448
+      ],
+      "id": "ce275339-da09-4e7e-8b2f-88c50fb597e2",
+      "name": "text to image"
+    },
+    {
+      "parameters": {
+        "jsCode": "// N8N Node: \"Format JSON2VIDEO Structure\"\nconst allItems = $input.all();\n\nif (!allItems || allItems.length === 0) {\n  throw new Error(\"No items received from Bridge Code1\");\n}\n\n// Get global variables from n8n (set these in your \"Set Global Variables\" node)\nconst globalVars = $('Set Global Variables1').item.json;\nconst voiceId = globalVars.ELEVENLABS_VOICE_ID || \"2ajXGJNYBR0iNHpS4VZb\"; // Default voice\nconst backgroundAudioUrl = globalVars.BACKGROUND_AUDIO_URL || \"\"; // Optional background music URL\n\n// --- NEW ---\n// Get the video title from the global variables node\nconst videoTitle = globalVars.TITLE || \"Untitled_Video\";\n// --- END NEW ---\n\nconsole.log(`Formatting ${allItems.length} scenes for JSON2VIDEO clone`);\n\n// Build scenes array in JSON2VIDEO format\nconst scenes = [];\n\nfor (const [index, item] of allItems.entries()) {\n  if (!item.json.imagePath) {\n    console.warn(`Skipping scene ${index} - no image path`);\n    continue;\n  }\n  scenes.push({\n    imageData: item.json.imagePath,\n    text: item.json.text,\n    voiceOverText: item.json.text,\n    imagePrompt: item.json.imagePrompt,\n    overlaidText: item.json.text.substring(0, 50) + \"...\", // Shortened for overlay\n    sceneIndex: index\n  });\n}\n\n// Create JSON2VIDEO-compatible structure\nconst json2videoConfig = {\n  // --- NEW ---\n  // Add the title to the JSON object so the Python script can access it\n  title: videoTitle,\n  // --- END NEW ---\n  id: \"n8n_generated\",\n  comment: \"Video created by n8n JSON2VIDEO clone\",\n  height: 1920,\n  width: 1080,\n  quality: \"medium\",\n  draft: false,\n  resolution: \"instagram-story\",\n  fps: 25,\n  cache: true,\n  \n  scenes: scenes,\n  \n  variables: {\n    voice: voiceId,\n    background_audio_url: backgroundAudioUrl,\n    scenes: scenes.map(scene => ({\n      overlaidText: scene.overlaidText,\n      voiceOverText: scene.voiceOverText,\n      imagePrompt: scene.imagePrompt\n    }))\n  },\n  \n  elements: [\n    ...(backgroundAudioUrl ? [{\n      id: \"background-music\",\n      type: \"audio\",\n      src: backgroundAudioUrl,\n      duration: -2,\n      \"fade-out\": 2,\n      volume: 0.2\n    }] : []),\n    \n    {\n      id: \"subtitles\",\n      type: \"subtitles\",\n      settings: {\n        \"font-family\": \"Oswald Bold\",\n        \"font-size\": 140,\n        \"outline-color\": \"#000000\",\n        \"outline-width\": 8,\n        \"position\": \"mid-bottom-center\"\n      },\n      language: \"auto\",\n      comment: \"Auto-generated subtitles\"\n    }\n  ]\n};\n\nconsole.log(`JSON2VIDEO structure created with ${scenes.length} scenes`);\nconsole.log(`Title: ${videoTitle}`); // Log the title for debugging\nconsole.log(`Voice ID: ${voiceId}`);\nconsole.log(`Background Audio: ${backgroundAudioUrl || 'None'}`);\n\n// Return the formatted structure\nreturn [{\n  json: json2videoConfig\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -2272,
+        -16
+      ],
+      "id": "e050f59b-0fe2-4115-ba9f-acc2a34f4e69",
+      "name": "Format JSON2VIDEO Structure"
+    },
+    {
+      "parameters": {
+        "content": "# Voices\n## ROB - Gritty British Guy:\n### 2ajXGJNYBR0iNHpS4VZb\n## Deacon Deane - New American:\n### ZRhQAAUuJfgKYOWgHWbg\n## Declan Sage - Deep American:\n### kqVT88a5QfII1HNAEPTJ\n## James - Husky and Engaging:\n### EkK5I93UQWFDigLMpZcX\n## Vincent C. Michaels - Dramatic Storyteller:\n### n1PvBOwxb8X6m7tahp2h\n## Nathaniel C - Original Suspenseful British Guy:\n### AeRdCCKzvd23BpJoofzx\n",
+        "height": 704,
+        "width": 592
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -5952,
+        -528
+      ],
+      "id": "81dfdf9d-44ba-4775-aef8-8502dbda3131",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9580e6ae-7bd9-438d-8856-49be1efccd79",
+              "name": "VOICE",
+              "value": "n1PvBOwxb8X6m7tahp2h",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -5888,
+        16
+      ],
+      "id": "19d6f04d-b89f-41b3-aeb0-f9c3e671f6e4",
+      "name": "SET VOICE"
+    },
+    {
+      "parameters": {
+        "command": "cd /short_video_maker && python3 json2video_clone.py input.json"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        -1536,
+        -16
+      ],
+      "id": "09a845b7-cfb0-4a0f-9a08-b020cad7fc8e",
+      "name": "Execute Command"
+    },
+    {
+      "parameters": {
+        "operation": "write",
+        "fileName": "=/short_video_maker/input.json",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1,
+      "position": [
+        -1808,
+        -32
+      ],
+      "id": "40439838-6a16-4a38-9848-46e923de73dc",
+      "name": "Read/Write Files from Disk2"
+    },
+    {
+      "parameters": {
+        "operation": "toJson",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        -2032,
+        -32
+      ],
+      "id": "d2dfced4-8e29-4d05-8729-5f9e084d4b64",
+      "name": "Convert to File"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Get the output from the previous Execute Command node\nconst executeNodeOutput = items[0].json;\nconst stdout = executeNodeOutput.stdout;\n\n// Find the starting position of the JSON object\n// We use lastIndexOf('{') because the JSON is the last thing printed\nconst jsonStartIndex = stdout.lastIndexOf('{');\n\n// Check if a JSON object was found\nif (jsonStartIndex === -1) {\n  throw new Error(\"Could not find a JSON object in the stdout from the previous node.\");\n}\n\n// Extract the JSON string from the full stdout\nconst jsonString = stdout.substring(jsonStartIndex);\n\ntry {\n  // Parse the extracted string into a usable JavaScript object\n  const cleanData = JSON.parse(jsonString);\n  \n  // Return the clean data for the next node (e.g., Google Sheets)\n  return [{\n    json: cleanData\n  }];\n} catch (error) {\n  console.error(\"Failed to parse JSON string:\", jsonString);\n  throw new Error(\"The extracted string could not be parsed as JSON. Check the execute node's output.\");\n}"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1296,
+        -16
+      ],
+      "id": "f463d9bc-a158-4bc9-85a4-9e6a1953b488",
+      "name": "Parse and prepare data"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1jlAIziQl3cFqugXsuMqduVc-6ArFwfHmyPjcAjjV2Gs",
+          "mode": "list",
+          "cachedResultName": "IUP - VIDEO IDEAS -N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jlAIziQl3cFqugXsuMqduVc-6ArFwfHmyPjcAjjV2Gs/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1jlAIziQl3cFqugXsuMqduVc-6ArFwfHmyPjcAjjV2Gs/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('Get row(s) in sheet').first().json.TITLE }}",
+            "Status": "DONE",
+            "VIDEO_PATH": "={{ $json.video_path }}",
+            "DATE": "={{ $json.created_at }}",
+            "POSTING STATUS": "READY",
+            "ERRORS?": "={{ $json.error }}"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "VIDEO_PATH",
+              "displayName": "VIDEO_PATH",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DATE",
+              "displayName": "DATE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "INSTAGRAM",
+              "displayName": "INSTAGRAM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FACEBOOK",
+              "displayName": "FACEBOOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "THREADS",
+              "displayName": "THREADS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ERRORS?",
+              "displayName": "ERRORS?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1088,
+        -16
+      ],
+      "id": "2beeb0ae-1239-4cab-a94b-18fbad917822",
+      "name": "Update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 110
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -3056,
+        -272
+      ],
+      "id": "7193aa97-e0b5-4123-9c67-25d75d636978",
+      "name": "Wait",
+      "webhookId": "06226018-b7ad-416e-bbc6-bf49e520b812",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://image.pollinations.ai/prompt/",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "width",
+              "value": "768"
+            },
+            {
+              "name": "height",
+              "value": "1280"
+            },
+            {
+              "name": "nologo",
+              "value": "true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -3680,
+        208
+      ],
+      "id": "689b3b5c-c3fc-4024-9676-d1940704de51",
+      "name": "Pollinations.AI"
+    },
+    {
+      "parameters": {
+        "amount": 15
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -3440,
+        208
+      ],
+      "id": "3607ff41-90cf-4050-88d7-03a5037cf870",
+      "name": "Wait1",
+      "webhookId": "747af82f-81da-4e7f-b540-8b595a6c9e4f"
+    }
+  ],
+  "pinData": {
+    "Manual Trigger": [
+      {
+        "json": {}
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-26T14:04:41.415Z",
+      "updatedAt": "2025-09-26T14:04:41.415Z",
+      "role": "workflow:owner",
+      "workflowId": "VzjdvK4JN5iQEG80",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-09-12T18:09:53.164Z",
+      "updatedAt": "2025-09-12T18:09:53.164Z",
+      "id": "E5uIgQAu9AEGW2wZ",
+      "name": "IUP"
+    },
+    {
+      "createdAt": "2025-08-02T18:56:26.268Z",
+      "updatedAt": "2025-08-02T18:56:26.268Z",
+      "id": "nnDA7isE4OxnQFwX",
+      "name": "Development"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-09-28T14:11:25.613Z",
+  "versionId": "d78a79be-ce49-4a6e-a946-7dd4365729c9"
+}
