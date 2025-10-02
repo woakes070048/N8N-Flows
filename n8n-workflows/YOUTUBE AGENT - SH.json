@@ -1,0 +1,349 @@
+{
+  "active": false,
+  "connections": {
+    "Youtube Post": {
+      "main": [
+        [
+          {
+            "node": "UPDATE YOUTUBE COLUMN",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Youtube Post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "UPDATE YOUTUBE COLUMN": {
+      "main": [
+        [
+          {
+            "node": "Return",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-09-06T16:49:56.638Z",
+  "id": "37xd0GPIwWIdXIMZ",
+  "isArchived": false,
+  "meta": null,
+  "name": "YOUTUBE AGENT - SH",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "upload",
+        "title": "={{ $('Start').item.json.output_youtube_title }}",
+        "regionCode": "US",
+        "categoryId": "24",
+        "options": {
+          "description": "={{ $('Start').item.json.output_youtube_description }}",
+          "privacyStatus": "public"
+        }
+      },
+      "type": "n8n-nodes-base.youTube",
+      "typeVersion": 1,
+      "position": [
+        -384,
+        -464
+      ],
+      "id": "10a45402-9be5-4a7c-8318-a1043463ee67",
+      "name": "Youtube Post",
+      "credentials": {
+        "youTubeOAuth2Api": {
+          "id": "Gf4ktvvHX8KT65dH",
+          "name": "YouTube SHOCKED HISTORY"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY",
+          "mode": "list",
+          "cachedResultName": "VIDEO IDEAS - MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "TO DO - TOPICS FOR MAKE",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1XuWiYtYX75JWhs4loyb1yFDNuIJic7_bAU3gcT8tOgY/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TITLE": "={{ $('Start').first().json.TITLE_firstItem }}",
+            "YOUTUBE": "SENT"
+          },
+          "matchingColumns": [
+            "TITLE"
+          ],
+          "schema": [
+            {
+              "id": "TITLE",
+              "displayName": "TITLE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Creation Status",
+              "displayName": "Creation Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "POSTING STATUS",
+              "displayName": "POSTING STATUS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Video URL",
+              "displayName": "Video URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "GITHUB URL",
+              "displayName": "GITHUB URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "SCRIPT",
+              "displayName": "SCRIPT",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "BACKGROUND MUSIC URL",
+              "displayName": "BACKGROUND MUSIC URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "BACKGROUND MUSIC CREDITS",
+              "displayName": "BACKGROUND MUSIC CREDITS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "GITHUB RELEASE ID",
+              "displayName": "GITHUB RELEASE ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "YOUTUBE",
+              "displayName": "YOUTUBE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FB",
+              "displayName": "FB",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "INSTA",
+              "displayName": "INSTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TIKTOK",
+              "displayName": "TIKTOK",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "CLEANED FROM GITHUB?",
+              "displayName": "CLEANED FROM GITHUB?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        -160,
+        -464
+      ],
+      "id": "903b7885-7eab-44bb-bd68-c417a5381202",
+      "name": "UPDATE YOUTUBE COLUMN",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "G5F0HGiAwsbqZpbE",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f8fc1983-8be7-4c16-85c9-43cf2fe54ef2",
+              "name": "YOUTUBE",
+              "value": "={{ $('UPDATE YOUTUBE COLUMN').item.json.YOUTUBE }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        64,
+        -464
+      ],
+      "id": "1cf6d827-c230-4dd0-893e-e2df560bf889",
+      "name": "Return"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "output_youtube_title",
+              "type": "any"
+            },
+            {
+              "name": "output_youtube_description",
+              "type": "any"
+            },
+            {
+              "name": "TITLE_firstItem",
+              "type": "any"
+            }
+          ]
+        }
+      },
+      "id": "23e80b27-ff04-4a42-ab61-04ef0d75f4a7",
+      "typeVersion": 1.1,
+      "name": "Start",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "position": [
+        -592,
+        -464
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-09-06T16:49:56.638Z",
+      "updatedAt": "2025-09-06T16:49:56.638Z",
+      "role": "workflow:owner",
+      "workflowId": "37xd0GPIwWIdXIMZ",
+      "projectId": "aYesZFcPjHzYQyLq"
+    }
+  ],
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-09-12T17:32:18.111Z",
+      "updatedAt": "2025-09-12T17:32:18.111Z",
+      "id": "BmDshSOyEp5T1nbE",
+      "name": "OLD"
+    },
+    {
+      "createdAt": "2025-09-12T16:16:08.199Z",
+      "updatedAt": "2025-09-12T16:16:08.199Z",
+      "id": "INWGn4QkkMHIr8M0",
+      "name": "SHOCKED HISTORY"
+    }
+  ],
+  "triggerCount": 0,
+  "updatedAt": "2025-10-01T18:09:19.827Z",
+  "versionId": "df5338ef-19be-4027-9d5d-66ebbc17f8f4"
+}
